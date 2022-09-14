@@ -23,6 +23,7 @@ export const MyInfoNavWrap = styled.div`
   border-left: 1px solid #c4c4c4;
   border-right: 1px solid #c4c4c4;
   box-shadow: 5px 0px 5px 0.5px #c4c4c4;
+  padding: 0 15px;
 `;
 
 export const MyInfoContentsWrap = styled.div`
@@ -30,4 +31,5 @@ export const MyInfoContentsWrap = styled.div`
   flex-direction: column;
   width: 65%;
   height: 100vh;
+  padding: 0 20px;
 `;
