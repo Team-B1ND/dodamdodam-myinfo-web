@@ -5,10 +5,9 @@ export const TitleWrap = styled.div`
   width: 100%;
   height: 75px;
   box-sizing: border-box;
-  /* background-color: #03c75a; */
-  padding-left: 10px;
-  padding-bottom: 20px;
-  padding-top: 5px;
+  padding: 20 0px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TitleText = styled.p`
@@ -22,5 +21,5 @@ export const TitleText = styled.p`
 
 export const DodamLogoImg = styled.img`
   width: 50px;
-  height: auto;
+  height: 50px;
 `;
