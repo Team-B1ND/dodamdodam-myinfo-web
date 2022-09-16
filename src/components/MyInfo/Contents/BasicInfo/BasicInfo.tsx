@@ -1,5 +1,5 @@
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import { BasicInfoNavbarWrap, BasicInfoWrap } from "./style";
+import ProfileInfo from "./SimpleProfileInfo/SimpleProfileInfo";
+import { BasicInfoNavbarWrap } from "./style";
 
 const BasicInfo = () => {
   return (
@@ -7,7 +7,6 @@ const BasicInfo = () => {
       <BasicInfoNavbarWrap>
         <ProfileInfo />
       </BasicInfoNavbarWrap>
-      <BasicInfoWrap></BasicInfoWrap>
     </>
   );
 };

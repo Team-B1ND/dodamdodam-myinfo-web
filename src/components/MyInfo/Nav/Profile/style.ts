@@ -25,9 +25,9 @@ export const ProfileNameText = styled.p`
   height: 10%;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 20px;
-  text-align: center;
 `;
 
 export const ProfileBasicInfoText = styled.p`
@@ -35,6 +35,7 @@ export const ProfileBasicInfoText = styled.p`
   height: 10%;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 15px;
 `;

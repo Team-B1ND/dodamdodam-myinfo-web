@@ -4,13 +4,14 @@ export const ProfileInfoWrap = styled.div`
   display: flex;
   width: 100px;
   height: 25px;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ProfileInfoImg = styled.img`
-  display: flex;
   width: 25px;
   height: 25px;
-  background-color: red;
 `;
 
 export const ProfileInfoName = styled.p`
@@ -18,5 +19,6 @@ export const ProfileInfoName = styled.p`
   width: auto;
   height: 25px;
   text-align: center;
+  align-items: center;
   padding-left: 10px;
 `;
