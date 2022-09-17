@@ -1,15 +1,11 @@
 import Contents from "./MyInfo/Contents/Contents";
-import Nav from "./MyInfo/Nav/Nav";
 
-import { Body, MyInfoWrap } from "./style";
+import { Body } from "./style";
 
 const MyInfo = () => {
   return (
     <Body>
-      <MyInfoWrap>
-        <Nav />
-        <Contents />
-      </MyInfoWrap>
+      <Contents />
     </Body>
   );
 };

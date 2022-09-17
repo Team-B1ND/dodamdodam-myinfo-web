@@ -5,7 +5,7 @@ import {
   ProfileNameText,
   ProfileWrap,
 } from "./style";
-import defaultProfileImg from "../../../../images/default_profile.png";
+import defaultProfileImg from "../../../../../images/default_profile.png";
 
 const Profile = () => {
   return (
