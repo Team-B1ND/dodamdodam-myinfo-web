@@ -14,7 +14,7 @@ export const ProfileInfoImg = styled.img`
   height: 25px;
 `;
 
-export const ProfileInfoName = styled.p`
+export const ProfileInfoName = styled.span`
   display: flex;
   width: auto;
   height: 25px;

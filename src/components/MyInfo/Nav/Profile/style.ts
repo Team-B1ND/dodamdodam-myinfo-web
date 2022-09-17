@@ -20,7 +20,7 @@ export const ProfileImg = styled.img`
   height: 50%;
 `;
 
-export const ProfileNameText = styled.p`
+export const ProfileNameText = styled.span`
   width: 100%;
   height: 10%;
   display: flex;
@@ -30,7 +30,7 @@ export const ProfileNameText = styled.p`
   font-size: 20px;
 `;
 
-export const ProfileBasicInfoText = styled.p`
+export const ProfileBasicInfoText = styled.span`
   width: 100%;
   height: 10%;
   display: flex;

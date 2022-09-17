@@ -10,7 +10,7 @@ export const TitleWrap = styled.div`
   align-items: center;
 `;
 
-export const TitleText = styled.p`
+export const TitleText = styled.span`
   width: 100%;
   height: auto;
   display: flex;

@@ -12,7 +12,7 @@ export const MyPointWrap = styled.div`
   border: 1px solid #c4c4c4;
 `;
 
-export const MyPointTextWrap = styled.p`
+export const MyPointTextWrap = styled.span`
   display: flex;
   width: 100%;
   height: 20%;
@@ -89,7 +89,7 @@ export const MyDemeritPointGraph = styled.div`
   background-color: rgb(249 126 109);
 `;
 
-export const MyMeritPointText = styled.p`
+export const MyMeritPointText = styled.span`
   width: 17.5%;
   text-align: center;
   display: flex;
@@ -98,7 +98,7 @@ export const MyMeritPointText = styled.p`
   margin-left: 5px;
 `;
 
-export const MyDemeritPointText = styled.p`
+export const MyDemeritPointText = styled.span`
   width: 17.5%;
   text-align: center;
   display: flex;
@@ -135,13 +135,13 @@ export const MyPointGuideInfoDemeritCircle = styled.div`
   margin-left: 10px;
 `;
 
-export const MyPointGuideInfoMeritText = styled.p`
+export const MyPointGuideInfoMeritText = styled.span`
   width: auto;
   text-align: center;
   font-size: 13px;
 `;
 
-export const MyPointGuideInfoDemeritText = styled.p`
+export const MyPointGuideInfoDemeritText = styled.span`
   width: auto;
   text-align: center;
   font-size: 13px;
