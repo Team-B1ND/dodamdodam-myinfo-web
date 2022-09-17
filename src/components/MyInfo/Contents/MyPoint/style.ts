@@ -13,6 +13,11 @@ export const MyPointWrap = styled.div`
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;
 
+export const MyPointIconImg = styled.img`
+  width: 30px;
+  height: 30px;
+`;
+
 export const MyPointTextWrap = styled.span`
   display: flex;
   width: 100%;
@@ -45,24 +50,21 @@ export const MyPointContentsDetailWrap = styled.div`
 `;
 
 // <MyPointContentsGraphWrap>
-export const MyMeritPointWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 30%;
+
+export const MyWholePointWrap = styled.div`
   margin-top: 15px;
-  /* background-color: #ffffff; */
+  height: 80%;
 `;
 
-export const MyDemeritPointWrap = styled.div`
+export const MyEachPointWrap = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 30%;
-  /* background-color: #ffffff; */
+  margin-top: 7px;
 `;
 
-export const MyMeritPointGraphWrap = styled.div`
+export const MyEachPointGraphWrap = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -70,27 +72,16 @@ export const MyMeritPointGraphWrap = styled.div`
   padding-left: 5px;
 `;
 
-export const MyDemeritPointGraphWrap = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 5px;
-`;
-
-export const MyMeritPointGraph = styled.div`
-  width: 40%; // 25점이 100% 입니다
+export const MyEachPointGraph = styled.div<{
+  meritPoint: number;
+  backgroundColor: string;
+}>`
+  width: ${({ meritPoint }) => (meritPoint / 25) * 100}%; // 25점이 100% 입니다
   height: 15px;
-  background-color: rgb(0 103 188);
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `;
 
-export const MyDemeritPointGraph = styled.div`
-  width: 25%; // 25점이 100% 입니다
-  height: 15px;
-  background-color: rgb(249 126 109);
-`;
-
-export const MyMeritPointText = styled.span`
+export const MyPointText = styled.span`
   width: 17.5%;
   text-align: center;
   display: flex;
@@ -99,14 +90,6 @@ export const MyMeritPointText = styled.span`
   margin-left: 5px;
 `;
 
-export const MyDemeritPointText = styled.span`
-  width: 17.5%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 5px;
-`;
 // </MyPointContentsGraphWrap>
 
 // <MyPointContentsDetailWrap>
@@ -116,45 +99,28 @@ export const MyPointGuideInfoWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: cnter;
   margin-top: 15px;
 `;
 
-export const MyPointGuideInfoMeritCircle = styled.div`
+export const MyPointGuideCircle = styled.div<{ circleColor: string }>`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: rgb(0 103 188);
-  margin-left: 10px;
+  /* background-color: rgb(249 126 109); */
+  background-color: ${({ circleColor }) => circleColor};
+  /* margin-left: 10px;
+  margin-top: 2px; */
+  margin: 1.5px 2px 0 10px;
 `;
 
-export const MyPointGuideInfoDemeritCircle = styled.div`
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgb(249 126 109);
-  margin-left: 10px;
-`;
-
-export const MyPointGuideInfoMeritText = styled.span`
+export const MyPointGuideInfoText = styled.span`
   width: auto;
   text-align: center;
   font-size: 13px;
 `;
 
-export const MyPointGuideInfoDemeritText = styled.span`
-  width: auto;
-  text-align: center;
-  font-size: 13px;
-`;
-
-export const MyPointToggleWrap = styled.div`
-  /* height: 75%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-`;
+export const MyPointToggleWrap = styled.div``;
 
 export const MyPointToggleButton = styled.button`
   background-color: #ffffff;

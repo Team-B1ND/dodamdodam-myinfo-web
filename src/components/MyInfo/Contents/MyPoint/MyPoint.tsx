@@ -4,48 +4,54 @@ import {
   MyPointContentsWrap,
   MyPointTextWrap,
   MyPointWrap,
-  MyMeritPointWrap,
-  MyMeritPointText,
-  MyMeritPointGraph,
-  MyDemeritPointWrap,
-  MyDemeritPointText,
-  MyDemeritPointGraph,
-  MyMeritPointGraphWrap,
-  MyDemeritPointGraphWrap,
   MyPointGuideInfoWrap,
   MyPointToggleWrap,
   MyPointToggleButton,
-  MyPointGuideInfoMeritCircle,
-  MyPointGuideInfoMeritText,
-  MyPointGuideInfoDemeritCircle,
-  MyPointGuideInfoDemeritText,
+  MyEachPointWrap,
+  MyEachPointGraphWrap,
+  MyEachPointGraph,
+  MyPointText,
+  MyPointGuideCircle,
+  MyPointGuideInfoText,
+  MyWholePointWrap,
+  MyPointIconImg,
 } from "./style";
+import { FcInspection } from "react-icons/fc";
 
 const MyPoint = () => {
   return (
     <MyPointWrap>
+      <FcInspection fontSize={"25px"} />
       <MyPointTextWrap>상벌점 조회</MyPointTextWrap>
       <MyPointContentsWrap>
         <MyPointContentsGraphWrap>
-          <MyMeritPointWrap>
-            <MyMeritPointText>10점</MyMeritPointText>
-            <MyMeritPointGraphWrap>
-              <MyMeritPointGraph />
-            </MyMeritPointGraphWrap>
-          </MyMeritPointWrap>
-          <MyDemeritPointWrap>
-            <MyDemeritPointText>3점</MyDemeritPointText>
-            <MyDemeritPointGraphWrap>
-              <MyDemeritPointGraph />
-            </MyDemeritPointGraphWrap>
-          </MyDemeritPointWrap>
+          <MyWholePointWrap>
+            <MyEachPointWrap>
+              <MyPointText>10점</MyPointText>
+              <MyEachPointGraphWrap>
+                <MyEachPointGraph
+                  meritPoint={10}
+                  backgroundColor={"rgb(0 103 188)"}
+                />
+              </MyEachPointGraphWrap>
+            </MyEachPointWrap>
+            <MyEachPointWrap>
+              <MyPointText>3점</MyPointText>
+              <MyEachPointGraphWrap>
+                <MyEachPointGraph
+                  meritPoint={3}
+                  backgroundColor={"rgb(249 126 109)"}
+                />
+              </MyEachPointGraphWrap>
+            </MyEachPointWrap>
+          </MyWholePointWrap>
         </MyPointContentsGraphWrap>
         <MyPointContentsDetailWrap>
           <MyPointGuideInfoWrap>
-            <MyPointGuideInfoMeritCircle />
-            <MyPointGuideInfoMeritText>상점</MyPointGuideInfoMeritText>
-            <MyPointGuideInfoDemeritCircle />
-            <MyPointGuideInfoDemeritText>벌점</MyPointGuideInfoDemeritText>
+            <MyPointGuideCircle circleColor={"rgb(0 103 188)"} />
+            <MyPointGuideInfoText>상점</MyPointGuideInfoText>
+            <MyPointGuideCircle circleColor={"rgb(249 126 109)"} />
+            <MyPointGuideInfoText>벌점</MyPointGuideInfoText>
           </MyPointGuideInfoWrap>
           <MyPointToggleWrap>
             <MyPointToggleButton>기숙사</MyPointToggleButton>
