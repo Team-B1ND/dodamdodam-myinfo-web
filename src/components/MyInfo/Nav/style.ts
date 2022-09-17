@@ -5,9 +5,10 @@ export const MyInfoNavWrap = styled.div`
   flex-direction: column;
   width: 35%;
   height: 100vh;
-  background-color: white;
-  border-left: 1px solid #c4c4c4;
-  border-right: 1px solid #c4c4c4;
-  box-shadow: 5px 0px 5px 0.5px #c4c4c4;
+  background-color: #ffffff;
+  /* border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4; */
   padding: 0 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;

@@ -9,7 +9,8 @@ export const MyPointWrap = styled.div`
   background-color: #ffffff;
   padding: 10px 20px;
   margin-top: 20px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #e3e9ed;
+  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;
 
 export const MyPointTextWrap = styled.span`
@@ -18,6 +19,7 @@ export const MyPointTextWrap = styled.span`
   height: 20%;
   font-size: 18px;
   border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 10px;
 `;
 
 export const MyPointContentsWrap = styled.div`
@@ -48,7 +50,7 @@ export const MyMeritPointWrap = styled.div`
   flex-direction: row;
   width: 100%;
   height: 30%;
-  margin-top: 20px;
+  margin-top: 15px;
   /* background-color: #ffffff; */
 `;
 
@@ -57,7 +59,6 @@ export const MyDemeritPointWrap = styled.div`
   flex-direction: row;
   width: 100%;
   height: 30%;
-
   /* background-color: #ffffff; */
 `;
 
