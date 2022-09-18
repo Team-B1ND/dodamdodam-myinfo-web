@@ -1,7 +1,7 @@
-import { BasicInfoWrap } from "./style";
+import * as S from "./style";
 
 const MainProfile = () => {
-  return <BasicInfoWrap></BasicInfoWrap>;
+  return <S.MainProfileWrap></S.MainProfileWrap>;
 };
 
 export default MainProfile;

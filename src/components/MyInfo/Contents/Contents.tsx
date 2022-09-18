@@ -2,18 +2,19 @@ import BasicInfo from "./BasicInfo/BasicInfo";
 import MainProfile from "./MainProfile/MainProfile";
 import MyPoint from "./MyPoint/MyPoint";
 import Nav from "./Nav/Nav";
-import { MyInfoContentsWrap, MyInfoWrap } from "./style";
+// import { MyInfoContentsWrap, MyInfoWrap } from "./style";
+import * as S from "./style";
 
 const Contents = () => {
   return (
-    <MyInfoWrap>
+    <S.MyInfoWrap>
       <Nav />
-      <MyInfoContentsWrap>
+      <S.MyInfoContentsWrap>
         <BasicInfo />
         <MainProfile />
         <MyPoint />
-      </MyInfoContentsWrap>
-    </MyInfoWrap>
+      </S.MyInfoContentsWrap>
+    </S.MyInfoWrap>
   );
 };
 
