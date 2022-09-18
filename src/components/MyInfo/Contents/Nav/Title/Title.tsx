@@ -1,4 +1,3 @@
-// import { DodamLogoImg, TitleText, TitleWrap } from "./style";
 import * as S from "./style";
 import dodam_logo from "../../../../../images/dodamdodam_logo.svg";
 
