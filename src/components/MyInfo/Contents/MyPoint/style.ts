@@ -13,18 +13,22 @@ export const MyPointWrap = styled.div`
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;
 
-export const MyPointIconImg = styled.img`
-  width: 30px;
-  height: 30px;
+export const MyPointTopAreaWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 10px;
 `;
 
 export const MyPointTextWrap = styled.span`
   display: flex;
   width: 100%;
-  height: 20%;
+  height: 100%;
   font-size: 18px;
-  border-bottom: 1px solid #c4c4c4;
-  padding-bottom: 10px;
+  align-items: center;
 `;
 
 export const MyPointContentsWrap = styled.div`

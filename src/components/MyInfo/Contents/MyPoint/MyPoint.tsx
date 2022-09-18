@@ -14,15 +14,17 @@ import {
   MyPointGuideCircle,
   MyPointGuideInfoText,
   MyWholePointWrap,
-  MyPointIconImg,
+  MyPointTopAreaWrap,
 } from "./style";
 import { FcInspection } from "react-icons/fc";
 
 const MyPoint = () => {
   return (
     <MyPointWrap>
-      <FcInspection fontSize={"25px"} />
-      <MyPointTextWrap>상벌점 조회</MyPointTextWrap>
+      <MyPointTopAreaWrap>
+        <FcInspection fontSize={"25px"} />
+        <MyPointTextWrap>상벌점 조회</MyPointTextWrap>
+      </MyPointTopAreaWrap>
       <MyPointContentsWrap>
         <MyPointContentsGraphWrap>
           <MyWholePointWrap>
