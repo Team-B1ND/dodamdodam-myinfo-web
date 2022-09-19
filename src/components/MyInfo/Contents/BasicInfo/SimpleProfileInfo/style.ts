@@ -11,7 +11,11 @@ export const ProfileInfoWrap = styled.div`
 
 export const ProfileInfoImg = styled.img`
   width: 25px;
+  max-width: 25px;
+  min-width: 25px;
   height: 25px;
+  max-height: 25px;
+  min-height: 25px;
 `;
 
 export const ProfileInfoName = styled.span`

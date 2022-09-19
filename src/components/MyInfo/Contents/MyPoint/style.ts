@@ -29,6 +29,7 @@ export const MyPointTextWrap = styled.span`
   height: 100%;
   font-size: 18px;
   align-items: center;
+  font-weight: bold;
 `;
 
 export const MyPointContentsWrap = styled.div`

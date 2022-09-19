@@ -5,7 +5,7 @@ const MyPoint = () => {
   return (
     <S.MyPointWrap>
       <S.MyPointTopAreaWrap>
-        <FcInspection fontSize={"25px"} />
+        <FcInspection fontSize={"25px"} style={{ marginRight: "5px" }} />
         <S.MyPointTextWrap>상벌점 조회</S.MyPointTextWrap>
       </S.MyPointTopAreaWrap>
       <S.MyPointContentsWrap>

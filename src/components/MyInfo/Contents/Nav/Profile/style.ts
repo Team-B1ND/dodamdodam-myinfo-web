@@ -16,8 +16,12 @@ export const ProfileImgWrap = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-  width: 37.5%;
-  height: 50%;
+  width: 150px;
+  max-width: 150px;
+  min-width: 150px;
+  height: 150px;
+  max-height: 150px;
+  min-height: 150px;
 `;
 
 export const ProfileNameText = styled.span`
