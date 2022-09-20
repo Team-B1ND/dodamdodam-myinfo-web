@@ -19,12 +19,12 @@ export const MyInfoWrap = styled.div`
 
 export const MyInfoContentsMiddleWrap = styled.div`
   width: 100%;
-  /* background-color: red; */
   height: 200px;
 `;
 
 export const MyInfoContentsBottomWrap = styled.div`
   width: 100%;
-  height: 200px;
-  background-color: red;
+  height: 250px;
+  /* background-color: red; */
+  padding: 20px;
 `;
