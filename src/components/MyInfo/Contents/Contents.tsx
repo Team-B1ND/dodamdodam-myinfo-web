@@ -11,7 +11,9 @@ const Contents = () => {
       <S.MyInfoContentsWrap>
         <BasicInfo />
         <MainProfile />
-        <MyPoint />
+        <S.MyInfoContentsMiddleWrap>
+          <MyPoint />
+        </S.MyInfoContentsMiddleWrap>
       </S.MyInfoContentsWrap>
     </S.MyInfoWrap>
   );

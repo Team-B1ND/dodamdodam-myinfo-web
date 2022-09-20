@@ -4,7 +4,7 @@ export const MyPointWrap = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 13%;
+  height: 135px;
   border-radius: 20px;
   background-color: #ffffff;
   padding: 10px 20px;
