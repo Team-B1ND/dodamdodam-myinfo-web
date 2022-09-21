@@ -1,3 +1,4 @@
+import DayOfTheWeekSelect from "./DayOfTheWeekSelect/DayOfTheWeekSelect";
 import MyClassroomSelect from "./MyClassroomSelectBox/MyClassroomSelectBox";
 import * as S from "./style";
 const BasicLocationChange = () => {
@@ -7,7 +8,9 @@ const BasicLocationChange = () => {
         <S.BasicLocationChangeTitle>기본 위치 수정</S.BasicLocationChangeTitle>
       </S.BasicLocationChangeTitleWrap>
       <S.BasicLocationMainWrap>
-        <S.DayOfTheWeekSelectWrap></S.DayOfTheWeekSelectWrap>
+        <S.DayOfTheWeekSelectWrap>
+          <DayOfTheWeekSelect />
+        </S.DayOfTheWeekSelectWrap>
         <S.BasicLocationChangeContentsWrap>
           <S.BasicClassroomSelectLineWrap>
             <MyClassroomSelect classTime={"8교시"} />
