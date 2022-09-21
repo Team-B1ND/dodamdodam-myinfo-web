@@ -81,7 +81,10 @@ export const MyEachPointGraph = styled.div<{
   meritPoint: number;
   backgroundColor: string;
 }>`
-  width: ${({ meritPoint }) => (meritPoint / 25) * 100}%; // 25점이 100% 입니다
+  /* width: ${({ meritPoint }) =>
+    (meritPoint / 25) * 100}%; // 25점이 100% 입니다 */
+  width: ${({ meritPoint }) =>
+    meritPoint <= 25 ? (meritPoint / 25) * 100 : 100}%;
   height: 15px;
   background-color: ${({ backgroundColor }) => backgroundColor};
 `;

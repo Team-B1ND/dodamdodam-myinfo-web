@@ -23,8 +23,11 @@ export const MyInfoContentsMiddleWrap = styled.div`
 `;
 
 export const MyInfoContentsBottomWrap = styled.div`
-  width: 100%;
+  width: 700px;
   height: 250px;
   /* background-color: red; */
   padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #e3e9ed;
+  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;
