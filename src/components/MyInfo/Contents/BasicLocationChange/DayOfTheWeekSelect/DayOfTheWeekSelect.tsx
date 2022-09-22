@@ -1,23 +1,83 @@
+import { useEffect, useState } from "react";
 import * as S from "./style";
 
 const DayOfTheWeekSelect = () => {
+  const [category, setCategory] = useState<string>("날짜");
+  const [date, setDate] = useState<string>("월요일");
+
+  const radioOnchangeValueHandler = (e: any) => {
+    console.log(e.target.value);
+    setCategory(e.target.value);
+  };
+
+  const dateOnchangeValueHandler = (e: any) => {
+    // console.log(e.target.value);
+    setDate(e.target.value);
+  };
+
+  useEffect(() => {
+    console.log(date);
+  }, [date]);
+
   return (
-    <S.DayOfTheWeekSelectWrap>
-      <S.DayOfTheWeekLabelWrap>
-        <S.DayofTheWeekSelectCategoryLabel>
-          <S.DayOfTheWeekSelectCategoryInput type="radio" name="period" />
-          <S.DayOfTheWeekLabelText>날짜</S.DayOfTheWeekLabelText>
-        </S.DayofTheWeekSelectCategoryLabel>
-        <S.DayofTheWeekSelectCategoryLabel>
-          <S.DayOfTheWeekSelectCategoryInput type="radio" name="period" />
-          <S.DayOfTheWeekLabelText>평일</S.DayOfTheWeekLabelText>
-        </S.DayofTheWeekSelectCategoryLabel>
-        <S.DayofTheWeekSelectCategoryLabel>
-          <S.DayOfTheWeekSelectCategoryInput type="radio" name="period" />
-          <S.DayOfTheWeekLabelText>주말</S.DayOfTheWeekLabelText>
-        </S.DayofTheWeekSelectCategoryLabel>
-      </S.DayOfTheWeekLabelWrap>
-    </S.DayOfTheWeekSelectWrap>
+    <>
+      <S.DayOfTheWeekSelectWrap>
+        <S.DayOfTheWeekLabelWrap>
+          <S.DayofTheWeekSelectCategoryLabel>
+            <S.DayOfTheWeekSelectCategoryInput
+              type="radio"
+              name="period"
+              value="날짜"
+              onChange={radioOnchangeValueHandler}
+              defaultChecked
+            />
+            <span>날짜</span>
+          </S.DayofTheWeekSelectCategoryLabel>
+          <S.DayofTheWeekSelectCategoryLabel>
+            <S.DayOfTheWeekSelectCategoryInput
+              type="radio"
+              name="period"
+              value="평일"
+              onChange={radioOnchangeValueHandler}
+            />
+            <span>평일</span>
+          </S.DayofTheWeekSelectCategoryLabel>
+          <S.DayofTheWeekSelectCategoryLabel>
+            <S.DayOfTheWeekSelectCategoryInput
+              type="radio"
+              name="period"
+              value="주말"
+              onChange={radioOnchangeValueHandler}
+            />
+            <span>주말</span>
+          </S.DayofTheWeekSelectCategoryLabel>
+        </S.DayOfTheWeekLabelWrap>
+        {category === "날짜" ? (
+          <>
+            <S.CategoryExplainText>
+              변경하고 싶은 날짜를 선택해주세요.
+            </S.CategoryExplainText>
+            <S.WhenDateContentsInput onChange={dateOnchangeValueHandler}>
+              <option value={"월요일"}>월요일</option>
+              <option value={"화요일"}>화요일</option>
+              <option value={"수요일"}>수요일</option>
+              <option value={"목요일"}>목요일</option>
+              <option value={"금요일"}>금요일</option>
+              <option value={"토요일"}>토요일</option>
+              <option value={"일요일"}>일요일</option>
+            </S.WhenDateContentsInput>
+          </>
+        ) : category === "평일" ? (
+          <S.CategoryExplainText>
+            평일 5일의 기본위치를 한 번에 변경할 수 있습니다.
+          </S.CategoryExplainText>
+        ) : (
+          <S.CategoryExplainText>
+            주말 이틀의 기본위치를 한 번에 변경할 수 있습니다.
+          </S.CategoryExplainText>
+        )}
+      </S.DayOfTheWeekSelectWrap>
+    </>
   );
 };
 

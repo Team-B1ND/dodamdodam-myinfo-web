@@ -3,7 +3,7 @@ import MyClassroomSelect from "./MyClassroomSelectBox/MyClassroomSelectBox";
 import * as S from "./style";
 const BasicLocationChange = () => {
   return (
-    <>
+    <S.BasicLocationChangeWrap>
       <S.BasicLocationChangeTitleWrap>
         <S.BasicLocationChangeTitle>기본 위치 수정</S.BasicLocationChangeTitle>
       </S.BasicLocationChangeTitleWrap>
@@ -22,7 +22,7 @@ const BasicLocationChange = () => {
           </S.BasicClassroomSelectLineWrap>
         </S.BasicLocationChangeContentsWrap>
       </S.BasicLocationMainWrap>
-    </>
+    </S.BasicLocationChangeWrap>
   );
 };
 

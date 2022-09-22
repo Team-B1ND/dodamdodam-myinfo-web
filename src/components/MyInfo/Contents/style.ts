@@ -6,6 +6,7 @@ export const MyInfoContentsWrap = styled.div`
   width: 65%;
   height: 100vh;
   padding: 0 20px;
+  background-color: white;
 `;
 
 export const MyInfoWrap = styled.div`

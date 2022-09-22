@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
+export const BasicLocationChangeWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: white; */
+`;
+
 export const BasicLocationChangeTitleWrap = styled.div`
   width: 95%;
   height: 20%;
-  /* background-color: red; */
 `;
 
 export const BasicLocationChangeTitle = styled.span`
@@ -25,7 +32,7 @@ export const BasicLocationMainWrap = styled.div`
 `;
 
 export const DayOfTheWeekSelectWrap = styled.div`
-  width: 30%;
+  width: 35%;
   height: 100%;
 `;
 

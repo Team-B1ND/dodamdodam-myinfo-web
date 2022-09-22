@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const DayOfTheWeekSelectWrap = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const DayOfTheWeekLabelWrap = styled.div`
@@ -14,20 +16,30 @@ export const DayOfTheWeekLabelWrap = styled.div`
   margin-top: 20px;
 `;
 
-export const DayofTheWeekSelectCategoryLabel = styled.label`
+export const DayofTheWeekSelectCategoryLabel = styled.div`
   width: 60px;
   height: 30px;
-  flex-direction: row;
+  display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
 export const DayOfTheWeekSelectCategoryInput = styled.input`
-  width: 18px;
-  height: 18px;
+  margin-top: -1px;
+  vertical-align: middle;
 `;
 
-export const DayOfTheWeekLabelText = styled.span`
-  width: 80px;
-  height: 20px;
-  font-size: 18px;
+export const CategoryExplainText = styled.span`
+  width: 100%;
+  display: flex;
+  font-size: 11.5px;
+  margin: 5px 0 10px 0;
+  padding-left: 5px;
+`;
+
+export const WhenDateContentsInput = styled.select`
+  width: 80%;
+  height: 25px;
+  padding-left: 10px;
+  margin-left: 10px;
 `;
