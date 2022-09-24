@@ -1,7 +1,12 @@
-import { CheckApplyListWrap } from "./style";
+import * as S from "./style";
 
 const CheckApplyList = () => {
-  return <CheckApplyListWrap></CheckApplyListWrap>;
+  return (
+    <S.CheckApplyListWrap>
+      <S.CheckApplyListTitle></S.CheckApplyListTitle>
+      <S.CheckApplyListContents></S.CheckApplyListContents>
+    </S.CheckApplyListWrap>
+  );
 };
 
 export default CheckApplyList;
