@@ -4,11 +4,14 @@ import default_profile_img from "../../../../images/default_profile.png";
 const MainProfile = () => {
   return (
     <S.MainProfileWrap>
-      <S.MainProfileText>내 프로필</S.MainProfileText>
+      <S.MainProfileTextWrap>
+        <S.MainProfileText>내 프로필</S.MainProfileText>
+      </S.MainProfileTextWrap>
       <S.MainProfileMiddleWrap>
         <S.MainProfileImgWrap>
           <S.MainProfileImg src={default_profile_img} />
         </S.MainProfileImgWrap>
+
         <S.MainProfileUserInfoWrap>
           <S.MainProfileUserEachInfoWrap>
             <S.MainProfileInfoTextExplain>

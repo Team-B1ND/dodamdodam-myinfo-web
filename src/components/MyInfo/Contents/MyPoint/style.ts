@@ -18,7 +18,6 @@ export const MyPointTopAreaWrap = styled.div`
   flex-direction: row;
   width: 100%;
   height: 20%;
-
   border-bottom: 1px solid #c4c4c4;
   padding-bottom: 10px;
 `;

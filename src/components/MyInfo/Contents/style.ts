@@ -6,7 +6,16 @@ export const MyInfoContentsWrap = styled.div`
   width: 65%;
   height: 100vh;
   padding: 0 20px;
-  background-color: white;
+  background-color: #f9fbfc;
+`;
+
+export const MyInfoNavWrap = styled.div`
+  display: flex;
+  width: 35%;
+  height: 100vh;
+  /* border-right: 2px red solid; */
+  margin-right: 10px;
+  box-shadow: 5px 1px 8px 0 rgb(0 0 0 / 6%);
 `;
 
 export const MyInfoWrap = styled.div`
@@ -26,7 +35,7 @@ export const MyInfoContentsMiddleWrap = styled.div`
 export const MyInfoContentsBottomWrap = styled.div`
   width: 700px;
   height: 250px;
-  /* background-color: red; */
+  background-color: white;
   padding: 20px;
   border-radius: 20px;
   border: 1px solid #e3e9ed;

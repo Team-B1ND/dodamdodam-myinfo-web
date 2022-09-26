@@ -8,7 +8,10 @@ import * as S from "./style";
 const Contents = () => {
   return (
     <S.MyInfoWrap>
-      <Nav />
+      <S.MyInfoNavWrap>
+        <Nav />
+      </S.MyInfoNavWrap>
+
       <S.MyInfoContentsWrap>
         <BasicInfo />
         <MainProfile />
