@@ -8,11 +8,12 @@ export const CheckApplyListWrap = styled.div`
 `;
 
 export const CheckApplyListTitle = styled.div`
-  width: 100%;
-  height: 10%;
+  width: 500px;
+  height: 30px;
+  background-origin: red;
 `;
 
 export const CheckApplyListContents = styled.div`
-  width: 100%;
-  height: 90%;
+  width: 500px;
+  height: 270px;
 `;

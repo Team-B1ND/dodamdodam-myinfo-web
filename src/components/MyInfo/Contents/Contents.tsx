@@ -8,9 +8,9 @@ import * as S from "./style";
 const Contents = () => {
   return (
     <S.MyInfoWrap>
-      <S.MyInfoNavWrap>
-        <Nav />
-      </S.MyInfoNavWrap>
+      {/* <S.MyInfoNavWrap> */}
+      <Nav />
+      {/* </S.MyInfoNavWrap> */}
 
       <S.MyInfoContentsWrap>
         <BasicInfo />

@@ -17,7 +17,7 @@ export const MyPointTopAreaWrap = styled.div`
   display: flex;
   flex-direction: row;
   width: 350px;
-  height: 27px;
+  height: 25px;
   padding: 10px 20px;
   /* border-bottom: 1px solid #c4c4c4; */
   border-radius: 20px 20px 0 0;
@@ -26,8 +26,8 @@ export const MyPointTopAreaWrap = styled.div`
 
 export const MyPointTextWrap = styled.span`
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 25px;
   font-size: 1.2rem;
   align-items: center;
   font-weight: bold;
@@ -39,21 +39,20 @@ export const MyPointContentsWrap = styled.div`
   flex-direction: row;
   width: 350px;
   height: 128px;
-  /* margin-top: 10px; */
   padding: 0 20px;
 `;
 
 export const MyPointContentsGraphWrap = styled.div`
   display: flex;
-  width: 70%;
-  height: 100%;
+  width: 245px;
+  height: 105px;
   flex-direction: column;
 `;
 
 export const MyPointContentsDetailWrap = styled.div`
   display: flex;
-  width: 30%;
-  height: 100%;
+  width: 105px;
+  height: 105px;
   flex-direction: column;
 `;
 
@@ -61,7 +60,7 @@ export const MyPointContentsDetailWrap = styled.div`
 
 export const MyWholePointWrap = styled.div`
   margin-top: 15px;
-  height: 80%;
+  height: 84px;
 `;
 
 export const MyEachPointWrap = styled.div`

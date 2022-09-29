@@ -15,7 +15,7 @@ export const BasicLocationChangeTitleWrap = styled.div`
 `;
 
 export const BasicLocationChangeTitle = styled.span`
-  width: 100%;
+  width: 675px;
   height: 100%;
   font-size: 1.3rem;
   font-weight: bold;
@@ -35,12 +35,13 @@ export const BasicLocationMainWrap = styled.div`
 `;
 
 export const DayOfTheWeekSelectWrap = styled.div`
-  width: 35%;
+  width: 231px;
   height: 100%;
+  /* background-color: red; */
 `;
 
 export const BasicLocationChangeContentsWrap = styled.div`
-  width: 65%;
+  width: 429px;
   height: 100%;
   /* background-color: green; */
 `;

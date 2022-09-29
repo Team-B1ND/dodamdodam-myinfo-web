@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MainProfileWrap = styled.div`
-  width: 93%;
-  height: 30%;
+  width: 700px;
+  height: 30vh;
   /* border: 1px solid #03c75a; */
   border: 1px solid #e3e9ed;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
@@ -11,7 +11,7 @@ export const MainProfileWrap = styled.div`
 `;
 
 export const MainProfileTextWrap = styled.div`
-  width: 93%;
+  width: 650px;
   height: auto;
   border-radius: 20px 20px 0 0;
   background-image: linear-gradient(98deg, #03c75a, #49c6dd);
@@ -22,8 +22,8 @@ export const MainProfileTextWrap = styled.div`
   margin-bottom: 20px;
 `;
 
-export const MainProfileText = styled.div`
-  width: 100%;
+export const MainProfileText = styled.span`
+  width: 700px;
   height: 25px;
   font-size: 1.3rem;
   font-weight: bold;
@@ -33,7 +33,6 @@ export const MainProfileText = styled.div`
 `;
 
 export const MainProfileMiddleWrap = styled.div`
-  /* width: 85%; */
   height: 170px;
   display: flex;
   flex-direction: row;
@@ -60,8 +59,8 @@ export const MainProfileImg = styled.img`
 `;
 
 export const MainProfileUserInfoWrap = styled.div`
-  width: 70%;
-  /* height: 100%; */
+  width: 490px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 35px;
@@ -74,13 +73,13 @@ export const MainProfileUserEachInfoWrap = styled.div`
 `;
 
 export const MainProfileInfoTextExplain = styled.span`
-  width: 25%;
+  width: 122.5px;
   font-size: 1rem;
   font-weight: bold;
 `;
 
 export const MainProfileInfoText = styled.span`
-  width: 70%;
+  width: 343px;
   font-size: 1rem;
 `;
 

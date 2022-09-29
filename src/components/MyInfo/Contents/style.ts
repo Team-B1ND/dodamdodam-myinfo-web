@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const MyInfoWrap = styled.div`
+  width: 1200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f9fbfc;
+`;
+
 export const MyInfoContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,15 +25,6 @@ export const MyInfoNavWrap = styled.div`
   /* border-right: 2px red solid; */
   margin-right: 10px;
   box-shadow: 5px 1px 8px 0 rgb(0 0 0 / 6%);
-`;
-
-export const MyInfoWrap = styled.div`
-  width: 1200px;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #f9fbfc;
 `;
 
 export const MyInfoContentsMiddleWrap = styled.div`
