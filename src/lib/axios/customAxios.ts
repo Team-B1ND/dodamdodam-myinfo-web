@@ -1,26 +1,13 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { REQUEST_TOKEN_KEY } from "../../constants/token/token.constant";
 import config from "../../config/config.json";
-import {
-  ACCESS_TOKEN_KEY,
-  REQUEST_TOKEN_KEY,
-} from "../../constants/token/token.constant";
 import token from "../token/token";
+import cookie from "../cookie/cookie";
 
-const createAxiosInstance = (config?: AxiosRequestConfig) => {
-  const baseConfig: AxiosRequestConfig = {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-  };
-  return axios.create({
-    ...baseConfig,
-    ...config,
-  });
-};
-
-export const customAxios = createAxiosInstance({
+export const customAxios = axios.create({
   baseURL: config.DODAM_SERVER_V3,
   headers: {
-    [REQUEST_TOKEN_KEY]: token.getToken(ACCESS_TOKEN_KEY)!,
+    "Access-Control-Allow-Origin": "*",
+    [REQUEST_TOKEN_KEY]: `Bearer ${cookie.getCookie("access-token")}`,
   },
 });

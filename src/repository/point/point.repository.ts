@@ -1,10 +1,10 @@
 import axios from "axios";
+import { customAxios } from "../../lib/axios/customAxios";
+import { myPointScore } from "../../types/myPointScore/myPointScore.type";
 
 class PointRepository {
-  public async getMyPoint() {
-    const { data } = await axios.get(
-      "http://dodam.b1nd.com//api/point/my/score"
-    );
+  public async getMyPoint(): Promise<myPointScore> {
+    const { data } = await customAxios.get(`/api/point/my/score`);
     return data;
   }
 }

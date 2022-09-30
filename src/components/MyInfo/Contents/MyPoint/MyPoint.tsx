@@ -1,7 +1,13 @@
 import * as S from "./style";
 import { FcInspection } from "react-icons/fc";
+import { useEffect, useState } from "react";
+import { myPointScore } from "../../../../types/myPointScore/myPointScore.type";
+import axios from "axios";
+import { customAxios } from "../../../../lib/axios/customAxios";
 
 const MyPoint = () => {
+  const [myPoint, setMyPoint] = useState<myPointScore>();
+
   return (
     <S.MyPointWrap>
       <S.MyPointTopAreaWrap>
