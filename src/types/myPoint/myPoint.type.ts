@@ -1,12 +1,12 @@
 import { Response } from "../util/response.type";
 
 export interface myPointScore {
-  domBonus: 0;
-  domMinus: 0;
-  schBonus: 0;
-  schMinus: 0;
+  domBonus: number;
+  domMinus: number;
+  schBonus: number;
+  schMinus: number;
   student: {
-    id: 0;
+    id: number;
   };
 }
 

@@ -1,7 +1,9 @@
 import * as S from "./style";
 import default_profile_img from "../../../../images/default_profile.png";
+import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 
 const MainProfile = () => {
+  const { grade, room, number, name, email, phone } = useMyGradeInfo();
   return (
     <S.MainProfileWrap>
       <S.MainProfileTextWrap>
@@ -17,17 +19,22 @@ const MainProfile = () => {
             <S.MainProfileInfoTextExplain>
               학번이름
             </S.MainProfileInfoTextExplain>
-            <S.MainProfileInfoText>2304기준</S.MainProfileInfoText>
+            <S.MainProfileInfoText>
+              {grade}
+              {room}
+              {number}
+              {name}
+            </S.MainProfileInfoText>
           </S.MainProfileUserEachInfoWrap>
           <S.MainProfileUserEachInfoWrap>
             <S.MainProfileInfoTextExplain>이메일</S.MainProfileInfoTextExplain>
-            <S.MainProfileInfoText>june0623@dgsw.hs.kr</S.MainProfileInfoText>
+            <S.MainProfileInfoText>{email}</S.MainProfileInfoText>
           </S.MainProfileUserEachInfoWrap>
           <S.MainProfileUserEachInfoWrap>
             <S.MainProfileInfoTextExplain>
               전화번호
             </S.MainProfileInfoTextExplain>
-            <S.MainProfileInfoText>010-9424-9415</S.MainProfileInfoText>
+            <S.MainProfileInfoText>{phone}</S.MainProfileInfoText>
           </S.MainProfileUserEachInfoWrap>
         </S.MainProfileUserInfoWrap>
       </S.MainProfileMiddleWrap>

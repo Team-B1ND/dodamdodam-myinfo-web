@@ -7,11 +7,11 @@ const MyPoint = () => {
   const [pointInfoState, setPointInfoState] = useState("기숙사");
 
   const { myPoint } = useMyPointScore();
-  console.log(myPoint);
+  // console.log(myPoint);
 
-  useEffect(() => {
-    console.log(pointInfoState);
-  }, [pointInfoState]);
+  // useEffect(() => {
+  //   console.log(pointInfoState);
+  // }, [pointInfoState]);
 
   return (
     <S.MyPointWrap>

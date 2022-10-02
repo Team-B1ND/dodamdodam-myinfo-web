@@ -1,6 +1,5 @@
-import axios from "axios";
 import { customAxios } from "../../lib/axios/customAxios";
-import { myPointResponse } from "../../types/myPointScore/myPointScore.type";
+import { myPointResponse } from "../../types/myPoint/myPoint.type";
 
 class PointRepository {
   public async getMyPoint(): Promise<myPointResponse> {
