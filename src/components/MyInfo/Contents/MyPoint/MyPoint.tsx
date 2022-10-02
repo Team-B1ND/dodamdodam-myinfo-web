@@ -1,12 +1,17 @@
 import * as S from "./style";
 import { FcInspection } from "react-icons/fc";
 import { useEffect, useState } from "react";
-import { myPointScore } from "../../../../types/myPointScore/myPointScore.type";
-import axios from "axios";
-import { customAxios } from "../../../../lib/axios/customAxios";
+import useMyPointScore from "../../../../hooks/myPoint/useMyPointScore";
 
 const MyPoint = () => {
-  const [myPoint, setMyPoint] = useState<myPointScore>();
+  const [pointInfoState, setPointInfoState] = useState("기숙사");
+
+  const { myPoint } = useMyPointScore();
+  console.log(myPoint);
+
+  useEffect(() => {
+    console.log(pointInfoState);
+  }, [pointInfoState]);
 
   return (
     <S.MyPointWrap>
@@ -16,26 +21,50 @@ const MyPoint = () => {
       </S.MyPointTopAreaWrap>
       <S.MyPointContentsWrap>
         <S.MyPointContentsGraphWrap>
-          <S.MyWholePointWrap>
-            <S.MyEachPointWrap>
-              <S.MyPointText>10점</S.MyPointText>
-              <S.MyEachPointGraphWrap>
-                <S.MyEachPointGraph
-                  meritPoint={10}
-                  backgroundColor={"rgb(0 103 188)"}
-                />
-              </S.MyEachPointGraphWrap>
-            </S.MyEachPointWrap>
-            <S.MyEachPointWrap>
-              <S.MyPointText>3점</S.MyPointText>
-              <S.MyEachPointGraphWrap>
-                <S.MyEachPointGraph
-                  meritPoint={3}
-                  backgroundColor={"rgb(249 126 109)"}
-                />
-              </S.MyEachPointGraphWrap>
-            </S.MyEachPointWrap>
-          </S.MyWholePointWrap>
+          {myPoint && pointInfoState === "기숙사" && (
+            <S.MyWholePointWrap>
+              <S.MyEachPointWrap>
+                <S.MyPointText>{myPoint.domBonus}점</S.MyPointText>
+                <S.MyEachPointGraphWrap>
+                  <S.MyEachPointGraph
+                    meritPoint={myPoint.domBonus}
+                    backgroundColor={"rgb(0 103 188)"}
+                  />
+                </S.MyEachPointGraphWrap>
+              </S.MyEachPointWrap>
+              <S.MyEachPointWrap>
+                <S.MyPointText>{myPoint.domMinus}점</S.MyPointText>
+                <S.MyEachPointGraphWrap>
+                  <S.MyEachPointGraph
+                    meritPoint={myPoint.domMinus}
+                    backgroundColor={"rgb(249 126 109)"}
+                  />
+                </S.MyEachPointGraphWrap>
+              </S.MyEachPointWrap>
+            </S.MyWholePointWrap>
+          )}
+          {myPoint && pointInfoState === "학교" && (
+            <S.MyWholePointWrap>
+              <S.MyEachPointWrap>
+                <S.MyPointText>{myPoint.schBonus}점</S.MyPointText>
+                <S.MyEachPointGraphWrap>
+                  <S.MyEachPointGraph
+                    meritPoint={myPoint.schBonus}
+                    backgroundColor={"rgb(0 103 188)"}
+                  />
+                </S.MyEachPointGraphWrap>
+              </S.MyEachPointWrap>
+              <S.MyEachPointWrap>
+                <S.MyPointText>{myPoint.schMinus}점</S.MyPointText>
+                <S.MyEachPointGraphWrap>
+                  <S.MyEachPointGraph
+                    meritPoint={myPoint.schMinus}
+                    backgroundColor={"rgb(249 126 109)"}
+                  />
+                </S.MyEachPointGraphWrap>
+              </S.MyEachPointWrap>
+            </S.MyWholePointWrap>
+          )}
         </S.MyPointContentsGraphWrap>
         <S.MyPointContentsDetailWrap>
           <S.MyPointGuideInfoWrap>
@@ -45,7 +74,24 @@ const MyPoint = () => {
             <S.MyPointGuideInfoText>벌점</S.MyPointGuideInfoText>
           </S.MyPointGuideInfoWrap>
           <S.MyPointToggleWrap>
-            <S.MyPointToggleButton>기숙사</S.MyPointToggleButton>
+            {pointInfoState === "기숙사" && (
+              <S.MyPointToggleButton
+                textColor={"rgb(0 103 188)"}
+                backgroundColor={"#ffffff"}
+                onClick={() => setPointInfoState("학교")}
+              >
+                기숙사
+              </S.MyPointToggleButton>
+            )}
+            {pointInfoState === "학교" && (
+              <S.MyPointToggleButton
+                textColor={"#ffffff"}
+                backgroundColor={"rgb(0 103 188)"}
+                onClick={() => setPointInfoState("기숙사")}
+              >
+                학교
+              </S.MyPointToggleButton>
+            )}
           </S.MyPointToggleWrap>
         </S.MyPointContentsDetailWrap>
       </S.MyPointContentsWrap>

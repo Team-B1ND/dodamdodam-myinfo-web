@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css, StyledInterface } from "styled-components";
 
 export const MyPointWrap = styled.div`
   display: flex;
@@ -83,10 +83,8 @@ export const MyEachPointGraph = styled.div<{
   meritPoint: number;
   backgroundColor: string;
 }>`
-  /* width: ${({ meritPoint }) =>
-    (meritPoint / 25) * 100}%; // 25점이 100% 입니다 */
   width: ${({ meritPoint }) =>
-    meritPoint <= 25 ? (meritPoint / 25) * 100 : 100}%;
+    meritPoint === 0 ? 1 : meritPoint <= 25 ? (meritPoint / 25) * 100 : 100}%;
   height: 15px;
   background-color: ${({ backgroundColor }) => backgroundColor};
 `;
@@ -132,12 +130,19 @@ export const MyPointGuideInfoText = styled.span`
 
 export const MyPointToggleWrap = styled.div``;
 
-export const MyPointToggleButton = styled.button`
-  background-color: #ffffff;
+export const MyPointToggleButton = styled.button<{
+  textColor: string;
+  backgroundColor: string;
+}>`
+  // background-color: #ffffff;
+  // color: rgb(0 103 188);
+
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  color: ${({ textColor }) => textColor};
+
   border-radius: 10px;
-  color: rgb(0 103 188);
   border: 2px solid rgb(0 103 188);
-  width: auto;
+  width: 55px;
   height: 25px;
   text-align: center;
   margin: 15px 0 0 45px;
