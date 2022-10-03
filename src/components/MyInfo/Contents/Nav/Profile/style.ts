@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProfileWrap = styled.div`
   width: 100%;
-  height: 30%;
+  height: 210px;
   display: flex;
   flex-direction: column;
 `;
@@ -26,7 +26,7 @@ export const ProfileImg = styled.img`
 
 export const ProfileNameText = styled.span`
   width: 100%;
-  height: 10%;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@ export const ProfileNameText = styled.span`
 
 export const ProfileBasicInfoText = styled.span`
   width: 100%;
-  height: 10%;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;

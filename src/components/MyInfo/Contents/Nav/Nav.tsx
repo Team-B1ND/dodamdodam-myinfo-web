@@ -1,5 +1,6 @@
 import Profile from "./Profile/Profile";
 import { MyInfoNavWrap } from "./style";
+import Tab from "./Tab/Tab";
 import Title from "./Title/Title";
 
 const Nav = () => {
@@ -7,6 +8,7 @@ const Nav = () => {
     <MyInfoNavWrap>
       <Title />
       <Profile />
+      <Tab />
     </MyInfoNavWrap>
   );
 };
