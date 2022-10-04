@@ -16,7 +16,11 @@ const MyClassroomSelectBox = ({ classTime }: classTime) => {
       <S.BasicClassroomSelect name="myClassroom" defaultValue="none">
         <option value="none">선택해주세요</option>
         {classroomList.map((classroom) => {
-          return <option value={`${classroom.name}`}>{classroom.name}</option>;
+          return (
+            <option key={classroom.id} value={`${classroom.name}`}>
+              {classroom.name}
+            </option>
+          );
         })}
       </S.BasicClassroomSelect>
     </S.EachClassroomBoxWrap>

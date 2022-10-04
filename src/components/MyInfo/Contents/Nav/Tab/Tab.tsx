@@ -27,25 +27,22 @@ const Tab = () => {
   }, [selectedCategory]);
   return (
     <S.SideTabBarWrap>
-      <S.TabBarCategoryWrap>
-        <S.TabBarCategoryDecoration
-          backgroundColor={categoryColor[0]}
-          onClick={() => setSelectedCategory([true, false, false])}
-        />
+      <S.TabBarCategoryWrap
+        onClick={() => setSelectedCategory([true, false, false])}
+      >
+        <S.TabBarCategoryDecoration backgroundColor={categoryColor[0]} />
         <S.TabBarCategoryText>내 정보</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
-      <S.TabBarCategoryWrap>
-        <S.TabBarCategoryDecoration
-          backgroundColor={categoryColor[1]}
-          onClick={() => setSelectedCategory([false, true, false])}
-        />
+      <S.TabBarCategoryWrap
+        onClick={() => setSelectedCategory([false, true, false])}
+      >
+        <S.TabBarCategoryDecoration backgroundColor={categoryColor[1]} />
         <S.TabBarCategoryText>상 벌점 상세</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
-      <S.TabBarCategoryWrap>
-        <S.TabBarCategoryDecoration
-          backgroundColor={categoryColor[2]}
-          onClick={() => setSelectedCategory([false, false, true])}
-        />
+      <S.TabBarCategoryWrap
+        onClick={() => setSelectedCategory([false, false, true])}
+      >
+        <S.TabBarCategoryDecoration backgroundColor={categoryColor[2]} />
         <S.TabBarCategoryText>내 정보</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
     </S.SideTabBarWrap>

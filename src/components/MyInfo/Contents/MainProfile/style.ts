@@ -98,6 +98,9 @@ export const UpdateProfileInfoBtn = styled.button`
   background-color: rgba(212, 216, 229, 0.25);
   width: 100px;
   padding: 8px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const UpdatePassWordBtn = styled.button`

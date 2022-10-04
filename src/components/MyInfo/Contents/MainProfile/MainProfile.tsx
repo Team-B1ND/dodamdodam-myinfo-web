@@ -1,9 +1,13 @@
 import * as S from "./style";
 import default_profile_img from "../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
+import { useRecoilState } from "recoil";
+import { locationChangeModalState } from "../../../../store/locationChangeModalState";
 
 const MainProfile = () => {
   const { grade, room, number, name, email, phone } = useMyGradeInfo();
+  const [isLocationChangeModalState, setIsLocationChangeModalState] =
+    useRecoilState(locationChangeModalState);
   return (
     <S.MainProfileWrap>
       <S.MainProfileTextWrap>
@@ -39,7 +43,13 @@ const MainProfile = () => {
         </S.MainProfileUserInfoWrap>
       </S.MainProfileMiddleWrap>
       <S.MainProfileButtonWrap>
-        <S.UpdateProfileInfoBtn>수정</S.UpdateProfileInfoBtn>
+        <S.UpdateProfileInfoBtn
+          onClick={() => {
+            setIsLocationChangeModalState(true);
+          }}
+        >
+          수정
+        </S.UpdateProfileInfoBtn>
         <S.UpdatePassWordBtn>비밀번호 변경</S.UpdatePassWordBtn>
       </S.MainProfileButtonWrap>
     </S.MainProfileWrap>

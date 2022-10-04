@@ -10,10 +10,15 @@ export const SideTabBarWrap = styled.div`
 `;
 
 export const TabBarCategoryWrap = styled.div`
-  width: 150px;
+  width: 100px;
   height: 50px;
   display: flex;
   align-items: center;
+  margin-right: 50px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const TabBarCategoryDecoration = styled.div<{ backgroundColor: string }>`

@@ -8,17 +8,16 @@ const useClassroom = () => {
   const getClassroomList = async () => {
     try {
       const { data } = await classroomRepository.getClassroom();
-      console.log("data");
-      console.log(data);
+      //   console.log(data);
       setClassroomList(data);
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    console.log(classroomList);
-  }, [classroomList]);
+  //   useEffect(() => {
+  //     console.log(classroomList);
+  //   }, [classroomList]);
 
   useEffect(() => {
     getClassroomList();
