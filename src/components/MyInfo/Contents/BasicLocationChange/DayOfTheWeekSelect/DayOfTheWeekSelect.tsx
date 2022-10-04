@@ -26,30 +26,33 @@ const DayOfTheWeekSelect = () => {
           <S.DayofTheWeekSelectCategoryLabel>
             <S.DayOfTheWeekSelectCategoryInput
               type="radio"
+              id="oneDay"
               name="period"
               value="날짜"
               onChange={radioOnchangeValueHandler}
               defaultChecked
             />
-            <span>날짜</span>
+            <S.CategoryText htmlFor="oneDay">날짜</S.CategoryText>
           </S.DayofTheWeekSelectCategoryLabel>
           <S.DayofTheWeekSelectCategoryLabel>
             <S.DayOfTheWeekSelectCategoryInput
               type="radio"
+              id="week"
               name="period"
               value="평일"
               onChange={radioOnchangeValueHandler}
             />
-            <span>평일</span>
+            <S.CategoryText htmlFor="week">평일</S.CategoryText>
           </S.DayofTheWeekSelectCategoryLabel>
           <S.DayofTheWeekSelectCategoryLabel>
             <S.DayOfTheWeekSelectCategoryInput
               type="radio"
+              id="weekend"
               name="period"
               value="주말"
               onChange={radioOnchangeValueHandler}
             />
-            <span>주말</span>
+            <S.CategoryText htmlFor="weekend">주말</S.CategoryText>
           </S.DayofTheWeekSelectCategoryLabel>
         </S.DayOfTheWeekLabelWrap>
         {category === "날짜" ? (

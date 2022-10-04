@@ -32,7 +32,7 @@ const useMyGradeInfo = () => {
     try {
       const { data } = await profileRepository.getMyProfileInfo();
       setMyGradeInfo(data);
-      console.log(myGradeInfo);
+      //   console.log(myGradeInfo);
     } catch (error) {
       console.log(error);
     }

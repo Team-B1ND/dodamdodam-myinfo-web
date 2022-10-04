@@ -22,11 +22,23 @@ export const DayofTheWeekSelectCategoryLabel = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const DayOfTheWeekSelectCategoryInput = styled.input`
   margin-top: -1px;
   vertical-align: middle;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const CategoryText = styled.label`
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const CategoryExplainText = styled.span`

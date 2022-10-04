@@ -17,7 +17,7 @@ const useMyPointScore = () => {
     try {
       const { data } = await pointRepository.getMyPoint();
       setMyPoint(data);
-      console.log(myPoint);
+      // console.log(myPoint);
     } catch (error) {
       console.log(error);
     }

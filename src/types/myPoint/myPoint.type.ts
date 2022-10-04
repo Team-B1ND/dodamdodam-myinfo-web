@@ -12,4 +12,6 @@ export interface myPointScore {
 
 export interface myPointResponse extends Response {
   data: myPointScore;
+  message: string;
+  status: number;
 }

@@ -146,6 +146,10 @@ export const MyPointToggleButton = styled.button<{
   height: 25px;
   text-align: center;
   margin: 15px 0 0 45px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 // </MyPointContentsDetailWrap>
