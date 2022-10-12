@@ -4,6 +4,7 @@ import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
 
 const SimpleProfileInfo = () => {
   const { profileImage } = useMyGradeInfo();
+
   return (
     <>
       <S.ProfileInfoWrap>

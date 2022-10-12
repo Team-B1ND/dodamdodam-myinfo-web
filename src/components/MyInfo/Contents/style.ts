@@ -14,22 +14,21 @@ export const MyInfoContentsWrap = styled.div`
   flex-direction: column;
   width: 780px;
   height: 100vh;
-  padding: 0 20px;
+  padding: 0 60px;
   background-color: #f9fbfc;
 `;
 
-export const MyInfoNavWrap = styled.div`
-  display: flex;
-  width: 420px;
-  height: 100vh;
-  /* border-right: 2px red solid; */
-  margin-right: 10px;
-  box-shadow: 5px 1px 8px 0 rgb(0 0 0 / 6%);
+export const MyInfoContentsTopWrap = styled.div`
+  width: 780px;
+  height: 30vh;
 `;
 
 export const MyInfoContentsMiddleWrap = styled.div`
   width: 780px;
-  height: 200px;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
 `;
 
 export const MyInfoContentsBottomWrap = styled.div`

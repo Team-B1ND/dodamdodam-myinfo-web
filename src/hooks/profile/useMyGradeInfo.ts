@@ -16,7 +16,7 @@ const useMyGradeInfo = () => {
       id: "dgsw_student",
       joinDate: "2022-10-02 21:17:48",
       name: "김준호",
-      profileImage: "KimJunHo.jpg",
+      profileImage: "default.jpg",
       role: "STUDENT",
       status: "ACTIVE",
     },

@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { locationChangeModalState } from "../../../store/locationChangeModalState";
 import BasicInfo from "./BasicInfo/BasicInfo";
 import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
+import BusApply from "./BusApply/BusApply";
 import MainProfile from "./MainProfile/MainProfile";
 import MyPoint from "./MyPoint/MyPoint";
 import Nav from "./Nav/Nav";
@@ -16,15 +17,15 @@ const Contents = () => {
     <>
       {isLocationChangeModalState && <ProfileModify />}
       <S.MyInfoWrap>
-        {/* <S.MyInfoNavWrap> */}
         <Nav />
-        {/* </S.MyInfoNavWrap> */}
-
         <S.MyInfoContentsWrap>
           <BasicInfo />
-          <MainProfile />
+          <S.MyInfoContentsTopWrap>
+            <MainProfile />
+          </S.MyInfoContentsTopWrap>
           <S.MyInfoContentsMiddleWrap>
             <MyPoint />
+            <BusApply />
           </S.MyInfoContentsMiddleWrap>
           <S.MyInfoContentsBottomWrap>
             <BasicLocationChange />

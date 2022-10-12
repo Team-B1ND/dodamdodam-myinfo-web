@@ -3,12 +3,11 @@ import styled, { css, StyledInterface } from "styled-components";
 export const MyPointWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 390px;
+  width: 350px;
   height: 155px;
   border-radius: 20px;
   background-color: #ffffff;
   /* padding: 10px 20px; */
-  margin-top: 20px;
   border: 1px solid #e3e9ed;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;
@@ -16,7 +15,7 @@ export const MyPointWrap = styled.div`
 export const MyPointTopAreaWrap = styled.div`
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 310px;
   height: 25px;
   padding: 10px 20px;
   /* border-bottom: 1px solid #c4c4c4; */
@@ -26,7 +25,7 @@ export const MyPointTopAreaWrap = styled.div`
 
 export const MyPointTextWrap = styled.span`
   display: flex;
-  width: 300px;
+  width: 260px;
   height: 25px;
   font-size: 1.2rem;
   align-items: center;
@@ -37,14 +36,14 @@ export const MyPointTextWrap = styled.span`
 export const MyPointContentsWrap = styled.div`
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 310px;
   height: 128px;
   padding: 0 20px;
 `;
 
 export const MyPointContentsGraphWrap = styled.div`
   display: flex;
-  width: 245px;
+  width: 205px;
   height: 105px;
   flex-direction: column;
 `;

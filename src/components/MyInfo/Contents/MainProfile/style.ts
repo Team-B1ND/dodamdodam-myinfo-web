@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MainProfileWrap = styled.div`
-  width: 700px;
+  width: 780px;
   height: 30vh;
   /* border: 1px solid #03c75a; */
   border: 1px solid #e3e9ed;
@@ -11,7 +11,7 @@ export const MainProfileWrap = styled.div`
 `;
 
 export const MainProfileTextWrap = styled.div`
-  width: 650px;
+  width: 730px;
   height: auto;
   border-radius: 20px 20px 0 0;
   background-image: linear-gradient(98deg, #03c75a, #49c6dd);
@@ -47,8 +47,7 @@ export const MainProfileImgWrap = styled.div`
   min-height: 120px;
   max-height: 120px;
   display: flex;
-  margin-left: 10px;
-  margin: 10px 0 0 10px;
+  margin: 10px 0 0 30px;
   border-radius: 50%;
   overflow: hidden;
 `;
@@ -63,7 +62,7 @@ export const MainProfileUserInfoWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 35px;
+  margin-left: 70px;
 `;
 
 export const MainProfileUserEachInfoWrap = styled.div`
@@ -74,13 +73,13 @@ export const MainProfileUserEachInfoWrap = styled.div`
 
 export const MainProfileInfoTextExplain = styled.span`
   width: 122.5px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: bold;
 `;
 
 export const MainProfileInfoText = styled.span`
   width: 343px;
-  font-size: 1rem;
+  font-size: 1.05rem;
 `;
 
 export const MainProfileButtonWrap = styled.div`

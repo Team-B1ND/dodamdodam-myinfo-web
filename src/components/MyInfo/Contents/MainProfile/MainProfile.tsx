@@ -6,6 +6,7 @@ import { locationChangeModalState } from "../../../../store/locationChangeModalS
 
 const MainProfile = () => {
   const { grade, room, number, name, email, phone } = useMyGradeInfo();
+  const { profileImage } = useMyGradeInfo();
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
   return (
@@ -15,7 +16,9 @@ const MainProfile = () => {
       </S.MainProfileTextWrap>
       <S.MainProfileMiddleWrap>
         <S.MainProfileImgWrap>
-          <S.MainProfileImg src={default_profile_img} />
+          <S.MainProfileImg
+            src={profileImage ? profileImage : default_profile_img}
+          />
         </S.MainProfileImgWrap>
 
         <S.MainProfileUserInfoWrap>
