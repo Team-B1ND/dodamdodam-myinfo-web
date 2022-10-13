@@ -10,7 +10,7 @@ export const SideTabBarWrap = styled.div`
 `;
 
 export const TabBarCategoryWrap = styled.div`
-  width: 100px;
+  width: 120px;
   height: 50px;
   display: flex;
   align-items: center;

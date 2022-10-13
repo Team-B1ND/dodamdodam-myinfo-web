@@ -22,6 +22,12 @@ export const MainProfileTextWrap = styled.div`
   margin-bottom: 20px;
 `;
 
+export const HappyFaceImg = styled.img`
+  width: 23px;
+  height: 23px;
+  display: flex;
+`;
+
 export const MainProfileText = styled.span`
   width: 700px;
   height: 25px;
@@ -30,6 +36,7 @@ export const MainProfileText = styled.span`
   display: flex;
   align-items: center;
   color: #fff;
+  margin-left: 10px;
 `;
 
 export const MainProfileMiddleWrap = styled.div`

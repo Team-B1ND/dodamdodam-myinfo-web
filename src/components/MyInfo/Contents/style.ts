@@ -32,7 +32,7 @@ export const MyInfoContentsMiddleWrap = styled.div`
 `;
 
 export const MyInfoContentsBottomWrap = styled.div`
-  width: 700px;
+  width: 780px;
   height: 250px;
   background-color: white;
   border-radius: 20px;

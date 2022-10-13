@@ -43,7 +43,7 @@ const Tab = () => {
         onClick={() => setSelectedCategory([false, false, true])}
       >
         <S.TabBarCategoryDecoration backgroundColor={categoryColor[2]} />
-        <S.TabBarCategoryText>내 정보</S.TabBarCategoryText>
+        <S.TabBarCategoryText>신청 내역 확인</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
     </S.SideTabBarWrap>
   );

@@ -1,21 +1,31 @@
 import styled from "styled-components";
 
 export const BasicLocationChangeWrap = styled.div`
-  width: 700px;
+  width: 780px;
   height: 100%;
   display: flex;
   flex-direction: column;
 `;
 
 export const BasicLocationChangeTitleWrap = styled.div`
-  width: 700px;
+  width: 780px;
   height: 100px;
   border-radius: 20px 20px 0 0;
   background-image: linear-gradient(98deg, #03c75a, #49c6dd);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const PencilImg = styled.img`
+  width: 23px;
+  height: 23px;
+  display: flex;
+  margin-left: 25px;
 `;
 
 export const BasicLocationChangeTitle = styled.span`
-  width: 675px;
+  width: 755px;
   height: 100%;
   font-size: 1.3rem;
   font-weight: bold;
@@ -23,11 +33,11 @@ export const BasicLocationChangeTitle = styled.span`
   display: flex;
   align-items: center;
   text-align: center;
-  padding-left: 25px;
+  padding-left: 10px;
 `;
 
 export const BasicLocationMainWrap = styled.div`
-  width: 660px;
+  width: 740px;
   height: 180px;
   display: flex;
   flex-direction: row;
@@ -41,7 +51,7 @@ export const DayOfTheWeekSelectWrap = styled.div`
 `;
 
 export const BasicLocationChangeContentsWrap = styled.div`
-  width: 429px;
+  width: 509px;
   height: 100%;
   /* background-color: green; */
 `;

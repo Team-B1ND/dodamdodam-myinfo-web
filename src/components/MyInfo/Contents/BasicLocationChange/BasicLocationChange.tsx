@@ -1,10 +1,13 @@
 import DayOfTheWeekSelect from "./DayOfTheWeekSelect/DayOfTheWeekSelect";
 import MyClassroomSelect from "./MyClassroomSelectBox/MyClassroomSelectBox";
 import * as S from "./style";
+import pencil_image from "../../../../images/pencil_3d.png";
+
 const BasicLocationChange = () => {
   return (
     <S.BasicLocationChangeWrap>
       <S.BasicLocationChangeTitleWrap>
+        <S.PencilImg src={pencil_image} />
         <S.BasicLocationChangeTitle>기본 위치 수정</S.BasicLocationChangeTitle>
       </S.BasicLocationChangeTitleWrap>
       <S.BasicLocationMainWrap>
