@@ -10,15 +10,18 @@ export const BusOptionWrap = styled.div<{ backgroundColor: string }>`
   justify-content: center;
   background-color: ${({ backgroundColor }) => backgroundColor};
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const BusOptionStationText = styled.span<{ textColor: string }>`
+export const BusOptionStationText = styled.span<{
+  textColor: string;
+  fontSize: string;
+}>`
   width: 100%;
-  font-size: 1.4rem;
+  font-size: ${({ fontSize }) => fontSize};
   display: flex;
   text-align: center;
   justify-content: center;

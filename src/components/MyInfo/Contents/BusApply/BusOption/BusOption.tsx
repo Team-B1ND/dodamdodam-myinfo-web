@@ -17,13 +17,25 @@ const BusOption = ({ id, station, time }: propsText) => {
         setIsClicked((prev) => !prev);
       }}
     >
-      <S.BusOptionStationText textColor={isClicked ? "#ffffff" : "#000000"}>
-        {id}
-      </S.BusOptionStationText>
-      <S.BusOptionStationText textColor={isClicked ? "#ffffff" : "#000000"}>
+      {id !== "5" && (
+        <S.BusOptionStationText
+          textColor={isClicked ? "#ffffff" : "#000000"}
+          fontSize="1.2rem"
+        >
+          {id}
+          {id !== "5" ? "호차" : null}
+        </S.BusOptionStationText>
+      )}
+      <S.BusOptionStationText
+        textColor={isClicked ? "#ffffff" : "#000000"}
+        fontSize="1.4rem"
+      >
         {station}
       </S.BusOptionStationText>
-      <S.BusOptionStationText textColor={isClicked ? "#ffffff" : "#000000"}>
+      <S.BusOptionStationText
+        textColor={isClicked ? "#ffffff" : "#cfcfcf"}
+        fontSize="1rem"
+      >
         ({time})
       </S.BusOptionStationText>
     </S.BusOptionWrap>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProfileInfoWrap = styled.div`
   display: flex;
-  width: 100px;
+  width: 150px;
   height: 25px;
   padding: 10px 0;
   align-items: center;
@@ -20,7 +20,7 @@ export const ProfileInfoImg = styled.img`
 
 export const ProfileInfoName = styled.span`
   display: flex;
-  width: auto;
+  width: 80px;
   height: 25px;
   text-align: center;
   align-items: center;

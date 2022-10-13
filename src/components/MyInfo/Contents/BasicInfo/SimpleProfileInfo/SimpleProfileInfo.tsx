@@ -5,13 +5,16 @@ import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
 const SimpleProfileInfo = () => {
   const myGradeInfo = useMyGradeInfo();
 
-  const { profileImage } = myGradeInfo.member;
+  const { profileImage, name } = myGradeInfo.member;
 
   return (
     <>
       <S.ProfileInfoWrap>
-        <S.ProfileInfoImg src={profileImage ? profileImage : default_profile} />
-        <S.ProfileInfoName>기준 학생</S.ProfileInfoName>
+        <S.ProfileInfoImg
+          src={profileImage ? profileImage : default_profile}
+          // src={default_profile}
+        />
+        <S.ProfileInfoName>{name} 학생</S.ProfileInfoName>
       </S.ProfileInfoWrap>
     </>
   );

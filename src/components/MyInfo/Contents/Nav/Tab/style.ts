@@ -7,14 +7,20 @@ export const SideTabBarWrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: 15px;
 `;
 
-export const TabBarCategoryWrap = styled.div`
-  width: 120px;
-  height: 50px;
+export const TabBarCategoryWrap = styled.div<{
+  underBarColor: string;
+  fontWeight: string;
+}>`
+  width: auto;
+  height: 30px;
   display: flex;
   align-items: center;
-  margin-right: 50px;
+  padding-right: 10px;
+  border-bottom: 2px solid ${({ underBarColor }) => underBarColor};
+  font-weight: ${({ fontWeight }) => fontWeight};
 
   &:hover {
     cursor: pointer;
@@ -29,6 +35,6 @@ export const TabBarCategoryDecoration = styled.div<{ backgroundColor: string }>`
 `;
 
 export const TabBarCategoryText = styled.span`
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-left: 7.5px;
 `;

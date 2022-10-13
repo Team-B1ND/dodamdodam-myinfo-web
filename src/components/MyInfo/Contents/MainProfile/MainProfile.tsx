@@ -27,6 +27,7 @@ const MainProfile = () => {
           <S.MainProfileImgWrap>
             <S.MainProfileImg
               src={profileImage ? profileImage : default_profile_img}
+              // src={default_profile_img}
             />
           </S.MainProfileImgWrap>
 
