@@ -7,9 +7,9 @@ export const MyPointWrap = styled.div`
   height: 155px;
   border-radius: 20px;
   background-color: #ffffff;
-  /* padding: 10px 20px; */
   border: 1px solid #e3e9ed;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
+  margin-top: 20px;
 `;
 
 export const MyPointTopAreaWrap = styled.div`
@@ -20,17 +20,16 @@ export const MyPointTopAreaWrap = styled.div`
   padding: 10px 20px;
   /* border-bottom: 1px solid #c4c4c4; */
   border-radius: 20px 20px 0 0;
-  background-image: linear-gradient(98deg, #03c75a, #49c6dd);
+  /* background-image: linear-gradient(98deg, #03c75a, #49c6dd); */
 `;
 
 export const MyPointTextWrap = styled.span`
   display: flex;
   width: 260px;
   height: 25px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   align-items: center;
-  font-weight: bold;
-  color: white;
+  color: #000000;
 `;
 
 export const MyPointContentsWrap = styled.div`

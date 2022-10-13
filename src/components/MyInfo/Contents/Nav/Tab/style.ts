@@ -5,7 +5,7 @@ export const SideTabBarWrap = styled.div`
   height: 250px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 `;
 

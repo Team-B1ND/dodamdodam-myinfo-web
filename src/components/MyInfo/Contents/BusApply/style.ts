@@ -1,23 +1,21 @@
 import styled from "styled-components";
 
 export const BusApplyWrap = styled.div`
-  width: 410px;
-  margin-left: 20px;
-  height: 155px;
+  width: 780px;
+  height: 200px;
   border-radius: 20px;
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
 `;
 
 export const BusApplyTopWrap = styled.div`
-  width: 400px;
+  width: 780px;
   height: 45px;
-  border-radius: 20px 20px 0 0;
-  background-image: linear-gradient(98deg, #03c75a, #49c6dd);
+  /* border-radius: 20px 20px 0 0;
+  background-image: linear-gradient(98deg, #03c75a, #49c6dd); */
   display: flex;
   flex-direction: row;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   align-items: center;
 `;
 
@@ -28,9 +26,10 @@ export const BusApplyTextWrap = styled.span`
   padding-left: 10px;
   display: flex;
   align-items: center;
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
   font-size: 1.2rem;
+  background-color: none;
 `;
 
 export const BusDateTextWrap = styled.span`
@@ -39,21 +38,26 @@ export const BusDateTextWrap = styled.span`
   text-align: left;
   display: flex;
   align-items: flex-end;
-  color: #ffffff;
+  color: #000000;
   font-size: 1rem;
-  margin-left: 40px;
+  margin-left: 400px;
 `;
 
 export const BusImg = styled.img`
   width: 23px;
   height: 23px;
   display: flex;
-  margin-left: 15px;
+  /* margin-left: 15px; */
 `;
 
-export const BusApplyMiddleWrap = styled.div`
-  width: 410px;
-  height: 110px;
-  /* background-color: red; */
+export const BusApplyMainWrap = styled.div`
+  width: 780px;
+  height: 155px;
   display: flex;
+  /* border-radius: 20px;
+  border: 1px solid #e3e9ed;
+  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%); */
+  flex-direction: row;
+  gap: 30px;
+  /* background-color: r; */
 `;

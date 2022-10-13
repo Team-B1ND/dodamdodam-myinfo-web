@@ -24,11 +24,10 @@ const Contents = () => {
             <MainProfile />
           </S.MyInfoContentsTopWrap>
           <S.MyInfoContentsMiddleWrap>
-            <MyPoint />
-            <BusApply />
+            <BasicLocationChange />
           </S.MyInfoContentsMiddleWrap>
           <S.MyInfoContentsBottomWrap>
-            <BasicLocationChange />
+            <BusApply />
           </S.MyInfoContentsBottomWrap>
         </S.MyInfoContentsWrap>
       </S.MyInfoWrap>

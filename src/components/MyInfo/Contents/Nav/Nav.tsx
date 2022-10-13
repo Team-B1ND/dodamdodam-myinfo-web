@@ -1,3 +1,4 @@
+import MyPoint from "../MyPoint/MyPoint";
 import Profile from "./Profile/Profile";
 import { MyInfoNavWrap } from "./style";
 import Tab from "./Tab/Tab";
@@ -9,6 +10,7 @@ const Nav = () => {
       <Title />
       <Profile />
       <Tab />
+      <MyPoint />
     </MyInfoNavWrap>
   );
 };

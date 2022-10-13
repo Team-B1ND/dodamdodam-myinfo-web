@@ -24,9 +24,9 @@ const useMyGradeInfo = () => {
     phone: "010-1234-5678",
   });
 
-  const { classroom, phone, member, number } = myGradeInfo;
-  const { grade, room } = classroom;
-  const { name, email, profileImage } = member;
+  // const { classroom, phone, member, number } = myGradeInfo;
+  // const { grade, room } = classroom;
+  // const { name, email, profileImage } = member;
 
   const getMyGrade = async () => {
     try {
@@ -42,7 +42,8 @@ const useMyGradeInfo = () => {
     getMyGrade();
   }, []);
 
-  return { grade, room, number, name, email, phone, profileImage };
+  return myGradeInfo;
+  // return { grade, room, number, name, email, phone, profileImage };
 };
 
 export default useMyGradeInfo;

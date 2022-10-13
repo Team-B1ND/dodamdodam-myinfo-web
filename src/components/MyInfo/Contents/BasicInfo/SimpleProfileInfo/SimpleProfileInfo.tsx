@@ -3,7 +3,9 @@ import default_profile from "../../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
 
 const SimpleProfileInfo = () => {
-  const { profileImage } = useMyGradeInfo();
+  const myGradeInfo = useMyGradeInfo();
+
+  const { profileImage } = myGradeInfo.member;
 
   return (
     <>

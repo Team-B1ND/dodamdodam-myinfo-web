@@ -4,22 +4,22 @@ export const MainProfileWrap = styled.div`
   width: 780px;
   height: 30vh;
   /* border: 1px solid #03c75a; */
-  border: 1px solid #e3e9ed;
-  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
-  border-radius: 20px;
-  background-color: #ffffff;
+  /* border: 1px solid #e3e9ed; */
+  /* box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
+  border-radius: 20px; */
+  /* background-color: #ffffff; */
 `;
 
 export const MainProfileTextWrap = styled.div`
-  width: 730px;
+  width: 780px;
   height: auto;
-  border-radius: 20px 20px 0 0;
-  background-image: linear-gradient(98deg, #03c75a, #49c6dd);
-  padding: 10px 25px;
+  /* border-radius: 20px 20px 0 0;
+  background-image: linear-gradient(98deg, #03c75a, #49c6dd); */
+  padding: 10px 0;
   margin: none;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 `;
 
 export const HappyFaceImg = styled.img`
@@ -35,8 +35,16 @@ export const MainProfileText = styled.span`
   font-weight: bold;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #000000;
   margin-left: 10px;
+`;
+
+export const MainProfileMainWrap = styled.div`
+  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
+  border-radius: 20px;
+  border: 1px solid #80db9f;
+  padding: 20px 0;
+  background-color: #ffffff;
 `;
 
 export const MainProfileMiddleWrap = styled.div`
