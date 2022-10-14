@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../store/locationChangeModalState";
+import { locationChangeModalState } from "../../../store/modal";
 import BasicInfo from "./BasicInfo/BasicInfo";
 import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
 import BusApply from "./BusApply/BusApply";

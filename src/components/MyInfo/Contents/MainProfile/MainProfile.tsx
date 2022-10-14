@@ -2,8 +2,8 @@ import * as S from "./style";
 import default_profile_img from "../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../../store/locationChangeModalState";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
+import { locationChangeModalState } from "../../../../store/modal";
 
 const MainProfile = () => {
   // const { grade, room, number, name, email, phone } = useMyGradeInfo();

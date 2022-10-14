@@ -1,7 +1,7 @@
 import React from "react";
 import { useOutsideClick } from "react-handle-outside-click";
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../../../../store/locationChangeModalState";
+import { locationChangeModalState } from "../../../../../../store/modal";
 import * as S from "./style";
 
 const ProfileModify = () => {
