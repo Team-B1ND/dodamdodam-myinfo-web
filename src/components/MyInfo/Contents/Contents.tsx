@@ -20,15 +20,17 @@ const Contents = () => {
         <Nav />
         <S.MyInfoContentsWrap>
           <BasicInfo />
-          <S.MyInfoContentsTopWrap>
-            <MainProfile />
-          </S.MyInfoContentsTopWrap>
-          <S.MyInfoContentsMiddleWrap>
-            <BasicLocationChange />
-          </S.MyInfoContentsMiddleWrap>
-          <S.MyInfoContentsBottomWrap>
-            <BusApply />
-          </S.MyInfoContentsBottomWrap>
+          <S.MyInfoMainContentsWrap>
+            <S.MyInfoContentsTopWrap>
+              <MainProfile />
+            </S.MyInfoContentsTopWrap>
+            <S.MyInfoContentsMiddleWrap>
+              <BasicLocationChange />
+            </S.MyInfoContentsMiddleWrap>
+            <S.MyInfoContentsBottomWrap>
+              <BusApply />
+            </S.MyInfoContentsBottomWrap>
+          </S.MyInfoMainContentsWrap>
         </S.MyInfoContentsWrap>
       </S.MyInfoWrap>
     </>

@@ -21,14 +21,13 @@ export const BusApplyTopWrap = styled.div`
 
 export const BusApplyTextWrap = styled.span`
   width: 200px;
-  height: 25px;
   text-align: left;
+  font-size: 1.3rem;
   padding-left: 10px;
   display: flex;
   align-items: center;
   color: #000000;
   font-weight: bold;
-  font-size: 1.2rem;
   background-color: none;
 `;
 

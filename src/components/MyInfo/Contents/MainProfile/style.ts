@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainProfileWrap = styled.div`
   width: 780px;
-  height: 30vh;
+  height: 290px;
   /* border: 1px solid #03c75a; */
   /* border: 1px solid #e3e9ed; */
   /* box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);

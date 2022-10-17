@@ -20,7 +20,7 @@ export const DayofTheWeekSelectCategoryLabel = styled.div`
   width: 60px;
   height: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   &:hover {
     cursor: pointer;
@@ -29,6 +29,7 @@ export const DayofTheWeekSelectCategoryLabel = styled.div`
 
 export const DayOfTheWeekSelectCategoryInput = styled.input`
   margin-top: -1px;
+  margin-left: 0;
   vertical-align: middle;
   &:hover {
     cursor: pointer;
@@ -46,12 +47,12 @@ export const CategoryExplainText = styled.span`
   display: flex;
   font-size: 11.5px;
   margin: 5px 0 10px 0;
-  padding-left: 5px;
+  /* padding-left: 5px; */
 `;
 
 export const WhenDateContentsInput = styled.select`
   width: 80%;
   height: 25px;
   padding-left: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 `;

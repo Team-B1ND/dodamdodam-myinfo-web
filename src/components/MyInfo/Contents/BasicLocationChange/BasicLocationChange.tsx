@@ -8,7 +8,9 @@ const BasicLocationChange = () => {
     <S.BasicLocationChangeWrap>
       <S.BasicLocationChangeTitleWrap>
         <S.PencilImg src={pencil_image} />
-        <S.BasicLocationChangeTitle>기본 위치 수정</S.BasicLocationChangeTitle>
+        <S.BasicLocationChangeTitleTextWrap>
+          기본 위치 수정
+        </S.BasicLocationChangeTitleTextWrap>
       </S.BasicLocationChangeTitleWrap>
       <S.BasicLocationMainWrap>
         <S.DayOfTheWeekSelectWrap>

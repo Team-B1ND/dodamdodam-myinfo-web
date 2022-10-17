@@ -4,7 +4,6 @@ export const EachClassroomBoxWrap = styled.div`
   width: 160px;
   height: 50px;
   /* background-color: red; */
-  margin: 0 25px 0 25px;
 `;
 
 export const BasicClassroomSelect = styled.select`
