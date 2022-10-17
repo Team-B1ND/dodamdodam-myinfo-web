@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MainProfileWrap = styled.div`
   width: 780px;
+  /* height: 300px; */
   height: 290px;
   /* border: 1px solid #03c75a; */
   /* border: 1px solid #e3e9ed; */
@@ -10,18 +11,13 @@ export const MainProfileWrap = styled.div`
   /* background-color: #ffffff; */
 `;
 
-export const MainProfileTextWrap = styled.div`
+export const MainProfileTopWrap = styled.div`
   width: 780px;
-  height: auto;
-  /* border-radius: 20px 20px 0 0;
-  background-image: linear-gradient(98deg, #03c75a, #49c6dd); */
-  padding: 10px 0;
-  margin: none;
+  height: 45px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  /* margin-bottom: 20px; */
 `;
-
 export const HappyFaceImg = styled.img`
   width: 23px;
   height: 23px;
@@ -29,61 +25,68 @@ export const HappyFaceImg = styled.img`
 `;
 
 export const MainProfileText = styled.span`
-  width: 700px;
-  height: 25px;
   font-size: 1.3rem;
   font-weight: bold;
+  color: #000000;
   display: flex;
   align-items: center;
-  color: #000000;
-  margin-left: 10px;
+  padding-left: 10px;
 `;
 
 export const MainProfileMainWrap = styled.div`
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
   border: 1px solid #80db9f;
-  padding: 20px 0;
+  padding: 20px;
   background-color: #ffffff;
 `;
 
 export const MainProfileMiddleWrap = styled.div`
-  height: 170px;
+  height: 130px;
   display: flex;
   flex-direction: row;
-  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 50px;
+`;
+
+export const MainProfileButtonWrap = styled.div`
+  height: 34px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
 `;
 
 export const MainProfileImgWrap = styled.div`
-  width: 120px;
-  min-width: 120px;
-  max-width: 120px;
-  height: 120px;
-  min-height: 120px;
-  max-height: 120px;
   display: flex;
-  margin: 10px 0 0 30px;
+  align-items: center;
+`;
+
+export const MainProfileImg = styled.img`
+  width: 130px;
+  min-width: 130px;
+  max-width: 130px;
+  height: 130px;
+  min-height: 130px;
+  max-height: 130px;
   border-radius: 50%;
   overflow: hidden;
 `;
 
-export const MainProfileImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 export const MainProfileUserInfoWrap = styled.div`
-  width: 490px;
+  width: 400px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 70px;
+  justify-content: space-between;
 `;
 
 export const MainProfileUserEachInfoWrap = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 15px 0;
+  /* margin: 15px 0; */
 `;
 
 export const MainProfileInfoTextExplain = styled.span`
@@ -93,16 +96,8 @@ export const MainProfileInfoTextExplain = styled.span`
 `;
 
 export const MainProfileInfoText = styled.span`
-  width: 343px;
+  width: 250px;
   font-size: 1.05rem;
-`;
-
-export const MainProfileButtonWrap = styled.div`
-  padding: 0;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
 `;
 
 export const UpdateProfileInfoBtn = styled.button`

@@ -7,8 +7,8 @@ const BusApply = () => {
     <S.BusApplyWrap>
       <S.BusApplyTopWrap>
         <S.BusImg src={busImage} />
-        <S.BusApplyTextWrap>귀가 버스 신청</S.BusApplyTextWrap>
-        <S.BusDateTextWrap>2022.10.21.</S.BusDateTextWrap>
+        <S.BusApplyText>귀가 버스 신청</S.BusApplyText>
+        <S.BusDateText>2022.10.21.</S.BusDateText>
       </S.BusApplyTopWrap>
       <S.BusApplyMainWrap>
         <BusOption id="1" station="동대구역" time="13:30"></BusOption>

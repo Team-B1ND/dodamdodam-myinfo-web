@@ -11,35 +11,28 @@ export const BusApplyWrap = styled.div`
 export const BusApplyTopWrap = styled.div`
   width: 780px;
   height: 45px;
-  /* border-radius: 20px 20px 0 0;
-  background-image: linear-gradient(98deg, #03c75a, #49c6dd); */
   display: flex;
   flex-direction: row;
-  /* padding-left: 10px; */
   align-items: center;
 `;
 
-export const BusApplyTextWrap = styled.span`
-  width: 200px;
-  text-align: left;
+export const BusApplyText = styled.span`
   font-size: 1.3rem;
-  padding-left: 10px;
+  font-weight: bold;
+  color: #000000;
   display: flex;
   align-items: center;
-  color: #000000;
-  font-weight: bold;
-  background-color: none;
+  padding-left: 10px;
 `;
 
-export const BusDateTextWrap = styled.span`
-  width: 100px;
+export const BusDateText = styled.span`
   height: 25px;
   text-align: left;
   display: flex;
   align-items: flex-end;
   color: #000000;
   font-size: 1rem;
-  margin-left: 400px;
+  margin-left: 500px;
 `;
 
 export const BusImg = styled.img`

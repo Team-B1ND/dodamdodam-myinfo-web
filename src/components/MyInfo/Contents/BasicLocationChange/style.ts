@@ -22,17 +22,14 @@ export const PencilImg = styled.img`
   width: 23px;
   height: 23px;
   display: flex;
-  /* margin-left: 25px; */
 `;
 
 export const BasicLocationChangeTitleTextWrap = styled.span`
-  width: 200px;
   font-size: 1.3rem;
   font-weight: bold;
   color: #000000;
   display: flex;
   align-items: center;
-  text-align: center;
   padding-left: 10px;
 `;
 

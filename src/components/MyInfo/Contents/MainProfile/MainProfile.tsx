@@ -18,10 +18,10 @@ const MainProfile = () => {
     useRecoilState(locationChangeModalState);
   return (
     <S.MainProfileWrap>
-      <S.MainProfileTextWrap>
+      <S.MainProfileTopWrap>
         <S.HappyFaceImg src={happy_face} />
         <S.MainProfileText>내 프로필</S.MainProfileText>
-      </S.MainProfileTextWrap>
+      </S.MainProfileTopWrap>
       <S.MainProfileMainWrap>
         <S.MainProfileMiddleWrap>
           <S.MainProfileImgWrap>
@@ -53,7 +53,10 @@ const MainProfile = () => {
               <S.MainProfileInfoTextExplain>
                 전화번호
               </S.MainProfileInfoTextExplain>
-              <S.MainProfileInfoText>{phone}</S.MainProfileInfoText>
+              <S.MainProfileInfoText>
+                {phone.substring(0, 3)}-{phone.substring(3, 7)}-
+                {phone.substring(7, 11)}
+              </S.MainProfileInfoText>
             </S.MainProfileUserEachInfoWrap>
           </S.MainProfileUserInfoWrap>
         </S.MainProfileMiddleWrap>
