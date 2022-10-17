@@ -33,7 +33,7 @@ export const MyInfoContentsTopWrap = styled.div`
 
 export const MyInfoContentsMiddleWrap = styled.div`
   width: 780px;
-  height: 227px;
+  height: 217px;
   display: flex;
   flex-direction: row;
   /* border: 1px solid #e3e9ed;

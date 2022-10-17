@@ -55,30 +55,32 @@ const DayOfTheWeekSelect = () => {
             <S.CategoryText htmlFor="weekend">주말</S.CategoryText>
           </S.DayofTheWeekSelectCategoryLabel>
         </S.DayOfTheWeekLabelWrap>
-        {category === "날짜" ? (
-          <>
+        <S.CategoryExplainWrap>
+          {category === "날짜" ? (
+            <>
+              <S.CategoryExplainText>
+                변경하고 싶은 날짜를 선택해주세요.
+              </S.CategoryExplainText>
+              <S.WhenDateContentsInput onChange={dateOnchangeValueHandler}>
+                <option value={"월요일"}>월요일</option>
+                <option value={"화요일"}>화요일</option>
+                <option value={"수요일"}>수요일</option>
+                <option value={"목요일"}>목요일</option>
+                <option value={"금요일"}>금요일</option>
+                <option value={"토요일"}>토요일</option>
+                <option value={"일요일"}>일요일</option>
+              </S.WhenDateContentsInput>
+            </>
+          ) : category === "평일" ? (
             <S.CategoryExplainText>
-              변경하고 싶은 날짜를 선택해주세요.
+              평일 5일의 기본위치를 한 번에 변경할 수 있습니다.
             </S.CategoryExplainText>
-            <S.WhenDateContentsInput onChange={dateOnchangeValueHandler}>
-              <option value={"월요일"}>월요일</option>
-              <option value={"화요일"}>화요일</option>
-              <option value={"수요일"}>수요일</option>
-              <option value={"목요일"}>목요일</option>
-              <option value={"금요일"}>금요일</option>
-              <option value={"토요일"}>토요일</option>
-              <option value={"일요일"}>일요일</option>
-            </S.WhenDateContentsInput>
-          </>
-        ) : category === "평일" ? (
-          <S.CategoryExplainText>
-            평일 5일의 기본위치를 한 번에 변경할 수 있습니다.
-          </S.CategoryExplainText>
-        ) : (
-          <S.CategoryExplainText>
-            주말 이틀의 기본위치를 한 번에 변경할 수 있습니다.
-          </S.CategoryExplainText>
-        )}
+          ) : (
+            <S.CategoryExplainText>
+              주말 이틀의 기본위치를 한 번에 변경할 수 있습니다.
+            </S.CategoryExplainText>
+          )}
+        </S.CategoryExplainWrap>
       </S.DayOfTheWeekSelectWrap>
     </>
   );

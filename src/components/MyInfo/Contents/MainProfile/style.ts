@@ -51,7 +51,7 @@ export const MainProfileMiddleWrap = styled.div`
   height: 170px;
   display: flex;
   flex-direction: row;
-  padding: 0 25px;
+  padding: 0 20px;
 `;
 
 export const MainProfileImgWrap = styled.div`

@@ -4,16 +4,16 @@ export const DayOfTheWeekSelectWrap = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 export const DayOfTheWeekLabelWrap = styled.div`
-  width: 100%;
-  height: 30px;
+  width: 60px;
+  height: 130px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 20px;
+  gap: 10px;
 `;
 
 export const DayofTheWeekSelectCategoryLabel = styled.div`
@@ -21,14 +21,14 @@ export const DayofTheWeekSelectCategoryLabel = styled.div`
   height: 30px;
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: flex-start;
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const DayOfTheWeekSelectCategoryInput = styled.input`
-  margin-top: -1px;
+  margin-top: 1.5px;
   margin-left: 0;
   vertical-align: middle;
   &:hover {
@@ -42,11 +42,19 @@ export const CategoryText = styled.label`
   }
 `;
 
+export const CategoryExplainWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 236px;
+  margin-left: 30px;
+  align-items: flex-start;
+  gap: 15px;
+`;
+
 export const CategoryExplainText = styled.span`
   width: 100%;
   display: flex;
   font-size: 11.5px;
-  margin: 5px 0 10px 0;
   /* padding-left: 5px; */
 `;
 

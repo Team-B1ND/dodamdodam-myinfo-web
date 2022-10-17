@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BasicLocationChangeWrap = styled.div`
   width: 780px;
-  height: 227px;
+  height: 217px;
   display: flex;
   flex-direction: column;
   /* gap: 5px; */
@@ -38,10 +38,10 @@ export const BasicLocationChangeTitleTextWrap = styled.span`
 
 export const BasicLocationMainWrap = styled.div`
   width: 730px;
-  height: 180px;
+  height: 120px;
   display: flex;
   flex-direction: row;
-  padding: 0 25px 0 25px;
+  padding: 25px;
   border: 1px solid #e3e9ed;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
@@ -49,26 +49,30 @@ export const BasicLocationMainWrap = styled.div`
 `;
 
 export const DayOfTheWeekSelectWrap = styled.div`
-  width: 226px;
-  height: 100%;
+  width: 326px;
+  height: 120px;
   /* background-color: red; */
 `;
 
 export const BasicLocationChangeContentsWrap = styled.div`
-  width: 504px;
-  height: 100%;
+  width: 404px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   /* background-color: green; */
 `;
 
 export const BasicClassroomSelectLineWrap = styled.div`
   width: 100%;
   /* height: 100px; */
-  height: 50%;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-start;
   /* background-color: red; */
   gap: 60px;
 `;

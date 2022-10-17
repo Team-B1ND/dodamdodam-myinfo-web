@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const EachClassroomBoxWrap = styled.div`
   width: 160px;
   height: 50px;
+  display: flex;
+  flex-direction: column;
   /* background-color: red; */
 `;
 
