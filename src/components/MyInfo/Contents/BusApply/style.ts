@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { palette } from "../../../../styles/palette";
 
 export const BusApplyWrap = styled.div`
   width: 780px;
@@ -19,7 +20,7 @@ export const BusApplyTopWrap = styled.div`
 export const BusApplyText = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
-  color: #000000;
+  color: ${palette.black};
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -30,7 +31,7 @@ export const BusDateText = styled.span`
   text-align: left;
   display: flex;
   align-items: flex-end;
-  color: #000000;
+  color: ${palette.black};
   font-size: 1rem;
   margin-left: 500px;
 `;

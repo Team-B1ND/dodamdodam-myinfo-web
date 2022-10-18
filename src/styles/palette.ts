@@ -124,6 +124,8 @@ const gray = {
   "600": "#262626",
   "700": "#000000",
 };
+const white = "#ffffff";
+const black = "#000000";
 
 export const palette = {
   red,
@@ -136,5 +138,7 @@ export const palette = {
   purple,
   indigo,
   gray,
+  white,
+  black,
   main: "#03c75a",
 };

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { palette } from "../../../../styles/palette";
 
 export const BasicLocationChangeWrap = styled.div`
   width: 780px;
@@ -11,8 +12,6 @@ export const BasicLocationChangeWrap = styled.div`
 export const BasicLocationChangeTitleWrap = styled.div`
   width: 780px;
   height: 45px;
-  /* border-radius: 20px 20px 0 0;
-  background-image: linear-gradient(98deg, #03c75a, #49c6dd); */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,7 +26,7 @@ export const PencilImg = styled.img`
 export const BasicLocationChangeTitleTextWrap = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
-  color: #000000;
+  color: ${palette.black};
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -42,7 +41,7 @@ export const BasicLocationMainWrap = styled.div`
   border: 1px solid #e3e9ed;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
-  background-color: #ffffff;
+  background-color: ${palette.white};
 `;
 
 export const DayOfTheWeekSelectWrap = styled.div`

@@ -2,6 +2,7 @@ import * as S from "./style";
 import { FcInspection } from "react-icons/fc";
 import { useEffect, useState } from "react";
 import useMyPointScore from "../../../../hooks/myPoint/useMyPointScore";
+import { palette } from "../../../../styles/palette";
 
 const MyPoint = () => {
   const [pointInfoState, setPointInfoState] = useState("기숙사");
@@ -77,7 +78,7 @@ const MyPoint = () => {
             {pointInfoState === "기숙사" && (
               <S.MyPointToggleButton
                 textColor={"rgb(0 103 188)"}
-                backgroundColor={"#ffffff"}
+                backgroundColor={palette.white}
                 onClick={() => setPointInfoState("학교")}
               >
                 기숙사
@@ -85,7 +86,7 @@ const MyPoint = () => {
             )}
             {pointInfoState === "학교" && (
               <S.MyPointToggleButton
-                textColor={"#ffffff"}
+                textColor={palette.white}
                 backgroundColor={"rgb(0 103 188)"}
                 onClick={() => setPointInfoState("기숙사")}
               >

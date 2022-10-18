@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { palette } from "../../../../../styles/palette";
 import * as S from "./style";
 
 const Tab = () => {
@@ -7,7 +8,7 @@ const Tab = () => {
     false,
     false,
   ]);
-  const colorList = ["#ffffff", "#000000"];
+  const colorList = [palette.white, palette.black];
   const [categoryColor, setCategoryColor] = useState([
     colorList[1],
     colorList[0],
@@ -32,21 +33,21 @@ const Tab = () => {
       <S.TabBarCategoryWrap
         onClick={() => setSelectedCategory([true, false, false])}
         underBarColor={categoryColor[0]}
-        fontWeight={categoryColor[0] === "#000000" ? "bold" : "none"}
+        fontWeight={categoryColor[0] === palette.black ? "bold" : "none"}
       >
         <S.TabBarCategoryText>내 정보</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
       <S.TabBarCategoryWrap
         onClick={() => setSelectedCategory([false, true, false])}
         underBarColor={categoryColor[1]}
-        fontWeight={categoryColor[1] === "#000000" ? "bold" : "none"}
+        fontWeight={categoryColor[1] === palette.black ? "bold" : "none"}
       >
         <S.TabBarCategoryText>상 벌점 상세</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
       <S.TabBarCategoryWrap
         onClick={() => setSelectedCategory([false, false, true])}
         underBarColor={categoryColor[2]}
-        fontWeight={categoryColor[2] === "#000000" ? "bold" : "none"}
+        fontWeight={categoryColor[2] === palette.black ? "bold" : "none"}
       >
         <S.TabBarCategoryText>신청 내역 확인</S.TabBarCategoryText>
       </S.TabBarCategoryWrap>
