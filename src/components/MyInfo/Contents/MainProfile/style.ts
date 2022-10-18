@@ -1,14 +1,9 @@
 import styled from "styled-components";
+import { palette } from "../../../../styles/palette";
 
 export const MainProfileWrap = styled.div`
   width: 780px;
-  /* height: 300px; */
-  height: 290px;
-  /* border: 1px solid #03c75a; */
-  /* border: 1px solid #e3e9ed; */
-  /* box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
-  border-radius: 20px; */
-  /* background-color: #ffffff; */
+  height: 257px;
 `;
 
 export const MainProfileTopWrap = styled.div`
@@ -27,18 +22,19 @@ export const HappyFaceImg = styled.img`
 export const MainProfileText = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
-  color: #000000;
+  color: ${palette.black};
   display: flex;
   align-items: center;
   padding-left: 10px;
 `;
 
 export const MainProfileMainWrap = styled.div`
+  height: 170px;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
-  border: 1px solid #80db9f;
+  border: 1px solid ${palette.main};
   padding: 20px;
-  background-color: #ffffff;
+  background-color: ${palette.white};
 `;
 
 export const MainProfileMiddleWrap = styled.div`
@@ -52,11 +48,12 @@ export const MainProfileMiddleWrap = styled.div`
 `;
 
 export const MainProfileButtonWrap = styled.div`
-  height: 34px;
+  height: 45px;
   align-items: center;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 10px;
+  margin-left: 525px;
 `;
 
 export const MainProfileImgWrap = styled.div`
@@ -100,23 +97,12 @@ export const MainProfileInfoText = styled.span`
   font-size: 1.05rem;
 `;
 
-export const UpdateProfileInfoBtn = styled.button`
+export const UpdateBtn = styled.button`
   text-align: center;
   align-items: center;
   border: solid 1px rgba(212, 216, 229, 0.5);
   background-color: rgba(212, 216, 229, 0.25);
-  width: 100px;
-  padding: 8px;
   &:hover {
     cursor: pointer;
   }
-`;
-
-export const UpdatePassWordBtn = styled.button`
-  text-align: center;
-  align-items: center;
-  border: solid 1px rgba(212, 216, 229, 0.5);
-  background-color: rgba(212, 216, 229, 0.25);
-  width: 100px;
-  padding: 8px;
 `;

@@ -28,7 +28,7 @@ export const MyInfoMainContentsWrap = styled.div`
 
 export const MyInfoContentsTopWrap = styled.div`
   width: 780px;
-  height: 290px;
+  height: 257px;
 `;
 
 export const MyInfoContentsMiddleWrap = styled.div`
@@ -36,19 +36,10 @@ export const MyInfoContentsMiddleWrap = styled.div`
   height: 217px;
   display: flex;
   flex-direction: row;
-  /* border: 1px solid #e3e9ed;
-  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
-  border-radius: 20px; */
-  /* background-color: #ffffff; */
-  /* border: 1px red solid; */
 `;
 
 export const MyInfoContentsBottomWrap = styled.div`
   width: 780px;
   height: 200px;
   background-color: none;
-  /* border-radius: 20px; */
-
-  /* border: 1px solid #e3e9ed;
-  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%); */
 `;

@@ -21,7 +21,7 @@ const BusOption = ({ id, station, time }: propsText) => {
       {id !== "5" && (
         <S.BusOptionStationText
           textColor={isClicked ? palette.white : palette.black}
-          fontSize="1.2rem"
+          fontSize="1rem"
         >
           {id}
           {id !== "5" ? "호차" : null}
@@ -29,13 +29,13 @@ const BusOption = ({ id, station, time }: propsText) => {
       )}
       <S.BusOptionStationText
         textColor={isClicked ? palette.white : palette.black}
-        fontSize="1.4rem"
+        fontSize="1.2rem"
       >
         {station}
       </S.BusOptionStationText>
       <S.BusOptionStationText
         textColor={isClicked ? palette.white : palette.gray[300]}
-        fontSize="1rem"
+        fontSize="0.8rem"
       >
         ({time})
       </S.BusOptionStationText>

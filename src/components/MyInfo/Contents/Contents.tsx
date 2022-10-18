@@ -5,6 +5,7 @@ import BasicInfo from "./BasicInfo/BasicInfo";
 import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
 import BusApply from "./BusApply/BusApply";
 import MainProfile from "./MainProfile/MainProfile";
+import MyInfoModify from "./MyInfoModify/MyInfoModify";
 import MyPoint from "./MyPoint/MyPoint";
 import Nav from "./Nav/Nav";
 import ProfileModify from "./Nav/Profile/ProfileModify/ProfileModify";
@@ -19,7 +20,8 @@ const Contents = () => {
       <S.MyInfoWrap>
         <Nav />
         <S.MyInfoContentsWrap>
-          <BasicInfo />
+          {/* <BasicInfo /> */}
+          <MyInfoModify />
           <S.MyInfoMainContentsWrap>
             <S.MyInfoContentsTopWrap>
               <MainProfile />

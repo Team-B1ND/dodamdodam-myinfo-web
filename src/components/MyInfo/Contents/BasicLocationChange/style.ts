@@ -56,7 +56,6 @@ export const BasicLocationChangeContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* background-color: green; */
 `;
 
 export const BasicClassroomSelectLineWrap = styled.div`

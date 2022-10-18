@@ -33,7 +33,7 @@ export const BusDateText = styled.span`
   align-items: flex-end;
   color: ${palette.black};
   font-size: 1rem;
-  margin-left: 500px;
+  margin-left: 548px;
 `;
 
 export const BusImg = styled.img`

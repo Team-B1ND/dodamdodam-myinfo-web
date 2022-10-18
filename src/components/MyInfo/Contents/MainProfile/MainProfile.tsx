@@ -60,16 +60,6 @@ const MainProfile = () => {
             </S.MainProfileUserEachInfoWrap>
           </S.MainProfileUserInfoWrap>
         </S.MainProfileMiddleWrap>
-        <S.MainProfileButtonWrap>
-          <S.UpdateProfileInfoBtn
-            onClick={() => {
-              setIsLocationChangeModalState(true);
-            }}
-          >
-            수정
-          </S.UpdateProfileInfoBtn>
-          <S.UpdatePassWordBtn>비밀번호 변경</S.UpdatePassWordBtn>
-        </S.MainProfileButtonWrap>
       </S.MainProfileMainWrap>
     </S.MainProfileWrap>
   );

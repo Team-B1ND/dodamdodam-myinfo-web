@@ -9,10 +9,10 @@ export const DayOfTheWeekSelectWrap = styled.div`
 
 export const DayOfTheWeekLabelWrap = styled.div`
   width: 60px;
-  height: 130px;
+  height: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
 `;
 
