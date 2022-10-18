@@ -30,7 +30,6 @@ const MainProfile = () => {
               // src={default_profile_img}
             />
           </S.MainProfileImgWrap>
-
           <S.MainProfileUserInfoWrap>
             <S.MainProfileUserEachInfoWrap>
               <S.MainProfileInfoTextExplain>

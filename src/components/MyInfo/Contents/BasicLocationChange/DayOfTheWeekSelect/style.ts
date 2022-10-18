@@ -13,7 +13,7 @@ export const DayOfTheWeekLabelWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 5px;
 `;
 
 export const DayofTheWeekSelectCategoryLabel = styled.div`
