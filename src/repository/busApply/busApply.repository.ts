@@ -1,8 +1,8 @@
 import { customAxios } from "../../lib/axios/customAxios";
 
 class BusApplyRepository {
-  public async postBusApply(data: string): Promise<void> {
-    await customAxios.post("/bus/apply/{busId}");
+  public async postBusApply(busId: string): Promise<void> {
+    await customAxios.post(`/bus/apply/${busId}`);
   }
 }
 
