@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../store/modal";
+import {
+  EmailModifyModalState,
+  locationChangeModalState,
+  MyInfoModifyModalState,
+  PhoneModifyModalState,
+} from "../../../store/modal";
 import BasicInfo from "./BasicInfo/BasicInfo";
 import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
 import BusApply from "./BusApply/BusApply";
@@ -14,6 +19,14 @@ import * as S from "./style";
 const Contents = () => {
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
+  const [isMyInfoModifyModalState, setIsMyInfoModifyModalState] =
+    useRecoilState(MyInfoModifyModalState);
+  const [isEmailModifyModalState, setIsEmailModifyModalState] = useRecoilState(
+    EmailModifyModalState
+  );
+  const [isPhoneModifyModalState, setIsPhoneModifyModalState] = useRecoilState(
+    PhoneModifyModalState
+  );
   return (
     <>
       {isLocationChangeModalState && <ProfileModify />}

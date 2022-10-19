@@ -146,7 +146,8 @@ export const UpdateBtn = styled.button`
 
 export const MyInfoModifyBtn = styled.div`
   border-radius: 10px;
-  height: 30px;
+  height: 28px;
+  border: 1px solid ${palette.gray[200]};
   background-color: ${palette.gray[100]};
   color: ${palette.gray[500]};
   display: flex;

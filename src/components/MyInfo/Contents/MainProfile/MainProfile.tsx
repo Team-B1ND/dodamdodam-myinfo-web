@@ -3,7 +3,12 @@ import default_profile_img from "../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
-import { locationChangeModalState } from "../../../../store/modal";
+import {
+  EmailModifyModalState,
+  locationChangeModalState,
+  MyInfoModifyModalState,
+  PhoneModifyModalState,
+} from "../../../../store/modal";
 import USER_IMG from "../../../../images/user.svg";
 import SMS_IMG from "../../../../images/sms.svg";
 import CALL_IMG from "../../../../images/call.svg";
@@ -18,8 +23,17 @@ const MainProfile = () => {
   const { grade, room } = classroom;
   const { email, name } = member;
 
-  const [isLocationChangeModalState, setIsLocationChangeModalState] =
+  const [LocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
+  const [isMyInfoModifyModalState, setIsMyInfoModifyModalState] =
+    useRecoilState(MyInfoModifyModalState);
+  const [isEmailModifyModalState, setIsEmailModifyModalState] = useRecoilState(
+    EmailModifyModalState
+  );
+  const [isPhoneModifyModalState, setIsPhoneModifyModalState] = useRecoilState(
+    PhoneModifyModalState
+  );
+
   return (
     <S.MainProfileWrap>
       <S.MainProfileTopWrap>
@@ -28,40 +42,6 @@ const MainProfile = () => {
       </S.MainProfileTopWrap>
       <S.MainProfileMainWrap>
         <S.MainProfileMiddleWrap>
-          {/* <S.MainProfileImgWrap>
-            <S.MainProfileImg
-              src={profileImage ? profileImage : default_profile_img}
-              // src={default_profile_img}
-            />
-          </S.MainProfileImgWrap>
-          <S.MainProfileUserInfoWrap>
-            <S.MainProfileUserEachInfoWrap>
-              <S.MainProfileInfoTextExplain>
-                학번이름
-              </S.MainProfileInfoTextExplain>
-              <S.MainProfileInfoText>
-                {grade}
-                {room}
-                {number}
-                {name}
-              </S.MainProfileInfoText>
-            </S.MainProfileUserEachInfoWrap>
-            <S.MainProfileUserEachInfoWrap>
-              <S.MainProfileInfoTextExplain>
-                이메일
-              </S.MainProfileInfoTextExplain>
-              <S.MainProfileInfoText>{email}</S.MainProfileInfoText>
-            </S.MainProfileUserEachInfoWrap>
-            <S.MainProfileUserEachInfoWrap>
-              <S.MainProfileInfoTextExplain>
-                전화번호
-              </S.MainProfileInfoTextExplain>
-              <S.MainProfileInfoText>
-                {phone.substring(0, 3)}-{phone.substring(3, 7)}-
-                {phone.substring(7, 11)}
-              </S.MainProfileInfoText>
-            </S.MainProfileUserEachInfoWrap>
-          </S.MainProfileUserInfoWrap> */}
           <S.MainProfileMyInfoWrap>
             <S.MainProfileImgWrap>
               <S.MainProfileImg src={profileImage} />
@@ -82,7 +62,7 @@ const MainProfile = () => {
               {number < 10 ? "0" + number : number}
               {name}
             </S.MainProfileEachExplain>
-            <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
+            {/* <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn> */}
           </S.MainProfileUserEachInfoWrap>
           <MainProfileHr />
           <S.MainProfileUserEachInfoWrap>
