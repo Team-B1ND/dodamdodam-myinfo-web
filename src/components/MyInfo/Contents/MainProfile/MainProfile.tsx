@@ -4,6 +4,10 @@ import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
 import { locationChangeModalState } from "../../../../store/modal";
+import USER_IMG from "../../../../images/user.svg";
+import SMS_IMG from "../../../../images/sms.svg";
+import CALL_IMG from "../../../../images/call.svg";
+import MainProfileHr from "./MainProfileHr/MainProfileHr";
 
 const MainProfile = () => {
   // const { grade, room, number, name, email, phone } = useMyGradeInfo();
@@ -24,7 +28,7 @@ const MainProfile = () => {
       </S.MainProfileTopWrap>
       <S.MainProfileMainWrap>
         <S.MainProfileMiddleWrap>
-          <S.MainProfileImgWrap>
+          {/* <S.MainProfileImgWrap>
             <S.MainProfileImg
               src={profileImage ? profileImage : default_profile_img}
               // src={default_profile_img}
@@ -57,7 +61,45 @@ const MainProfile = () => {
                 {phone.substring(7, 11)}
               </S.MainProfileInfoText>
             </S.MainProfileUserEachInfoWrap>
-          </S.MainProfileUserInfoWrap>
+          </S.MainProfileUserInfoWrap> */}
+          <S.MainProfileMyInfoWrap>
+            <S.MainProfileImgWrap>
+              <S.MainProfileImg src={profileImage} />
+            </S.MainProfileImgWrap>
+            <S.MainProfileInfoBasicWrap>
+              <S.MainProfileNameText>{name}</S.MainProfileNameText>
+              <S.MainProfileGenerationText>기수</S.MainProfileGenerationText>
+            </S.MainProfileInfoBasicWrap>
+          </S.MainProfileMyInfoWrap>
+          <MainProfileHr />
+          <S.MainProfileUserEachInfoWrap>
+            <S.MainProfileEachTitle>
+              <S.MainProfileTitleImg src={USER_IMG} />
+            </S.MainProfileEachTitle>
+            <S.MainProfileEachExplain>
+              {grade}
+              {room}
+              {number < 10 ? "0" + number : number}
+              {name}
+            </S.MainProfileEachExplain>
+            <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
+          </S.MainProfileUserEachInfoWrap>
+          <MainProfileHr />
+          <S.MainProfileUserEachInfoWrap>
+            <S.MainProfileEachTitle>
+              <S.MainProfileTitleImg src={SMS_IMG} />
+            </S.MainProfileEachTitle>
+            <S.MainProfileEachExplain>{email}</S.MainProfileEachExplain>
+            <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
+          </S.MainProfileUserEachInfoWrap>
+          <MainProfileHr />
+          <S.MainProfileUserEachInfoWrap>
+            <S.MainProfileEachTitle>
+              <S.MainProfileTitleImg src={CALL_IMG} />
+            </S.MainProfileEachTitle>
+            <S.MainProfileEachExplain>{phone}</S.MainProfileEachExplain>
+            <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
+          </S.MainProfileUserEachInfoWrap>
         </S.MainProfileMiddleWrap>
       </S.MainProfileMainWrap>
     </S.MainProfileWrap>

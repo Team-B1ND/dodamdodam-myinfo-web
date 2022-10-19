@@ -3,7 +3,8 @@ import { palette } from "../../../../styles/palette";
 
 export const MainProfileWrap = styled.div`
   width: 780px;
-  height: 257px;
+  /* height: 175px + 40px + 45px + 2px; */
+  /* height: 257px; */
 `;
 
 export const MainProfileTopWrap = styled.div`
@@ -29,7 +30,7 @@ export const MainProfileText = styled.span`
 `;
 
 export const MainProfileMainWrap = styled.div`
-  height: 170px;
+  /* height: 170px; */
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
   border: 1px solid ${palette.main};
@@ -38,58 +39,94 @@ export const MainProfileMainWrap = styled.div`
 `;
 
 export const MainProfileMiddleWrap = styled.div`
-  height: 130px;
+  /* height: 170px; */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-  gap: 50px;
+  /* gap: 5px; */
 `;
 
-export const MainProfileButtonWrap = styled.div`
-  height: 45px;
-  align-items: center;
+// export const MainProfileUserInfoWrap = styled.div`
+//   width: 400px;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// `;
+
+export const MainProfileMyInfoWrap = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-left: 525px;
+  flex-direction: row;
+  width: 738px;
+  /* padding: 12.5px 0; */
 `;
 
 export const MainProfileImgWrap = styled.div`
   display: flex;
-  align-items: center;
+  width: 55px;
+  height: 55px;
 `;
 
 export const MainProfileImg = styled.img`
-  width: 130px;
-  min-width: 130px;
-  max-width: 130px;
-  height: 130px;
-  min-height: 130px;
-  max-height: 130px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   overflow: hidden;
 `;
 
-export const MainProfileUserInfoWrap = styled.div`
-  width: 400px;
-  height: 100%;
+export const MainProfileInfoBasicWrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  /* width: 663px; */
+  width: 600px;
+  height: 55px;
+  padding-left: 20px;
+  gap: 5px;
+`;
+
+export const MainProfileNameText = styled.span`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: ${palette.black};
+`;
+
+export const MainProfileGenerationText = styled.span`
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: ${palette.gray[500]};
+  justify-content: flex-start;
 `;
 
 export const MainProfileUserEachInfoWrap = styled.div`
   display: flex;
   flex-direction: row;
-  /* margin: 15px 0; */
+  width: 738px;
 `;
 
-export const MainProfileInfoTextExplain = styled.span`
-  width: 122.5px;
-  font-size: 1.05rem;
-  font-weight: bold;
+export const MainProfileEachTitle = styled.span`
+  display: flex;
+  width: 38px;
+  height: 30px;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const MainProfileTitleImg = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
+export const MainProfileEachExplain = styled.span`
+  display: flex;
+  width: 637px;
+  align-items: center;
+  height: 30px;
+  color: ${palette.gray[700]};
 `;
 
 export const MainProfileInfoText = styled.span`
@@ -102,6 +139,20 @@ export const UpdateBtn = styled.button`
   align-items: center;
   border: solid 1px rgba(212, 216, 229, 0.5);
   background-color: rgba(212, 216, 229, 0.25);
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const MyInfoModifyBtn = styled.div`
+  border-radius: 10px;
+  height: 30px;
+  background-color: ${palette.gray[100]};
+  color: ${palette.gray[500]};
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 1rem;
   &:hover {
     cursor: pointer;
   }

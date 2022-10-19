@@ -28,7 +28,7 @@ export const MyInfoMainContentsWrap = styled.div`
 
 export const MyInfoContentsTopWrap = styled.div`
   width: 780px;
-  height: 257px;
+  /* height: 257px; */
 `;
 
 export const MyInfoContentsMiddleWrap = styled.div`
