@@ -1,35 +1,58 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useOutsideClick } from "react-handle-outside-click";
 import { useRecoilState } from "recoil";
 import { locationChangeModalState } from "../../../../../../store/modal";
 import * as S from "./style";
 import { BiPlus } from "react-icons/bi";
+import useModifyMainProfile from "../../../../../../hooks/mainProfile/useModifyMainProfile";
+import useMyGradeInfo from "../../../../../../hooks/profile/useMyGradeInfo";
+import fileUpload from "../../../../../../repository/mainProfile/fileUpload";
+import DODAM_DEFAULT_PROFILE from "../../../../../../images/default_profile.png";
 
 const ProfileModify = () => {
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
 
-  //   const [imageSrc, setImageSrc] = useState("");
+  const myGradeInfo = useMyGradeInfo();
+  const { member, phone } = myGradeInfo;
+  const { email, profileImage } = member;
 
-  //   const [imgfiles, setImgFiles] = useState([]);
+  const { patchMainProfile } = useModifyMainProfile();
 
-  //   const formData = new FormData();
+  const [imageSrc, setImageSrc] = useState("");
 
-  //   formData.append("file");
+  const [imgfiles, setImgFiles] = useState([]);
 
-  // const encodeFileToBase64 = (fileBlob: Blob) => {
-  //   const reader = new FileReader();
+  useEffect(() => {
+    setImageSrc(profileImage);
+  }, []);
 
-  //   reader.readAsDataURL(fileBlob);
+  const uploadImage = async (e: ChangeEvent<HTMLInputElement>) => {
+    try {
+      const formData = new FormData();
+      console.log(e.target.files);
+      if (e.target.files) {
+        formData.append("file", e.target.files[0]);
+        const { data } = await fileUpload.postFileUpload(formData);
+        console.log(data);
+        if (data) {
+          setImageSrc(data);
+        }
+      }
+    } catch (e) {}
+  };
 
-  //   return new Promise((resolve) => {
-  //     reader.onload = () => {
-  //       setImageSrc(reader.result);
-
-  //       resolve();
-  //     };
-  //   });
-  // };
+  const updateImage = async (e: ChangeEvent<HTMLInputElement>) => {
+    try {
+      await patchMainProfile({
+        email: email,
+        imageUrl: imageSrc,
+        phone: phone,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <S.ProfileModifyModalBackground
@@ -54,7 +77,9 @@ const ProfileModify = () => {
           }}
         />
         <S.MyInfoModifyModalTitleWrap>
-          <S.MyInfoModifyTitleText>프로필 수정</S.MyInfoModifyTitleText>
+          <S.MyInfoModifyTitleText onClick={() => {}}>
+            프로필 수정
+          </S.MyInfoModifyTitleText>
           <S.MyInfoModifySubTitleText>
             대표 프로필과 이메일, 전화번호를 수정할 수 있습니다.
           </S.MyInfoModifySubTitleText>
@@ -64,8 +89,15 @@ const ProfileModify = () => {
             프로필 사진
           </S.ModalPictureChangeTitleText>
           <S.ModalPictureWrap>
-            <S.ModalPictureImg />
-            <input type="file" name="files" />
+            {imgfiles && (
+              <S.ModalPictureImg
+                src={
+                  imageSrc === "defa/ult.jpg" ? imageSrc : DODAM_DEFAULT_PROFILE
+                  // DODAM_DEFAULT_PROFILE
+                }
+              />
+            )}
+            <input type="file" name="files" onChange={uploadImage} />
           </S.ModalPictureWrap>
           <S.PictureBecomeBasicImageBtn>
             기본 프로필
