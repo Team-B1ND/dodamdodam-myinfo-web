@@ -44,7 +44,9 @@ const MainProfile = () => {
         <S.MainProfileMiddleWrap>
           <S.MainProfileMyInfoWrap>
             <S.MainProfileImgWrap>
-              <S.MainProfileImg src={profileImage} />
+              <S.MainProfileImg
+                src={profileImage === null ? default_profile_img : profileImage}
+              />
             </S.MainProfileImgWrap>
             <S.MainProfileInfoBasicWrap>
               <S.MainProfileNameText>{name}</S.MainProfileNameText>

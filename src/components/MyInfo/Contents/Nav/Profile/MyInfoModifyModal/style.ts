@@ -39,8 +39,6 @@ export const MyInfoModifyModalTitleWrap = styled.div`
   border-bottom: 1px solid ${palette.gray[500]};
 `;
 
-export const MyInfoModifyTopWrap = styled.div``;
-
 export const MyInfoModifyTitleText = styled.span`
   font-size: 1.7rem;
   font-weight: bold;
@@ -59,8 +57,8 @@ export const ModalPictureChangeWrap = styled.div`
 `;
 
 export const ModalPictureChangeTitleText = styled.span`
-  font-size: 1rem;
-  padding: 5px 0;
+  font-size: 1.2rem;
+  padding: 10px 0;
 `;
 
 export const ModalPictureWrap = styled.div`
@@ -79,8 +77,15 @@ export const ModalPictureImg = styled.img`
 
 export const PictureBecomeBasicImageBtn = styled.div`
   display: flex;
+  font-size: 1rem;
   height: 30px;
+  padding: 0 10px;
+  border-radius: 10px;
   align-items: center;
+  background-color: ${palette.gray[200]};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 // export const PictureImageModifyImageWrap = styled.div`

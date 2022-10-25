@@ -13,7 +13,7 @@ export interface myProfile {
     id: string;
     joinDate: string;
     name: string;
-    profileImage: string;
+    profileImage: string | null;
     role: "ADMIN" | "STUDENT";
     status: "ACTIVE" | "DEACTIVATED";
   };

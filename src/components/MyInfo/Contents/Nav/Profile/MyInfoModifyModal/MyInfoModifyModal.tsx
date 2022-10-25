@@ -20,11 +20,11 @@ const MyInfoModifyModal = () => {
 
   const { patchMainProfile } = useModifyMainProfile();
 
-  const [imageSrc, setImageSrc] = useState("");
-
-  const [imgfiles, setImgFiles] = useState([]);
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [tempImgSrc, setTempImgSrc] = useState<string | null>(null); // 보기 전용
 
   useEffect(() => {
+    setTempImgSrc(profileImage);
     setImageSrc(profileImage);
   }, [profileImage]);
 
@@ -37,13 +37,30 @@ const MyInfoModifyModal = () => {
         const { data } = await fileUpload.postFileUpload(formData);
         console.log(data);
         if (data) {
+          setTempImgSrc(data);
           setImageSrc(data);
         }
       }
-    } catch (e) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const updateImage = async (e: ChangeEvent<HTMLInputElement>) => {
+  // const uploadDefaultImage = async () => {
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append("file", DODAM_DEFAULT_PROFILE);
+  //     const { data } = await fileUpload.postFileUpload(formData);
+  //     console.log(data);
+  //     if (data === null) {
+  //       setImageSrc("default.jpg");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const updateInfo = async (e: ChangeEvent<HTMLInputElement>) => {
     try {
       await patchMainProfile({
         email: email,
@@ -86,35 +103,31 @@ const MyInfoModifyModal = () => {
           }}
         />
         <S.MyInfoModifyModalTitleWrap>
-          <S.MyInfoModifyTitleText onClick={() => {}}>
-            프로필 수정
-          </S.MyInfoModifyTitleText>
+          <S.MyInfoModifyTitleText>프로필 수정</S.MyInfoModifyTitleText>
           <S.MyInfoModifySubTitleText>
             대표 프로필과 이메일, 전화번호를 수정할 수 있습니다.
           </S.MyInfoModifySubTitleText>
         </S.MyInfoModifyModalTitleWrap>
-        {/* <S.MyInfoModifyTopWrap> */}
+
         <S.ModalPictureChangeWrap>
           <S.ModalPictureChangeTitleText>
             프로필 사진
           </S.ModalPictureChangeTitleText>
           <S.ModalPictureWrap>
-            {imgfiles && (
-              <div>
-                {isLoading ? (
-                  <>로딩중..</>
-                ) : (
-                  <S.ModalPictureImg
-                    src={
-                      imageSrc === "default.jpg"
-                        ? DODAM_DEFAULT_PROFILE
-                        : imageSrc
-                      // DODAM_DEFAULT_PROFILE
-                    }
-                  />
-                )}
-              </div>
-            )}
+            <div>
+              {isLoading ? (
+                <>로딩중..</>
+              ) : (
+                <S.ModalPictureImg
+                  src={
+                    tempImgSrc === null || tempImgSrc === ""
+                      ? DODAM_DEFAULT_PROFILE
+                      : tempImgSrc
+                  }
+                />
+              )}
+            </div>
+
             <S.PictureImageModifyLabel htmlFor="file_upload">
               <div className="btnStart">
                 <img src={CAMERA_IMAGE} alt="btnStart" />
@@ -126,14 +139,19 @@ const MyInfoModifyModal = () => {
               id="file_upload"
               accept="image/jpg, image/png, image/jpeg"
               onChange={uploadImage}
-              // ref={imageInput}
             />
             {/* <button onClick={onCickImageUpload}>이미지업로드</button> */}
           </S.ModalPictureWrap>
         </S.ModalPictureChangeWrap>
-        {/* </S.MyInfoModifyTopWrap> */}
 
-        <S.PictureBecomeBasicImageBtn>기본 프로필</S.PictureBecomeBasicImageBtn>
+        <S.PictureBecomeBasicImageBtn
+          onClick={() => {
+            setImageSrc("");
+            setTempImgSrc("");
+          }}
+        >
+          기본 프로필로 변경
+        </S.PictureBecomeBasicImageBtn>
       </S.ProfileModifyModalWrap>
     </S.ProfileModifyModalBackground>
   );
