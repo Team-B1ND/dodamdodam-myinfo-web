@@ -13,7 +13,7 @@ import MainProfile from "./MainProfile/MainProfile";
 import MyInfoModify from "./MyInfoModify/MyInfoModify";
 import MyPoint from "./MyPoint/MyPoint";
 import Nav from "./Nav/Nav";
-import ProfileModify from "./Nav/Profile/ProfileModify/ProfileModify";
+import ProfileModifyModal from "./Nav/Profile/MyInfoModifyModal/MyInfoModifyModal";
 import * as S from "./style";
 
 const Contents = () => {
@@ -29,7 +29,7 @@ const Contents = () => {
   );
   return (
     <>
-      {isLocationChangeModalState && <ProfileModify />}
+      {isLocationChangeModalState && <ProfileModifyModal />}
       <S.MyInfoWrap>
         <Nav />
         <S.MyInfoContentsWrap>

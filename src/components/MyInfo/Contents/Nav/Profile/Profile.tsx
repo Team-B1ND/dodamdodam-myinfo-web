@@ -3,12 +3,10 @@ import defaultProfileImg from "../../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
 
 const Profile = () => {
-  const myGradeInfo = useMyGradeInfo();
+  const { myGradeInfo } = useMyGradeInfo();
   const { member, classroom, number } = myGradeInfo;
   const { profileImage, name } = member;
   const { grade, room } = classroom;
-
-  console.log(profileImage);
 
   return (
     <S.ProfileWrap>

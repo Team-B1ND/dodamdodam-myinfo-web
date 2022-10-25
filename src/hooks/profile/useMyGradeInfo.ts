@@ -3,6 +3,7 @@ import profileRepository from "../../repository/profile/profile.repository";
 import { myProfile } from "../../types/profile/profile.type";
 
 const useMyGradeInfo = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [myGradeInfo, setMyGradeInfo] = useState<myProfile>({
     classroom: {
       grade: 0,
@@ -30,10 +31,14 @@ const useMyGradeInfo = () => {
 
   const getMyGrade = async () => {
     try {
+      setIsLoading(true);
       const { data } = await profileRepository.getMyProfileInfo();
       setMyGradeInfo(data);
+      setIsLoading(false);
+
       //   console.log(myGradeInfo);
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   };
@@ -42,7 +47,7 @@ const useMyGradeInfo = () => {
     getMyGrade();
   }, []);
 
-  return myGradeInfo;
+  return { myGradeInfo, isLoading };
   // return { grade, room, number, name, email, phone, profileImage };
 };
 

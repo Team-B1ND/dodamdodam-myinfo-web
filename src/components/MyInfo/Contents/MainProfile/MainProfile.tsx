@@ -17,7 +17,7 @@ import MainProfileHr from "./MainProfileHr/MainProfileHr";
 const MainProfile = () => {
   // const { grade, room, number, name, email, phone } = useMyGradeInfo();
   // const { profileImage } = useMyGradeInfo();
-  const myGradeInfo = useMyGradeInfo();
+  const { myGradeInfo } = useMyGradeInfo();
   const { classroom, member, number, phone } = myGradeInfo;
   const { profileImage } = member;
   const { grade, room } = classroom;
