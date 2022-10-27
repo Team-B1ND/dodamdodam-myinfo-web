@@ -21,10 +21,10 @@ const MyInfoModifyModal = () => {
   const { patchMainProfile } = useModifyMainProfile();
 
   const [imageSrc, setImageSrc] = useState<string | null>(null);
-  const [tempImgSrc, setTempImgSrc] = useState<string | null>(null); // 보기 전용
+  // const [tempImgSrc, setTempImgSrc] = useState<string | null>(null); // 보기 전용
 
   useEffect(() => {
-    setTempImgSrc(profileImage);
+    // setTempImgSrc(profileImage);
     setImageSrc(profileImage);
   }, [profileImage]);
 
@@ -37,7 +37,7 @@ const MyInfoModifyModal = () => {
         const { data } = await fileUpload.postFileUpload(formData);
         console.log(data);
         if (data) {
-          setTempImgSrc(data);
+          // setTempImgSrc(data);
           setImageSrc(data);
         }
       }
@@ -120,9 +120,12 @@ const MyInfoModifyModal = () => {
               ) : (
                 <S.ModalPictureImg
                   src={
-                    tempImgSrc === null || tempImgSrc === ""
+                    imageSrc === null || imageSrc === ""
                       ? DODAM_DEFAULT_PROFILE
-                      : tempImgSrc
+                      : imageSrc
+                    // tempImgSrc === null || tempImgSrc === ""
+                    //   ? DODAM_DEFAULT_PROFILE
+                    //   : tempImgSrc
                   }
                 />
               )}
@@ -142,16 +145,26 @@ const MyInfoModifyModal = () => {
             />
             {/* <button onClick={onCickImageUpload}>이미지업로드</button> */}
           </S.ModalPictureWrap>
-        </S.ModalPictureChangeWrap>
 
-        <S.PictureBecomeBasicImageBtn
-          onClick={() => {
-            setImageSrc("");
-            setTempImgSrc("");
-          }}
-        >
-          기본 프로필로 변경
-        </S.PictureBecomeBasicImageBtn>
+          <S.PictureBecomeBasicImageBtn
+            onClick={() => {
+              setImageSrc("");
+              // setTempImgSrc("");
+            }}
+          >
+            기본 프로필로 변경
+          </S.PictureBecomeBasicImageBtn>
+        </S.ModalPictureChangeWrap>
+        <S.EmailModifyWrap>
+          <S.ModifyBox>
+            <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
+          </S.ModifyBox>
+        </S.EmailModifyWrap>
+        <S.PhoneNumberModifyWrap>
+          <S.ModifyBox>
+            <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
+          </S.ModifyBox>
+        </S.PhoneNumberModifyWrap>
       </S.ProfileModifyModalWrap>
     </S.ProfileModifyModalBackground>
   );

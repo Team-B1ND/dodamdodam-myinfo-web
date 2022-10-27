@@ -36,7 +36,7 @@ export const MyInfoModifyModalTitleWrap = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border-bottom: 1px solid ${palette.gray[500]};
+  border-bottom: 1px solid ${palette.gray[400]};
 `;
 
 export const MyInfoModifyTitleText = styled.span`
@@ -54,6 +54,7 @@ export const ModalPictureChangeWrap = styled.div`
   padding: 10px 0;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid ${palette.gray[400]};
 `;
 
 export const ModalPictureChangeTitleText = styled.span`
@@ -86,6 +87,7 @@ export const PictureBecomeBasicImageBtn = styled.div`
   &:hover {
     cursor: pointer;
   }
+  margin: 10px 0;
 `;
 
 // export const PictureImageModifyImageWrap = styled.div`
@@ -107,4 +109,24 @@ export const PictureImageModifyLabel = styled.label`
 
 export const PictureImageModifyButtonImg = styled.img`
   display: flex;
+`;
+
+export const EmailModifyWrap = styled.div`
+  width: 700px;
+`;
+
+export const PhoneNumberModifyWrap = styled.div`
+  width: 700px;
+`;
+
+export const ModifyBox = styled.div`
+  padding: 5px 0;
+  width: 690px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+`;
+
+export const ModifyBoxTitleText = styled.span`
+  font-size: 1.2rem;
 `;

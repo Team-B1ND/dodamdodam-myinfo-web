@@ -79,7 +79,10 @@ const MainProfile = () => {
             <S.MainProfileEachTitle>
               <S.MainProfileTitleImg src={CALL_IMG} />
             </S.MainProfileEachTitle>
-            <S.MainProfileEachExplain>{phone}</S.MainProfileEachExplain>
+            <S.MainProfileEachExplain>
+              {phone.substring(0, 3)}-{phone.substring(3, 7)}-
+              {phone.substring(7, 11)}
+            </S.MainProfileEachExplain>
             <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
           </S.MainProfileUserEachInfoWrap>
         </S.MainProfileMiddleWrap>
