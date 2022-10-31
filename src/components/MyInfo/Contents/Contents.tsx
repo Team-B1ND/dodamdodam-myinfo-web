@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRecoilState } from "recoil";
 import {
   EmailModifyModalState,
@@ -6,12 +5,10 @@ import {
   MyInfoModifyModalState,
   PhoneModifyModalState,
 } from "../../../store/modal";
-import BasicInfo from "./BasicInfo/BasicInfo";
 import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
 import BusApply from "./BusApply/BusApply";
 import MainProfile from "./MainProfile/MainProfile";
 import MyInfoModify from "./MyInfoModify/MyInfoModify";
-import MyPoint from "./MyPoint/MyPoint";
 import Nav from "./Nav/Nav";
 import ProfileModifyModal from "./Nav/Profile/MyInfoModifyModal/MyInfoModifyModal";
 import * as S from "./style";

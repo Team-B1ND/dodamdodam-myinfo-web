@@ -9,14 +9,6 @@ export const BasicLocationChangeWrap = styled.div`
   /* gap: 5px; */
 `;
 
-export const BasicLocationChangeTitleWrap = styled.div`
-  width: 780px;
-  height: 45px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
 export const PencilImg = styled.img`
   width: 23px;
   height: 23px;

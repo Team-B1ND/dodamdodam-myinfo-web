@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { palette } from "../../../../../styles/palette";
-import { lightTheme } from "../../../../../styles/theme";
 import * as S from "./style";
 
 interface propsText {

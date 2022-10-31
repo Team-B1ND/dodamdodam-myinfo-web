@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const TitleWrap = styled.div`
-  width: 770px;
+  width: 780px;
   height: 45px;
-  background-color: red;
   display: flex;
+  /* background-color: red; */
   flex-direction: row;
-  padding-left: 10px;
   align-items: center;
 `;

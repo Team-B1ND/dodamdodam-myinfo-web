@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
-import { useOutsideClick } from "react-handle-outside-click";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { locationChangeModalState } from "../../../../../../store/modal";
 import * as S from "./style";
@@ -21,10 +20,8 @@ const MyInfoModifyModal = () => {
   const { patchMainProfile } = useModifyMainProfile();
 
   const [imageSrc, setImageSrc] = useState<string | null>(null);
-  // const [tempImgSrc, setTempImgSrc] = useState<string | null>(null); // 보기 전용
 
   useEffect(() => {
-    // setTempImgSrc(profileImage);
     setImageSrc(profileImage);
   }, [profileImage]);
 
@@ -37,7 +34,6 @@ const MyInfoModifyModal = () => {
         const { data } = await fileUpload.postFileUpload(formData);
         console.log(data);
         if (data) {
-          // setTempImgSrc(data);
           setImageSrc(data);
         }
       }
@@ -45,20 +41,6 @@ const MyInfoModifyModal = () => {
       console.log(error);
     }
   };
-
-  // const uploadDefaultImage = async () => {
-  //   try {
-  //     const formData = new FormData();
-  //     formData.append("file", DODAM_DEFAULT_PROFILE);
-  //     const { data } = await fileUpload.postFileUpload(formData);
-  //     console.log(data);
-  //     if (data === null) {
-  //       setImageSrc("default.jpg");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const updateInfo = async (e: ChangeEvent<HTMLInputElement>) => {
     try {
@@ -71,14 +53,6 @@ const MyInfoModifyModal = () => {
       console.log(error);
     }
   };
-
-  // useRef를 이용해 input태그에 접근한다.
-  // const imageInput = useRef<>();
-
-  // 버튼클릭시 input태그에 클릭이벤트를 걸어준다.
-  function onCickImageUpload() {
-    // imageInput.current.click();
-  }
 
   return (
     <S.ProfileModifyModalBackground
@@ -123,9 +97,6 @@ const MyInfoModifyModal = () => {
                     imageSrc === null || imageSrc === ""
                       ? DODAM_DEFAULT_PROFILE
                       : imageSrc
-                    // tempImgSrc === null || tempImgSrc === ""
-                    //   ? DODAM_DEFAULT_PROFILE
-                    //   : tempImgSrc
                   }
                 />
               )}

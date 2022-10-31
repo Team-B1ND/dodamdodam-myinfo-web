@@ -9,14 +9,6 @@ export const BusApplyWrap = styled.div`
   flex-direction: column;
 `;
 
-export const BusApplyTopWrap = styled.div`
-  width: 780px;
-  height: 45px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
 export const BusApplyText = styled.span`
   font-size: 1.3rem;
   font-weight: bold;

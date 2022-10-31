@@ -11,7 +11,7 @@ const DayOfTheWeekSelect = () => {
   };
 
   const dateOnchangeValueHandler = (e: any) => {
-    // console.log(e.target.value);
+    console.log(e.target.value);
     setDate(e.target.value);
   };
 

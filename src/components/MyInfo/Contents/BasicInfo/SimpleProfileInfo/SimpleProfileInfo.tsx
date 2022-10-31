@@ -10,10 +10,7 @@ const SimpleProfileInfo = () => {
   return (
     <>
       <S.ProfileInfoWrap>
-        <S.ProfileInfoImg
-          src={profileImage ? profileImage : default_profile}
-          // src={default_profile}
-        />
+        <S.ProfileInfoImg src={profileImage ? profileImage : default_profile} />
         <S.ProfileInfoName>{name} 학생</S.ProfileInfoName>
       </S.ProfileInfoWrap>
     </>

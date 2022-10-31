@@ -12,8 +12,6 @@ const Profile = () => {
     <S.ProfileWrap>
       <S.ProfileImgWrap>
         <S.ProfileImg src={profileImage ? profileImage : defaultProfileImg} />
-        {/* <S.ProfileImg src={defaultProfileImg} /> */}
-
         <S.ProfileNameText>{name}</S.ProfileNameText>
         <S.ProfileBasicInfoText>
           {grade}학년 {room}반 {number}번

@@ -13,6 +13,7 @@ import USER_IMG from "../../../../images/user.svg";
 import SMS_IMG from "../../../../images/sms.svg";
 import CALL_IMG from "../../../../images/call.svg";
 import MainProfileHr from "./MainProfileHr/MainProfileHr";
+import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 
 const MainProfile = () => {
   // const { grade, room, number, name, email, phone } = useMyGradeInfo();
@@ -36,10 +37,10 @@ const MainProfile = () => {
 
   return (
     <S.MainProfileWrap>
-      <S.MainProfileTopWrap>
+      <ComponentTitle>
         <S.HappyFaceImg src={happy_face} />
         <S.MainProfileText>내 프로필</S.MainProfileText>
-      </S.MainProfileTopWrap>
+      </ComponentTitle>
       <S.MainProfileMainWrap>
         <S.MainProfileMiddleWrap>
           <S.MainProfileMyInfoWrap>
