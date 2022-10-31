@@ -10,12 +10,25 @@ export const SideTabBarWrap = styled.div`
   gap: 15px;
 `;
 
-export const TabBarCategoryWrap = styled.div`
+export const TabBarCategoryWrap = styled.div<{
+  linkName: string;
+  pathName: string;
+}>`
   height: 30px;
   display: flex;
   align-items: center;
   padding-right: 10px;
   cursor: pointer;
+  border-bottom: 2px solid
+    ${({ linkName, pathName }) => (linkName === pathName ? "#333" : "#fff")};
+
+  .Link {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: ${({ linkName, pathName }) =>
+      linkName === pathName ? "bold" : "none"};
+  }
 `;
 
 export const TabBarCategoryDecoration = styled.div<{ backgroundColor: string }>`
@@ -23,9 +36,4 @@ export const TabBarCategoryDecoration = styled.div<{ backgroundColor: string }>`
   height: 35px;
   background-color: ${({ backgroundColor }) => backgroundColor};
   border-radius: 5px;
-`;
-
-export const TabBarCategoryText = styled.span`
-  font-size: 1.2rem;
-  margin-left: 7.5px;
 `;
