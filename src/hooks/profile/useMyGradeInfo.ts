@@ -22,7 +22,7 @@ const useMyGradeInfo = () => {
       status: "ACTIVE",
     },
     number: 0,
-    phone: "010-1234-5678",
+    phone: "01012345678",
   });
 
   // const { classroom, phone, member, number } = myGradeInfo;
