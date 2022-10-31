@@ -10,21 +10,12 @@ export const SideTabBarWrap = styled.div`
   gap: 15px;
 `;
 
-export const TabBarCategoryWrap = styled.div<{
-  underBarColor: string;
-  fontWeight: string;
-}>`
-  width: auto;
+export const TabBarCategoryWrap = styled.div`
   height: 30px;
   display: flex;
   align-items: center;
   padding-right: 10px;
-  border-bottom: 2px solid ${({ underBarColor }) => underBarColor};
-  font-weight: ${({ fontWeight }) => fontWeight};
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 export const TabBarCategoryDecoration = styled.div<{ backgroundColor: string }>`

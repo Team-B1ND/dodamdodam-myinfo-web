@@ -1,13 +1,13 @@
-import Contents from "./MyInfo/Contents/Contents";
 import { Body } from "./style";
 import * as S from "./style";
+import Router from "./Router";
 
 const MyInfo = () => {
   return (
     <Body>
       <S.MyInfoLeftWrap />
       <S.MyInfoRightWrap />
-      <Contents />
+      <Router />
     </Body>
   );
 };
