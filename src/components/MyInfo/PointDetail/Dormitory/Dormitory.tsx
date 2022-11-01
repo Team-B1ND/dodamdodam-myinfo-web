@@ -13,7 +13,7 @@ const Dormitory = () => {
       <S.PointHeaderContainer>
         <S.RewardPoints onClick={() => {
           setIsPoint(false);
-          // getPointDetail();
+          getPointDetail();
         }} isColor={isPoint} >상점</S.RewardPoints>
         <S.BadPoints onClick={() => setIsPoint(true)} isColor={isPoint}>벌점</S.BadPoints>
       </S.PointHeaderContainer>

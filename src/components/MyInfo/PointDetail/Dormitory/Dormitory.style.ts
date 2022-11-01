@@ -45,18 +45,3 @@ export const Divide = styled.div`
   margin: 8px 0;
   border: 1px solid ${palette.gray[300]};
 `;
-
-// export const Date = styled.div`
-//   width: 20%;
-//   text-align: center;
-//   border-right: 1px solid ${palette.gray[400]};
-// `;
-
-// export const TeacherIdx = styled.div`
-//   width: 15%;
-//   text-align: center;
-// `;
-
-// export const PointDetailContainer = styled.div``;
-// export const PointDetailContainer = styled.div``;
-// export const PointDetailContainer = styled.div``;
