@@ -3,7 +3,7 @@ import { palette } from "../../../../styles/palette";
 
 export const BasicLocationChangeWrap = styled.div`
   width: 780px;
-  height: 217px;
+  /* height: 217px; */
   display: flex;
   flex-direction: column;
   /* gap: 5px; */
@@ -15,7 +15,7 @@ export const PencilImg = styled.img`
   display: flex;
 `;
 
-export const BasicLocationChangeTitleTextWrap = styled.span`
+export const BasicLocationChangeTitleText = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
   color: ${palette.black};
@@ -26,7 +26,7 @@ export const BasicLocationChangeTitleTextWrap = styled.span`
 
 export const BasicLocationMainWrap = styled.div`
   width: 730px;
-  height: 120px;
+  /* height: 157px; */
   display: flex;
   flex-direction: row;
   padding: 25px;
@@ -52,14 +52,46 @@ export const BasicLocationChangeContentsWrap = styled.div`
 
 export const BasicClassroomSelectLineWrap = styled.div`
   width: 100%;
-  /* height: 100px; */
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* justify-content: center; */
-  /* align-items: center; */
   align-items: flex-start;
-  /* background-color: red; */
   gap: 60px;
+`;
+
+export const BasicClassroomApplyButton = styled.div`
+  font-size: 1rem;
+  color: ${palette.white};
+  background-color: ${palette.main};
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+`;
+
+export const MainRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ApplyButton = styled.div`
+  padding: 7px 13px;
+  color: ${palette.gray[400]};
+  background-color: ${palette.gray[200]};
+  border-radius: 50px;
+  margin-left: 575px;
+  &:hover {
+    cursor: pointer;
+  }
 `;

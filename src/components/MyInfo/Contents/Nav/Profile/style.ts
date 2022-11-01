@@ -22,6 +22,7 @@ export const ProfileImg = styled.img`
   height: 150px;
   max-height: 150px;
   min-height: 150px;
+  object-fit: cover;
 `;
 
 export const ProfileNameText = styled.span`

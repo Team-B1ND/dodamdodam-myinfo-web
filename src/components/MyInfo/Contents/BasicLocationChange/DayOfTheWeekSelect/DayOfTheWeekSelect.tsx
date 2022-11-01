@@ -61,7 +61,7 @@ const DayOfTheWeekSelect = () => {
               <S.CategoryExplainText>
                 변경하고 싶은 날짜를 선택해주세요.
               </S.CategoryExplainText>
-              <S.WhenDateContentsInput onChange={dateOnchangeValueHandler}>
+              <S.WhenDateContentsSelect onChange={dateOnchangeValueHandler}>
                 <option value={"월요일"}>월요일</option>
                 <option value={"화요일"}>화요일</option>
                 <option value={"수요일"}>수요일</option>
@@ -69,7 +69,7 @@ const DayOfTheWeekSelect = () => {
                 <option value={"금요일"}>금요일</option>
                 <option value={"토요일"}>토요일</option>
                 <option value={"일요일"}>일요일</option>
-              </S.WhenDateContentsInput>
+              </S.WhenDateContentsSelect>
             </>
           ) : category === "평일" ? (
             <S.CategoryExplainText>

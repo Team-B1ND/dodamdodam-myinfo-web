@@ -73,6 +73,7 @@ export const MainProfileImg = styled.img`
   height: 55px;
   border-radius: 50%;
   overflow: hidden;
+  object-fit: cover;
 `;
 
 export const MainProfileInfoBasicWrap = styled.div`

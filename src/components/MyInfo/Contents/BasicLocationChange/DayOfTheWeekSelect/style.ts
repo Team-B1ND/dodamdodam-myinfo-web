@@ -58,7 +58,7 @@ export const CategoryExplainText = styled.span`
   /* padding-left: 5px; */
 `;
 
-export const WhenDateContentsInput = styled.select`
+export const WhenDateContentsSelect = styled.select`
   width: 80%;
   height: 25px;
   padding-left: 10px;

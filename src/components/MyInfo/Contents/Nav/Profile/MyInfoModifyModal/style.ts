@@ -74,6 +74,7 @@ export const ModalPictureImg = styled.img`
   width: 130px;
   height: 130px;
   border-radius: 50%;
+  object-fit: cover;
 `;
 
 export const PictureBecomeBasicImageBtn = styled.div`
@@ -111,12 +112,11 @@ export const PictureImageModifyButtonImg = styled.img`
   display: flex;
 `;
 
-export const EmailModifyWrap = styled.div`
+export const ModifyBoxWrap = styled.div`
+  display: flex;
   width: 700px;
-`;
-
-export const PhoneNumberModifyWrap = styled.div`
-  width: 700px;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const ModifyBox = styled.div`
@@ -124,9 +124,35 @@ export const ModifyBox = styled.div`
   width: 690px;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
+  padding: 20px 0 20px 10px;
+  border-bottom: 1px solid ${palette.gray[300]};
+  gap: 10px;
 `;
 
 export const ModifyBoxTitleText = styled.span`
   font-size: 1.2rem;
+  font-weight: bold;
+`;
+
+export const ModifyBoxContentText = styled.span`
+  font-size: 1.3rem;
+`;
+
+export const ModifyBoxContentInput = styled.input`
+  font-size: 1.1rem;
+`;
+
+export const ModifyEventButton = styled.div`
+  display: flex;
+  padding: 10px 15px;
+  border-radius: 50px;
+  background-color: ${palette.main};
+  color: ${palette.white};
+  font-size: 1.1rem;
+  width: min-content;
+  white-space: nowrap;
+  margin-top: 15px;
+  &:hover {
+    cursor: pointer;
+  }
 `;

@@ -1,5 +1,5 @@
 import * as S from "./style";
-import default_profile_img from "../../../../images/default_profile.png";
+import defaultProfileImg from "../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
@@ -46,7 +46,7 @@ const MainProfile = () => {
           <S.MainProfileMyInfoWrap>
             <S.MainProfileImgWrap>
               <S.MainProfileImg
-                src={profileImage === null ? default_profile_img : profileImage}
+                src={profileImage ? profileImage : defaultProfileImg}
               />
             </S.MainProfileImgWrap>
             <S.MainProfileInfoBasicWrap>
