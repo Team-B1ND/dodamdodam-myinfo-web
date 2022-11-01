@@ -17,9 +17,26 @@ const MyInfoModifyModal = () => {
   const { member, phone } = myGradeInfo;
   const { email, profileImage } = member;
 
+  const [emailInfo, setEmailInfo] = useState<string>("");
+  const [phoneInfo, setPhoneInfo] = useState<string>("");
+
+  const [tempPhoneInfo, setTempPhoneInfo] = useState<string>("");
+
   const { patchMainProfile } = useModifyMainProfile();
 
   const [imageSrc, setImageSrc] = useState<string | null>(null);
+
+  const [isModifying, setIsModifying] = useState<boolean>(false);
+
+  useEffect(() => {
+    setEmailInfo(email);
+    setTempPhoneInfo(
+      `${phone.substring(0, 3)}-${phone.substring(3, 7)}-${phone.substring(
+        7,
+        11
+      )}`
+    );
+  }, [email, phone]);
 
   useEffect(() => {
     setImageSrc(profileImage);
@@ -34,6 +51,7 @@ const MyInfoModifyModal = () => {
         const { data } = await fileUpload.postFileUpload(formData);
         console.log(data);
         if (data) {
+          console.log("url 받음");
           setImageSrc(data);
         }
       }
@@ -42,13 +60,65 @@ const MyInfoModifyModal = () => {
     }
   };
 
-  const updateInfo = async (e: ChangeEvent<HTMLInputElement>) => {
+  const autoHypenPhone = (str: string) => {
+    str = str.replace(/[^0-9]/g, "");
+    let tmp = "";
+    if (str.length < 4) {
+      return str;
+    } else if (str.length < 7) {
+      tmp += str.substr(0, 3);
+      tmp += "-";
+      tmp += str.substr(3);
+      return tmp;
+    } else if (str.length < 11) {
+      tmp += str.substr(0, 3);
+      tmp += "-";
+      tmp += str.substr(3, 3);
+      tmp += "-";
+      tmp += str.substr(6);
+      return tmp;
+    } else {
+      tmp += str.substr(0, 3);
+      tmp += "-";
+      tmp += str.substr(3, 4);
+      tmp += "-";
+      tmp += str.substr(7);
+      return tmp;
+    }
+    return str;
+  };
+
+  useEffect(() => {
+    setPhoneInfo(
+      tempPhoneInfo.split("-")[0] +
+        tempPhoneInfo.split("-")[1] +
+        tempPhoneInfo.split("-")[2]
+    );
+  }, [tempPhoneInfo]);
+
+  const emailInfoHandler = (e: any) => {
+    console.log(e.target.value);
+    setEmailInfo(e.target.value);
+  };
+
+  const phoneInfoHandler = (e: any) => {
+    console.log(e.target.value);
+    console.log(autoHypenPhone(e.target.value));
+    setTempPhoneInfo(autoHypenPhone(e.target.value));
+  };
+
+  const updateInfo = async () => {
     try {
+      console.log(phoneInfo);
+      console.log("수정 시작");
       await patchMainProfile({
-        email: email,
+        email: emailInfo,
         imageUrl: imageSrc,
-        phone: phone,
+        phone: phoneInfo,
       });
+      console.log(phoneInfo);
+      console.log("수정 끝");
+      console.log(phoneInfo);
     } catch (error) {
       console.log(error);
     }
@@ -126,16 +196,49 @@ const MyInfoModifyModal = () => {
             기본 프로필로 변경
           </S.PictureBecomeBasicImageBtn>
         </S.ModalPictureChangeWrap>
-        <S.EmailModifyWrap>
-          <S.ModifyBox>
-            <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
-          </S.ModifyBox>
-        </S.EmailModifyWrap>
-        <S.PhoneNumberModifyWrap>
-          <S.ModifyBox>
-            <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
-          </S.ModifyBox>
-        </S.PhoneNumberModifyWrap>
+        {!isModifying ? (
+          <S.ModifyBoxWrap>
+            <S.ModifyBox>
+              <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
+              <S.ModifyBoxContentText>{emailInfo}</S.ModifyBoxContentText>
+            </S.ModifyBox>
+            <S.ModifyBox>
+              <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
+              <S.ModifyBoxContentText>{tempPhoneInfo}</S.ModifyBoxContentText>
+            </S.ModifyBox>
+            <S.ModifyEventButton
+              onClick={() => setIsModifying((prev) => !prev)}
+            >
+              수정
+            </S.ModifyEventButton>
+          </S.ModifyBoxWrap>
+        ) : (
+          <S.ModifyBoxWrap>
+            <S.ModifyBox>
+              <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
+              <S.ModifyBoxContentInput
+                value={emailInfo}
+                onChange={emailInfoHandler}
+              />
+            </S.ModifyBox>
+            <S.ModifyBox>
+              <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
+              <S.ModifyBoxContentInput
+                value={tempPhoneInfo}
+                onChange={phoneInfoHandler}
+                maxLength={13}
+              />
+            </S.ModifyBox>
+            <S.ModifyEventButton
+              onClick={() => {
+                updateInfo();
+                setIsLocationChangeModalState((prev) => !prev);
+              }}
+            >
+              완료
+            </S.ModifyEventButton>
+          </S.ModifyBoxWrap>
+        )}
       </S.ProfileModifyModalWrap>
     </S.ProfileModifyModalBackground>
   );
