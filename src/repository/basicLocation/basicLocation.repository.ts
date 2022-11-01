@@ -1,5 +1,8 @@
 import { customAxios } from "../../lib/axios/customAxios";
-import { studyroomByOneday } from "../../types/basicLocation/basicLocation.type";
+import {
+  studyroomByOneday,
+  studyRoomTimeTableListResponse,
+} from "../../types/basicLocation/basicLocation.type";
 
 class BasicLocationRepository {
   public async postBasicLocationByOneday(
@@ -7,4 +10,18 @@ class BasicLocationRepository {
   ): Promise<void> {
     await customAxios.post("/study-room/default", studyroomByOneday);
   }
+
+  public async getStudyRoomTimeTable(): Promise<studyRoomTimeTableListResponse> {
+    const { data } = await customAxios.get("/time/tables");
+    return data;
+  }
+
+  public async getStudyRoomTimeTableByType(
+    type: string
+  ): Promise<studyRoomTimeTableListResponse> {
+    const { data } = await customAxios.get(`/time/tables/type?type=${type}`);
+    return data;
+  }
 }
+
+export default new BasicLocationRepository();

@@ -5,9 +5,21 @@ import pencil_image from "../../../../images/pencil_3d.png";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 import { useRecoilState } from "recoil";
 import { basicLocationFor } from "../../../../store/basicLocation";
+import useTimeTables from "../../../../hooks/basicLocation/useTimeTables";
+import { useEffect } from "react";
 
 const BasicLocationChange = () => {
   const [period, setPeriod] = useRecoilState(basicLocationFor);
+
+  const { timeTables, timeTablesByWeekday, timeTablesByWeekend } =
+    useTimeTables();
+
+  useEffect(() => {
+    console.log(timeTables);
+    console.log(timeTablesByWeekday);
+    console.log(timeTablesByWeekend);
+  }, [timeTables, timeTablesByWeekday, timeTablesByWeekend]);
+
   return (
     <S.BasicLocationChangeWrap>
       <ComponentTitle>
@@ -26,12 +38,16 @@ const BasicLocationChange = () => {
             {period !== "weekend" ? (
               <S.BasicLocationChangeContentsWrap>
                 <S.BasicClassroomSelectLineWrap>
-                  <MyClassroomSelect classTime={"8교시"} />
-                  <MyClassroomSelect classTime={"9교시"} />
+                  <MyClassroomSelect classTime="8교시" />
+                  <MyClassroomSelect classTime="9교시" />
+                  {/* <MyClassroomSelect classTime={timeTables[0].name} />
+                  <MyClassroomSelect classTime={timeTables[1].name} /> */}
                 </S.BasicClassroomSelectLineWrap>
                 <S.BasicClassroomSelectLineWrap>
-                  <MyClassroomSelect classTime={"10교시"} />
-                  <MyClassroomSelect classTime={"11교시"} />
+                  <MyClassroomSelect classTime="10교시" />
+                  <MyClassroomSelect classTime="11교시" />
+                  {/* <MyClassroomSelect classTime={timeTables[2].name} />
+                  <MyClassroomSelect classTime={timeTables[3].name} /> */}
                 </S.BasicClassroomSelectLineWrap>
               </S.BasicLocationChangeContentsWrap>
             ) : (
