@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { palette } from "../../../../styles/palette";
 
 export const BusApplyWrap = styled.div`
@@ -18,14 +18,34 @@ export const BusApplyText = styled.span`
   padding-left: 10px;
 `;
 
+export const BusApplyButton = styled.button<{ isDisable: boolean }>`
+  padding: 7px 13px;
+  border-radius: 50px;
+  border: 0px;
+  outline: none;
+  font-size: 15px;
+
+  ${({ isDisable }) =>
+    isDisable
+      ? css`
+          background-color: ${palette.gray[200]};
+          color: ${palette.gray[400]};
+        `
+      : css`
+          cursor: pointer;
+          background-color: ${palette.main};
+          color: white;
+        `}
+`;
+
 export const BusDateText = styled.span`
-  height: 25px;
   text-align: left;
   display: flex;
   align-items: flex-end;
   color: ${palette.black};
   font-size: 1rem;
-  margin-left: 548px;
+  margin-left: auto;
+  margin-right: 10px;
 `;
 
 export const BusImg = styled.img`
