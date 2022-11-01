@@ -9,7 +9,7 @@ const BusApply = () => {
       <ComponentTitle>
         <S.BusImg src={busImage} />
         <S.BusApplyText>귀가 버스 신청</S.BusApplyText>
-        <S.BusDateText>2022.10.21.</S.BusDateText>
+        <S.BusDateText>2022.10.21</S.BusDateText>
       </ComponentTitle>
       <S.BusApplyMainWrap>
         <BusOption id="1" station="동대구역" time="13:30"></BusOption>

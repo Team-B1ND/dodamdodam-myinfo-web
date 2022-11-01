@@ -8,16 +8,11 @@ const MyPoint = () => {
   const [pointInfoState, setPointInfoState] = useState("기숙사");
 
   const { myPoint } = useMyPointScore();
-  // console.log(myPoint);
-
-  // useEffect(() => {
-  //   console.log(pointInfoState);
-  // }, [pointInfoState]);
 
   return (
     <S.MyPointWrap>
       <S.MyPointTopAreaWrap>
-        <FcInspection fontSize={"25px"} style={{ marginRight: "5px" }} />
+        <FcInspection style={{ marginRight: "5px", fontSize: "25px" }} />
         <S.MyPointTextWrap>상벌점 조회</S.MyPointTextWrap>
       </S.MyPointTopAreaWrap>
       <S.MyPointContentsWrap>

@@ -12,6 +12,24 @@ export interface myPointScore {
 
 export interface myPointResponse extends Response {
   data: myPointScore;
-  message: string;
-  status: number;
+}
+
+export interface PointReason {
+  point: {
+    log: [
+      {
+        idx: number;
+        reason: string;
+        score: number;
+        studentIdx: number;
+        target: number;
+        teacherIdx: number;
+        type: number;
+      }
+    ];
+  };
+}
+
+export interface PointReasonResponse extends Response {
+  data: PointReason[];
 }

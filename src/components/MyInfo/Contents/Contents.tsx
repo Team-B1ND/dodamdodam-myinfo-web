@@ -16,21 +16,20 @@ import * as S from "./style";
 const Contents = () => {
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
-  const [isMyInfoModifyModalState, setIsMyInfoModifyModalState] =
-    useRecoilState(MyInfoModifyModalState);
-  const [isEmailModifyModalState, setIsEmailModifyModalState] = useRecoilState(
-    EmailModifyModalState
-  );
-  const [isPhoneModifyModalState, setIsPhoneModifyModalState] = useRecoilState(
-    PhoneModifyModalState
-  );
+  // const [isMyInfoModifyModalState, setIsMyInfoModifyModalState] =
+  //   useRecoilState(MyInfoModifyModalState);
+  // const [isEmailModifyModalState, setIsEmailModifyModalState] = useRecoilState(
+  //   EmailModifyModalState
+  // );
+  // const [isPhoneModifyModalState, setIsPhoneModifyModalState] = useRecoilState(
+  //   PhoneModifyModalState
+  // );
   return (
     <>
       {isLocationChangeModalState && <ProfileModifyModal />}
       <S.MyInfoWrap>
         <Nav />
         <S.MyInfoContentsWrap>
-          {/* <BasicInfo /> */}
           <MyInfoModify />
           <S.MyInfoMainContentsWrap>
             <S.MyInfoContentsTopWrap>
