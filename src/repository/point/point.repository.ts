@@ -6,13 +6,13 @@ import {
 
 class PointRepository {
   public async getMyPoint(): Promise<myPointResponse> {
-    const { data } = await customAxios.get(`/point/my/score`);
+    const { data } = await customAxios.get(`point/my/score`);
     return data;
   }
 
   public async getPointReason(): Promise<PointReasonResponse> {
-    const { data } = await customAxios.get("point/my/year");
-    console.log(data);
+    const date = new Date().toLocaleDateString().split(".")[0];
+    const { data } = await customAxios.get(`point/my/year?year=${date}`);
     return data;
   }
 }
