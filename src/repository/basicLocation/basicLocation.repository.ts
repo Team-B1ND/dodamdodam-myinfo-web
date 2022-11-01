@@ -11,11 +11,6 @@ class BasicLocationRepository {
     await customAxios.post("/study-room/default", studyroomByOneday);
   }
 
-  public async getStudyRoomTimeTable(): Promise<studyRoomTimeTableListResponse> {
-    const { data } = await customAxios.get("/time/tables");
-    return data;
-  }
-
   public async getStudyRoomTimeTableByType(
     type: string
   ): Promise<studyRoomTimeTableListResponse> {

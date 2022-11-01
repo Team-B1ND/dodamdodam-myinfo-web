@@ -13,7 +13,7 @@ const DayOfTheWeekSelect = () => {
     if (e.target.value === "날짜") {
       setPeriod("oneday");
     } else if (e.target.value === "평일") {
-      setPeriod("week");
+      setPeriod("weekday");
     } else if (e.target.value === "주말") {
       setPeriod("weekend");
     }
@@ -51,7 +51,7 @@ const DayOfTheWeekSelect = () => {
           <S.DayofTheWeekSelectCategoryLabel>
             <S.DayOfTheWeekSelectCategoryInput
               type="radio"
-              id="week"
+              id="weekday"
               name="period"
               value="평일"
               onChange={radioOnchangeValueHandler}

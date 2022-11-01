@@ -6,22 +6,70 @@ import {
 } from "../../types/basicLocation/basicLocation.type";
 
 const useTimeTables = () => {
-  const [timeTables, setTimeTables] = useState<studyRoomTimeTable[]>([]);
   const [timeTablesByWeekday, setTimeTablesByWeekday] = useState<
     studyRoomTimeTable[]
-  >([]);
+  >([
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+  ]);
   const [timeTablesByWeekend, setTimeTablesByWeekend] = useState<
     studyRoomTimeTable[]
-  >([]);
-
-  const getTimetables = async () => {
-    try {
-      const { data } = await basicLocationRepository.getStudyRoomTimeTable();
-      setTimeTables(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  >([
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+    {
+      endTime: "HH:mm",
+      id: 0,
+      name: "string",
+      startTime: "HH:mm",
+      type: "WEEKDAY",
+    },
+  ]);
 
   const getTimeTablesByType = async (type: string) => {
     try {
@@ -40,12 +88,11 @@ const useTimeTables = () => {
   };
 
   useEffect(() => {
-    getTimetables();
     getTimeTablesByType("WEEKDAY");
     getTimeTablesByType("WEEKEND");
   }, []);
 
-  return { timeTables, timeTablesByWeekday, timeTablesByWeekend };
+  return { timeTablesByWeekday, timeTablesByWeekend };
 };
 
 export default useTimeTables;

@@ -11,14 +11,12 @@ import { useEffect } from "react";
 const BasicLocationChange = () => {
   const [period, setPeriod] = useRecoilState(basicLocationFor);
 
-  const { timeTables, timeTablesByWeekday, timeTablesByWeekend } =
-    useTimeTables();
+  const { timeTablesByWeekday, timeTablesByWeekend } = useTimeTables();
 
   useEffect(() => {
-    console.log(timeTables);
     console.log(timeTablesByWeekday);
     console.log(timeTablesByWeekend);
-  }, [timeTables, timeTablesByWeekday, timeTablesByWeekend]);
+  }, [timeTablesByWeekday, timeTablesByWeekend]);
 
   return (
     <S.BasicLocationChangeWrap>
@@ -38,27 +36,23 @@ const BasicLocationChange = () => {
             {period !== "weekend" ? (
               <S.BasicLocationChangeContentsWrap>
                 <S.BasicClassroomSelectLineWrap>
-                  <MyClassroomSelect classTime="8교시" />
-                  <MyClassroomSelect classTime="9교시" />
-                  {/* <MyClassroomSelect classTime={timeTables[0].name} />
-                  <MyClassroomSelect classTime={timeTables[1].name} /> */}
+                  <MyClassroomSelect classTime={timeTablesByWeekday[0].name} />
+                  <MyClassroomSelect classTime={timeTablesByWeekday[1].name} />
                 </S.BasicClassroomSelectLineWrap>
                 <S.BasicClassroomSelectLineWrap>
-                  <MyClassroomSelect classTime="10교시" />
-                  <MyClassroomSelect classTime="11교시" />
-                  {/* <MyClassroomSelect classTime={timeTables[2].name} />
-                  <MyClassroomSelect classTime={timeTables[3].name} /> */}
+                  <MyClassroomSelect classTime={timeTablesByWeekday[2].name} />
+                  <MyClassroomSelect classTime={timeTablesByWeekday[3].name} />
                 </S.BasicClassroomSelectLineWrap>
               </S.BasicLocationChangeContentsWrap>
             ) : (
               <S.BasicLocationChangeContentsWrap>
                 <S.BasicClassroomSelectLineWrap>
-                  <MyClassroomSelect classTime={"오전1"} />
-                  <MyClassroomSelect classTime={"오전2"} />
+                  <MyClassroomSelect classTime={timeTablesByWeekend[0].name} />
+                  <MyClassroomSelect classTime={timeTablesByWeekend[1].name} />
                 </S.BasicClassroomSelectLineWrap>
                 <S.BasicClassroomSelectLineWrap>
-                  <MyClassroomSelect classTime={"오후1"} />
-                  <MyClassroomSelect classTime={"오후2"} />
+                  <MyClassroomSelect classTime={timeTablesByWeekend[2].name} />
+                  <MyClassroomSelect classTime={timeTablesByWeekend[3].name} />
                 </S.BasicClassroomSelectLineWrap>
               </S.BasicLocationChangeContentsWrap>
             )}
