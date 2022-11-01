@@ -3,8 +3,11 @@ import MyClassroomSelect from "./MyClassroomSelectBox/MyClassroomSelectBox";
 import * as S from "./style";
 import pencil_image from "../../../../images/pencil_3d.png";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
+import { useRecoilState } from "recoil";
+import { basicLocationFor } from "../../../../store/basicLocation";
 
 const BasicLocationChange = () => {
+  const [period, setPeriod] = useRecoilState(basicLocationFor);
   return (
     <S.BasicLocationChangeWrap>
       <ComponentTitle>
@@ -20,16 +23,29 @@ const BasicLocationChange = () => {
             <S.DayOfTheWeekSelectWrap>
               <DayOfTheWeekSelect />
             </S.DayOfTheWeekSelectWrap>
-            <S.BasicLocationChangeContentsWrap>
-              <S.BasicClassroomSelectLineWrap>
-                <MyClassroomSelect classTime={"8교시"} />
-                <MyClassroomSelect classTime={"9교시"} />
-              </S.BasicClassroomSelectLineWrap>
-              <S.BasicClassroomSelectLineWrap>
-                <MyClassroomSelect classTime={"10교시"} />
-                <MyClassroomSelect classTime={"11교시"} />
-              </S.BasicClassroomSelectLineWrap>
-            </S.BasicLocationChangeContentsWrap>
+            {period !== "weekend" ? (
+              <S.BasicLocationChangeContentsWrap>
+                <S.BasicClassroomSelectLineWrap>
+                  <MyClassroomSelect classTime={"8교시"} />
+                  <MyClassroomSelect classTime={"9교시"} />
+                </S.BasicClassroomSelectLineWrap>
+                <S.BasicClassroomSelectLineWrap>
+                  <MyClassroomSelect classTime={"10교시"} />
+                  <MyClassroomSelect classTime={"11교시"} />
+                </S.BasicClassroomSelectLineWrap>
+              </S.BasicLocationChangeContentsWrap>
+            ) : (
+              <S.BasicLocationChangeContentsWrap>
+                <S.BasicClassroomSelectLineWrap>
+                  <MyClassroomSelect classTime={"오전1"} />
+                  <MyClassroomSelect classTime={"오전2"} />
+                </S.BasicClassroomSelectLineWrap>
+                <S.BasicClassroomSelectLineWrap>
+                  <MyClassroomSelect classTime={"오후1"} />
+                  <MyClassroomSelect classTime={"오후2"} />
+                </S.BasicClassroomSelectLineWrap>
+              </S.BasicLocationChangeContentsWrap>
+            )}
           </S.Row>
           {/* <S.BasicClassroomApplyButton>수정</S.BasicClassroomApplyButton> */}
         </S.MainRow>

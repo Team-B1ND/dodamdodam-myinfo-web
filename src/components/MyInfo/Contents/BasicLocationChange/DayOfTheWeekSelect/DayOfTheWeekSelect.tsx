@@ -1,14 +1,28 @@
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { basicLocationFor } from "../../../../../store/basicLocation";
 import * as S from "./style";
 
 const DayOfTheWeekSelect = () => {
   const [category, setCategory] = useState<string>("날짜");
   const [date, setDate] = useState<string>("월요일");
+  const [period, setPeriod] = useRecoilState(basicLocationFor);
 
   const radioOnchangeValueHandler = (e: any) => {
     console.log(e.target.value);
+    if (e.target.value === "날짜") {
+      setPeriod("oneday");
+    } else if (e.target.value === "평일") {
+      setPeriod("week");
+    } else if (e.target.value === "주말") {
+      setPeriod("weekend");
+    }
     setCategory(e.target.value);
   };
+
+  useEffect(() => {
+    console.log(period);
+  }, [period]);
 
   const dateOnchangeValueHandler = (e: any) => {
     console.log(e.target.value);
@@ -26,13 +40,13 @@ const DayOfTheWeekSelect = () => {
           <S.DayofTheWeekSelectCategoryLabel>
             <S.DayOfTheWeekSelectCategoryInput
               type="radio"
-              id="oneDay"
+              id="oneday"
               name="period"
               value="날짜"
               onChange={radioOnchangeValueHandler}
               defaultChecked
             />
-            <S.CategoryText htmlFor="oneDay">날짜</S.CategoryText>
+            <S.CategoryText htmlFor="oneday">날짜</S.CategoryText>
           </S.DayofTheWeekSelectCategoryLabel>
           <S.DayofTheWeekSelectCategoryLabel>
             <S.DayOfTheWeekSelectCategoryInput

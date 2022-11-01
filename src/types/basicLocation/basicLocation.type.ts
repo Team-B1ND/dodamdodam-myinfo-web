@@ -3,7 +3,7 @@ export interface defaultStudyRooms {
   timeTableId: number;
 }
 
-export interface basicLocation {
+export interface studyroomByOneday {
   day: string;
   defaultStudyRooms: defaultStudyRooms[];
 }
