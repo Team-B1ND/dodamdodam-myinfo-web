@@ -38,10 +38,17 @@ export const PointReasonDetailWrap = styled.div`
 
 export const ReasonDetail = styled.div`
   margin: 15px 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Divide = styled.div`
   margin: 8px 0;
   border: 1px solid ${palette.gray[300]};
+`;
+
+export const PointReasonDataNullMent = styled.div`
+  margin: 20px 0 10px 0;
+  text-align: center;
 `;

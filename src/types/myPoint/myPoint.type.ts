@@ -15,19 +15,54 @@ export interface myPointResponse extends Response {
 }
 
 export interface PointReason {
-  point: {
-    log: [
-      {
-        idx: number;
-        reason: string;
-        score: number;
-        studentIdx: number;
-        target: number;
-        teacherIdx: number;
-        type: number;
-      }
-    ];
+  given_date: string;
+  id: number;
+  place: "DORMITORY" | "SCHOOL";
+  reason: string;
+  score: number;
+  student: {
+    id: number;
+    member: {
+      email: string;
+      id: string;
+      joinDate: string;
+      name: string;
+      profileImage: string;
+      role: "ADMIN" | "STUDENT";
+      status: "ACTIVE" | "DEACTIVATED";
+    };
+    classroom: {
+      grade: number;
+      id: number;
+      place: {
+        id: number;
+        name: string;
+        type: {
+          id: number;
+          name: string;
+        };
+      };
+      room: number;
+    };
+    number: number;
+    phone: string;
   };
+  teacher: {
+    id: number;
+    member: {
+      email: string;
+      id: string;
+      joinDate: string;
+      name: string;
+      profileImage: null;
+      role: "ADMIN" | "STUDENT";
+      status: "ACTIVE" | "DEACTIVATED";
+    };
+    tel: string;
+    position: string;
+    phone: string;
+  };
+  type: "BONUS" | "MINUS";
 }
 
 export interface PointReasonResponse extends Response {
