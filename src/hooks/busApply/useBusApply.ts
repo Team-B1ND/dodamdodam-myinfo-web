@@ -36,14 +36,13 @@ const useBusApply = () => {
     }
   };
 
-  const handlingMyBus = (data: Bus[]) => {
-    if (data.length === 0) {
+  const handlingMyBus = (data: Bus | null) => {
+    if (data) {
+      setSelectedBusId(data.id);
+      setSelectBusId(data.id);
+    } else {
       setSelectedBusId(-1);
       setSelectBusId(-1);
-    } else {
-      const recentAppliedBus = data[data.length - 1];
-      setSelectedBusId(recentAppliedBus.id);
-      setSelectBusId(recentAppliedBus.id);
     }
   };
 
@@ -64,7 +63,7 @@ const useBusApply = () => {
 
   const onModifyBusApply = async () => {
     try {
-      await busApplyRepository.postBusApply({
+      await busApplyRepository.patchBusApply({
         idx: String(selectBusId),
         originIdx: String(selectedBusId),
       });
