@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import useDefaultStudyRoom from "../../../../../hooks/basicLocation/useDefaultStudyRoom";
 import useTimeTables from "../../../../../hooks/basicLocation/useTimeTables";
 import useClassroom from "../../../../../hooks/classroom/useClassroom";
 import {
   basicLocatioinRoomAtom,
   basicLocationFor,
 } from "../../../../../store/basicLocation";
-import { defaultStudyRooms } from "../../../../../types/basicLocation/basicLocation.type";
+import { defaultStudyRoomArray } from "../../../../../types/basicLocation/basicLocation.type";
 import * as S from "./style";
 
 interface classTime {
@@ -21,6 +22,16 @@ const MyClassroomSelect = ({ classTime }: classTime) => {
 
   const { timeTablesByWeekday, timeTablesByWeekend } = useTimeTables();
 
+  const { defaultRoom } = useDefaultStudyRoom();
+
+  useEffect(() => {
+    console.log(1);
+    console.log(defaultRoom);
+    console.log(1);
+  }, [defaultRoom]);
+
+  const [selectedRoom, setSelectedRoom] = useState<string>("선택해주세요");
+
   const [period, setPeriod] = useRecoilState(basicLocationFor);
 
   useEffect(() => {
@@ -30,20 +41,21 @@ const MyClassroomSelect = ({ classTime }: classTime) => {
       { ...basicLocaionRoom[2], placeId: 0 },
       { ...basicLocaionRoom[3], placeId: 0 },
     ]);
+
     if (period !== "weekend") {
-      setBasicLocationRoom([
-        { ...basicLocaionRoom[0], timeTableId: 1 },
-        { ...basicLocaionRoom[1], timeTableId: 2 },
-        { ...basicLocaionRoom[2], timeTableId: 3 },
-        { ...basicLocaionRoom[3], timeTableId: 4 },
-      ]);
+      for (let i = 0; i < 4; i++) {
+        setBasicLocationRoom([
+          ...basicLocaionRoom,
+          { ...basicLocaionRoom[i], timeTableId: Number(i) + 1 },
+        ]);
+      }
     } else {
-      setBasicLocationRoom([
-        { ...basicLocaionRoom[0], timeTableId: 5 },
-        { ...basicLocaionRoom[1], timeTableId: 6 },
-        { ...basicLocaionRoom[2], timeTableId: 7 },
-        { ...basicLocaionRoom[3], timeTableId: 8 },
-      ]);
+      for (let i = 0; i < 4; i++) {
+        setBasicLocationRoom([
+          ...basicLocaionRoom,
+          { ...basicLocaionRoom[i], timeTableId: Number(i) + 4 },
+        ]);
+      }
     }
   }, [period]);
 
@@ -113,20 +125,20 @@ const MyClassroomSelect = ({ classTime }: classTime) => {
         onChange={basicLocaionRoomHandler}
       >
         <option value="none">선택해주세요</option>
-        {classroomList &&
-          basicLocaionRoom &&
-          classroomList.map((classroom, idx) => {
-            return (
-              <option key={classroom.id} value={classroom.name}>
-                {classroomList
-                  ? classroomList.filter(
-                      (classroom) =>
-                        basicLocaionRoom[idx].placeId === classroom.id
-                    )[0].name
-                  : "선택해주세요"}
-              </option>
-            );
-          })}
+        {classroomList?.map((classroom, idx) => {
+          // console.log(classroom.name);
+          // if (classroom?.id === basicLocaionRoom[idx].placeId) {
+          //   // setSelectedRoom(classroom.name);
+          //   console.log(classroom.name);
+          // }
+          // console.log("안녕");
+          return (
+            <option key={classroom?.id} value={classroom?.name}>
+              {classroom.name}
+              {/* {selectedRoom} */}
+            </option>
+          );
+        })}
       </S.BasicClassroomSelect>
     </S.EachClassroomBoxWrap>
   );

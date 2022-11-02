@@ -1,12 +1,12 @@
 import { atom } from "recoil";
-import { defaultStudyRooms } from "../types/basicLocation/basicLocation.type";
+import { defaultStudyRoomArray } from "../types/basicLocation/basicLocation.type";
 
 export const basicLocationFor = atom<string>({
   key: "basicLocationFor",
   default: "oneday",
 });
 
-export const basicLocatioinRoomAtom = atom<defaultStudyRooms[]>({
+export const basicLocatioinRoomAtom = atom<defaultStudyRoomArray[]>({
   key: "basicLocatioinRoomAtom",
   default: [
     { placeId: 0, timeTableId: 0 },
