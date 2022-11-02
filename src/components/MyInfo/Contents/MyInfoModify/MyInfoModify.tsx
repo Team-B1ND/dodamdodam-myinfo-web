@@ -1,10 +1,16 @@
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../../store/modal";
+import {
+  locationChangeModalState,
+  PasswordModifyModalState,
+} from "../../../../store/modal";
 import * as S from "./style";
 
 const MyInfoModify = () => {
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
+
+  const [isOpenPasswordModifyModal, setIsOpenPasswordModifyModal] =
+    useRecoilState(PasswordModifyModalState);
   return (
     <S.MyInfoModifyWrap>
       <S.MyInfoModifyBtnWrap>
@@ -15,7 +21,9 @@ const MyInfoModify = () => {
         >
           수정
         </S.MyInfoModifyBtn>
-        <S.MyInfoModifyBtn>비밀번호 번경</S.MyInfoModifyBtn>
+        <S.MyInfoModifyBtn onClick={() => setIsOpenPasswordModifyModal(true)}>
+          비밀번호 번경
+        </S.MyInfoModifyBtn>
       </S.MyInfoModifyBtnWrap>
     </S.MyInfoModifyWrap>
   );

@@ -19,3 +19,8 @@ export const PhoneModifyModalState = atom<boolean>({
   key: "PhoneModifyModalState",
   default: false,
 });
+
+export const PasswordModifyModalState = atom<boolean>({
+  key: "PasswordModifyModalState",
+  default: false,
+});

@@ -1,43 +1,42 @@
-import { useState } from "react";
-import { palette } from "../../../../../styles/palette";
+import { Bus } from "../../../../../types/busApply/busApply.type";
 import * as S from "./style";
 
-interface propsText {
-  id: string;
-  station: string;
-  time: string;
+interface Props {
+  data: Bus;
+  isSelect: boolean;
+  onChangeApplyBus: (busId: number) => void;
 }
 
-const BusOption = ({ id, station, time }: propsText) => {
-  const [isClicked, setIsClicked] = useState(false);
+const BusOption = ({ data, isSelect, onChangeApplyBus }: Props) => {
+  const [busNumber, busName] = data.busName.split(" ");
+
   return (
     <S.BusOptionWrap
-      backgroundColor={isClicked ? palette.main : palette.white}
-      onClick={() => {
-        setIsClicked((prev) => !prev);
-      }}
+      isSelect={isSelect}
+      onClick={() => onChangeApplyBus(data.id)}
     >
-      {id !== "5" && (
-        <S.BusOptionStationText
-          textColor={isClicked ? palette.white : palette.black}
-          fontSize="1rem"
-        >
-          {id}
-          {id !== "5" ? "호차" : null}
-        </S.BusOptionStationText>
+      {busNumber === "미탑승" ? (
+        <>
+          <S.BusOptionStationText isSelect={isSelect}>
+            {busNumber}
+          </S.BusOptionStationText>
+          <S.BusOptionStationText isSelect={isSelect}>
+            ({data.leaveTime.split(" ")[1]})
+          </S.BusOptionStationText>
+        </>
+      ) : (
+        <>
+          <S.BusOptionStationText isSelect={isSelect}>
+            {busNumber}
+          </S.BusOptionStationText>
+          <S.BusOptionStationText isSelect={isSelect}>
+            {busName}
+          </S.BusOptionStationText>
+          <S.BusOptionStationText isSelect={isSelect}>
+            ({data.leaveTime.split(" ")[1]})
+          </S.BusOptionStationText>
+        </>
       )}
-      <S.BusOptionStationText
-        textColor={isClicked ? palette.white : palette.black}
-        fontSize="1.2rem"
-      >
-        {station}
-      </S.BusOptionStationText>
-      <S.BusOptionStationText
-        textColor={isClicked ? palette.white : palette.gray[300]}
-        fontSize="0.8rem"
-      >
-        ({time})
-      </S.BusOptionStationText>
     </S.BusOptionWrap>
   );
 };
