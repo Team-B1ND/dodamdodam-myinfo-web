@@ -40,14 +40,14 @@ const useDefaultStudyRoom = () => {
     },
   ]);
 
-  const getDefaultStudyRoom = async () => {
-    const { data } = await basicLocationRepository.getMyDefaultStudyRoom();
-    console.log(data);
-    setDefaultRoom(data);
-  };
+  //   const getDefaultStudyRoom = async () => {
+  //     const { data } = await basicLocationRepository.getMyDefaultStudyRoom();
+  //     console.log(data);
+  //     setDefaultRoom(data);
+  //   };
 
   useEffect(() => {
-    getDefaultStudyRoom();
+    // getDefaultStudyRoom();
   }, []);
 
   return { defaultRoom };
