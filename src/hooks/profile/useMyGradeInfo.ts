@@ -36,7 +36,7 @@ const useMyGradeInfo = () => {
       setMyGradeInfo(data);
       setIsLoading(false);
 
-      //   console.log(myGradeInfo);
+      console.log(data);
     } catch (error) {
       setIsLoading(false);
       console.log(error);
