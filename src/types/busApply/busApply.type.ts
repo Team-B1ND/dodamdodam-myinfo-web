@@ -20,5 +20,5 @@ export interface TodayBusesResponse extends Response {
 }
 
 export interface MyAppliedBusResponse extends Response {
-  data: Bus[];
+  data: null | Bus;
 }
