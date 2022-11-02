@@ -19,8 +19,13 @@ class BasicLocationRepository {
     return data;
   }
 
-  public async getMyDefaultStudyRoom(): Promise<defaultStudyRoomResponse> {
-    const { data } = await customAxios.get("/study-room/my");
+  public async getMyDefaultStudyRoomByType(): Promise<defaultStudyRoomResponse> {
+    const { data } = await customAxios.get("/default/type?type");
+    return data;
+  }
+
+  public async getMyDefaultStudyRoomByDay(): Promise<defaultStudyRoomResponse> {
+    const { data } = await customAxios.get("/default/type?day");
     return data;
   }
 }
