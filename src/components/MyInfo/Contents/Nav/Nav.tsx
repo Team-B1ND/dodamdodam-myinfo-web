@@ -10,7 +10,7 @@ const Nav = () => {
       <Title />
       <Profile />
       <Tab />
-      <MyPoint />
+      {/* <MyPoint /> */}
     </MyInfoNavWrap>
   );
 };
