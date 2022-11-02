@@ -1,19 +1,30 @@
 import * as S from "./style";
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Tab = () => {
-
   const { pathname } = useLocation();
+  const navigator = useNavigate();
 
   return (
     <S.SideTabBarWrap>
-
-      <S.TabBarCategoryWrap linkName={"/"} pathName={pathname} >
-        <Link className="Link" to={"/"}>내 정보</Link>
+      <S.TabBarCategoryWrap
+        linkName={"/"}
+        pathName={pathname}
+        onClick={() => {
+          navigator("/");
+        }}
+      >
+        내 정보
       </S.TabBarCategoryWrap>
 
-      <S.TabBarCategoryWrap linkName={"/mypointdetail"} pathName={pathname}>
-        <Link className="Link" to={"mypointdetail"}>상 벌점 상세</Link>
+      <S.TabBarCategoryWrap
+        linkName={"/mypointdetail"}
+        pathName={pathname}
+        onClick={() => {
+          navigator("/mypointdetail");
+        }}
+      >
+        상 벌점 상세
       </S.TabBarCategoryWrap>
 
       {/* <S.TabBarCategoryWrap >
