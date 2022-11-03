@@ -3,6 +3,7 @@ import Notice from "./Notice/Notice";
 import Profile from "./Profile/Profile";
 import { MyInfoNavWrap } from "./style";
 import Tab from "./Tab/Tab";
+import TabHr from "./Tab/TabHr/TabHr";
 import Title from "./Title/Title";
 
 const Nav = () => {
@@ -12,6 +13,7 @@ const Nav = () => {
       <Profile />
       <Notice />
       <Tab />
+      <TabHr />
       {/* <MyPoint /> */}
     </MyInfoNavWrap>
   );

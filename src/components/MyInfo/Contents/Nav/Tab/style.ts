@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const SideTabBarWrap = styled.div`
   width: 250px;
-  height: 250px;
+  /* height: 250px; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: 25px;
+  margin: 50px 0;
 `;
 
 export const TabBarCategoryWrap = styled.div<{ isSelect: boolean }>`
