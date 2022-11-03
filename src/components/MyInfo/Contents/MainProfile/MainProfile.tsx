@@ -3,24 +3,25 @@ import defaultProfileImg from "../../../../images/default_profile.png";
 import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
-import {
-  EmailModifyModalState,
-  locationChangeModalState,
-  MyInfoModifyModalState,
-  PhoneModifyModalState,
-} from "../../../../store/modal";
+import { locationChangeModalState } from "../../../../store/modal";
 import USER_IMG from "../../../../images/user.svg";
 import SMS_IMG from "../../../../images/sms.svg";
 import CALL_IMG from "../../../../images/call.svg";
 import MainProfileHr from "./MainProfileHr/MainProfileHr";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
+import { profileInfo } from "../../../../store/profile";
 
 const MainProfile = () => {
-  const { myGradeInfo } = useMyGradeInfo();
-  const { classroom, member, number, phone } = myGradeInfo;
-  const { profileImage } = member;
+  // const { myGradeInfo } = useMyGradeInfo();
+  // const { classroom, member, number, phone } = myGradeInfo;
+  // const { profileImage } = member;
+  // const { grade, room } = classroom;
+  // const { email, name } = member;
+
+  const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
+  const { classroom, member, number, phone } = tempProfileInfo;
+  const { profileImage, email, name } = member;
   const { grade, room } = classroom;
-  const { email, name } = member;
 
   const [LocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);

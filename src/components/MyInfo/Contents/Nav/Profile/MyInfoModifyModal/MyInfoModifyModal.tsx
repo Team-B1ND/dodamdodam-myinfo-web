@@ -9,13 +9,16 @@ import fileUpload from "../../../../../../repository/mainProfile/fileUpload";
 import DODAM_DEFAULT_PROFILE from "../../../../../../images/default_profile.png";
 import CAMERA_IMAGE from "../../../../../../images/camera.svg";
 import { autoHypenPhone } from "../../../../../../util/autoHypenPhone";
+import { profileInfo } from "../../../../../../store/profile";
 
 const MyInfoModifyModal = () => {
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
 
-  const { myGradeInfo, isLoading } = useMyGradeInfo();
-  const { member, phone } = myGradeInfo;
+  const { isLoading } = useMyGradeInfo();
+  const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
+
+  const { member, phone } = tempProfileInfo;
   const { email, profileImage } = member;
 
   const [emailInfo, setEmailInfo] = useState<string>("");
@@ -84,16 +87,21 @@ const MyInfoModifyModal = () => {
 
   const updateInfo = async () => {
     try {
-      console.log(phoneInfo);
-      console.log("수정 시작");
       await patchMainProfile({
         email: emailInfo,
         imageUrl: imageSrc,
         phone: phoneInfo,
       });
-      console.log(phoneInfo);
-      console.log("수정 끝");
-      console.log(phoneInfo);
+      // email, phone, profileImage
+      setTempProfileInfo({
+        ...tempProfileInfo,
+        member: {
+          ...member,
+          email: emailInfo,
+          profileImage: imageSrc,
+        },
+        phone: phoneInfo,
+      });
     } catch (error) {
       console.log(error);
     }

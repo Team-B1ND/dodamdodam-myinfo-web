@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 import profileRepository from "../../repository/profile/profile.repository";
+import { profileInfo } from "../../store/profile";
 import { myProfile } from "../../types/profile/profile.type";
 
 const useMyGradeInfo = () => {
@@ -24,6 +26,7 @@ const useMyGradeInfo = () => {
     number: 0,
     phone: "",
   });
+  const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
 
   // const { classroom, phone, member, number } = myGradeInfo;
   // const { grade, room } = classroom;
@@ -34,6 +37,7 @@ const useMyGradeInfo = () => {
       setIsLoading(true);
       const { data } = await profileRepository.getMyProfileInfo();
       setMyGradeInfo(data);
+      setTempProfileInfo(data);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
