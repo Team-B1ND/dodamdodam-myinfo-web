@@ -1,5 +1,7 @@
 import * as S from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
+import { palette } from "../../../../../styles/palette";
+import { NAV_TAB_ITEMS } from "../../../../../constants/nav/nav.constant";
 
 const Tab = () => {
   const { pathname } = useLocation();
@@ -7,25 +9,16 @@ const Tab = () => {
 
   return (
     <S.SideTabBarWrap>
-      <S.TabBarCategoryWrap
-        linkName={"/"}
-        pathName={pathname}
-        onClick={() => {
-          navigator("/");
-        }}
-      >
-        내 정보
-      </S.TabBarCategoryWrap>
-
-      <S.TabBarCategoryWrap
-        linkName={"/mypointdetail"}
-        pathName={pathname}
-        onClick={() => {
-          navigator("/mypointdetail");
-        }}
-      >
-        상 벌점 상세
-      </S.TabBarCategoryWrap>
+      {NAV_TAB_ITEMS.map((tab) => (
+        <S.TabBarCategoryWrap
+          isSelect={tab.link === pathname}
+          onClick={() => {
+            navigator(tab.link);
+          }}
+        >
+          {tab.title}
+        </S.TabBarCategoryWrap>
+      ))}
 
       {/* <S.TabBarCategoryWrap >
         <S.TabBarCategoryText>신청 내역 확인</S.TabBarCategoryText>

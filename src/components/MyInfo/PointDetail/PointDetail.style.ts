@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { palette } from "../../../styles/palette";
 
 export const MyInfoWrap = styled.div`
-  width: 1351px;
+  width: 1251px;
   height: 100vh;
   display: flex;
   justify-content: center;

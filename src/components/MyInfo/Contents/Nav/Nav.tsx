@@ -1,4 +1,5 @@
 import MyPoint from "../MyPoint/MyPoint";
+import Notice from "./Notice/Notice";
 import Profile from "./Profile/Profile";
 import { MyInfoNavWrap } from "./style";
 import Tab from "./Tab/Tab";
@@ -9,6 +10,7 @@ const Nav = () => {
     <MyInfoNavWrap>
       <Title />
       <Profile />
+      <Notice />
       <Tab />
       {/* <MyPoint /> */}
     </MyInfoNavWrap>
