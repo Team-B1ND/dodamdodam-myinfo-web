@@ -16,8 +16,6 @@ import MainProfileHr from "./MainProfileHr/MainProfileHr";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 
 const MainProfile = () => {
-  // const { grade, room, number, name, email, phone } = useMyGradeInfo();
-  // const { profileImage } = useMyGradeInfo();
   const { myGradeInfo } = useMyGradeInfo();
   const { classroom, member, number, phone } = myGradeInfo;
   const { profileImage } = member;
@@ -26,14 +24,6 @@ const MainProfile = () => {
 
   const [LocationChangeModalState, setIsLocationChangeModalState] =
     useRecoilState(locationChangeModalState);
-  const [isMyInfoModifyModalState, setIsMyInfoModifyModalState] =
-    useRecoilState(MyInfoModifyModalState);
-  const [isEmailModifyModalState, setIsEmailModifyModalState] = useRecoilState(
-    EmailModifyModalState
-  );
-  const [isPhoneModifyModalState, setIsPhoneModifyModalState] = useRecoilState(
-    PhoneModifyModalState
-  );
 
   return (
     <S.MainProfileWrap>
@@ -65,7 +55,6 @@ const MainProfile = () => {
               {number < 10 ? "0" + number : number}
               {name}
             </S.MainProfileEachExplain>
-            {/* <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn> */}
           </S.MainProfileUserEachInfoWrap>
           <MainProfileHr />
           <S.MainProfileUserEachInfoWrap>
@@ -73,7 +62,11 @@ const MainProfile = () => {
               <S.MainProfileTitleImg src={SMS_IMG} />
             </S.MainProfileEachTitle>
             <S.MainProfileEachExplain>{email}</S.MainProfileEachExplain>
-            <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
+            <S.MyInfoModifyBtn
+              onClick={() => setIsLocationChangeModalState(true)}
+            >
+              수정
+            </S.MyInfoModifyBtn>
           </S.MainProfileUserEachInfoWrap>
           <MainProfileHr />
           <S.MainProfileUserEachInfoWrap>
@@ -84,7 +77,11 @@ const MainProfile = () => {
               {phone.substring(0, 3)}-{phone.substring(3, 7)}-
               {phone.substring(7, 11)}
             </S.MainProfileEachExplain>
-            <S.MyInfoModifyBtn>수정</S.MyInfoModifyBtn>
+            <S.MyInfoModifyBtn
+              onClick={() => setIsLocationChangeModalState(true)}
+            >
+              수정
+            </S.MyInfoModifyBtn>
           </S.MainProfileUserEachInfoWrap>
         </S.MainProfileMiddleWrap>
       </S.MainProfileMainWrap>

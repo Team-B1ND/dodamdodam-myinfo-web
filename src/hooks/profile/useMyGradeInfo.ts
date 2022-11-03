@@ -13,16 +13,16 @@ const useMyGradeInfo = () => {
     },
     id: 0,
     member: {
-      email: "student@dgsw.hs.kr",
-      id: "dgsw_student",
+      email: "",
+      id: "",
       joinDate: "2022-10-02 21:17:48",
-      name: "김준호",
+      name: "",
       profileImage: null,
       role: "STUDENT",
       status: "ACTIVE",
     },
     number: 0,
-    phone: "01012345678",
+    phone: "",
   });
 
   // const { classroom, phone, member, number } = myGradeInfo;

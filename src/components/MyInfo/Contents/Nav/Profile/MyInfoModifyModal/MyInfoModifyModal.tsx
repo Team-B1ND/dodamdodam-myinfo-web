@@ -8,6 +8,7 @@ import useMyGradeInfo from "../../../../../../hooks/profile/useMyGradeInfo";
 import fileUpload from "../../../../../../repository/mainProfile/fileUpload";
 import DODAM_DEFAULT_PROFILE from "../../../../../../images/default_profile.png";
 import CAMERA_IMAGE from "../../../../../../images/camera.svg";
+import { autoHypenPhone } from "../../../../../../util/autoHypenPhone";
 
 const MyInfoModifyModal = () => {
   const [isLocationChangeModalState, setIsLocationChangeModalState] =
@@ -27,6 +28,8 @@ const MyInfoModifyModal = () => {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
   const [isModifying, setIsModifying] = useState<boolean>(false);
+  const [emailIsModifying, setEmailIsModifying] = useState<boolean>(false);
+  const [phoneIsModifying, setPhoneIsModifying] = useState<boolean>(false);
 
   useEffect(() => {
     setEmailInfo(email);
@@ -58,34 +61,6 @@ const MyInfoModifyModal = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const autoHypenPhone = (str: string) => {
-    str = str.replace(/[^0-9]/g, "");
-    let tmp = "";
-    if (str.length < 4) {
-      return str;
-    } else if (str.length < 7) {
-      tmp += str.substr(0, 3);
-      tmp += "-";
-      tmp += str.substr(3);
-      return tmp;
-    } else if (str.length < 11) {
-      tmp += str.substr(0, 3);
-      tmp += "-";
-      tmp += str.substr(3, 3);
-      tmp += "-";
-      tmp += str.substr(6);
-      return tmp;
-    } else {
-      tmp += str.substr(0, 3);
-      tmp += "-";
-      tmp += str.substr(3, 4);
-      tmp += "-";
-      tmp += str.substr(7);
-      return tmp;
-    }
-    return str;
   };
 
   useEffect(() => {
@@ -196,49 +171,68 @@ const MyInfoModifyModal = () => {
             기본 프로필로 변경
           </S.PictureBecomeBasicImageBtn>
         </S.ModalPictureChangeWrap>
-        {!isModifying ? (
-          <S.ModifyBoxWrap>
-            <S.ModifyBox>
-              <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
-              <S.ModifyBoxContentText>{emailInfo}</S.ModifyBoxContentText>
-            </S.ModifyBox>
-            <S.ModifyBox>
-              <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
-              <S.ModifyBoxContentText>{tempPhoneInfo}</S.ModifyBoxContentText>
-            </S.ModifyBox>
-            <S.ModifyEventButton
-              onClick={() => setIsModifying((prev) => !prev)}
-            >
-              수정
-            </S.ModifyEventButton>
-          </S.ModifyBoxWrap>
-        ) : (
-          <S.ModifyBoxWrap>
-            <S.ModifyBox>
-              <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
-              <S.ModifyBoxContentInput
-                value={emailInfo}
-                onChange={emailInfoHandler}
-              />
-            </S.ModifyBox>
-            <S.ModifyBox>
-              <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
-              <S.ModifyBoxContentInput
-                value={tempPhoneInfo}
-                onChange={phoneInfoHandler}
-                maxLength={13}
-              />
-            </S.ModifyBox>
-            <S.ModifyEventButton
-              onClick={() => {
-                updateInfo();
-                setIsLocationChangeModalState((prev: boolean) => !prev);
-              }}
-            >
-              완료
-            </S.ModifyEventButton>
-          </S.ModifyBoxWrap>
-        )}
+        <S.ModifyBoxWrap>
+          <S.ModifyBox>
+            <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
+            {!emailIsModifying ? (
+              <S.ModifyBoxInContents>
+                <S.ModifyBoxContentText>{emailInfo}</S.ModifyBoxContentText>
+                <S.EachModifyEventButton
+                  onClick={() => setEmailIsModifying((prev: boolean) => !prev)}
+                >
+                  수정
+                </S.EachModifyEventButton>
+              </S.ModifyBoxInContents>
+            ) : (
+              <S.ModifyBoxInContents>
+                <S.ModifyBoxContentInput
+                  value={emailInfo}
+                  onChange={emailInfoHandler}
+                />
+                <S.EachModifyEventButton
+                  onClick={() => setEmailIsModifying((prev: boolean) => !prev)}
+                >
+                  취소
+                </S.EachModifyEventButton>
+              </S.ModifyBoxInContents>
+            )}
+          </S.ModifyBox>
+          <S.ModifyBox>
+            <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
+            {!phoneIsModifying ? (
+              <S.ModifyBoxInContents>
+                <S.ModifyBoxContentText>{tempPhoneInfo}</S.ModifyBoxContentText>
+                <S.EachModifyEventButton
+                  onClick={() => setPhoneIsModifying((prev: boolean) => !prev)}
+                >
+                  수정
+                </S.EachModifyEventButton>
+              </S.ModifyBoxInContents>
+            ) : (
+              <S.ModifyBoxInContents>
+                <S.ModifyBoxContentInput
+                  value={tempPhoneInfo}
+                  onChange={phoneInfoHandler}
+                  maxLength={13}
+                />
+                <S.EachModifyEventButton
+                  onClick={() => setEmailIsModifying((prev: boolean) => !prev)}
+                >
+                  취소
+                </S.EachModifyEventButton>
+              </S.ModifyBoxInContents>
+            )}
+          </S.ModifyBox>
+
+          <S.ModifyEventButton
+            onClick={() => {
+              updateInfo();
+              setIsLocationChangeModalState((prev: boolean) => !prev);
+            }}
+          >
+            완료
+          </S.ModifyEventButton>
+        </S.ModifyBoxWrap>
       </S.ProfileModifyModalWrap>
     </S.ProfileModifyModalBackground>
   );
