@@ -35,8 +35,6 @@ const useMyGradeInfo = () => {
       const { data } = await profileRepository.getMyProfileInfo();
       setMyGradeInfo(data);
       setIsLoading(false);
-
-      console.log(data);
     } catch (error) {
       setIsLoading(false);
       console.log(error);

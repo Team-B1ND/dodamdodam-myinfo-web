@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { palette } from "../../../../styles/palette";
 
 export const BasicLocationChangeWrap = styled.div`
@@ -46,7 +46,7 @@ export const BasicLocationChangeContentsWrap = styled.div`
   width: 404px;
   height: 120px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
 `;
 
@@ -85,13 +85,22 @@ export const Row = styled.div`
   flex-direction: row;
 `;
 
-export const ApplyButton = styled.div`
+export const ApplyButton = styled.div<{ isDisable: boolean }>`
   padding: 7px 13px;
-  color: ${palette.gray[400]};
-  background-color: ${palette.gray[200]};
   border-radius: 50px;
   margin-left: 575px;
   &:hover {
     cursor: pointer;
   }
+
+  ${({ isDisable }) =>
+    isDisable
+      ? css`
+          background-color: ${palette.main};
+          color: white;
+        `
+      : css`
+          background-color: ${palette.gray[200]};
+          color: ${palette.gray[400]};
+        `}
 `;

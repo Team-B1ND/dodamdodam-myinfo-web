@@ -1,11 +1,6 @@
-export interface defaultStudyRoomArray {
-  placeId: number;
-  timeTableId: number;
-}
-
 export interface studyroomByOneday {
   day: string;
-  defaultStudyRooms: defaultStudyRoomArray[];
+  defaultStudyRooms: applyDefaultRoom[];
 }
 
 // export interface studyroomInfo {
@@ -25,6 +20,11 @@ export interface studyroomByOneday {
 //   message: string;
 //   status: number;
 // }
+
+export interface applyDefaultRoom {
+  placeId: number;
+  timeTableId: number;
+}
 
 export interface studyRoomTimeTable {
   endTime: string;
@@ -78,13 +78,7 @@ export interface defaultStudyRoom {
     profileImage: string;
     room: number;
   };
-  timeTable: {
-    endTime: string;
-    id: number;
-    name: string;
-    startTime: string;
-    type: string;
-  };
+  timeTable: studyRoomTimeTable;
 }
 
 export interface defaultStudyRoomResponse extends Response {
