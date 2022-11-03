@@ -22,32 +22,28 @@ const BasicLocationChange = () => {
         <S.BasicLocationChangeTitleText>
           기본 위치 수정
         </S.BasicLocationChangeTitleText>
-        <S.ApplyButton isDisable={isChange} onClick={onSubmitDefaultStudyRoom}>
+        <S.ApplyButton isDisable={!isChange} onClick={onSubmitDefaultStudyRoom}>
           수정
         </S.ApplyButton>
       </ComponentTitle>
       <S.BasicLocationMainWrap>
         <S.MainRow>
-          <S.Row>
-            <S.DayOfTheWeekSelectWrap>
-              <DayOfTheWeekSelect onChangeDefaultType={onChangeDefaultType} />
-            </S.DayOfTheWeekSelectWrap>
-            <S.BasicLocationChangeContentsWrap>
-              {timeTable.length === 4 && (
-                <>
-                  {timeTable.map((item, idx) => (
-                    <MyClassroomSelect
-                      applyPlaces={applyPlaces[idx]}
-                      key={item.id}
-                      idx={idx}
-                      timeTable={item}
-                      onChangePlace={onChangePlace}
-                    />
-                  ))}
-                </>
-              )}
-            </S.BasicLocationChangeContentsWrap>
-          </S.Row>
+          <DayOfTheWeekSelect onChangeDefaultType={onChangeDefaultType} />
+          <S.BasicLocationChangeContentsWrap>
+            {timeTable.length === 4 && (
+              <>
+                {timeTable.map((item, idx) => (
+                  <MyClassroomSelect
+                    applyPlaces={applyPlaces[idx]}
+                    key={item.id}
+                    idx={idx}
+                    timeTable={item}
+                    onChangePlace={onChangePlace}
+                  />
+                ))}
+              </>
+            )}
+          </S.BasicLocationChangeContentsWrap>
         </S.MainRow>
       </S.BasicLocationMainWrap>
     </S.BasicLocationChangeWrap>

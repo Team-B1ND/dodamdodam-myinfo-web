@@ -1,8 +1,5 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
-import useDefaultStudyRoom from "../../../../../hooks/basicLocation/useDefaultStudyRoom";
+import { ChangeEvent } from "react";
 import useClassroom from "../../../../../hooks/classroom/useClassroom";
-import { basicLocatioinRoomAtom } from "../../../../../store/basicLocation";
 import {
   applyDefaultRoom,
   studyRoomTimeTable,
@@ -23,19 +20,10 @@ const MyClassroomSelect = ({
   applyPlaces,
 }: classTime) => {
   const { classroomList } = useClassroom();
-  const [basicLocaionRoom, setBasicLocationRoom] = useRecoilState(
-    basicLocatioinRoomAtom
-  );
-
-  // const { timeTablesByWeekday, timeTablesByWeekend } = useTimeTables();
-
-  const [selectedRoom, setSelectedRoom] = useState<string>("선택해주세요");
 
   return (
     <S.EachClassroomBoxWrap>
-      <S.BasicClassroomSelectTextWrap>
-        <S.ClassTimeText>{timeTable.name}</S.ClassTimeText>
-      </S.BasicClassroomSelectTextWrap>
+      <S.BasicClassroomSelectText>{timeTable.name}</S.BasicClassroomSelectText>
       <S.BasicClassroomSelect
         onChange={onChangePlace}
         name={String(timeTable.id)}

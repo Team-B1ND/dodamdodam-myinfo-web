@@ -4,31 +4,31 @@ import {
 } from "../../basicLocation/basicLocation.type";
 
 class DataTransform {
-  public dayTransform(day: string): basicLocationDay {
+  public dayTransform(day: basicLocationDay): string {
     switch (day) {
-      case "월":
-        return "MONDAY";
+      case "MONDAY":
+        return "월요일";
 
-      case "화":
-        return "TUESDAY";
+      case "TUESDAY":
+        return "화요일";
 
-      case "수":
-        return "WEDNESDAY";
+      case "WEDNESDAY":
+        return "수요일";
 
-      case "목":
-        return "THURSDAY";
+      case "THURSDAY":
+        return "목요일";
 
-      case "금":
-        return "FRIDAY";
+      case "FRIDAY":
+        return "금요일";
 
-      case "토":
-        return "SATURDAY";
+      case "SATURDAY":
+        return "토요일";
 
-      case "일":
-        return "SUNDAY";
+      case "SUNDAY":
+        return "일요일";
 
       default:
-        return "MONDAY";
+        return "월요일";
     }
   }
 

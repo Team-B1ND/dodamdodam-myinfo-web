@@ -36,18 +36,13 @@ export const BasicLocationMainWrap = styled.div`
   background-color: ${palette.white};
 `;
 
-export const DayOfTheWeekSelectWrap = styled.div`
-  width: 326px;
-  height: 120px;
-  /* background-color: red; */
-`;
-
 export const BasicLocationChangeContentsWrap = styled.div`
-  width: 404px;
-  height: 120px;
+  width: 410px;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  column-gap: 30px;
+  row-gap: 20px;
 `;
 
 export const BasicClassroomSelectLineWrap = styled.div`
@@ -74,15 +69,10 @@ export const BasicClassroomApplyButton = styled.div`
 `;
 
 export const MainRow = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 15px;
-`;
-
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const ApplyButton = styled.div<{ isDisable: boolean }>`
@@ -96,11 +86,11 @@ export const ApplyButton = styled.div<{ isDisable: boolean }>`
   ${({ isDisable }) =>
     isDisable
       ? css`
-          background-color: ${palette.main};
-          color: white;
-        `
-      : css`
           background-color: ${palette.gray[200]};
           color: ${palette.gray[400]};
+        `
+      : css`
+          background-color: ${palette.main};
+          color: white;
         `}
 `;

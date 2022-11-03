@@ -1,4 +1,10 @@
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { useRecoilState } from "recoil";
 import basicLocationRepository from "../../repository/basicLocation/basicLocation.repository";
 import { basicLocationRoomDayAtom } from "../../store/basicLocation";
@@ -72,17 +78,15 @@ const useDefaultStudyRoom = () => {
   };
 
   const checkSavedDefaultStudy = useCallback(() => {
-    setIsChange(false);
     applyPlaces.forEach((item, idx) => {
-      console.log(tempApplyPlaces.includes(item));
-
-      if (!tempApplyPlaces.includes(item)) {
+      if (item.placeId !== tempApplyPlaces[idx].placeId) {
         setIsChange(true);
       }
     });
   }, [applyPlaces, tempApplyPlaces]);
 
   useEffect(() => {
+    setIsChange(false);
     checkSavedDefaultStudy();
   }, [checkSavedDefaultStudy]);
 
@@ -111,8 +115,8 @@ const useDefaultStudyRoom = () => {
     }
   };
 
-  const onChangeDefaultType = (e: ChangeEvent<HTMLSelectElement>) => {
-    setCurrentType(e.target.value as basicLocationDay);
+  const onChangeDefaultType = (day: basicLocationDay) => {
+    setCurrentType(day);
   };
 
   const onChangePlace = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -198,10 +202,10 @@ const useDefaultStudyRoom = () => {
   useEffect(() => {
     getTimeTable();
     getSavedDefault();
-    resetPlace();
   }, [currentType]);
 
   useEffect(() => {
+    resetPlace();
     if (timeTable.length > 0) {
       loadInitialPlace();
       if (savedTempDefaultData.length !== 0) {

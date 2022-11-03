@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { palette } from "../../../../../styles/palette";
 
 export const EachClassroomBoxWrap = styled.div`
-  width: 160px;
-  height: 50px;
+  width: 190px;
   display: flex;
   flex-direction: column;
   /* background-color: red; */
@@ -10,15 +10,19 @@ export const EachClassroomBoxWrap = styled.div`
 
 export const BasicClassroomSelect = styled.select`
   width: 100%;
-  height: 30px;
-  padding-left: 10px;
+  height: 35px;
+  padding: 0px 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  outline: none;
+
+  &:focus {
+    border: 2px solid ${palette.main};
+  }
 `;
 
-export const BasicClassroomSelectTextWrap = styled.div`
+export const BasicClassroomSelectText = styled.h1`
   width: 100%;
-  height: 20px;
-`;
-
-export const ClassTimeText = styled.span`
   font-size: 16px;
+  margin-bottom: 5px;
 `;
