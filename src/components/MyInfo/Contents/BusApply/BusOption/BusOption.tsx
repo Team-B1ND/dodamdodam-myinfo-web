@@ -21,7 +21,7 @@ const BusOption = ({ data, isSelect, onChangeApplyBus }: Props) => {
             {busNumber}
           </S.BusOptionStationText>
           <S.BusOptionStationText isSelect={isSelect}>
-            ({data.leaveTime.split(" ")[1]})
+            ({data.leaveTime.split(" ")[1].substring(0, 5)})
           </S.BusOptionStationText>
         </>
       ) : (
@@ -33,7 +33,7 @@ const BusOption = ({ data, isSelect, onChangeApplyBus }: Props) => {
             {busName}
           </S.BusOptionStationText>
           <S.BusOptionStationText isSelect={isSelect}>
-            ({data.leaveTime.split(" ")[1]})
+            ({data.leaveTime.split(" ")[1].substring(0, 5)})
           </S.BusOptionStationText>
         </>
       )}

@@ -4,7 +4,7 @@ import { palette } from "../../../../styles/palette";
 export const MyInfoNavWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 420px;
+  width: 320px;
   height: 100%;
   background-color: ${palette.white};
   padding: 0 15px;

@@ -232,7 +232,7 @@ const MyInfoModifyModal = () => {
             <S.ModifyEventButton
               onClick={() => {
                 updateInfo();
-                setIsLocationChangeModalState((prev) => !prev);
+                setIsLocationChangeModalState((prev: boolean) => !prev);
               }}
             >
               완료
