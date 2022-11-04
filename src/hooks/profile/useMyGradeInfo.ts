@@ -17,7 +17,7 @@ const useMyGradeInfo = () => {
     member: {
       email: "",
       id: "",
-      joinDate: "2022-10-02 21:17:48",
+      joinDate: "",
       name: "",
       profileImage: null,
       role: "STUDENT",
@@ -27,10 +27,6 @@ const useMyGradeInfo = () => {
     phone: "",
   });
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
-
-  // const { classroom, phone, member, number } = myGradeInfo;
-  // const { grade, room } = classroom;
-  // const { name, email, profileImage } = member;
 
   const getMyGrade = async () => {
     try {
