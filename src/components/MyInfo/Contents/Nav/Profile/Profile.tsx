@@ -8,10 +8,14 @@ const Profile = () => {
   const { profileImage, name } = member;
   const { grade, room } = classroom;
 
+ 
+
   return (
     <S.ProfileWrap>
       <S.ProfileImgWrap>
-        <S.ProfileImg src={profileImage ? profileImage : defaultProfileImg} />
+        <S.ProfileImg
+          src={profileImage ? profileImage : defaultProfileImg}
+        />
         <S.ProfileNameText>{name}</S.ProfileNameText>
         <S.ProfileBasicInfoText>
           {grade}학년 {room}반 {number}번
