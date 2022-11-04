@@ -5,9 +5,7 @@ const useModifyMainProfile = () => {
   const patchMainProfile = async (member: mainProfile) => {
     try {
       const response = await mainProfileRepository.patchMainProfile(member);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   return { patchMainProfile };
 };

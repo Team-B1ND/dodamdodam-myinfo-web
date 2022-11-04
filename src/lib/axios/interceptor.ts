@@ -12,8 +12,6 @@ export const customAxiosErrorInterceptor = async (config: AxiosError) => {
   const accessToken = token.getToken(ACCESS_TOKEN_KEY);
   const refreshToken = token.getToken(REFRESH_TOKEN_KEY);
 
-  console.log(config);
-
   if (accessToken && refreshToken && config.response?.status === 401) {
     try {
       const { data } = await tokenRepository.postTokenRefresh({ refreshToken });

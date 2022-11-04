@@ -1,6 +1,6 @@
 {
   "DODAM_SERVER_V2": "http://dodam.b1nd.com/api/v2",
-  "DODAM_SERVER_V6": "http://10.80.162.152:8080",
+  "DODAM_SERVER_V6": "http://dodam.b1nd.com/api",
   "AUTH_SERVER": "http://auth.dodam.b1nd.com",
   "DEV_EVENT_URL": "https://www.wanted.co.kr/api/chaos/events/v1"
 }

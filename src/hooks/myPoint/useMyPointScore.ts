@@ -17,9 +17,7 @@ const useMyPointScore = () => {
     try {
       const { data } = await pointRepository.getMyPoint();
       setMyPoint(data);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
