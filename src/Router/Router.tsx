@@ -5,11 +5,10 @@ import PointDetail from "../components/MyInfo/PointDetail";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/myinfo">
       <Routes>
         <Route path="/" element={<Contents />}></Route>
-        <Route path="/mypointdetail" element={<PointDetail />}></Route>
-        <Route path="/" element={<Contents />}></Route>
+        <Route path="mypointdetail" element={<PointDetail />}></Route>
       </Routes>
     </BrowserRouter>
   );
