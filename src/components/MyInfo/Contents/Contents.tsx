@@ -21,14 +21,6 @@ const Contents = () => {
   const [isOpenPasswordModifyModal, setIsOpenPasswordModifyModal] =
     useRecoilState(PasswordModifyModalState);
 
-  // const [isMyInfoModifyModalState, setIsMyInfoModifyModalState] =
-  //   useRecoilState(MyInfoModifyModalState);
-  // const [isEmailModifyModalState, setIsEmailModifyModalState] = useRecoilState(
-  //   EmailModifyModalState
-  // );
-  // const [isPhoneModifyModalState, setIsPhoneModifyModalState] = useRecoilState(
-  //   PhoneModifyModalState
-  // );
   return (
     <>
       {isLocationChangeModalState && <ProfileModifyModal />}
