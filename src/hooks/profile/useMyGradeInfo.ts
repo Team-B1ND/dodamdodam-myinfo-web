@@ -37,7 +37,6 @@ const useMyGradeInfo = () => {
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
     }
   };
 
@@ -46,7 +45,6 @@ const useMyGradeInfo = () => {
   }, []);
 
   return { myGradeInfo, isLoading };
-  // return { grade, room, number, name, email, phone, profileImage };
 };
 
 export default useMyGradeInfo;

@@ -17,7 +17,6 @@ export const MyInfoContentsWrap = styled.div`
   padding: 0 60px;
   background-color: #f9fbfc;
   overflow: auto;
-  /* gap: 20px; */
 `;
 
 export const MyInfoMainContentsWrap = styled.div`
@@ -28,12 +27,10 @@ export const MyInfoMainContentsWrap = styled.div`
 
 export const MyInfoContentsTopWrap = styled.div`
   width: 780px;
-  /* height: 257px; */
 `;
 
 export const MyInfoContentsMiddleWrap = styled.div`
   width: 780px;
-  /* height: 217px; */
   display: flex;
   flex-direction: row;
 `;

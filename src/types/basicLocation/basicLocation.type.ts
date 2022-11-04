@@ -3,24 +3,6 @@ export interface studyroomByOneday {
   defaultStudyRooms: applyDefaultRoom[];
 }
 
-// export interface studyroomInfo {
-//   location: {
-//     checkedTeacherIdx: number;
-//     date: string;
-//     idx: number;
-//     isChecked: number;
-//     placeIdx: number;
-//     studendIdx: number;
-//     timeTableIdx: number;
-//   };
-// }
-
-// export interface studyroomInfoResponse extends Response {
-//   data: studyroomInfo[];
-//   message: string;
-//   status: number;
-// }
-
 export interface applyDefaultRoom {
   placeId: number;
   timeTableId: number;
@@ -51,7 +33,6 @@ export type basicLocationDay =
   | "SATURDAY"
   | "SUNDAY";
 
-//("study-room/default")
 export interface defaultStudyRoom {
   id: number;
   place: {

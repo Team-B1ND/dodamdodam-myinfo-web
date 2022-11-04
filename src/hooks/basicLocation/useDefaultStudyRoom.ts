@@ -90,10 +90,6 @@ const useDefaultStudyRoom = () => {
     checkSavedDefaultStudy();
   }, [checkSavedDefaultStudy]);
 
-  useEffect(() => {
-    console.log(isChange);
-  }, [isChange]);
-
   const getTimeTable = async () => {
     if (currentType === "SUNDAY" || currentType === "SATURDAY") {
       try {

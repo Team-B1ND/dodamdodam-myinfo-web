@@ -3,8 +3,6 @@ import { palette } from "../../../../styles/palette";
 
 export const MainProfileWrap = styled.div`
   width: 780px;
-  /* height: 175px + 40px + 45px + 2px; */
-  /* height: 257px; */
 `;
 
 export const MainProfileTopWrap = styled.div`
@@ -30,7 +28,6 @@ export const MainProfileText = styled.span`
 `;
 
 export const MainProfileMainWrap = styled.div`
-  /* height: 170px; */
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
   border: 1px solid ${palette.main};
@@ -39,27 +36,16 @@ export const MainProfileMainWrap = styled.div`
 `;
 
 export const MainProfileMiddleWrap = styled.div`
-  /* height: 170px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* gap: 5px; */
 `;
-
-// export const MainProfileUserInfoWrap = styled.div`
-//   width: 400px;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-// `;
 
 export const MainProfileMyInfoWrap = styled.div`
   display: flex;
   flex-direction: row;
   width: 738px;
-  /* padding: 12.5px 0; */
 `;
 
 export const MainProfileImgWrap = styled.div`
@@ -80,7 +66,6 @@ export const MainProfileInfoBasicWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: 663px; */
   width: 600px;
   height: 55px;
   padding-left: 20px;

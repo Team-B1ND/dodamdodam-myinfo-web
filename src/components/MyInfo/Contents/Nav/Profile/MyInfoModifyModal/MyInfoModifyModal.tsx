@@ -92,7 +92,6 @@ const MyInfoModifyModal = () => {
         imageUrl: imageSrc,
         phone: phoneInfo,
       });
-      // email, phone, profileImage
       setTempProfileInfo({
         ...tempProfileInfo,
         member: {
@@ -167,13 +166,11 @@ const MyInfoModifyModal = () => {
               accept="image/jpg, image/png, image/jpeg"
               onChange={uploadImage}
             />
-            {/* <button onClick={onCickImageUpload}>이미지업로드</button> */}
           </S.ModalPictureWrap>
 
           <S.PictureBecomeBasicImageBtn
             onClick={() => {
               setImageSrc("");
-              // setTempImgSrc("");
             }}
           >
             기본 프로필로 변경

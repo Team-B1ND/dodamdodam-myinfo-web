@@ -3,10 +3,8 @@ import { palette } from "../../../../styles/palette";
 
 export const BasicLocationChangeWrap = styled.div`
   width: 780px;
-  /* height: 217px; */
   display: flex;
   flex-direction: column;
-  /* gap: 5px; */
 `;
 
 export const PencilImg = styled.img`
@@ -26,7 +24,6 @@ export const BasicLocationChangeTitleText = styled.span`
 
 export const BasicLocationMainWrap = styled.div`
   width: 730px;
-  /* height: 157px; */
   display: flex;
   flex-direction: row;
   padding: 25px;

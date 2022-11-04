@@ -16,7 +16,6 @@ const Nav = () => {
       <Tab />
       <TabHr />
       <Logout />
-      {/* <MyPoint /> */}
     </MyInfoNavWrap>
   );
 };
