@@ -59,6 +59,7 @@ export const MyInfoPasswordModalTopTitle = styled.h1`
   font-size: 1.7rem;
   line-height: 27px;
   font-weight: bold;
+  white-space: nowrap;
 `;
 
 export const MyInfoPasswordModalTopDescription = styled.p`

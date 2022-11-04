@@ -16,6 +16,7 @@ export const BusApplyText = styled.span`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  white-space: nowrap;
 `;
 
 export const BusApplyButton = styled.button<{ isDisable: boolean }>`

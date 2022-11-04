@@ -25,6 +25,7 @@ export const MainProfileText = styled.span`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  white-space: nowrap;
 `;
 
 export const MainProfileMainWrap = styled.div`

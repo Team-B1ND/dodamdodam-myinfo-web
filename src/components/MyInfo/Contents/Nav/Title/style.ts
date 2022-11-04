@@ -18,6 +18,7 @@ export const TitleText = styled.span`
   font-size: 20px;
   padding-left: 10px;
   font-weight: bold;
+  white-space: nowrap;
 `;
 
 export const DodamLogoImg = styled.img`

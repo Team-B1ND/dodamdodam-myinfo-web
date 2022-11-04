@@ -20,6 +20,7 @@ export const BasicLocationChangeTitleText = styled.span`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  white-space: nowrap;
 `;
 
 export const BasicLocationMainWrap = styled.div`
@@ -76,6 +77,7 @@ export const ApplyButton = styled.div<{ isDisable: boolean }>`
   padding: 7px 13px;
   border-radius: 50px;
   margin-left: 575px;
+  white-space: nowrap;
   &:hover {
     cursor: pointer;
   }
