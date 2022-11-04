@@ -12,12 +12,6 @@ import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 import { profileInfo } from "../../../../store/profile";
 
 const MainProfile = () => {
-  // const { myGradeInfo } = useMyGradeInfo();
-  // const { classroom, member, number, phone } = myGradeInfo;
-  // const { profileImage } = member;
-  // const { grade, room } = classroom;
-  // const { email, name } = member;
-
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
   const { classroom, member, number, phone } = tempProfileInfo;
   const { profileImage, email, name } = member;

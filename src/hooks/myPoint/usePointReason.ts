@@ -40,9 +40,7 @@ const usePointReason = () => {
             return items.type === "MINUS" && items.place === "SCHOOL";
           })
         );
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     })();
   }, []);
 

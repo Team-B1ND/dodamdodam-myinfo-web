@@ -5,7 +5,6 @@ export const EachClassroomBoxWrap = styled.div`
   width: 190px;
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
 `;
 
 export const BasicClassroomSelect = styled.select`

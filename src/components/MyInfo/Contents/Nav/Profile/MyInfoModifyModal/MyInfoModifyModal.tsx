@@ -51,19 +51,14 @@ const MyInfoModifyModal = () => {
   const uploadImage = async (e: ChangeEvent<HTMLInputElement>) => {
     try {
       const formData = new FormData();
-      console.log(e.target.files);
       if (e.target.files) {
         formData.append("file", e.target.files[0]);
         const { data } = await fileUpload.postFileUpload(formData);
-        console.log(data);
         if (data) {
-          console.log("url 받음");
           setImageSrc(data);
         }
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -75,13 +70,10 @@ const MyInfoModifyModal = () => {
   }, [tempPhoneInfo]);
 
   const emailInfoHandler = (e: any) => {
-    console.log(e.target.value);
     setEmailInfo(e.target.value);
   };
 
   const phoneInfoHandler = (e: any) => {
-    console.log(e.target.value);
-    console.log(autoHypenPhone(e.target.value));
     setTempPhoneInfo(autoHypenPhone(e.target.value));
   };
 
@@ -92,7 +84,6 @@ const MyInfoModifyModal = () => {
         imageUrl: imageSrc,
         phone: phoneInfo,
       });
-      // email, phone, profileImage
       setTempProfileInfo({
         ...tempProfileInfo,
         member: {
@@ -102,9 +93,7 @@ const MyInfoModifyModal = () => {
         },
         phone: phoneInfo,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
@@ -167,13 +156,11 @@ const MyInfoModifyModal = () => {
               accept="image/jpg, image/png, image/jpeg"
               onChange={uploadImage}
             />
-            {/* <button onClick={onCickImageUpload}>이미지업로드</button> */}
           </S.ModalPictureWrap>
 
           <S.PictureBecomeBasicImageBtn
             onClick={() => {
               setImageSrc("");
-              // setTempImgSrc("");
             }}
           >
             기본 프로필로 변경

@@ -14,9 +14,7 @@ const useBusApply = () => {
       const { data } = await busApplyRepository.getTodayBuses();
       setServerBusData(data.bus);
       setBusDate(data.date);
-    } catch (error) {
-      console.log("버스 못 불러옴");
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -31,9 +29,7 @@ const useBusApply = () => {
     try {
       const { data } = await busApplyRepository.getMyAppliedBus();
       handlingMyBus(data);
-    } catch (error) {
-      console.log("내가 신청한 버스 못 불러옴");
-    }
+    } catch (error) {}
   };
 
   const handlingMyBus = (data: Bus | null) => {

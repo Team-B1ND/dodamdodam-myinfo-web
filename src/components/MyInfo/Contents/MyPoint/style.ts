@@ -53,8 +53,6 @@ export const MyPointContentsDetailWrap = styled.div`
   flex-direction: column;
 `;
 
-// <MyPointContentsGraphWrap>
-
 export const MyWholePointWrap = styled.div`
   margin-top: 15px;
   height: 84px;
@@ -95,9 +93,6 @@ export const MyPointText = styled.span`
   margin-left: 5px;
 `;
 
-// </MyPointContentsGraphWrap>
-
-// <MyPointContentsDetailWrap>
 export const MyPointGuideInfoWrap = styled.div`
   height: 25%;
   width: 100%;
@@ -112,10 +107,7 @@ export const MyPointGuideCircle = styled.div<{ circleColor: string }>`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  /* background-color: rgb(249 126 109); */
   background-color: ${({ circleColor }) => circleColor};
-  /* margin-left: 10px;
-  margin-top: 2px; */
   margin: 1.5px 2px 0 10px;
 `;
 
@@ -145,5 +137,3 @@ export const MyPointToggleButton = styled.button<{
     cursor: pointer;
   }
 `;
-
-// </MyPointContentsDetailWrap>

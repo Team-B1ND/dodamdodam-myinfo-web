@@ -19,10 +19,6 @@ const Tab = () => {
           {tab.title}
         </S.TabBarCategoryWrap>
       ))}
-
-      {/* <S.TabBarCategoryWrap >
-        <S.TabBarCategoryText>신청 내역 확인</S.TabBarCategoryText>
-      </S.TabBarCategoryWrap> */}
     </S.SideTabBarWrap>
   );
 };

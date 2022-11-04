@@ -91,10 +91,6 @@ export const PictureBecomeBasicImageBtn = styled.div`
   margin: 10px 0;
 `;
 
-// export const PictureImageModifyImageWrap = styled.div`
-//   position: relative;
-// `;
-
 export const PictureImageModifyLabel = styled.label`
   position: absolute;
   width: 40px;

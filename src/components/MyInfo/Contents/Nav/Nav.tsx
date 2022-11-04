@@ -1,4 +1,5 @@
 import MyPoint from "../MyPoint/MyPoint";
+import Logout from "./Logout/Logout";
 import Notice from "./Notice/Notice";
 import Profile from "./Profile/Profile";
 import { MyInfoNavWrap } from "./style";
@@ -14,7 +15,7 @@ const Nav = () => {
       <Notice />
       <Tab />
       <TabHr />
-      {/* <MyPoint /> */}
+      <Logout />
     </MyInfoNavWrap>
   );
 };

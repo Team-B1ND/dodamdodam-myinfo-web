@@ -3,6 +3,7 @@ import busImage from "../../../../images/bus_3d.png";
 import BusOption from "./BusOption/BusOption";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 import useBusApply from "../../../../hooks/busApply/useBusApply";
+import SCHOOL_IMG from "../../../../images/school_color.svg";
 
 const BusApply = () => {
   const {
@@ -31,14 +32,26 @@ const BusApply = () => {
         </S.BusApplyButton>
       </ComponentTitle>
       <S.BusApplyMainWrap>
-        {serverBusData.map((bus) => (
-          <BusOption
-            onChangeApplyBus={onChangeApplyBus}
-            isSelect={bus.id === selectBusId}
-            data={bus}
-            key={bus.id}
-          />
-        ))}
+        {selectBusId === -1 ? (
+          <S.BusIsNotFoundWrap>
+            <S.BusNotFoundIcon src={SCHOOL_IMG} />
+            <S.BusIsNotFoundTextWrap>
+              <S.BusIsNotFound>버스가 없습니다</S.BusIsNotFound>
+              <S.BusIsNotFound>
+                <S.EmphasisSpan>학교에서</S.EmphasisSpan> 공부하세요
+              </S.BusIsNotFound>
+            </S.BusIsNotFoundTextWrap>
+          </S.BusIsNotFoundWrap>
+        ) : (
+          serverBusData.map((bus) => (
+            <BusOption
+              onChangeApplyBus={onChangeApplyBus}
+              isSelect={bus.id === selectBusId}
+              data={bus}
+              key={bus.id}
+            />
+          ))
+        )}
       </S.BusApplyMainWrap>
     </S.BusApplyWrap>
   );
