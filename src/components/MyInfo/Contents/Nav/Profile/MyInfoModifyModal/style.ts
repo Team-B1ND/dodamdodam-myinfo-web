@@ -124,9 +124,15 @@ export const ModifyBox = styled.div`
   width: 690px;
   display: flex;
   flex-direction: column;
-  padding: 20px 0 20px 10px;
+  padding: 20px 0 10px 10px;
   border-bottom: 1px solid ${palette.gray[300]};
   gap: 10px;
+`;
+
+export const ModifyBoxInContents = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const ModifyBoxTitleText = styled.span`
@@ -135,11 +141,25 @@ export const ModifyBoxTitleText = styled.span`
 `;
 
 export const ModifyBoxContentText = styled.span`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `;
 
 export const ModifyBoxContentInput = styled.input`
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+`;
+
+export const EachModifyEventButton = styled.div`
+  display: flex;
+  padding: 7px 13px;
+  border-radius: 50px;
+  background-color: ${palette.gray[300]};
+  font-size: 1rem;
+  cursor: pointer;
+  width: min-content;
+  white-space: nowrap;
 `;
 
 export const ModifyEventButton = styled.div`
