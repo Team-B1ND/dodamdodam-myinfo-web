@@ -52,17 +52,44 @@ export const BusImg = styled.img`
   width: 23px;
   height: 23px;
   display: flex;
-  /* margin-left: 15px; */
 `;
 
 export const BusApplyMainWrap = styled.div`
   width: 780px;
-  height: 155px;
   display: flex;
-  /* border-radius: 20px;
-  border: 1px solid #e3e9ed;
-  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%); */
   flex-direction: row;
   gap: 30px;
-  /* background-color: r; */
+`;
+
+export const BusIsNotFoundWrap = styled.div`
+  display: flex;
+  justify-content: left;
+  gap: 25px;
+  align-items: left;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: ${palette.white};
+  box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
+  width: 100%;
+`;
+
+export const BusIsNotFoundTextWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
+
+export const BusIsNotFound = styled.h1`
+  font-size: 1.4rem;
+  color: ${palette.black};
+  font-weight: bold;
+`;
+
+export const EmphasisSpan = styled.span`
+  color: ${palette.main};
+`;
+
+export const BusNotFoundIcon = styled.img`
+  width: 45px;
+  height: 45px;
 `;
