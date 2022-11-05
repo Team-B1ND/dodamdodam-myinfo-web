@@ -36,7 +36,6 @@ const MainProfile = () => {
             </S.MainProfileImgWrap>
             <S.MainProfileInfoBasicWrap>
               <S.MainProfileNameText>{name}</S.MainProfileNameText>
-              <S.MainProfileGenerationText>기수</S.MainProfileGenerationText>
             </S.MainProfileInfoBasicWrap>
           </S.MainProfileMyInfoWrap>
           <MainProfileHr />
