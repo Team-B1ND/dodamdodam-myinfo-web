@@ -7,6 +7,7 @@ export const BusApplyWrap = styled.div`
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 `;
 
 export const BusApplyText = styled.span`
