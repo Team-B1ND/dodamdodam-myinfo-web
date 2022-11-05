@@ -12,4 +12,5 @@ export const LogoutWrap = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  cursor: pointer;
 `;
