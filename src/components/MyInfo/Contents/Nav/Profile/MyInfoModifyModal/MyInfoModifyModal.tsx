@@ -30,7 +30,6 @@ const MyInfoModifyModal = () => {
 
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
-  const [isModifying, setIsModifying] = useState<boolean>(false);
   const [emailIsModifying, setEmailIsModifying] = useState<boolean>(false);
   const [phoneIsModifying, setPhoneIsModifying] = useState<boolean>(false);
 
@@ -78,6 +77,7 @@ const MyInfoModifyModal = () => {
   };
 
   const updateInfo = async () => {
+    // if ({email: emailInfo, imageSrc: imageSrc, phone: phoneInfo } !== )
     try {
       await patchMainProfile({
         email: emailInfo,
