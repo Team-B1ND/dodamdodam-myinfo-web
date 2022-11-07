@@ -77,23 +77,30 @@ const MyInfoModifyModal = () => {
   };
 
   const updateInfo = async () => {
-    // if ({email: emailInfo, imageSrc: imageSrc, phone: phoneInfo } !== )
-    try {
-      await patchMainProfile({
-        email: emailInfo,
-        imageUrl: imageSrc,
-        phone: phoneInfo,
-      });
-      setTempProfileInfo({
-        ...tempProfileInfo,
-        member: {
-          ...member,
+    if (
+      !(
+        emailInfo === tempProfileInfo.member.email &&
+        imageSrc === tempProfileInfo.member.profileImage &&
+        phone === tempProfileInfo.phone
+      )
+    ) {
+      try {
+        await patchMainProfile({
           email: emailInfo,
-          profileImage: imageSrc,
-        },
-        phone: phoneInfo,
-      });
-    } catch (error) {}
+          imageUrl: imageSrc,
+          phone: phoneInfo,
+        });
+        setTempProfileInfo({
+          ...tempProfileInfo,
+          member: {
+            ...member,
+            email: emailInfo,
+            profileImage: imageSrc,
+          },
+          phone: phoneInfo,
+        });
+      } catch (error) {}
+    }
   };
 
   return (
