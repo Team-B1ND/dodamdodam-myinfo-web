@@ -22,7 +22,7 @@ const MyInfoModify = () => {
           수정
         </S.MyInfoModifyBtn>
         <S.MyInfoModifyBtn onClick={() => setIsOpenPasswordModifyModal(true)}>
-          비밀번호 번경
+          비밀번호 변경
         </S.MyInfoModifyBtn>
       </S.MyInfoModifyBtnWrap>
     </S.MyInfoModifyWrap>

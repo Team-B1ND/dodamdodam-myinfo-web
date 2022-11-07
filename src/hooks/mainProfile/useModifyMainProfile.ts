@@ -2,9 +2,9 @@ import mainProfileRepository from "../../repository/mainProfile/mainProfile.repo
 import { mainProfile } from "../../types/mainProfile/mainProfile.type";
 
 const useModifyMainProfile = () => {
-  const patchMainProfile = async (member: mainProfile) => {
+  const patchMainProfile = async (memberInfo: mainProfile) => {
     try {
-      const response = await mainProfileRepository.patchMainProfile(member);
+      const response = await mainProfileRepository.patchMainProfile(memberInfo);
     } catch (error) {}
   };
   return { patchMainProfile };

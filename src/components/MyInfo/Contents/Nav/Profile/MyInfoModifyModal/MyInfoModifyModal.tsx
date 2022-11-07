@@ -30,7 +30,6 @@ const MyInfoModifyModal = () => {
 
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
-  const [isModifying, setIsModifying] = useState<boolean>(false);
   const [emailIsModifying, setEmailIsModifying] = useState<boolean>(false);
   const [phoneIsModifying, setPhoneIsModifying] = useState<boolean>(false);
 
@@ -78,22 +77,30 @@ const MyInfoModifyModal = () => {
   };
 
   const updateInfo = async () => {
-    try {
-      await patchMainProfile({
-        email: emailInfo,
-        imageUrl: imageSrc,
-        phone: phoneInfo,
-      });
-      setTempProfileInfo({
-        ...tempProfileInfo,
-        member: {
-          ...member,
+    if (
+      !(
+        emailInfo === tempProfileInfo.member.email &&
+        imageSrc === tempProfileInfo.member.profileImage &&
+        phone === tempProfileInfo.phone
+      )
+    ) {
+      try {
+        await patchMainProfile({
           email: emailInfo,
-          profileImage: imageSrc,
-        },
-        phone: phoneInfo,
-      });
-    } catch (error) {}
+          imageUrl: imageSrc,
+          phone: phoneInfo,
+        });
+        setTempProfileInfo({
+          ...tempProfileInfo,
+          member: {
+            ...member,
+            email: emailInfo,
+            profileImage: imageSrc,
+          },
+          phone: phoneInfo,
+        });
+      } catch (error) {}
+    }
   };
 
   return (
