@@ -22,7 +22,7 @@ const Dormitory = () => {
           dormitoryMinusPointReasonData.length !== 0 ? dormitoryMinusPointReasonData.map((item, idx) => {
             return (
               <S.PointReasonDetailWrap key={idx}>
-                <S.ReasonDetail style={{ width: "20%" }}>{item.score}</S.ReasonDetail>
+                <S.ReasonDetail style={{ width: "20%" }}>{item.score}점</S.ReasonDetail>
                 <S.Divide />
                 <S.ReasonDetail style={{ width: "50%" }}>{item.reason}</S.ReasonDetail>
                 <S.Divide />
@@ -37,7 +37,7 @@ const Dormitory = () => {
           dormitoryBonusPointReasonData.length !== 0 ? dormitoryBonusPointReasonData.map((item, idx) => {
             return (
               <S.PointReasonDetailWrap key={idx}>
-                <S.ReasonDetail style={{ width: "20%" }}>{item.score}</S.ReasonDetail>
+                <S.ReasonDetail style={{ width: "20%" }}>{item.score}점</S.ReasonDetail>
                 <S.Divide />
                 <S.ReasonDetail style={{ width: "50%" }}>{item.reason}</S.ReasonDetail>
                 <S.Divide />
