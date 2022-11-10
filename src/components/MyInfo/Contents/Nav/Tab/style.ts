@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { palette } from "../../../../../styles/palette";
 
 export const SideTabBarWrap = styled.div`
   width: 250px;
@@ -20,4 +21,14 @@ export const TabBarCategoryWrap = styled.div<{ isSelect: boolean }>`
   text-decoration: none;
   color: #333;
   font-weight: ${({ isSelect }) => (isSelect ? "bold" : "none")};
+  position: relative;
+`;
+
+export const TabBarPointDetailText = styled.span`
+  font-size: 14px;
+  color: ${palette.gray[400]};
+  position: absolute;
+  width: 150px;
+  bottom: 4.5px;
+  left: 110px;
 `;
