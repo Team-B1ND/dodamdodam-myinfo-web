@@ -46,8 +46,7 @@ const MainProfile = () => {
             <S.MainProfileEachExplain>
               {grade}
               {room}
-              {number < 10 ? "0" + number : number}
-              {name}
+              {number < 10 ? "0" + number : number} {name}
             </S.MainProfileEachExplain>
           </S.MainProfileUserEachInfoWrap>
           <MainProfileHr />
