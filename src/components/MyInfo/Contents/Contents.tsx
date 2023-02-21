@@ -1,29 +1,28 @@
 import { useRecoilState } from "recoil";
 import {
-  EmailModifyModalState,
-  locationChangeModalState,
   MyInfoModifyModalState,
   PasswordModifyModalState,
-  PhoneModifyModalState,
 } from "../../../store/modal";
 import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
 import BusApply from "./BusApply/BusApply";
 import MainProfile from "./MainProfile/MainProfile";
-import MyInfoModify from "./MyInfoModify/MyInfoModify";
+import MyInfoModify from "./Header/Header";
 import Nav from "./Nav/Nav";
-import ProfileModifyModal from "./Nav/Profile/MyInfoModifyModal/MyInfoModifyModal";
-import MyInfoPasswordModal from "./Nav/Profile/MyInfoPasswordModal/MyInfoPasswordModal";
+
+import MyInfoPasswordModal from "./Header/MyInfoPasswordModal/MyInfoPasswordModal";
 import * as S from "./style";
+import MyInfoModifyModal from "./Header/MyInfoModifyModal/MyInfoModifyModal";
 
 const Contents = () => {
-  const [isLocationChangeModalState, setIsLocationChangeModalState] =
-    useRecoilState(locationChangeModalState);
+  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
+    MyInfoModifyModalState
+  );
   const [isOpenPasswordModifyModal, setIsOpenPasswordModifyModal] =
     useRecoilState(PasswordModifyModalState);
 
   return (
     <>
-      {isLocationChangeModalState && <ProfileModifyModal />}
+      {isOpenMyInfoModifyModal && <MyInfoModifyModal />}
       {isOpenPasswordModifyModal && <MyInfoPasswordModal />}
       <S.MyInfoWrap>
         <Nav />

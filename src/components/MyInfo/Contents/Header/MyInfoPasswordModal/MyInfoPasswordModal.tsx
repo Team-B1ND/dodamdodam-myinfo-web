@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
-import usePasswordChange from "../../../../../../hooks/profile/usePasswrodChange";
-import { PasswordModifyModalState } from "../../../../../../store/modal";
+import usePasswordChange from "../../../../../hooks/profile/usePasswrodChange";
+import { PasswordModifyModalState } from "../../../../../store/modal";
 import {
   MyInfoPasswordModalCloseButton,
   MyInfoPasswordModalCloseIcon,

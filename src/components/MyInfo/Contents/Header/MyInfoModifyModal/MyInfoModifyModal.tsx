@@ -1,19 +1,21 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../../../../store/modal";
 import * as S from "./style";
 import { BiPlus } from "react-icons/bi";
-import useModifyMainProfile from "../../../../../../hooks/mainProfile/useModifyMainProfile";
-import useMyGradeInfo from "../../../../../../hooks/profile/useMyGradeInfo";
-import fileUpload from "../../../../../../repository/mainProfile/fileUpload";
-import DODAM_DEFAULT_PROFILE from "../../../../../../images/default_profile.png";
-import CAMERA_IMAGE from "../../../../../../images/camera.svg";
-import { autoHypenPhone } from "../../../../../../util/autoHypenPhone";
-import { profileInfo } from "../../../../../../store/profile";
+import DODAM_DEFAULT_PROFILE from "../../../../../images/default_profile.png";
+// import CAMERA_IMAGE from "../../../../../../images/camera.svg";
+import CAMERA_IMAGE from "../../../../../images/camera.svg";
+import { MyInfoModifyModalState } from "../../../../../store/modal";
+import useModifyMainProfile from "../../../../../hooks/mainProfile/useModifyMainProfile";
+import fileUpload from "../../../../../repository/mainProfile/fileUpload";
+import { autoHypenPhone } from "../../../../../util/autoHypenPhone";
+import { profileInfo } from "../../../../../store/profile";
+import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
 
 const MyInfoModifyModal = () => {
-  const [isLocationChangeModalState, setIsLocationChangeModalState] =
-    useRecoilState(locationChangeModalState);
+  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
+    MyInfoModifyModalState
+  );
 
   const { isLoading } = useMyGradeInfo();
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
@@ -105,7 +107,7 @@ const MyInfoModifyModal = () => {
 
   return (
     <S.ProfileModifyModalBackground
-      onClick={() => setIsLocationChangeModalState(false)}
+      onClick={() => setIsOpenMyInfoModifyModal(false)}
     >
       <S.ProfileModifyModalWrap
         onClick={(e) => {
@@ -122,7 +124,7 @@ const MyInfoModifyModal = () => {
             right: "20px",
           }}
           onClick={() => {
-            setIsLocationChangeModalState(false);
+            setIsOpenMyInfoModifyModal(false);
           }}
         />
         <S.MyInfoModifyModalTitleWrap>
@@ -229,7 +231,7 @@ const MyInfoModifyModal = () => {
           <S.ModifyEventButton
             onClick={() => {
               updateInfo();
-              setIsLocationChangeModalState((prev: boolean) => !prev);
+              setIsOpenMyInfoModifyModal((prev: boolean) => !prev);
             }}
           >
             완료
