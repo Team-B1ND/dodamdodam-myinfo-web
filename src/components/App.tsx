@@ -13,7 +13,7 @@ function App() {
       !token.getToken(ACCESS_TOKEN_KEY) ||
       !token.getToken(REFRESH_TOKEN_KEY)
     ) {
-      window.location.href = "http://dodam.b1nd.com/sign";
+      // window.location.href = "http://dodam.b1nd.com/sign";
     }
   }, []);
 

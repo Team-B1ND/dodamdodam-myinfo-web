@@ -3,7 +3,6 @@ import { useRecoilState } from "recoil";
 import * as S from "./style";
 import { BiPlus } from "react-icons/bi";
 import DODAM_DEFAULT_PROFILE from "../../../../../images/default_profile.png";
-// import CAMERA_IMAGE from "../../../../../../images/camera.svg";
 import CAMERA_IMAGE from "../../../../../images/camera.svg";
 import { MyInfoModifyModalState } from "../../../../../store/modal";
 import useModifyMainProfile from "../../../../../hooks/mainProfile/useModifyMainProfile";
@@ -20,8 +19,9 @@ const MyInfoModifyModal = () => {
   const { isLoading } = useMyGradeInfo();
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
 
-  const { member, phone } = tempProfileInfo;
+  const { member, phone, number, classroom } = tempProfileInfo;
   const { email, profileImage } = member;
+  const { grade, room } = classroom;
 
   const [emailInfo, setEmailInfo] = useState<string>("");
   const [phoneInfo, setPhoneInfo] = useState<string>("");
@@ -176,6 +176,24 @@ const MyInfoModifyModal = () => {
           </S.PictureBecomeBasicImageBtn>
         </S.ModalPictureChangeWrap>
         <S.ModifyBoxWrap>
+          <S.ModifyBox>
+            <S.ModifyBoxTitleText>학년 반 번호</S.ModifyBoxTitleText>
+            {!emailIsModifying ? (
+              <S.ModifyBoxInContents>
+                <S.ModifyBoxContentText>
+                  {grade}학년 {room}반 {number}번
+                </S.ModifyBoxContentText>
+                <S.EachModifyEventButton onClick={() => {}}>
+                  수정
+                </S.EachModifyEventButton>
+              </S.ModifyBoxInContents>
+            ) : (
+              <S.ModifyBoxInContents>
+                <S.ModifyBoxContentInput />
+                <S.EachModifyEventButton>취소</S.EachModifyEventButton>
+              </S.ModifyBoxInContents>
+            )}
+          </S.ModifyBox>
           <S.ModifyBox>
             <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
             {!emailIsModifying ? (
