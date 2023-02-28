@@ -6,16 +6,10 @@ import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
 } from "../constants/token/token.constant";
+import useTokenCheck from "../hooks/auth/useTokenCheck";
 
 function App() {
-  useEffect(() => {
-    if (
-      !token.getToken(ACCESS_TOKEN_KEY) ||
-      !token.getToken(REFRESH_TOKEN_KEY)
-    ) {
-      // window.location.href = "http://dodam.b1nd.com/sign";
-    }
-  }, []);
+  useTokenCheck();
 
   return (
     <Body>

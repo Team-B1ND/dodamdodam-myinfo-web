@@ -1,11 +1,12 @@
 import * as S from "./style";
 import default_profile from "../../../../../images/default_profile.png";
-import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
+import { useRecoilValue } from "recoil";
+import { profileInfo } from "../../../../../store/profile";
 
 const SimpleProfileInfo = () => {
-  const { myGradeInfo } = useMyGradeInfo();
+  const profileInfoData = useRecoilValue(profileInfo);
 
-  const { profileImage, name } = myGradeInfo.member;
+  const { profileImage, name } = profileInfoData.member;
 
   return (
     <>

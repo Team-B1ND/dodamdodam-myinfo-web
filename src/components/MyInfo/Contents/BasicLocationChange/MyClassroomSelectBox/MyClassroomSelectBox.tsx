@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import useClassroom from "../../../../../hooks/classroom/useClassroom";
+import usePlace from "../../../../../hooks/place/usePlace";
 import {
   applyDefaultRoom,
   studyRoomTimeTable,
@@ -19,7 +19,7 @@ const MyClassroomSelect = ({
   onChangePlace,
   applyPlaces,
 }: classTime) => {
-  const { classroomList } = useClassroom();
+  const { placeList } = usePlace();
 
   return (
     <S.EachClassroomBoxWrap>
@@ -30,14 +30,14 @@ const MyClassroomSelect = ({
         id={String(idx)}
       >
         <option value="0">선택해주세요</option>
-        {classroomList?.map((classroom) => {
+        {placeList?.map((place) => {
           return (
             <option
-              key={classroom?.id}
-              value={String(classroom?.id)}
-              selected={applyPlaces?.placeId === classroom?.id}
+              key={place?.id}
+              value={String(place?.id)}
+              selected={applyPlaces?.placeId === place?.id}
             >
-              {classroom.name}
+              {place.name}
             </option>
           );
         })}

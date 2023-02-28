@@ -6,7 +6,7 @@ export interface myProfile {
     id: number;
     placeId: number;
     room: number;
-  };
+  } | null;
   id: number;
   member: {
     email: string;

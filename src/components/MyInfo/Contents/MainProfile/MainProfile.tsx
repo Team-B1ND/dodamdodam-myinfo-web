@@ -1,6 +1,5 @@
 import * as S from "./style";
 import defaultProfileImg from "../../../../images/default_profile.png";
-import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
 import { MyInfoModifyModalState } from "../../../../store/modal";
@@ -15,7 +14,6 @@ const MainProfile = () => {
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
   const { classroom, member, number, phone } = tempProfileInfo;
   const { profileImage, email, name } = member;
-  const { grade, room } = classroom;
 
   const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
     MyInfoModifyModalState
@@ -45,8 +43,8 @@ const MainProfile = () => {
               <S.MainProfileTitleImg src={USER_IMG} />
             </S.MainProfileEachTitle>
             <S.MainProfileEachExplain>
-              {grade}
-              {room}
+              {classroom?.grade}
+              {classroom?.room}
               {number < 10 ? "0" + number : number}
               {name}
             </S.MainProfileEachExplain>

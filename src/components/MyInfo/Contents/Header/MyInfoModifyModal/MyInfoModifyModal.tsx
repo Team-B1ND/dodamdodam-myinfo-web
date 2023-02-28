@@ -10,6 +10,7 @@ import fileUpload from "../../../../../repository/mainProfile/fileUpload";
 import { autoHypenPhone } from "../../../../../util/autoHypenPhone";
 import { profileInfo } from "../../../../../store/profile";
 import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
+import MyInfoClassModifyModal from "../MyInfoClassModifyModal/MyInfoClassModifyModal";
 
 const MyInfoModifyModal = () => {
   const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
@@ -21,7 +22,6 @@ const MyInfoModifyModal = () => {
 
   const { member, phone, number, classroom } = tempProfileInfo;
   const { email, profileImage } = member;
-  const { grade, room } = classroom;
 
   const [emailInfo, setEmailInfo] = useState<string>("");
   const [phoneInfo, setPhoneInfo] = useState<string>("");
@@ -34,6 +34,7 @@ const MyInfoModifyModal = () => {
 
   const [emailIsModifying, setEmailIsModifying] = useState<boolean>(false);
   const [phoneIsModifying, setPhoneIsModifying] = useState<boolean>(false);
+  const [classIsModifying, setClassIsModifying] = useState<boolean>(false);
 
   useEffect(() => {
     setEmailInfo(email);
@@ -114,6 +115,10 @@ const MyInfoModifyModal = () => {
           e.stopPropagation();
         }}
       >
+        {classIsModifying && (
+          <MyInfoClassModifyModal setClassIsModifying={setClassIsModifying} />
+        )}
+
         <BiPlus
           className="exitIcon"
           style={{
@@ -178,21 +183,16 @@ const MyInfoModifyModal = () => {
         <S.ModifyBoxWrap>
           <S.ModifyBox>
             <S.ModifyBoxTitleText>학년 반 번호</S.ModifyBoxTitleText>
-            {!emailIsModifying ? (
-              <S.ModifyBoxInContents>
-                <S.ModifyBoxContentText>
-                  {grade}학년 {room}반 {number}번
-                </S.ModifyBoxContentText>
-                <S.EachModifyEventButton onClick={() => {}}>
-                  수정
-                </S.EachModifyEventButton>
-              </S.ModifyBoxInContents>
-            ) : (
-              <S.ModifyBoxInContents>
-                <S.ModifyBoxContentInput />
-                <S.EachModifyEventButton>취소</S.EachModifyEventButton>
-              </S.ModifyBoxInContents>
-            )}
+            <S.ModifyBoxInContents>
+              <S.ModifyBoxContentText>
+                {classroom?.grade || 0}학년 {classroom?.room || 0}반 {number}번
+              </S.ModifyBoxContentText>
+              <S.EachModifyEventButton
+                onClick={() => setClassIsModifying(true)}
+              >
+                수정
+              </S.EachModifyEventButton>
+            </S.ModifyBoxInContents>
           </S.ModifyBox>
           <S.ModifyBox>
             <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
