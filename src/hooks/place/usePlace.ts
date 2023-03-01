@@ -6,10 +6,10 @@ const usePlace = () => {
   const [placeList, setPlaceList] = useState<Place[]>([
     {
       id: 0,
-      name: "string",
+      name: "",
       type: {
         id: 0,
-        name: "string",
+        name: "",
       },
     },
   ]);

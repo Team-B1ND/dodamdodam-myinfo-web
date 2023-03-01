@@ -18,9 +18,7 @@ const useModifyStudentInfo = () => {
     number: profileInfoData.number,
   });
 
-  useEffect(() => {
-    console.log(studentInfo);
-  }, [studentInfo]);
+
 
   const onChangeStudentInfo = (
     e: ChangeEvent<HTMLSelectElement>,
