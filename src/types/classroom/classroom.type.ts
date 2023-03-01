@@ -1,14 +1,6 @@
-export interface classroomList {
-  id: number;
-  name: string;
-  type: {
-    id: number;
-    name: string;
-  };
-}
+import { Place } from "../place/place.type";
 
-export interface classroomListResponse extends Response {
-  data: classroomList[];
-  message: string;
-  status: number;
+export interface Classroom extends Place {
+  grade: number;
+  room: number;
 }

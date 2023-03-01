@@ -1,24 +1,26 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { locationChangeModalState } from "../../../../../../store/modal";
 import * as S from "./style";
 import { BiPlus } from "react-icons/bi";
-import useModifyMainProfile from "../../../../../../hooks/mainProfile/useModifyMainProfile";
-import useMyGradeInfo from "../../../../../../hooks/profile/useMyGradeInfo";
-import fileUpload from "../../../../../../repository/mainProfile/fileUpload";
-import DODAM_DEFAULT_PROFILE from "../../../../../../images/default_profile.png";
-import CAMERA_IMAGE from "../../../../../../images/camera.svg";
-import { autoHypenPhone } from "../../../../../../util/autoHypenPhone";
-import { profileInfo } from "../../../../../../store/profile";
+import DODAM_DEFAULT_PROFILE from "../../../../../images/default_profile.png";
+import CAMERA_IMAGE from "../../../../../images/camera.svg";
+import { MyInfoModifyModalState } from "../../../../../store/modal";
+import useModifyMainProfile from "../../../../../hooks/mainProfile/useModifyMainProfile";
+import fileUpload from "../../../../../repository/mainProfile/fileUpload";
+import { autoHypenPhone } from "../../../../../util/autoHypenPhone";
+import { profileInfo } from "../../../../../store/profile";
+import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
+import MyInfoClassModifyModal from "../MyInfoClassModifyModal/MyInfoClassModifyModal";
 
 const MyInfoModifyModal = () => {
-  const [isLocationChangeModalState, setIsLocationChangeModalState] =
-    useRecoilState(locationChangeModalState);
+  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
+    MyInfoModifyModalState
+  );
 
   const { isLoading } = useMyGradeInfo();
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
 
-  const { member, phone } = tempProfileInfo;
+  const { member, phone, number, classroom } = tempProfileInfo;
   const { email, profileImage } = member;
 
   const [emailInfo, setEmailInfo] = useState<string>("");
@@ -32,6 +34,7 @@ const MyInfoModifyModal = () => {
 
   const [emailIsModifying, setEmailIsModifying] = useState<boolean>(false);
   const [phoneIsModifying, setPhoneIsModifying] = useState<boolean>(false);
+  const [classIsModifying, setClassIsModifying] = useState<boolean>(false);
 
   useEffect(() => {
     setEmailInfo(email);
@@ -105,13 +108,17 @@ const MyInfoModifyModal = () => {
 
   return (
     <S.ProfileModifyModalBackground
-      onClick={() => setIsLocationChangeModalState(false)}
+      onClick={() => setIsOpenMyInfoModifyModal(false)}
     >
       <S.ProfileModifyModalWrap
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
+        {classIsModifying && (
+          <MyInfoClassModifyModal setClassIsModifying={setClassIsModifying} />
+        )}
+
         <BiPlus
           className="exitIcon"
           style={{
@@ -122,7 +129,7 @@ const MyInfoModifyModal = () => {
             right: "20px",
           }}
           onClick={() => {
-            setIsLocationChangeModalState(false);
+            setIsOpenMyInfoModifyModal(false);
           }}
         />
         <S.MyInfoModifyModalTitleWrap>
@@ -174,6 +181,19 @@ const MyInfoModifyModal = () => {
           </S.PictureBecomeBasicImageBtn>
         </S.ModalPictureChangeWrap>
         <S.ModifyBoxWrap>
+          <S.ModifyBox>
+            <S.ModifyBoxTitleText>학년 반 번호</S.ModifyBoxTitleText>
+            <S.ModifyBoxInContents>
+              <S.ModifyBoxContentText>
+                {classroom?.grade || 0}학년 {classroom?.room || 0}반 {number}번
+              </S.ModifyBoxContentText>
+              <S.EachModifyEventButton
+                onClick={() => setClassIsModifying(true)}
+              >
+                수정
+              </S.EachModifyEventButton>
+            </S.ModifyBoxInContents>
+          </S.ModifyBox>
           <S.ModifyBox>
             <S.ModifyBoxTitleText>이메일</S.ModifyBoxTitleText>
             {!emailIsModifying ? (
@@ -229,7 +249,7 @@ const MyInfoModifyModal = () => {
           <S.ModifyEventButton
             onClick={() => {
               updateInfo();
-              setIsLocationChangeModalState((prev: boolean) => !prev);
+              setIsOpenMyInfoModifyModal((prev: boolean) => !prev);
             }}
           >
             완료

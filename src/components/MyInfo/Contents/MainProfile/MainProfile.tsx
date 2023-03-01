@@ -1,9 +1,8 @@
 import * as S from "./style";
 import defaultProfileImg from "../../../../images/default_profile.png";
-import useMyGradeInfo from "../../../../hooks/profile/useMyGradeInfo";
 import { useRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
-import { locationChangeModalState } from "../../../../store/modal";
+import { MyInfoModifyModalState } from "../../../../store/modal";
 import USER_IMG from "../../../../images/user.svg";
 import SMS_IMG from "../../../../images/sms.svg";
 import CALL_IMG from "../../../../images/call.svg";
@@ -15,10 +14,10 @@ const MainProfile = () => {
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
   const { classroom, member, number, phone } = tempProfileInfo;
   const { profileImage, email, name } = member;
-  const { grade, room } = classroom;
 
-  const [LocationChangeModalState, setIsLocationChangeModalState] =
-    useRecoilState(locationChangeModalState);
+  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
+    MyInfoModifyModalState
+  );
 
   return (
     <S.MainProfileWrap>
@@ -44,8 +43,8 @@ const MainProfile = () => {
               <S.MainProfileTitleImg src={USER_IMG} />
             </S.MainProfileEachTitle>
             <S.MainProfileEachExplain>
-              {grade}
-              {room}
+              {classroom?.grade}
+              {classroom?.room}
               {number < 10 ? "0" + number : number}
               {name}
             </S.MainProfileEachExplain>
@@ -56,9 +55,7 @@ const MainProfile = () => {
               <S.MainProfileTitleImg src={SMS_IMG} />
             </S.MainProfileEachTitle>
             <S.MainProfileEachExplain>{email}</S.MainProfileEachExplain>
-            <S.MyInfoModifyBtn
-              onClick={() => setIsLocationChangeModalState(true)}
-            >
+            <S.MyInfoModifyBtn onClick={() => setIsOpenMyInfoModifyModal(true)}>
               수정
             </S.MyInfoModifyBtn>
           </S.MainProfileUserEachInfoWrap>
@@ -71,9 +68,7 @@ const MainProfile = () => {
               {phone.substring(0, 3)}-{phone.substring(3, 7)}-
               {phone.substring(7, 11)}
             </S.MainProfileEachExplain>
-            <S.MyInfoModifyBtn
-              onClick={() => setIsLocationChangeModalState(true)}
-            >
+            <S.MyInfoModifyBtn onClick={() => setIsOpenMyInfoModifyModal(true)}>
               수정
             </S.MyInfoModifyBtn>
           </S.MainProfileUserEachInfoWrap>

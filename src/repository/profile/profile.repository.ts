@@ -1,6 +1,6 @@
 import { customAxios } from "../../lib/axios/customAxios";
 import { myProfileResponse } from "../../types/profile/profile.type";
-import { patchMyPasswordParam } from "./profile.param";
+import { patchMyPasswordParam, patchStudentInfoParam } from "./profile.param";
 
 class ProfileRepository {
   public async getMyProfileInfo(): Promise<myProfileResponse> {
@@ -13,6 +13,18 @@ class ProfileRepository {
     pw,
   }: patchMyPasswordParam): Promise<void> {
     await customAxios.patch("/members/pw", { newPw, pw });
+  }
+
+  public async patchStudentInfo({
+    grade,
+    room,
+    number,
+  }: patchStudentInfoParam): Promise<void> {
+    await customAxios.patch("/members/student/studentInfo", {
+      grade,
+      room,
+      number,
+    });
   }
 }
 
