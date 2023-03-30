@@ -238,7 +238,7 @@ const MyInfoModifyModal = () => {
                   maxLength={13}
                 />
                 <S.EachModifyEventButton
-                  onClick={() => setEmailIsModifying((prev: boolean) => !prev)}
+                  onClick={() => setPhoneIsModifying((prev: boolean) => !prev)}
                 >
                   취소
                 </S.EachModifyEventButton>
