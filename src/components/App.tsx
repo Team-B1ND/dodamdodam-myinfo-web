@@ -7,14 +7,18 @@ import {
   REFRESH_TOKEN_KEY,
 } from "../constants/token/token.constant";
 import useTokenCheck from "../hooks/auth/useTokenCheck";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
   useTokenCheck();
+  const queryClient = new QueryClient();
 
   return (
-    <Body>
-      <Router />
-    </Body>
+    <QueryClientProvider client={queryClient}>
+      <Body>
+        <Router />
+      </Body>
+    </QueryClientProvider>
   );
 }
 
