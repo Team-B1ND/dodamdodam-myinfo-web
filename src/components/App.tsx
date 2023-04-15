@@ -1,11 +1,5 @@
 import Router from "../Router/Router";
 import styled from "styled-components";
-import { useEffect } from "react";
-import token from "../lib/token/token";
-import {
-  ACCESS_TOKEN_KEY,
-  REFRESH_TOKEN_KEY,
-} from "../constants/token/token.constant";
 import useTokenCheck from "../hooks/auth/useTokenCheck";
 import { QueryClient, QueryClientProvider } from "react-query";
 

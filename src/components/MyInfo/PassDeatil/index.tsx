@@ -15,7 +15,7 @@ import Outing from "./Outing";
 import Sleepover from "./Sleepover";
 
 const PassDetail = () => {
-  const [isPassAndSleep, setIsPassAndSleep] = useState<boolean>(true);
+  const [isPassAndSleep, setIsPassAndSleep] = useState<boolean>(false);
 
   return (
     <MyInfoWrap>
