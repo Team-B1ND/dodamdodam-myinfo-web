@@ -4,6 +4,7 @@ import { LeaveData, LeaveHeaderWrap } from "../style";
 
 const SleepoverItem = () => {
   const { data } = useGetMyOutSleep();
+
   return (
     <>
       <OutingTbody>
@@ -15,7 +16,11 @@ const SleepoverItem = () => {
                 <LeaveData>{data.startOutDate}</LeaveData>
                 <LeaveData>{data.endOutDate}</LeaveData>
                 <LeaveData>
-                  {data.status === "PENDING" ? "대기중" : "승인됨"}
+                  {data.status === "PENDING"
+                    ? "대기중"
+                    : data.status === "ALLOWED"
+                    ? "승인됨"
+                    : "거절됨"}
                 </LeaveData>
               </LeaveHeaderWrap>
             </>

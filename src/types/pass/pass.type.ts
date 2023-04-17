@@ -10,7 +10,7 @@ export interface AppliedPass extends Pass {
   arrivedDate: null | string;
   checkedDate: null | string;
   id: number;
-  status: "ALLOWED" | "PENDING";
+  status: "ALLOWED" | "PENDING" | "DENIED";
   student: {
     id: number;
   };

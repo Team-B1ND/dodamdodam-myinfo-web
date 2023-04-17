@@ -15,7 +15,11 @@ const OutingItem = () => {
                 <OutingData>{data.startOutDate}</OutingData>
                 <OutingData>{data.endOutDate}</OutingData>
                 <OutingData>
-                  {data.status === "PENDING" ? "대기중" : "승인됨"}
+                  {data.status === "PENDING"
+                    ? "대기중"
+                    : data.status === "DENIED"
+                    ? "거절됨"
+                    : "승인됨"}
                 </OutingData>
               </OutingHeaderWrap>
             </>
