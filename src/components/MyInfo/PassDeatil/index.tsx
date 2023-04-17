@@ -3,19 +3,21 @@ import Nav from "../Contents/Nav/Nav";
 import { MyInfoWrap } from "../Contents/style";
 import ComponentTitle from "../../common/ComponentTitle/ComponentTitle";
 import {
-  DormitoryBtn,
   MainProfileText,
   MyInfoContentsWrap,
   MyInfoModifyBtnContainer,
   PointDetailContainer,
-  SchoolBtn,
 } from "../PointDetail/PointDetail.style";
 import { FcAlarmClock } from "react-icons/fc";
 import Outing from "./Outing";
 import Sleepover from "./Sleepover";
+import { SwitchCase } from "@b1nd/b1nd-react-util";
+import { OutSleepingBtn, OutgoingBtn } from "./style";
+
+export type ColorType = "outgoing" | "outsleeping";
 
 const PassDetail = () => {
-  const [isPassAndSleep, setIsPassAndSleep] = useState<boolean>(false);
+  const [isPassAndSleep, setIsPassAndSleep] = useState<ColorType>("outgoing");
 
   return (
     <MyInfoWrap>
@@ -35,23 +37,29 @@ const PassDetail = () => {
               외출 외박 조회
             </MainProfileText>
             <MyInfoModifyBtnContainer>
-              <DormitoryBtn
-                onClick={() => setIsPassAndSleep(false)}
+              <OutgoingBtn
                 isColor={isPassAndSleep}
+                onClick={() => setIsPassAndSleep("outgoing")}
               >
                 외출
-              </DormitoryBtn>
-              <SchoolBtn
-                onClick={() => setIsPassAndSleep(true)}
+              </OutgoingBtn>
+              <OutSleepingBtn
                 isColor={isPassAndSleep}
+                onClick={() => setIsPassAndSleep("outsleeping")}
               >
                 외박
-              </SchoolBtn>
+              </OutSleepingBtn>
             </MyInfoModifyBtnContainer>
           </div>
         </ComponentTitle>
         <PointDetailContainer>
-          {isPassAndSleep ? <Sleepover /> : <Outing />}
+          <SwitchCase
+            value={isPassAndSleep}
+            caseBy={{
+              outgoing: <Outing />,
+              outsleeping: <Sleepover />,
+            }}
+          />
         </PointDetailContainer>
       </MyInfoContentsWrap>
     </MyInfoWrap>

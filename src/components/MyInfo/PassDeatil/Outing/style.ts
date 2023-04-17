@@ -17,3 +17,7 @@ export const OutingHeaderTitle = styled.td`
 export const OutingData = styled.td`
   padding-bottom: 3px;
 `;
+
+export const OutingTbody = styled.tbody``;
+
+export const OutingThead = styled.thead``;

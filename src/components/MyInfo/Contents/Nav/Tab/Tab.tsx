@@ -11,6 +11,7 @@ const Tab = () => {
     <S.SideTabBarWrap>
       {NAV_TAB_ITEMS.map((tab) => (
         <S.TabBarCategoryWrap
+          key={tab.link}
           isSelect={tab.link === pathname}
           onClick={() => {
             navigator(tab.link);
