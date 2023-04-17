@@ -30,8 +30,9 @@ const DayOfTheWeekSelect = ({ onChangeDefaultType }: Props) => {
 
           {!close && (
             <S.DayOfTheWeekSelectOptionWrap>
-              {BASIC_LOCATION_DAY_SELECT_ITEMS.map((item) => (
+              {BASIC_LOCATION_DAY_SELECT_ITEMS.map((item, idx) => (
                 <S.DayOfTheWeekSelectOption
+                  key={idx}
                   onClick={() =>
                     onChangeDefaultType(item.type as basicLocationDay)
                   }

@@ -8,7 +8,6 @@ const Profile = () => {
   const tempProfileInfo = useRecoilValue(profileInfo);
   useMyGradeInfo();
 
-  console.log(tempProfileInfo.classroom);
   const { member, classroom, number } = tempProfileInfo;
   const { profileImage, name } = member;
 

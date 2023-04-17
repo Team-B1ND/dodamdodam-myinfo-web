@@ -25,8 +25,10 @@ const MyInfoClassSelect = ({
         defaultValue={value}
         onChange={(e) => onChnageSelect(e, scope)}
       >
-        {items.map((item) => (
-          <option value={item}>{item}</option>
+        {items.map((item, idx) => (
+          <option key={idx} value={item}>
+            {item}
+          </option>
         ))}
       </S.SelectContainer>
       <S.Label>{label}</S.Label>
