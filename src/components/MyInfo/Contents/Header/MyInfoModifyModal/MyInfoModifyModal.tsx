@@ -11,6 +11,8 @@ import { autoHypenPhone } from "../../../../../util/autoHypenPhone";
 import { profileInfo } from "../../../../../store/profile";
 import useMyGradeInfo from "../../../../../hooks/profile/useMyGradeInfo";
 import MyInfoClassModifyModal from "../MyInfoClassModifyModal/MyInfoClassModifyModal";
+import patternCheck from "../../../../../util/patternCheck";
+import { B1ndToast } from "@b1nd/b1nd-toastify";
 
 const MyInfoModifyModal = () => {
   const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
@@ -84,15 +86,26 @@ const MyInfoModifyModal = () => {
       !(
         emailInfo === tempProfileInfo.member.email &&
         imageSrc === tempProfileInfo.member.profileImage &&
-        phone === tempProfileInfo.phone
+        phoneInfo === tempProfileInfo.phone
       )
     ) {
       try {
+        if (!patternCheck.emailCheck(emailInfo) || emailInfo.trim() === "") {
+          return B1ndToast.showInfo("이메일 형식을 지켜주세요!");
+        }
+
+        if (!patternCheck.phoneCheck(phoneInfo) || phoneInfo.trim() === "") {
+          return B1ndToast.showInfo("전화번호 형식을 지켜주세요!");
+        }
+
         await patchMainProfile({
           email: emailInfo,
           imageUrl: imageSrc,
           phone: phoneInfo,
         });
+
+        B1ndToast.showSuccess("내 정보를 수정하셨습니다!");
+
         setTempProfileInfo({
           ...tempProfileInfo,
           member: {
@@ -102,7 +115,11 @@ const MyInfoModifyModal = () => {
           },
           phone: phoneInfo,
         });
+
+        setIsOpenMyInfoModifyModal((prev: boolean) => !prev);
       } catch (error) {}
+    } else {
+      B1ndToast.showInfo("내 정보를 수정해주세요!");
     }
   };
 
@@ -246,14 +263,7 @@ const MyInfoModifyModal = () => {
             )}
           </S.ModifyBox>
 
-          <S.ModifyEventButton
-            onClick={() => {
-              updateInfo();
-              setIsOpenMyInfoModifyModal((prev: boolean) => !prev);
-            }}
-          >
-            완료
-          </S.ModifyEventButton>
+          <S.ModifyEventButton onClick={updateInfo}>완료</S.ModifyEventButton>
         </S.ModifyBoxWrap>
       </S.ProfileModifyModalWrap>
     </S.ProfileModifyModalBackground>

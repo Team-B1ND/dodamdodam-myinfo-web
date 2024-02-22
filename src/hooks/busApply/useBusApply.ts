@@ -1,3 +1,4 @@
+import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { useEffect, useState } from "react";
 import busApplyRepository from "../../repository/busApply/busApply.repository";
 import { Bus } from "../../types/busApply/busApply.type";
@@ -50,10 +51,10 @@ const useBusApply = () => {
   const onSubmitBusApply = async () => {
     try {
       await busApplyRepository.postBusApply({ idx: String(selectBusId) });
-      window.alert("버스 신청 성공");
+      B1ndToast.showSuccess("버스 신청 성공");
       setSelectedBusId(selectBusId);
     } catch (error) {
-      window.alert("버스 신청 실패");
+      B1ndToast.showError("버스 신청 실패");
     }
   };
 
@@ -63,10 +64,10 @@ const useBusApply = () => {
         idx: String(selectBusId),
         originIdx: String(selectedBusId),
       });
-      window.alert("버스 수정 성공");
+      B1ndToast.showSuccess("버스 수정 성공");
       setSelectedBusId(selectBusId);
     } catch (error) {
-      window.alert("버스 수정 실패");
+      B1ndToast.showInfo("버스 수정 실패");
     }
   };
 

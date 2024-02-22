@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import usePasswordChange from "../../../../../hooks/profile/usePasswrodChange";
 import { PasswordModifyModalState } from "../../../../../store/modal";
 import {
@@ -18,8 +18,9 @@ import {
 import { MdOutlineClose } from "react-icons/md";
 
 const MyInfoPasswordModal = () => {
-  const [isOpenPasswordModifyModal, setIsOpenPasswordModifyModal] =
-    useRecoilState(PasswordModifyModalState);
+  const setIsOpenPasswordModifyModal = useSetRecoilState(
+    PasswordModifyModalState
+  );
 
   const { pwData, onChangePassword, onSubmitPassword } = usePasswordChange();
 
@@ -70,7 +71,9 @@ const MyInfoPasswordModal = () => {
             />
           </MyInfoPasswordModalInputWrap>
         </MyInfoPasswordModalMiddleWrap>
-        <MyInfoPasswordModalSubmitButton onClick={onSubmitPassword}>
+        <MyInfoPasswordModalSubmitButton
+          onClick={() => onSubmitPassword(setIsOpenPasswordModifyModal)}
+        >
           변경
         </MyInfoPasswordModalSubmitButton>
       </MyInfoPasswordModalContainer>

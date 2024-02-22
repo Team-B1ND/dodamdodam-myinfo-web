@@ -1,3 +1,4 @@
+import { B1ndToast } from "@b1nd/b1nd-toastify";
 import {
   ChangeEvent,
   MouseEvent,
@@ -177,7 +178,7 @@ const useDefaultStudyRoom = () => {
         defaultStudyRooms: applyPlaces,
       });
       setTempApplyPlaces([...applyPlaces]);
-      window.alert("기본위치 설정 성공");
+      B1ndToast.showSuccess("기본위치 설정 성공");
     } catch (error) {}
   };
 

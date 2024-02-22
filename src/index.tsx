@@ -1,3 +1,4 @@
+import { B1ndToastContainer } from "@b1nd/b1nd-toastify";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={lightTheme}>
       <RecoilRoot>
+        <B1ndToastContainer style={{ width: "auto", minWidth: "300px" }} />
         <GlobalStyle />
         <App />
       </RecoilRoot>

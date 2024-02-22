@@ -11,7 +11,7 @@ const useTokenCheck = () => {
       token.getToken(ACCESS_TOKEN_KEY) === undefined ||
       token.getToken(REFRESH_TOKEN_KEY) === undefined
     ) {
-      window.location.href = "/sign";
+      window.location.href = "http://dodam.b1nd.com/sign";
     }
   }, []);
 };
