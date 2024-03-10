@@ -1,24 +1,19 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import {
   MyInfoModifyModalState,
   PasswordModifyModalState,
 } from "../../../store/modal";
-import BasicLocationChange from "./BasicLocationChange/BasicLocationChange";
 import BusApply from "./BusApply/BusApply";
 import MainProfile from "./MainProfile/MainProfile";
 import MyInfoModify from "./Header/Header";
 import Nav from "./Nav/Nav";
-
 import MyInfoPasswordModal from "./Header/MyInfoPasswordModal/MyInfoPasswordModal";
 import * as S from "./style";
 import MyInfoModifyModal from "./Header/MyInfoModifyModal/MyInfoModifyModal";
 
 const Contents = () => {
-  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
-    MyInfoModifyModalState
-  );
-  const [isOpenPasswordModifyModal, setIsOpenPasswordModifyModal] =
-    useRecoilState(PasswordModifyModalState);
+  const isOpenMyInfoModifyModal = useRecoilValue(MyInfoModifyModalState);
+  const isOpenPasswordModifyModal = useRecoilValue(PasswordModifyModalState);
 
   return (
     <>
@@ -33,11 +28,8 @@ const Contents = () => {
               <MainProfile />
             </S.MyInfoContentsTopWrap>
             <S.MyInfoContentsMiddleWrap>
-              <BasicLocationChange />
-            </S.MyInfoContentsMiddleWrap>
-            <S.MyInfoContentsBottomWrap>
               <BusApply />
-            </S.MyInfoContentsBottomWrap>
+            </S.MyInfoContentsMiddleWrap>
           </S.MyInfoMainContentsWrap>
         </S.MyInfoContentsWrap>
       </S.MyInfoWrap>

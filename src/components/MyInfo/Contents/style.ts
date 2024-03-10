@@ -34,9 +34,3 @@ export const MyInfoContentsMiddleWrap = styled.div`
   display: flex;
   flex-direction: row;
 `;
-
-export const MyInfoContentsBottomWrap = styled.div`
-  width: 780px;
-  height: 200px;
-  background-color: none;
-`;
