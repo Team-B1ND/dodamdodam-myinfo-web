@@ -4,7 +4,7 @@ import {
   REFRESH_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
 } from "../../constants/token/token.constant";
-import tokenRepository from "../../repository/token/token.repository";
+import authRepository from "../../repository/auth/auth.repository";
 import token from "../token/token";
 import { customAxios } from "./customAxios";
 
@@ -14,7 +14,7 @@ export const customAxiosErrorInterceptor = async (config: AxiosError) => {
 
   if (accessToken && refreshToken && config.response?.status === 401) {
     try {
-      const { data } = await tokenRepository.postTokenRefresh({ refreshToken });
+      const { data } = await authRepository.postTokenRefresh({ refreshToken });
 
       token.setToken(ACCESS_TOKEN_KEY, data);
       customAxios.defaults.headers.common[REQUEST_TOKEN_KEY] = data;
