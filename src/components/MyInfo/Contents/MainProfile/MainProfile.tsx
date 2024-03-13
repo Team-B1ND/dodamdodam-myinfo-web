@@ -1,6 +1,6 @@
 import * as S from "./style";
 import defaultProfileImg from "../../../../images/default_profile.png";
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
 import { MyInfoModifyModalState } from "../../../../store/modal";
 import USER_IMG from "../../../../images/user.svg";
@@ -11,13 +11,10 @@ import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 import { profileInfo } from "../../../../store/profile";
 
 const MainProfile = () => {
-  const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
-  const { classroom, member, number, phone } = tempProfileInfo;
-  const { profileImage, email, name } = member;
+  const tempProfileInfo = useRecoilValue(profileInfo);
+  const { profileImage, email, name, student, phone } = tempProfileInfo;
 
-  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
-    MyInfoModifyModalState
-  );
+  const setIsOpenMyInfoModifyModal = useSetRecoilState(MyInfoModifyModalState);
 
   return (
     <S.MainProfileWrap>
@@ -43,9 +40,11 @@ const MainProfile = () => {
               <S.MainProfileTitleImg src={USER_IMG} />
             </S.MainProfileEachTitle>
             <S.MainProfileEachExplain>
-              {classroom?.grade}
-              {classroom?.room}
-              {number < 10 ? "0" + number : number}
+              {student?.grade}
+              {student?.room}
+              {student?.number! < 10
+                ? "0" + student?.number.toString()
+                : student?.number}{" "}
               {name}
             </S.MainProfileEachExplain>
           </S.MainProfileUserEachInfoWrap>

@@ -8,8 +8,7 @@ const Profile = () => {
   const tempProfileInfo = useRecoilValue(profileInfo);
   useMyGradeInfo();
 
-  const { member, classroom, number } = tempProfileInfo;
-  const { profileImage, name } = member;
+  const { profileImage, name, student } = tempProfileInfo;
 
   return (
     <S.ProfileWrap>
@@ -17,7 +16,8 @@ const Profile = () => {
         <S.ProfileImg src={profileImage ? profileImage : defaultProfileImg} />
         <S.ProfileNameText>{name}</S.ProfileNameText>
         <S.ProfileBasicInfoText>
-          {classroom?.grade || 0}학년 {classroom?.room || 0}반 {number || 0}번
+          {student?.grade || 0}학년 {student?.room || 0}반{" "}
+          {student?.number || 0}번
         </S.ProfileBasicInfoText>
       </S.ProfileImgWrap>
     </S.ProfileWrap>

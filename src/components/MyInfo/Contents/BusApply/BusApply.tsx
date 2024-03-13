@@ -4,6 +4,7 @@ import BusOption from "./BusOption/BusOption";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
 import useBusApply from "../../../../hooks/busApply/useBusApply";
 import SCHOOL_IMG from "../../../../images/school_color.svg";
+import dateTransform from "../../../../util/transform/dateTransform";
 
 const BusApply = () => {
   const {
@@ -22,7 +23,7 @@ const BusApply = () => {
       <ComponentTitle>
         <S.BusImg src={busImage} />
         <S.BusApplyText>귀가 버스 신청</S.BusApplyText>
-        <S.BusDateText>{busDate}</S.BusDateText>
+        <S.BusDateText>{dateTransform.hyphen(busDate)}</S.BusDateText>
         <S.BusApplyButton
           disabled={!isChange}
           isDisable={!isChange}
@@ -32,7 +33,16 @@ const BusApply = () => {
         </S.BusApplyButton>
       </ComponentTitle>
       <S.BusApplyMainWrap>
-        {selectBusId === -1 ? (
+        {serverBusData.length > 0 ? (
+          serverBusData.map((bus) => (
+            <BusOption
+              onChangeApplyBus={onChangeApplyBus}
+              isSelect={bus.id === selectBusId}
+              data={bus}
+              key={bus.id}
+            />
+          ))
+        ) : (
           <S.BusIsNotFoundWrap>
             <S.BusNotFoundIcon src={SCHOOL_IMG} />
             <S.BusIsNotFoundTextWrap>
@@ -42,15 +52,6 @@ const BusApply = () => {
               </S.BusIsNotFound>
             </S.BusIsNotFoundTextWrap>
           </S.BusIsNotFoundWrap>
-        ) : (
-          serverBusData.map((bus) => (
-            <BusOption
-              onChangeApplyBus={onChangeApplyBus}
-              isSelect={bus.id === selectBusId}
-              data={bus}
-              key={bus.id}
-            />
-          ))
         )}
       </S.BusApplyMainWrap>
     </S.BusApplyWrap>

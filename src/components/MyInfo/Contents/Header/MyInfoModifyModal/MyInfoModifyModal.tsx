@@ -22,8 +22,7 @@ const MyInfoModifyModal = () => {
   const { isLoading } = useMyGradeInfo();
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
 
-  const { member, phone, number, classroom } = tempProfileInfo;
-  const { email, profileImage } = member;
+  const { student, phone, email, profileImage } = tempProfileInfo;
 
   const [emailInfo, setEmailInfo] = useState<string>("");
   const [phoneInfo, setPhoneInfo] = useState<string>("");
@@ -84,8 +83,8 @@ const MyInfoModifyModal = () => {
   const updateInfo = async () => {
     if (
       !(
-        emailInfo === tempProfileInfo.member.email &&
-        imageSrc === tempProfileInfo.member.profileImage &&
+        emailInfo === tempProfileInfo?.email &&
+        imageSrc === tempProfileInfo?.profileImage &&
         phoneInfo === tempProfileInfo.phone
       )
     ) {
@@ -108,11 +107,8 @@ const MyInfoModifyModal = () => {
 
         setTempProfileInfo({
           ...tempProfileInfo,
-          member: {
-            ...member,
-            email: emailInfo,
-            profileImage: imageSrc,
-          },
+          email: emailInfo,
+          profileImage: imageSrc,
           phone: phoneInfo,
         });
 
@@ -202,7 +198,8 @@ const MyInfoModifyModal = () => {
             <S.ModifyBoxTitleText>학년 반 번호</S.ModifyBoxTitleText>
             <S.ModifyBoxInContents>
               <S.ModifyBoxContentText>
-                {classroom?.grade || 0}학년 {classroom?.room || 0}반 {number}번
+                {student?.grade || 0}학년 {student?.room || 0}반{" "}
+                {student?.number}번
               </S.ModifyBoxContentText>
               <S.EachModifyEventButton
                 onClick={() => setClassIsModifying(true)}

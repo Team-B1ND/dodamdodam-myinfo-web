@@ -16,26 +16,26 @@ const MyInfoClassSelectList = ({ onChnageSelect }: Props) => {
 
   return (
     <S.SelectWrap>
-      {profileInfoData.classroom && (
+      {profileInfoData.student && (
         <>
           <MyInfoClassSelect
             label="학년"
             items={[1, 2, 3]}
-            value={profileInfoData.classroom.grade}
+            value={profileInfoData.student.grade}
             onChnageSelect={onChnageSelect}
             scope="grade"
           />
           <MyInfoClassSelect
             label="반"
             items={[1, 2, 3, 4]}
-            value={profileInfoData.classroom.room}
+            value={profileInfoData.student.room}
             onChnageSelect={onChnageSelect}
             scope="room"
           />
           <MyInfoClassSelect
             label="번"
             items={[...Array.from({ length: 20 }).map((_, idx) => idx + 1)]}
-            value={profileInfoData.number}
+            value={profileInfoData.student.number}
             onChnageSelect={onChnageSelect}
             scope="number"
           />

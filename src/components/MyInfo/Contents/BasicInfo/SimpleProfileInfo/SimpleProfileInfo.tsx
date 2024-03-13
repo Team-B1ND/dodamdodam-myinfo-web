@@ -6,7 +6,7 @@ import { profileInfo } from "../../../../../store/profile";
 const SimpleProfileInfo = () => {
   const profileInfoData = useRecoilValue(profileInfo);
 
-  const { profileImage, name } = profileInfoData.member;
+  const { profileImage, name } = profileInfoData;
 
   return (
     <>
