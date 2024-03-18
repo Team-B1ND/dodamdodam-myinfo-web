@@ -1,6 +1,5 @@
 export interface patchMyPasswordParam {
-  newPw: string;
-  pw: string;
+  password: string;
 }
 
 export interface patchStudentInfoParam {

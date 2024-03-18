@@ -4,7 +4,7 @@ import { mainProfile } from "../../types/mainProfile/mainProfile.type";
 const useModifyMainProfile = () => {
   const patchMainProfile = async (memberInfo: mainProfile) => {
     try {
-      const response = await mainProfileRepository.patchMainProfile(memberInfo);
+      await mainProfileRepository.patchMainProfile(memberInfo);
     } catch (error) {}
   };
   return { patchMainProfile };

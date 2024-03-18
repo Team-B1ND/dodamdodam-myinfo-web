@@ -12,6 +12,7 @@ const useMyGradeInfo = () => {
     try {
       setIsLoading(true);
       const { data } = await profileRepository.getMyProfileInfo();
+      console.log(data);
       setTempProfileInfo(data);
       setIsLoading(false);
     } catch (error) {

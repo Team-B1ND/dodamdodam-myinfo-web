@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 
 class DateTransform {
   public hyphen(date?: string): string {
-    return dayjs(date).format("YYYY-MM-DD");
+    return dayjs(date || new Date()).format("YYYY-MM-DD");
   }
 
   public period(date?: string): string {

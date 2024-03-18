@@ -113,7 +113,9 @@ const MyInfoModifyModal = () => {
         });
 
         setIsOpenMyInfoModifyModal((prev: boolean) => !prev);
-      } catch (error) {}
+      } catch (error) {
+        B1ndToast.showError("내 정보를 수정하지 못했습니다!");
+      }
     } else {
       B1ndToast.showInfo("내 정보를 수정해주세요!");
     }

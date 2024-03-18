@@ -1,4 +1,4 @@
-import { testAxios } from "../../lib/axios/customAxios";
+import { customAxios } from "../../lib/axios/customAxios";
 import {
   BusesResponse,
   MyAppliedBusResponse,
@@ -7,21 +7,21 @@ import { BusApplyParam } from "./busApply.param";
 
 class BusApplyRepository {
   public async getTodayBuses(): Promise<BusesResponse> {
-    const { data } = await testAxios.get("/bus");
+    const { data } = await customAxios.get("/bus");
     return data;
   }
 
   public async getMyAppliedBus(): Promise<MyAppliedBusResponse> {
-    const { data } = await testAxios.get("/bus/apply");
+    const { data } = await customAxios.get("/bus/apply");
     return data;
   }
 
   public async postBusApply({ idx }: BusApplyParam): Promise<void> {
-    await testAxios.post(`/bus/apply/${idx}`);
+    await customAxios.post(`/bus/apply/${idx}`);
   }
 
   public async patchBusApply({ idx }: BusApplyParam): Promise<void> {
-    await testAxios.patch(`/bus/apply/${idx}`);
+    await customAxios.patch(`/bus/apply/${idx}`);
   }
 }
 
