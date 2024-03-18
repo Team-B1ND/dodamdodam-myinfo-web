@@ -15,17 +15,7 @@ export const customAxios = axios.create({
   },
 });
 
-export const testAxios = axios.create({
-  baseURL: config.DODAM_TEST_SERVER,
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    [REQUEST_TOKEN_KEY]: `Bearer ${token.getToken(ACCESS_TOKEN_KEY)}`,
-  },
-});
-
 customAxios.interceptors.response.use(
   (res) => res,
   customAxiosErrorInterceptor
 );
-
-testAxios.interceptors.response.use((res) => res, customAxiosErrorInterceptor);
