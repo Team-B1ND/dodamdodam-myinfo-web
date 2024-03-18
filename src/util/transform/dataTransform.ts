@@ -1,7 +1,7 @@
 import {
   basicLocationDay,
   basicLocationType,
-} from "../../basicLocation/basicLocation.type";
+} from "../../types/basicLocation/basicLocation.type";
 
 class DataTransform {
   public dayTransform(day: basicLocationDay): string {

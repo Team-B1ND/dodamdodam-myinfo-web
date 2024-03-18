@@ -1,12 +1,5 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
-import { sha512 } from "js-sha512";
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import profileRepository from "../../repository/profile/profile.repository";
 import patternCheck from "../../util/patternCheck";
 
@@ -46,10 +39,8 @@ const usePasswordChange = () => {
     }
 
     try {
-      const { pw, newPw } = pwData;
       await profileRepository.patchMyPassword({
-        pw: sha512(pw),
-        newPw: sha512(newPw),
+        password: newPw,
       });
       B1ndToast.showSuccess("비밀번호 수정 성공");
       setPwData({ pw: "", newPw: "" });

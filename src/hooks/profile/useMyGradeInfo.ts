@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import profileRepository from "../../repository/profile/profile.repository";
 import { profileInfo } from "../../store/profile";
-import { myProfile } from "../../types/profile/profile.type";
 
 const useMyGradeInfo = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -13,6 +12,7 @@ const useMyGradeInfo = () => {
     try {
       setIsLoading(true);
       const { data } = await profileRepository.getMyProfileInfo();
+      console.log(data);
       setTempProfileInfo(data);
       setIsLoading(false);
     } catch (error) {

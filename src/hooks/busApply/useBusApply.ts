@@ -13,17 +13,13 @@ const useBusApply = () => {
   const mappingBusData = async () => {
     try {
       const { data } = await busApplyRepository.getTodayBuses();
-      setServerBusData(data.bus);
-      setBusDate(data.date);
+      setServerBusData(data);
+      setBusDate(data[0].leaveTime);
     } catch (error) {}
   };
 
   useEffect(() => {
-    if (selectedBusId !== selectBusId) {
-      setIsChange(true);
-    } else {
-      setIsChange(false);
-    }
+    setIsChange(selectedBusId !== selectBusId);
   }, [selectedBusId, selectBusId]);
 
   const initializingMyBus = async () => {
@@ -62,7 +58,6 @@ const useBusApply = () => {
     try {
       await busApplyRepository.patchBusApply({
         idx: String(selectBusId),
-        originIdx: String(selectedBusId),
       });
       B1ndToast.showSuccess("버스 수정 성공");
       setSelectedBusId(selectBusId);

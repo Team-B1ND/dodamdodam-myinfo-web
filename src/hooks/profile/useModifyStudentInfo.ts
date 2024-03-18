@@ -1,5 +1,5 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useRecoilState } from "recoil";
 import ProfileRepository from "../../repository/profile/profile.repository";
 import { profileInfo } from "../../store/profile";
@@ -8,15 +8,15 @@ const useModifyStudentInfo = () => {
   const [profileInfoData, setProfileInfoData] = useRecoilState(profileInfo);
 
   const [studentInfo, setStudentInfo] = useState({
-    grade: profileInfoData.classroom?.grade || 0,
-    room: profileInfoData.classroom?.room || 0,
-    number: profileInfoData.number,
+    grade: profileInfoData.student?.grade || 0,
+    room: profileInfoData.student?.room || 0,
+    number: profileInfoData.student?.number || 0,
   });
 
   const [tempStudentInfo, setTempStudentInfo] = useState({
-    grade: profileInfoData.classroom?.grade || 0,
-    room: profileInfoData.classroom?.room || 0,
-    number: profileInfoData.number,
+    grade: profileInfoData.student?.grade || 0,
+    room: profileInfoData.student?.room || 0,
+    number: profileInfoData.student?.number || 0,
   });
 
   const onChangeStudentInfo = (
@@ -54,21 +54,21 @@ const useModifyStudentInfo = () => {
 
     try {
       await ProfileRepository.patchStudentInfo({
-        grade: studentInfo.grade,
-        room: studentInfo.room,
-        number: studentInfo.number,
+        grade: studentInfo.grade || 0,
+        room: studentInfo.room || 0,
+        number: studentInfo.number || 0,
       });
 
       B1ndToast.showSuccess("학반 수정 성공");
 
       setProfileInfoData((prev) => ({
         ...prev,
-        number: studentInfo.number,
-        classroom: {
-          grade: studentInfo.grade,
-          room: studentInfo.room,
-          placeId: prev.classroom!.placeId,
-          id: prev.classroom!.id,
+        student: {
+          id: prev.student!.id,
+          name: prev.student!.name,
+          number: studentInfo.number || 0,
+          grade: studentInfo.grade || 0,
+          room: studentInfo.room || 0,
         },
       }));
 

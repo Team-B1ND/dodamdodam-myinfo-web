@@ -1,27 +1,30 @@
 import { atom } from "recoil";
-import { myProfile } from "../types/profile/profile.type";
+import { Profile } from "../types/profile/profile.type";
 
-export const profileInfo = atom<myProfile>({
+export const profileInfo = atom<Profile>({
   key: "profileInfo",
   default: {
-    classroom: {
-      grade: 0,
-      id: 0,
-      placeId: 0,
-      room: 0,
-    },
-    id: 0,
-    member: {
-      email: "",
-      id: "",
-      joinDate: "2022-11-03 23:11:48",
-      name: "",
-      profileImage: null,
-      role: "STUDENT",
-      status: "ACTIVE",
-    },
-    number: 0,
+    id: "",
+    name: "",
+    email: "",
+    role: "STUDENT",
+    status: "ACTIVE",
+    profileImage: null, //nullable
     phone: "",
+    student: {
+      id: 0,
+      name: "",
+      grade: 0,
+      room: 0,
+      number: 0,
+    },
+    teacher: {
+      id: 0,
+      tel: "",
+      position: "",
+    },
+    createdAt: "",
+    modifiedAt: "",
   },
 });
 

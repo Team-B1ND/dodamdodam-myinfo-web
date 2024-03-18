@@ -4,15 +4,14 @@ import { patchMyPasswordParam, patchStudentInfoParam } from "./profile.param";
 
 class ProfileRepository {
   public async getMyProfileInfo(): Promise<myProfileResponse> {
-    const { data } = await customAxios.get("/members/my");
+    const { data } = await customAxios.get("/member/my");
     return data;
   }
 
   public async patchMyPassword({
-    newPw,
-    pw,
+    password,
   }: patchMyPasswordParam): Promise<void> {
-    await customAxios.patch("/members/pw", { newPw, pw });
+    await customAxios.patch("/member/password", { password });
   }
 
   public async patchStudentInfo({
@@ -20,7 +19,7 @@ class ProfileRepository {
     room,
     number,
   }: patchStudentInfoParam): Promise<void> {
-    await customAxios.patch("/members/student/studentInfo", {
+    await customAxios.patch("/member/student/info", {
       grade,
       room,
       number,
