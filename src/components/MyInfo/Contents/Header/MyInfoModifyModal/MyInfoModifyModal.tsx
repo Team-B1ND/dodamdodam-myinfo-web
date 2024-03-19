@@ -99,7 +99,7 @@ const MyInfoModifyModal = () => {
 
         await patchMainProfile({
           email: emailInfo,
-          imageUrl: imageSrc,
+          profileImage: imageSrc,
           phone: phoneInfo,
         });
 
@@ -195,6 +195,7 @@ const MyInfoModifyModal = () => {
             기본 프로필로 변경
           </S.PictureBecomeBasicImageBtn>
         </S.ModalPictureChangeWrap>
+
         <S.ModifyBoxWrap>
           <S.ModifyBox>
             <S.ModifyBoxTitleText>학년 반 번호</S.ModifyBoxTitleText>
@@ -235,6 +236,7 @@ const MyInfoModifyModal = () => {
               </S.ModifyBoxInContents>
             )}
           </S.ModifyBox>
+
           <S.ModifyBox>
             <S.ModifyBoxTitleText>전화번호</S.ModifyBoxTitleText>
             {!phoneIsModifying ? (

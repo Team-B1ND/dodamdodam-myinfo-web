@@ -1,5 +1,5 @@
 export interface mainProfile {
   email: string;
-  imageUrl: string | null;
+  profileImage: string | null;
   phone: string;
 }
