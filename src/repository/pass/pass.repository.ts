@@ -3,7 +3,7 @@ import { MyPassesResponse } from "../../types/pass/pass.type";
 
 class PassRepository {
   public async getMyOutGoing(): Promise<MyPassesResponse> {
-    const { data } = await customAxios.get("/out/outgoing/my");
+    const { data } = await customAxios.get("/out-going/my");
     return data;
   }
 }

@@ -2,4 +2,4 @@ import { useQuery } from "react-query";
 import leaveRepository from "../../repository/leave/leave.repository";
 
 export const useGetMyOutSleep = () =>
-  useQuery("leave/getMyLeave", () => leaveRepository.getMyOutSleeping());
+  useQuery("/out-sleeping/my", () => leaveRepository.getMyOutSleeping());

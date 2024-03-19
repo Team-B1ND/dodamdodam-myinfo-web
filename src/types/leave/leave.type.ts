@@ -1,9 +1,9 @@
 import { Response } from "../util/response.type";
 
 export interface Leave {
-  endOutDate: string;
   reason: string;
-  startOutDate: string;
+  startAt: string;
+  endAt: string;
 }
 
 export interface AppliedLeave extends Leave {

@@ -1,9 +1,9 @@
 import { Response } from "../util/response.type";
 
 export interface Pass {
-  endOutDate: string;
   reason: string;
-  startOutDate: string;
+  startAt: string;
+  endAt: string;
 }
 
 export interface AppliedPass extends Pass {

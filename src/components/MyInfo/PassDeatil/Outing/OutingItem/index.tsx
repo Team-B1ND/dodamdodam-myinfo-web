@@ -12,8 +12,16 @@ const OutingItem = () => {
             <>
               <OutingHeaderWrap key={data.id}>
                 <OutingData>{data.reason}</OutingData>
-                <OutingData>{data.startOutDate}</OutingData>
-                <OutingData>{data.endOutDate}</OutingData>
+                <OutingData>
+                  {data.startAt.slice(0, 10)}
+                  &nbsp;
+                  {data.startAt.slice(11, 19)}
+                </OutingData>
+                <OutingData>
+                  {data.endAt.slice(0, 10)}
+                  &nbsp;
+                  {data.endAt.slice(11, 19)}
+                </OutingData>
                 <OutingData>
                   {data.status === "PENDING"
                     ? "대기중"

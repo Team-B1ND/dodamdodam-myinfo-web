@@ -13,8 +13,8 @@ const SleepoverItem = () => {
             <>
               <LeaveHeaderWrap key={data.id}>
                 <LeaveData>{data.reason}</LeaveData>
-                <LeaveData>{data.startOutDate}</LeaveData>
-                <LeaveData>{data.endOutDate}</LeaveData>
+                <LeaveData>{data.startAt}</LeaveData>
+                <LeaveData>{data.endAt}</LeaveData>
                 <LeaveData>
                   {data.status === "PENDING"
                     ? "대기중"
