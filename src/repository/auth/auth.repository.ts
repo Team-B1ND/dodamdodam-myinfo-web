@@ -8,7 +8,7 @@ class AuthRepository {
     refreshToken,
   }: postTokenRefreshParam): Promise<TokenRefreshResponse> {
     const { data } = await axios.post(
-      `${config.DODAM_TEST_SERVER}}/auth/reissue`,
+      `${config.DODAM_SERVER}}/auth/reissue`,
       refreshToken
     );
     return data;
