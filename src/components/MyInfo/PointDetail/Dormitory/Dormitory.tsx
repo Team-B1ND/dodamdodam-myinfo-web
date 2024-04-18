@@ -1,11 +1,25 @@
+import { useGetMyPointReasonQuery } from "../../../../query/point/point.query";
 import * as S from "./Dormitory.style";
 import { useState } from "react";
-import usePointReason from "../../../../hooks/myPoint/usePointReason";
 
-const Dormitory = () => {
+interface Props {
+  isDormitoryAndSchool: boolean;
+}
+
+const Dormitory = ({ isDormitoryAndSchool }: Props) => {
   const [isPoint, setIsPoint] = useState<boolean>(false);
-  const { dormitoryMinusPointReasonData, dormitoryBonusPointReasonData } =
-    usePointReason();
+
+  const { data: dormitoryBonusPointReasonData } = useGetMyPointReasonQuery(
+    isDormitoryAndSchool ? "SCHOOL" : "DORMITORY"
+  );
+
+  const bonusData = dormitoryBonusPointReasonData?.data.filter(
+    (data) => data.reason.scoreType === "BONUS"
+  );
+
+  const minusData = dormitoryBonusPointReasonData?.data.filter(
+    (data) => data.reason.scoreType === "MINUS"
+  );
 
   return (
     <S.DormitoryPointContainer>
@@ -22,59 +36,50 @@ const Dormitory = () => {
           벌점
         </S.BadPoints>
       </S.PointHeaderContainer>
-
-      {isPoint ? (
-        dormitoryMinusPointReasonData.length !== 0 ? (
-          dormitoryMinusPointReasonData.map((item, idx) => {
-            return (
-              <S.PointReasonDetailWrap key={idx}>
-                <S.ReasonDetail style={{ width: "20%" }}>
-                  {item.score}점
-                </S.ReasonDetail>
-                <S.Divide />
-                <S.ReasonDetail style={{ width: "50%" }}>
-                  {item.reason}
-                </S.ReasonDetail>
-                <S.Divide />
-                <S.ReasonDetail style={{ width: "20%" }}>
-                  {item.given_date.split(" ")[0]}
-                </S.ReasonDetail>
-                <S.Divide />
-                <S.ReasonDetail style={{ width: "10%" }}>
-                  {item.teacher.member.name}
-                </S.ReasonDetail>
-              </S.PointReasonDetailWrap>
-            );
-          })
-        ) : (
-          <S.PointReasonDataNullMent>
-            벌점이 없습니다.
-          </S.PointReasonDataNullMent>
-        )
-      ) : dormitoryBonusPointReasonData.length !== 0 ? (
-        dormitoryBonusPointReasonData.map((item, idx) => {
-          return (
+      {!isPoint ? (
+        <>
+          {bonusData?.map((item, idx) => (
             <S.PointReasonDetailWrap key={idx}>
               <S.ReasonDetail style={{ width: "20%" }}>
-                {item.score}점
+                {item.reason.score}점
               </S.ReasonDetail>
               <S.Divide />
               <S.ReasonDetail style={{ width: "50%" }}>
-                {item.reason}
+                {item.reason.reason}
               </S.ReasonDetail>
               <S.Divide />
               <S.ReasonDetail style={{ width: "20%" }}>
-                {item.given_date.split(" ")[0]}
+                {item.issueAt}
               </S.ReasonDetail>
               <S.Divide />
               <S.ReasonDetail style={{ width: "10%" }}>
-                {item.teacher.member.name}
+                {item.teacher.name}
               </S.ReasonDetail>
             </S.PointReasonDetailWrap>
-          );
-        })
+          ))}
+        </>
       ) : (
-        <S.PointReasonDataNullMent>상점이 없습니다.</S.PointReasonDataNullMent>
+        <>
+          {minusData?.map((item, idx) => (
+            <S.PointReasonDetailWrap key={idx}>
+              <S.ReasonDetail style={{ width: "20%" }}>
+                {item.reason.score}점
+              </S.ReasonDetail>
+              <S.Divide />
+              <S.ReasonDetail style={{ width: "50%" }}>
+                {item.reason.reason}
+              </S.ReasonDetail>
+              <S.Divide />
+              <S.ReasonDetail style={{ width: "20%" }}>
+                {item.issueAt}
+              </S.ReasonDetail>
+              <S.Divide />
+              <S.ReasonDetail style={{ width: "10%" }}>
+                {item.teacher.name}
+              </S.ReasonDetail>
+            </S.PointReasonDetailWrap>
+          ))}
+        </>
       )}
     </S.DormitoryPointContainer>
   );

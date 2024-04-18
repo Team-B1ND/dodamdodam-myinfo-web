@@ -10,9 +10,10 @@ class PointRepository {
     return data;
   }
 
-  public async getPointReason(): Promise<PointReasonResponse> {
-    const date = new Date().toLocaleDateString().split(".")[0];
-    const { data } = await customAxios.get(`point/my/year?year=${date}`);
+  public async getPointReason(
+    type: "DORMITORY" | "SCHOOL"
+  ): Promise<PointReasonResponse> {
+    const { data } = await customAxios.get(`/point/my?type=${type}`);
     return data;
   }
 }
