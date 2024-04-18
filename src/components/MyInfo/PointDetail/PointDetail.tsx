@@ -3,7 +3,6 @@ import * as S from "./PointDetail.style";
 import { FcInspection } from "react-icons/fc";
 import ComponentTitle from "../../common/ComponentTitle/ComponentTitle";
 import { useState } from "react";
-import School from "./School";
 import Dormitory from "./Dormitory";
 
 const PointDetail = () => {
@@ -13,7 +12,6 @@ const PointDetail = () => {
   return (
     <S.MyInfoWrap>
       <Nav />
-
       <S.MyInfoContentsWrap>
         <ComponentTitle>
           <div
@@ -46,7 +44,7 @@ const PointDetail = () => {
         </ComponentTitle>
 
         <S.PointDetailContainer>
-          {isDormitoryAndSchool ? <School /> : <Dormitory />}
+          <Dormitory isDormitoryAndSchool={isDormitoryAndSchool} />
         </S.PointDetailContainer>
       </S.MyInfoContentsWrap>
     </S.MyInfoWrap>

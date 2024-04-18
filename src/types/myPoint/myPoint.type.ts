@@ -66,5 +66,29 @@ export interface PointReason {
 }
 
 export interface PointReasonResponse extends Response {
-  data: PointReason[];
+  data: [
+    {
+      id: number;
+      student: {
+        id: number;
+        name: string;
+        grade: number;
+        room: number;
+        number: number;
+      };
+      teacher: {
+        name: string;
+        position: string;
+        tel: string;
+      };
+      reason: {
+        id: number;
+        reason: string;
+        score: number;
+        scoreType: "MINUS" | "BONUS" | "OFFSET"; //BONUS, MINUS, OFFSET
+        pointType: "DORMITORY" | "SCHHOL"; //DORMITORY, SCHOOL
+      };
+      issueAt: string;
+    }
+  ];
 }
