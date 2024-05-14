@@ -72,6 +72,7 @@ const deleteBusApply = async ()=>{
     });
     B1ndToast.showSuccess("버스 신청 취소");
       setSelectBusId(-1);
+      setSelectedBusId(-1);
   }catch(error){
     B1ndToast.showInfo("버스 신청취소 실패");
   }
