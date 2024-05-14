@@ -9,7 +9,7 @@ const useBusApply = () => {
   const [selectBusId, setSelectBusId] = useState<number>(-1);
   const [busDate, setBusDate] = useState("");
   const [isChange, setIsChange] = useState(false);
-
+  
   const mappingBusData = async () => {
     try {
       const { data } = await busApplyRepository.getTodayBuses();
