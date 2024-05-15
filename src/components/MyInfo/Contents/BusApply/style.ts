@@ -39,7 +39,7 @@ export const BusApplyButton = styled.button<{ isDisable: boolean }>`
           color: white;
         `}
 `;
-export const BusApplyDelete = styled.button<{ isDisable: boolean }>`
+export const BusApplyCancelButton = styled.button<{ isDisable: boolean }>`
   margin-left: 10px;
   padding: 7px 13px;
   border-radius: 50px;
@@ -48,7 +48,7 @@ export const BusApplyDelete = styled.button<{ isDisable: boolean }>`
   font-size: 15px;
 
   ${({ isDisable }) =>
-    isDisable
+    isDisable 
       ? css`
           background-color: ${palette.gray[200]};
           color: ${palette.gray[400]};
