@@ -16,6 +16,7 @@ const BusApply = () => {
     selectedBusId,
     onChangeApplyBus,
     onModifyBusApply,
+    deleteBusApply,
   } = useBusApply();
 
   return (
@@ -31,6 +32,13 @@ const BusApply = () => {
         >
           수정
         </S.BusApplyButton>
+        <S.BusApplyDelete
+          disabled={isChange}
+          isDisable={isChange}
+          onClick={selectBusId === -1 ? deleteBusApply : deleteBusApply }
+        >
+          신청취소
+        </S.BusApplyDelete>
       </ComponentTitle>
       <S.BusApplyMainWrap>
         {serverBusData.length > 0 ? (

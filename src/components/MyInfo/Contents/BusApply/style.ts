@@ -39,6 +39,26 @@ export const BusApplyButton = styled.button<{ isDisable: boolean }>`
           color: white;
         `}
 `;
+export const BusApplyDelete = styled.button<{ isDisable: boolean }>`
+  margin-left: 10px;
+  padding: 7px 13px;
+  border-radius: 50px;
+  border: 0px;
+  outline: none;
+  font-size: 15px;
+
+  ${({ isDisable }) =>
+    isDisable
+      ? css`
+          background-color: ${palette.gray[200]};
+          color: ${palette.gray[400]};
+        `
+      : css`
+          cursor: pointer;
+          background-color: red;
+          color: white;
+        `}
+`;
 
 export const BusDateText = styled.span`
   text-align: left;
