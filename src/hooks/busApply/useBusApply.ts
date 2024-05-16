@@ -9,7 +9,7 @@ const useBusApply = () => {
   const [selectBusId, setSelectBusId] = useState<number>(-1);
   const [busDate, setBusDate] = useState("");
   const [isChange, setIsChange] = useState(false);
-  
+  const [isChose, setIsChose] = useState(false);
   const mappingBusData = async () => {
     try {
       const { data } = await busApplyRepository.getTodayBuses();
@@ -17,9 +17,14 @@ const useBusApply = () => {
       setBusDate(data[0].leaveTime);
     } catch (error) {}
   };
-
   useEffect(() => {
     setIsChange(selectedBusId !== selectBusId);
+    if(selectedBusId==-1){
+      setIsChose(true)
+    }
+    else{
+      setIsChose(false)
+    }
   }, [selectedBusId, selectBusId]);
 
   const initializingMyBus = async () => {
@@ -80,6 +85,7 @@ const deleteBusApply = async ()=>{
   const onChangeApplyBus = (busId: number) => setSelectBusId(busId);
 
   return {
+    isChose,
     isChange,
     serverBusData,
     busDate,
