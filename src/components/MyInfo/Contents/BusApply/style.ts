@@ -58,8 +58,8 @@ export const BusApplyCancelButton = styled.button<{
         `
       : css`
        cursor: pointer;
-          background-color: red;
-          color: white;
+          background-color: #ff0000;
+          color:  #fff;
       `};
   
 `;
