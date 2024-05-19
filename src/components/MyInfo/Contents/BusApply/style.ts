@@ -42,7 +42,6 @@ export const BusApplyButton = styled.button<{ isDisable: boolean }>`
 `;
 export const BusApplyCancelButton = styled.button<{
   isChose: boolean;
-  isDisable: boolean;
 }>`
   margin-left: 10px;
   padding: 7px 13px;

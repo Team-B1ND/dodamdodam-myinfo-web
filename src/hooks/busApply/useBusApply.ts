@@ -9,7 +9,7 @@ const useBusApply = () => {
   const [selectBusId, setSelectBusId] = useState<number>(-1);
   const [busDate, setBusDate] = useState("");
   const [isChange, setIsChange] = useState(false);
-  const [isChose, setIsChose] = useState(true);
+
   const mappingBusData = async () => {
     try {
       const { data } = await busApplyRepository.getTodayBuses();
@@ -19,12 +19,6 @@ const useBusApply = () => {
   };
   useEffect(() => {
     setIsChange(selectedBusId !== selectBusId);
-    if(selectedBusId==-1){
-      setIsChose(true)
-    }
-    else{
-      setIsChose(false)
-    }
   }, [selectedBusId, selectBusId]);
 
   const initializingMyBus = async () => {
@@ -70,22 +64,21 @@ const useBusApply = () => {
       B1ndToast.showInfo("버스 수정 실패");
     }
   };
-const deleteBusApply = async ()=>{
-  try{
-    await busApplyRepository.deleteBusApply({
-      idx: String(selectBusId),
-    });
-    B1ndToast.showSuccess("버스 신청 취소");
+  const deleteBusApply = async () => {
+    try {
+      await busApplyRepository.deleteBusApply({
+        idx: String(selectBusId),
+      });
+      B1ndToast.showSuccess("버스 신청 취소");
       setSelectBusId(-1);
       setSelectedBusId(-1);
-  }catch(error){
-    B1ndToast.showInfo("버스 신청취소 실패");
-  }
-}
+    } catch (error) {
+      B1ndToast.showInfo("버스 신청취소 실패");
+    }
+  };
   const onChangeApplyBus = (busId: number) => setSelectBusId(busId);
 
   return {
-    isChose,
     isChange,
     serverBusData,
     busDate,

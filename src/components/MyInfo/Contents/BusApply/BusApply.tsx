@@ -8,7 +8,6 @@ import dateTransform from "../../../../util/transform/dateTransform";
 
 const BusApply = () => {
   const {
-    isChose,
     isChange,
     serverBusData,
     busDate,
@@ -31,12 +30,10 @@ const BusApply = () => {
           isDisable={!isChange}
           onClick={selectedBusId === -1 ? onSubmitBusApply : onModifyBusApply}
         >
-          {selectedBusId === -1 ? "신청":"수정"}
-         
+          {selectedBusId === -1 ? "신청" : "수정"}
         </S.BusApplyButton>
         <S.BusApplyCancelButton
           isChose={selectedBusId === -1}
-          isDisable={isChange}
           onClick={deleteBusApply}
         >
           신청취소
