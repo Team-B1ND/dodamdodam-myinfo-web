@@ -30,15 +30,14 @@ const BusApply = () => {
           isDisable={!isChange}
           onClick={selectedBusId === -1 ? onSubmitBusApply : onModifyBusApply}
         >
-          수정
+          {selectedBusId === -1 ? "신청" : "수정"}
         </S.BusApplyButton>
-        <S.BusApplyDelete
-          disabled={isChange}
-          isDisable={isChange}
-          onClick={selectBusId === -1 ? deleteBusApply : deleteBusApply }
+        <S.BusApplyCancelButton
+          isChose={selectedBusId === -1}
+          onClick={deleteBusApply}
         >
           신청취소
-        </S.BusApplyDelete>
+        </S.BusApplyCancelButton>
       </ComponentTitle>
       <S.BusApplyMainWrap>
         {serverBusData.length > 0 ? (

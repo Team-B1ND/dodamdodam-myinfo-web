@@ -30,6 +30,7 @@ export const BusApplyButton = styled.button<{ isDisable: boolean }>`
   ${({ isDisable }) =>
     isDisable
       ? css`
+        pointer-events: none; 
           background-color: ${palette.gray[200]};
           color: ${palette.gray[400]};
         `
@@ -39,25 +40,27 @@ export const BusApplyButton = styled.button<{ isDisable: boolean }>`
           color: white;
         `}
 `;
-export const BusApplyDelete = styled.button<{ isDisable: boolean }>`
+export const BusApplyCancelButton = styled.button<{
+  isChose: boolean;
+}>`
   margin-left: 10px;
   padding: 7px 13px;
   border-radius: 50px;
   border: 0px;
   outline: none;
   font-size: 15px;
-
-  ${({ isDisable }) =>
-    isDisable
-      ? css`
+  ${({ isChose }) =>
+    isChose? css`
+          pointer-events: none; 
           background-color: ${palette.gray[200]};
           color: ${palette.gray[400]};
         `
       : css`
-          cursor: pointer;
-          background-color: red;
-          color: white;
-        `}
+       cursor: pointer;
+          background-color: #ff0000;
+          color:  #fff;
+      `};
+  
 `;
 
 export const BusDateText = styled.span`
