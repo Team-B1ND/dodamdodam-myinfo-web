@@ -30,7 +30,7 @@ const BusApply = () => {
           isDisable={!isChange}
           onClick={selectedBusId === -1 ? onSubmitBusApply : onModifyBusApply}
         >
-          {selectedBusId === -1 ? "신청" : "수정"}
+          {selectedBusId === -1 ? "신청" : "버스변경"}
         </S.BusApplyButton>
         <S.BusApplyCancelButton
           isChose={selectedBusId === -1}
