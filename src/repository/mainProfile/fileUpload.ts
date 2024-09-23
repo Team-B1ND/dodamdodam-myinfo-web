@@ -2,8 +2,8 @@ import { customAxios } from "../../lib/axios/customAxios";
 import { fileUpload } from "../../types/fileUpload/fileUpload.type";
 
 class FileUpload {
-  public async postFileUpload(formData: FormData): Promise<fileUpload> {
-    const { data } = await customAxios.post("/upload", formData);
+  public async postFileUpload(formData: FormData | ""): Promise<fileUpload> {
+    const { data } = await customAxios.post("/upload", formData === undefined ? formData : "");
     return data;
   }
 }

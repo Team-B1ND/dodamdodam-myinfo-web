@@ -15,9 +15,7 @@ import patternCheck from "../../../../../util/patternCheck";
 import { B1ndToast } from "@b1nd/b1nd-toastify";
 
 const MyInfoModifyModal = () => {
-  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
-    MyInfoModifyModalState
-  );
+  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(MyInfoModifyModalState);
 
   const { isLoading } = useMyGradeInfo();
   const [tempProfileInfo, setTempProfileInfo] = useRecoilState(profileInfo);
@@ -39,12 +37,7 @@ const MyInfoModifyModal = () => {
 
   useEffect(() => {
     setEmailInfo(email);
-    setTempPhoneInfo(
-      `${phone.substring(0, 3)}-${phone.substring(3, 7)}-${phone.substring(
-        7,
-        11
-      )}`
-    );
+    setTempPhoneInfo(`${phone.substring(0, 3)}-${phone.substring(3, 7)}-${phone.substring(7, 11)}`);
   }, [email, phone]);
 
   useEffect(() => {
@@ -56,7 +49,7 @@ const MyInfoModifyModal = () => {
       const formData = new FormData();
       if (e.target.files) {
         formData.append("file", e.target.files[0]);
-        const { data } = await fileUpload.postFileUpload(formData);
+        const { data } = await fileUpload.postFileUpload(formData.get("file") ? formData : "");
         if (data) {
           setImageSrc(data);
         }
@@ -65,11 +58,7 @@ const MyInfoModifyModal = () => {
   };
 
   useEffect(() => {
-    setPhoneInfo(
-      tempPhoneInfo.split("-")[0] +
-        tempPhoneInfo.split("-")[1] +
-        tempPhoneInfo.split("-")[2]
-    );
+    setPhoneInfo(tempPhoneInfo.split("-")[0] + tempPhoneInfo.split("-")[1] + tempPhoneInfo.split("-")[2]);
   }, [tempPhoneInfo]);
 
   const emailInfoHandler = (e: any) => {
@@ -122,17 +111,13 @@ const MyInfoModifyModal = () => {
   };
 
   return (
-    <S.ProfileModifyModalBackground
-      onClick={() => setIsOpenMyInfoModifyModal(false)}
-    >
+    <S.ProfileModifyModalBackground onClick={() => setIsOpenMyInfoModifyModal(false)}>
       <S.ProfileModifyModalWrap
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
-        {classIsModifying && (
-          <MyInfoClassModifyModal setClassIsModifying={setClassIsModifying} />
-        )}
+        {classIsModifying && <MyInfoClassModifyModal setClassIsModifying={setClassIsModifying} />}
 
         <BiPlus
           className="exitIcon"
@@ -149,27 +134,17 @@ const MyInfoModifyModal = () => {
         />
         <S.MyInfoModifyModalTitleWrap>
           <S.MyInfoModifyTitleText>프로필 수정</S.MyInfoModifyTitleText>
-          <S.MyInfoModifySubTitleText>
-            대표 프로필과 이메일, 전화번호를 수정할 수 있습니다.
-          </S.MyInfoModifySubTitleText>
+          <S.MyInfoModifySubTitleText>대표 프로필과 이메일, 전화번호를 수정할 수 있습니다.</S.MyInfoModifySubTitleText>
         </S.MyInfoModifyModalTitleWrap>
 
         <S.ModalPictureChangeWrap>
-          <S.ModalPictureChangeTitleText>
-            프로필 사진
-          </S.ModalPictureChangeTitleText>
+          <S.ModalPictureChangeTitleText>프로필 사진</S.ModalPictureChangeTitleText>
           <S.ModalPictureWrap>
             <div>
               {isLoading ? (
                 <>로딩중..</>
               ) : (
-                <S.ModalPictureImg
-                  src={
-                    imageSrc === null || imageSrc === ""
-                      ? DODAM_DEFAULT_PROFILE
-                      : imageSrc
-                  }
-                />
+                <S.ModalPictureImg src={imageSrc === null || imageSrc === "" ? DODAM_DEFAULT_PROFILE : imageSrc} />
               )}
             </div>
 
@@ -201,14 +176,9 @@ const MyInfoModifyModal = () => {
             <S.ModifyBoxTitleText>학년 반 번호</S.ModifyBoxTitleText>
             <S.ModifyBoxInContents>
               <S.ModifyBoxContentText>
-                {student?.grade || 0}학년 {student?.room || 0}반{" "}
-                {student?.number}번
+                {student?.grade || 0}학년 {student?.room || 0}반 {student?.number}번
               </S.ModifyBoxContentText>
-              <S.EachModifyEventButton
-                onClick={() => setClassIsModifying(true)}
-              >
-                수정
-              </S.EachModifyEventButton>
+              <S.EachModifyEventButton onClick={() => setClassIsModifying(true)}>수정</S.EachModifyEventButton>
             </S.ModifyBoxInContents>
           </S.ModifyBox>
           <S.ModifyBox>
@@ -216,21 +186,14 @@ const MyInfoModifyModal = () => {
             {!emailIsModifying ? (
               <S.ModifyBoxInContents>
                 <S.ModifyBoxContentText>{emailInfo}</S.ModifyBoxContentText>
-                <S.EachModifyEventButton
-                  onClick={() => setEmailIsModifying((prev: boolean) => !prev)}
-                >
+                <S.EachModifyEventButton onClick={() => setEmailIsModifying((prev: boolean) => !prev)}>
                   수정
                 </S.EachModifyEventButton>
               </S.ModifyBoxInContents>
             ) : (
               <S.ModifyBoxInContents>
-                <S.ModifyBoxContentInput
-                  value={emailInfo}
-                  onChange={emailInfoHandler}
-                />
-                <S.EachModifyEventButton
-                  onClick={() => setEmailIsModifying((prev: boolean) => !prev)}
-                >
+                <S.ModifyBoxContentInput value={emailInfo} onChange={emailInfoHandler} />
+                <S.EachModifyEventButton onClick={() => setEmailIsModifying((prev: boolean) => !prev)}>
                   취소
                 </S.EachModifyEventButton>
               </S.ModifyBoxInContents>
@@ -242,22 +205,14 @@ const MyInfoModifyModal = () => {
             {!phoneIsModifying ? (
               <S.ModifyBoxInContents>
                 <S.ModifyBoxContentText>{tempPhoneInfo}</S.ModifyBoxContentText>
-                <S.EachModifyEventButton
-                  onClick={() => setPhoneIsModifying((prev: boolean) => !prev)}
-                >
+                <S.EachModifyEventButton onClick={() => setPhoneIsModifying((prev: boolean) => !prev)}>
                   수정
                 </S.EachModifyEventButton>
               </S.ModifyBoxInContents>
             ) : (
               <S.ModifyBoxInContents>
-                <S.ModifyBoxContentInput
-                  value={tempPhoneInfo}
-                  onChange={phoneInfoHandler}
-                  maxLength={13}
-                />
-                <S.EachModifyEventButton
-                  onClick={() => setPhoneIsModifying((prev: boolean) => !prev)}
-                >
+                <S.ModifyBoxContentInput value={tempPhoneInfo} onChange={phoneInfoHandler} maxLength={13} />
+                <S.EachModifyEventButton onClick={() => setPhoneIsModifying((prev: boolean) => !prev)}>
                   취소
                 </S.EachModifyEventButton>
               </S.ModifyBoxInContents>
