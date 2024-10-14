@@ -14,14 +14,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Ensure Config Directory Exists
-        run: mkdir -p ./src/config  # config 디렉토리 생성
+        run: mkdir -p ./src/config 
 
       - name: Create Config JSON File
         id: create-json 
         uses: jsdaniell/create-json@v1.2.2 
         with:
-          name: "config.json"
-          json: ${{ secrets.CONFIG_JSON }} 
+          name: "config.json" 
+          json: ${{ secrets.CONFIG_JSON }}
           dir: './src/config' 
 
       - name: Read Config JSON File
