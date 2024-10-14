@@ -13,13 +13,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
+      - name: Ensure Config Directory Exists
+        run: mkdir -p ./src/config 
+
       - name: Create Config JSON File
         id: create-json 
         uses: jsdaniell/create-json@v1.2.2 
         with:
-          name: "config.json"  # 생성할 파일 이름
-          json: ${{ secrets.CONFIG_JSON }}  # JSON 데이터
-          dir: './src/config'  # 파일이 생성될 디렉토리 
+          name: "config.json"
+          json: ${{ secrets.CONFIG_JSON }}
+          dir: './src/config' 
 
       - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
