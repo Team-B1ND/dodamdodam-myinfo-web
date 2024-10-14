@@ -1,4 +1,4 @@
-name: Web Deploy
+name: Trigger Deploy Workflow
 
 on:
   push:
@@ -10,23 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Project
-        run: npm run build
-
-      - name: Trigger Deploy Workflow in Another Repo
+      - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GIT_ACCESS_TOKEN }}
-          repository: team-b1nd/dodam-web-deploy-config
+          token: ${{ secrets.GIT_ACCESS_TOKEN }
+          repository: team-b1nd/dodam-web-deploy-config 
           event-type: trigger-deploy
           client-payload: |
             {
-              "source_directory": "./build",
+              "repo_name": "${{ github.repository }}",
+              "branch": "${{ github.ref_name }}",
               "destination_directory": "/dodam/myinfo"
             }
