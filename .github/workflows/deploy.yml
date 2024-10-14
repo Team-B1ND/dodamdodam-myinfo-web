@@ -1,0 +1,24 @@
+name: Call Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Deploy Workflow in Another Repo
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: yourusername/deploy-config-repo
+          event-type: trigger-deploy
+          client-payload: |
+            {
+              "build_command": "npm run build",
+              "source_directory": "./build",
+              "destination_directory": "/dodam/myinfo"
+            }
