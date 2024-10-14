@@ -13,23 +13,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Ensure Config Directory Exists
-        run: mkdir -p ./src/config 
-
-      - name: Create Config JSON File
-        id: create-json 
-        uses: jsdaniell/create-json@v1.2.2 
-        with:
-          name: "config.json" 
-          json: ${{ secrets.CONFIG_JSON }}
-          dir: './src/config' 
-
-      - name: Read Config JSON File
-        id: read-json
-        run: |
-          cat ./src/config/config.json | jq -c . > ./src/config/config_string.json
-          echo "::set-output name=json_string::$(cat ./src/config/config_string.json)"
-
       - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
         with:
@@ -42,5 +25,5 @@ jobs:
               "branch": "${{ github.ref }}",
               "source_directory": "./build",
               "destination_directory": "/dodam/myinfo",
-              "config_secret": "${{ steps.read-json.outputs.json_string }}"
+              "config_secret": "${{ secrets.CONFIG_JSON }}"
             }
