@@ -13,7 +13,7 @@ jobs:
       - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GIT_ACCESS_TOKEN }
+          token: ${{ secrets.GIT_ACCESS_TOKEN }}
           repository: team-b1nd/dodam-web-deploy-config 
           event-type: trigger-deploy
           client-payload: |
