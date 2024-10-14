@@ -1,4 +1,4 @@
-name: Call Deploy Workflow
+name: Web Deploy
 
 on:
   push:
@@ -6,10 +6,19 @@ on:
       - develop
 
 jobs:
-  trigger-deploy:
+  build-and-trigger-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
       - name: Trigger Deploy Workflow in Another Repo
         uses: peter-evans/repository-dispatch@v2
         with:
@@ -18,7 +27,6 @@ jobs:
           event-type: trigger-deploy
           client-payload: |
             {
-              "build_command": "npm run build",
               "source_directory": "./build",
               "destination_directory": "/dodam/myinfo"
             }
