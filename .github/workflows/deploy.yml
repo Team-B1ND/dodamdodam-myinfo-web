@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "${{ secrets.CONFIG_JSON }}" | base64 > encoded_config.txt
           echo "CONFIG_ENCODED=$(cat encoded_config.txt)" >> $GITHUB_ENV
-          
+
       - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
         with:
@@ -31,5 +31,5 @@ jobs:
               "branch": "${{ github.ref }}",
               "source_directory": "./build",
               "destination_directory": "/dodam/myinfo",
-              "config_secret": "${{ secrets.CONFIG_JSON | toJson | base64 }}"
+              "config_secret": "${{ env.CONFIG_ENCODED }}"
             }
