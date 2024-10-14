@@ -25,5 +25,5 @@ jobs:
               "branch": "${{ github.ref }}",
               "source_directory": "./build",
               "destination_directory": "/dodam/myinfo",
-              "config_secret": ${{ secrets.CONFIG_JSON }}
+              "config_secret": ${JSON.stringify(secrets.CONFIG_JSON)}
             }
