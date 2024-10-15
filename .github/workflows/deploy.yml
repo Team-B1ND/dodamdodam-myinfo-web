@@ -1,6 +1,11 @@
 name: Trigger Web Deploy
 
 on:
+  pull_request:
+    branches:
+      - develop
+    types: [closed]
+
   push:
     branches:
       - develop
@@ -12,6 +17,15 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+
+      - name: Set Payload
+        id: set_payload
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "PR_TITLE=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+          fi
 
       - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
@@ -26,5 +40,6 @@ jobs:
               "source_directory": "./build",
               "project_name": "dodam",
               "destination_directory": "/myinfo",
-              "config_secret": "${{ secrets.CONFIG_JSON }}"
+              "config_secret": "${{ secrets.CONFIG_JSON }}",
+              "title_or_message": "${{ env.PR_TITLE || env.COMMIT_MESSAGE }}"
             }
