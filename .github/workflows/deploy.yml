@@ -1,12 +1,10 @@
 name: Trigger Web Deploy
 
 on:
-  pull_request:
-    branches:
-      - develop
-    types: [closed]
-
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - develop
 
@@ -14,18 +12,14 @@ jobs:
   trigger-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      PR_TITLE: ${{ github.event.pull_request.title || '' }}
+      COMMIT_MESSAGE: ${{ github.event.head_commit.message || '' }}
+      FINAL_TITLE: ${{ github.event.pull_request.title || github.event.head_commit.message }}
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-
-      - name: Set Payload
-        id: set_payload
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            echo "PR_TITLE=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
-          elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
-          fi
 
       - name: Trigger Deploy
         uses: peter-evans/repository-dispatch@v2
@@ -41,5 +35,5 @@ jobs:
               "project_name": "dodam",
               "destination_directory": "/myinfo",
               "config_secret": "${{ secrets.CONFIG_JSON }}",
-              "title_or_message": "${{ env.PR_TITLE || env.COMMIT_MESSAGE }}"
+              "title": "${{ env.FINAL_TITLE }}"
             }
