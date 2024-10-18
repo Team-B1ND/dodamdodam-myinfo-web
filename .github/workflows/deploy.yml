@@ -36,5 +36,6 @@ jobs:
               "project_name": "dodam",
               "destination_directory": "/myinfo",
               "config_secret": "${{ secrets.CONFIG_JSON }}",
-              "title": "${{ env.FINAL_TITLE }}"
+              "title": "${{ env.FINAL_TITLE }}",
+              "package_manager": "npm"
             }
