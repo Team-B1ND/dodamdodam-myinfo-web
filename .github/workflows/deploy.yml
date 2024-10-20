@@ -43,5 +43,6 @@ jobs:
               "destination_directory": "/myinfo",
               "config_secret": "${{ secrets.CONFIG_JSON }}",
               "title": "${{ env.CLEAN_TITLE }}",
-              "package_manager": "npm"
+              "package_manager": "npm",
+              "build_command": "npm run build"
             }
