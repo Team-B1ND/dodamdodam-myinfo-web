@@ -12,7 +12,7 @@ interface Props {
 const MyInfoClassModifyModal = ({ setClassIsModifying }: Props) => {
   const onClose = () => setClassIsModifying(false);
 
-  const { onChangeStudentInfo, onModifyStudentInfo } = useModifyStudentInfo();
+  const { onChangeStudentInfo, onModifyStudentInfo } = useModifyStudentInfo({setClassIsModifying});
 
   return (
     <>
