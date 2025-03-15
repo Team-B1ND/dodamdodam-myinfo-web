@@ -1,21 +1,36 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
+import config from "../../config/config.json";
 import {
   ACCESS_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
 } from "../../constants/token/token.constant";
-import config from "../../config/config.json";
-import { customAxiosErrorInterceptor } from "./interceptor";
 import token from "../token/token";
+import errorResponseHandler from "./errorResponseHandler";
+import requestHandler from "./requestHandler";
 
-export const customAxios = axios.create({
+const createAxiosInstance = (config?: AxiosRequestConfig) => {
+  const baseConfig: AxiosRequestConfig = {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
+  return axios.create({
+    ...baseConfig,
+    ...config,
+  });
+};
+
+export const customAxios = createAxiosInstance({
   baseURL: config.DODAM_SERVER,
   headers: {
-    "Access-Control-Allow-Origin": "*",
-    [REQUEST_TOKEN_KEY]: `Bearer ${token.getToken(ACCESS_TOKEN_KEY)}`,
+    [REQUEST_TOKEN_KEY]: `Bearer ${token.getToken(ACCESS_TOKEN_KEY)}`!,
   },
 });
 
-customAxios.interceptors.response.use(
-  (res) => res,
-  customAxiosErrorInterceptor
-);
+export const customAxiosSetAccessToken = (token: string) => {
+  customAxios.defaults.headers.common[REQUEST_TOKEN_KEY] = `Bearer ${token}`;
+};
+
+customAxios.interceptors.request.use(requestHandler , (res) => res);
+
+customAxios.interceptors.response.use((res) => res, errorResponseHandler);
