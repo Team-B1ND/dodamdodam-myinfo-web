@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../../styles/palette";
+
 
 export const MyInfoModifyWrap = styled.div`
   width: 780px;
@@ -17,8 +17,8 @@ export const MyInfoModifyBtnWrap = styled.div`
 export const MyInfoModifyBtn = styled.div`
   border-radius: 50px;
   height: 30px;
-  background-color: ${palette.main};
-  color: ${palette.white};
+  
+  
   display: flex;
   align-items: center;
   padding: 0 15px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../../styles/palette";
+
 
 export const MainProfileWrap = styled.div`
   width: 780px;
@@ -21,7 +21,7 @@ export const HappyFaceImg = styled.img`
 export const MainProfileText = styled.span`
   font-size: 1.3rem;
   font-weight: bold;
-  color: ${palette.black};
+  
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -31,9 +31,9 @@ export const MainProfileText = styled.span`
 export const MainProfileMainWrap = styled.div`
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   border-radius: 20px;
-  border: 1px solid ${palette.main};
+  
   padding: 20px;
-  background-color: ${palette.white};
+  
 `;
 
 export const MainProfileMiddleWrap = styled.div`
@@ -78,14 +78,14 @@ export const MainProfileNameText = styled.span`
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
-  color: ${palette.black};
+  
 `;
 
 export const MainProfileGenerationText = styled.span`
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  color: ${palette.gray[500]};
+  
   justify-content: flex-start;
 `;
 
@@ -113,7 +113,7 @@ export const MainProfileEachExplain = styled.span`
   width: 637px;
   align-items: center;
   height: 30px;
-  color: ${palette.gray[700]};
+  
 `;
 
 export const MainProfileInfoText = styled.span`
@@ -134,9 +134,9 @@ export const UpdateBtn = styled.button`
 export const MyInfoModifyBtn = styled.div`
   border-radius: 10px;
   height: 28px;
-  border: 1px solid ${palette.gray[200]};
-  background-color: ${palette.gray[100]};
-  color: ${palette.gray[500]};
+  
+  
+  
   display: flex;
   align-items: center;
   padding: 0 15px;

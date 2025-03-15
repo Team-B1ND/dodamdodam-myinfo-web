@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { pathToFileURL } from "url";
-import { palette } from "../../../../../styles/palette";
+
 
 export const MainProfileHrWrap = styled.div`
   display: flex;
@@ -12,5 +11,5 @@ export const MainProfileHrWrap = styled.div`
 export const MainProfileHrBar = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${palette.gray[200]};
+  
 `;

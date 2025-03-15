@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { palette } from "../../../../../styles/palette";
+
 
 export const BusOptionWrap = styled.div<{ isSelect: boolean }>`
   width: 140px;
@@ -18,7 +18,7 @@ export const BusOptionWrap = styled.div<{ isSelect: boolean }>`
   ${({ isSelect }) =>
     isSelect
       ? css`
-          background-color: ${palette.main};
+          
           color: white;
         `
       : css`

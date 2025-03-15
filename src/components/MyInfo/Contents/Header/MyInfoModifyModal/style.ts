@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../../../styles/palette";
+
 
 export const ProfileModifyModalBackground = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ export const ProfileModifyModalBackground = styled.div`
 export const ProfileModifyModalWrap = styled.div`
   width: 880px;
   height: 680px;
-  background-color: ${palette.white};
+
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -36,7 +36,7 @@ export const MyInfoModifyModalTitleWrap = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border-bottom: 1px solid ${palette.gray[400]};
+  
 `;
 
 export const MyInfoModifyTitleText = styled.span`
@@ -54,7 +54,7 @@ export const ModalPictureChangeWrap = styled.div`
   padding: 10px 0;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid ${palette.gray[400]};
+  
 `;
 
 export const ModalPictureChangeTitleText = styled.span`
@@ -84,7 +84,7 @@ export const PictureBecomeBasicImageBtn = styled.div`
   padding: 0 10px;
   border-radius: 10px;
   align-items: center;
-  background-color: ${palette.gray[200]};
+  
   &:hover {
     cursor: pointer;
   }
@@ -98,7 +98,7 @@ export const PictureImageModifyLabel = styled.label`
   top: 65%;
   left: 65%;
   border-radius: 50%;
-  background-color: ${palette.gray[300]};
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +121,7 @@ export const ModifyBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 0 10px 10px;
-  border-bottom: 1px solid ${palette.gray[300]};
+  
   gap: 10px;
 `;
 
@@ -151,7 +151,7 @@ export const EachModifyEventButton = styled.div`
   display: flex;
   padding: 7px 13px;
   border-radius: 50px;
-  background-color: ${palette.gray[300]};
+  
   font-size: 1rem;
   cursor: pointer;
   width: min-content;
@@ -162,8 +162,7 @@ export const ModifyEventButton = styled.div`
   display: flex;
   padding: 10px 15px;
   border-radius: 50px;
-  background-color: ${palette.main};
-  color: ${palette.white};
+
   font-size: 1.1rem;
   width: min-content;
   white-space: nowrap;

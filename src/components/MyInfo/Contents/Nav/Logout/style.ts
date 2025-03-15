@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { palette } from "../../../../../styles/palette";
+
 
 export const LogoutWrap = styled.div`
   width: 130px;
   text-align: center;
   padding: 15px 0;
-  background-color: ${palette.main};
-  color: ${palette.white};
+  
   border-radius: 20px;
   /* margin-top: 30px;
   width: calc(100% - 60px - 100px);

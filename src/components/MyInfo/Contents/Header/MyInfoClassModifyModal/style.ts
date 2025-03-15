@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../../../styles/palette";
+
 
 export const Background = styled.div`
   width: 100%;
@@ -16,7 +16,7 @@ export const Background = styled.div`
 export const Container = styled.div`
   width: 584px;
   height: 336px;
-  background-color: ${palette.white};
+
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -51,7 +51,7 @@ export const SubmitButton = styled.button`
   display: flex;
   padding: 7px 13px;
   border-radius: 50px;
-  background-color: ${palette.main};
+
   font-size: 1rem;
   cursor: pointer;
   width: min-content;
@@ -64,7 +64,7 @@ export const CancelButton = styled.button`
   display: flex;
   padding: 7px 13px;
   border-radius: 50px;
-  background-color: ${palette.gray[300]};
+
   font-size: 1rem;
   cursor: pointer;
   width: min-content;

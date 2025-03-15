@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { palette } from "../../../../../../styles/palette";
 
 export const Container = styled.div`
   display: flex;
@@ -24,6 +23,6 @@ export const SelectContainer = styled.select`
   justify-content: space-between;
 
   :focus {
-    border: 2px solid ${palette.main};
+    
   }
 `;

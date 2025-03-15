@@ -1,6 +1,6 @@
 import { atom } from "recoil";
-import { ETheme } from "src/enum/Theme/theme.enum";
-import { getTheme } from "src/utils/Theme/getTheme";
+import { ETheme } from "enum/Theme/theme.enum";
+import { getTheme } from "utils/Theme/getTheme";
 
 export const themeModeAtom = atom<ETheme>({
   key: "theme/themeModeAtom",

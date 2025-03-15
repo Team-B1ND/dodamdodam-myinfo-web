@@ -6,7 +6,7 @@ export const LayoutContainer = styled.div`
     user-select: none;
     margin: 0;
     overflow: hidden;
-    background-color: ${({theme})=> theme.backgroundNeutral};
+    
 `
 
 export const Layout = styled.div`

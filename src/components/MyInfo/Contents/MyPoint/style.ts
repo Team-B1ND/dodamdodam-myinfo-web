@@ -1,5 +1,5 @@
-import styled, { css, StyledInterface } from "styled-components";
-import { palette } from "../../../../styles/palette";
+import styled from "styled-components";
+
 
 export const MyPointWrap = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const MyPointWrap = styled.div`
   width: 350px;
   height: 155px;
   border-radius: 20px;
-  background-color: ${palette.white};
+  
   border: 1px solid #e3e9ed;
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
   margin-top: 20px;
@@ -28,7 +28,7 @@ export const MyPointTextWrap = styled.span`
   height: 25px;
   font-size: 1.1rem;
   align-items: center;
-  color: ${palette.black};
+  
 `;
 
 export const MyPointContentsWrap = styled.div`

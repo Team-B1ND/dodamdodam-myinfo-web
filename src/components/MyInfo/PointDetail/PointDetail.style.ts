@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../styles/palette";
+
 
 export const MyInfoWrap = styled.div`
   width: 1251px;
@@ -26,8 +26,8 @@ export const MainProfileText = styled.span`
 export const DormitoryBtn = styled.div<{ isColor: boolean }>`
   border-radius: 50px;
   height: 30px;
-  background-color: ${({ isColor }) =>
-    isColor ? `${palette.gray[400]};` : `${palette.main};`};
+  
+    
   color: #fff;
   display: flex;
   align-items: center;
@@ -39,8 +39,7 @@ export const DormitoryBtn = styled.div<{ isColor: boolean }>`
 export const SchoolBtn = styled.div<{ isColor: boolean }>`
   border-radius: 50px;
   height: 30px;
-  background-color: ${({ isColor }) =>
-    isColor ? `${palette.main};` : `${palette.gray[400]};`};
+  
   color: #fff;
   display: flex;
   align-items: center;
@@ -59,6 +58,5 @@ export const PointDetailContainer = styled.div`
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
-  border: 1px solid ${palette.gray[300]};
   box-shadow: 1px 1px 10px 0 rgb(72 75 108 / 8%);
 `;

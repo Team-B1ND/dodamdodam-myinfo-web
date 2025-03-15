@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
-import { palette } from "../../../../../styles/palette";
-import { NAV_TAB_ITEMS } from "../../../../../constants/nav/nav.constant";
+
+import { NAV_TAB_ITEMS } from "constants/nav/nav.constant";
 
 const Tab = () => {
   const { pathname } = useLocation();

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../../../styles/palette";
+
 
 export const NoticeWrap = styled.div`
   border-radius: 8px;
@@ -16,6 +16,6 @@ export const NoticeText = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${palette.main};
+
   font-size: 1.05rem;
 `;

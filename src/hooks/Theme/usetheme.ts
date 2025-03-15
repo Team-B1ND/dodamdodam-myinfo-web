@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from "react";
-import { THEME_KEY } from "src/constants/Theme/theme.contant";
-import { ETheme } from "src/enum/Theme/theme.enum";
+import { THEME_KEY } from "constants/Theme/theme.contant";
+import { ETheme } from "enum/Theme/theme.enum";
 import { useRecoilState } from "recoil";
-import { themeModeAtom } from "src/store/Theme/themeStore";
+import { themeModeAtom } from "store/Theme/themeStore";
 
 /**
  * 다크 모드를 관리하는 커스텀 훅

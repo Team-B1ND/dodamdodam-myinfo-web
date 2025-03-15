@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../../../../styles/palette";
+
 
 export const MyInfoPasswordModalOverlay = styled.div`
   width: 100%;
@@ -52,7 +52,7 @@ export const MyInfoPasswordModalTopWrap = styled.div`
   align-items: center;
   justify-content: center;
   row-gap: 10px;
-  border-bottom: 1px solid ${palette.gray[400]};
+  
 `;
 
 export const MyInfoPasswordModalTopTitle = styled.h1`
@@ -79,7 +79,7 @@ export const MyInfoPasswordModalInputWrap = styled.div`
   flex-direction: column;
   padding: 20px 10px;
   row-gap: 10px;
-  border-bottom: 1px solid ${palette.gray[300]};
+  
   box-sizing: border-box;
 `;
 
@@ -99,7 +99,7 @@ export const MyInfoPasswordModalInput = styled.input`
   padding: 0px;
 
   ::placeholder {
-    color: ${palette.gray[400]};
+    
   }
 `;
 
@@ -110,7 +110,7 @@ export const MyInfoPasswordModalSubmitButton = styled.button`
   justify-content: center;
   border-radius: 50px;
   color: white;
-  background-color: ${palette.main};
+  
   font-size: 1.1rem;
   border: 0px;
   margin: 0px auto;
