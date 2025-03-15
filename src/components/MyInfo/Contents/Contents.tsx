@@ -3,7 +3,6 @@ import {
   MyInfoModifyModalState,
   PasswordModifyModalState,
 } from "../../../store/modal";
-import BusApply from "./BusApply/BusApply";
 import MainProfile from "./MainProfile/MainProfile";
 import MyInfoModify from "./Header/Header";
 import Nav from "./Nav/Nav";
@@ -28,7 +27,7 @@ const Contents = () => {
               <MainProfile />
             </S.MyInfoContentsTopWrap>
             <S.MyInfoContentsMiddleWrap>
-              <BusApply />
+              {/* <BusApply /> */}
             </S.MyInfoContentsMiddleWrap>
           </S.MyInfoMainContentsWrap>
         </S.MyInfoContentsWrap>
