@@ -1,6 +1,6 @@
 import {  Route, Routes } from "react-router-dom";
-import MyinfoPage from "page/myinfoPage";
-import PageTemplate from "components/common/PageTemplate";
+import MyinfoPage from "pages/myinfoPage";
+import PageTemplate from "components/Common/PageTemplate";
 
 
 const Router = () => {

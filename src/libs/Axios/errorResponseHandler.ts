@@ -6,7 +6,7 @@ import {
 } from "../../constants/token/token.constant";
 import token from "../token/token";
 import { customAxios } from "./customAxios";
-import authRepository from "repositories/auth/auth.repository";
+import authRepository from "repositories/Auth/auth.repository";
 
 //리프레쉬 작업중인지 아닌지를 구분하는 변수
 let isRefreshing = false;
