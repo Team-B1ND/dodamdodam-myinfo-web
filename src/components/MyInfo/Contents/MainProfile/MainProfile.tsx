@@ -1,14 +1,14 @@
 import * as S from "./style";
-import defaultProfileImg from "../../../../images/default_profile.png";
+import defaultProfileImg from "images/default_profile.png";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import happy_face from "../../../../images/grinning_face_with_smiling_eyes_3d.png";
-import { MyInfoModifyModalState } from "../../../../store/modal";
-import USER_IMG from "../../../../images/user.svg";
-import SMS_IMG from "../../../../images/sms.svg";
-import CALL_IMG from "../../../../images/call.svg";
+import happy_face from "images/grinning_face_with_smiling_eyes_3d.png";
+import { MyInfoModifyModalState } from "stores/modal";
+import USER_IMG from "images/user.svg";
+import SMS_IMG from "images/sms.svg";
+import CALL_IMG from "images/call.svg";
 import MainProfileHr from "./MainProfileHr/MainProfileHr";
 import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
-import { profileInfo } from "../../../../store/profile";
+import { profileInfo } from "stores/profile";
 
 const MainProfile = () => {
   const tempProfileInfo = useRecoilValue(profileInfo);

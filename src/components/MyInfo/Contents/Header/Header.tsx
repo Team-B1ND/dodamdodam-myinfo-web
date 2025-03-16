@@ -2,7 +2,7 @@ import { useRecoilState } from "recoil";
 import {
   MyInfoModifyModalState,
   PasswordModifyModalState,
-} from "../../../../store/modal";
+} from "stores/modal";
 import * as S from "./style";
 
 const Header = () => {

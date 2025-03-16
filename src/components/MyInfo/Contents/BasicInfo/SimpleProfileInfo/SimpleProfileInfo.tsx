@@ -1,7 +1,7 @@
 import * as S from "./style";
-import default_profile from "../../../../../images/default_profile.png";
+import default_profile from "images/default_profile.png";
 import { useRecoilValue } from "recoil";
-import { profileInfo } from "../../../../../store/profile";
+import { profileInfo } from "stores/profile";
 
 const SimpleProfileInfo = () => {
   const profileInfoData = useRecoilValue(profileInfo);

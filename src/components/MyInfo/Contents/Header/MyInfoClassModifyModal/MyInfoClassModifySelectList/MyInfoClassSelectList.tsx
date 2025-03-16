@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import { useRecoilValue } from "recoil";
-import { profileInfo } from "../../../../../../store/profile";
+import { profileInfo } from "stores/profile";
 import MyInfoClassSelect from "../MyInfoClassSelect/MyInfoClassSelect";
 import * as S from "./style";
 

@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 import {
   MyInfoModifyModalState,
   PasswordModifyModalState,
-} from "../../../store/modal";
+} from "stores/modal";
 import MainProfile from "./MainProfile/MainProfile";
 import MyInfoModify from "./Header/Header";
 import Nav from "./Nav/Nav";
