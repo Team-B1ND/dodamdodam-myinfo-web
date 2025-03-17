@@ -1,4 +1,4 @@
-import { Response } from "../Utils/response.types";
+import { Response } from "../Utils/response.type";
 
 // export interface myProfile {
 //   classroom: {

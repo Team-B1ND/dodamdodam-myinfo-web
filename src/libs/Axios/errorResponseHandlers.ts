@@ -4,7 +4,7 @@ import {
   REFRESH_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
 } from "constants/Tokens/token.constant";
-import token from "../Tokens/token";
+import token from "../Token/token";
 import { customAxios } from "./customAxioss";
 import authRepository from "repositories/Auth/auth.repository";
 

@@ -4,7 +4,7 @@ import {
   REQUEST_TOKEN_KEY,
 } from "constants/Tokens/token.constant";
 import { InternalAxiosRequestConfig } from "axios";
-import token from "../Tokens/token";
+import token from "../Token/token";
 
 const requestHandler = (config: InternalAxiosRequestConfig) => {
   if (

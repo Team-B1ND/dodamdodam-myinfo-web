@@ -1,4 +1,4 @@
-import { Response } from "types/Utils/response.types";
+import { Response } from "types/Utils/response.type";
 
 export interface myPointScore {
   domBonus: number;

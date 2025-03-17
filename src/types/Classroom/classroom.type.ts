@@ -1,4 +1,4 @@
-import { Place } from "../Place/place.types";
+import { Place } from "../Place/place.type";
 
 export interface Classroom extends Place {
   grade: number;

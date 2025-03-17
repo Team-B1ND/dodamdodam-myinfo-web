@@ -3,7 +3,7 @@ import {
   BusesResponse,
   MyAppliedBusResponse,
 } from "types/BusApply/busApply.type";
-import { BusApplyParam } from "./busApply.params";
+import { BusApplyParam } from "./busApply.param";
 
 class BusApplyRepository {
   public async getTodayBuses(): Promise<BusesResponse> {

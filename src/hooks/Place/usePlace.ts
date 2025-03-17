@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import placeRepository from "repositories/Place/place.repository";
-import { Place } from "types/Place/place.types";
+import { Place } from "types/Place/place.type";
 
 const usePlace = () => {
   const [placeList, setPlaceList] = useState<Place[]>([
