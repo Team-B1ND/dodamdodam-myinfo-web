@@ -1,9 +1,7 @@
 import * as S from "./style";
-import { BiPlus } from "react-icons/bi";
 import { Dispatch, SetStateAction } from "react";
-import MyInfoClassSelect from "./MyInfoClassSelect/MyInfoClassSelect";
 import MyInfoClassSelectList from "./MyInfoClassModifySelectList/MyInfoClassSelectList";
-import useModifyStudentInfo from "../../../../../hooks/profile/useModifyStudentInfo";
+import useModifyStudentInfo from "hooks/Profile/useModifyStudentInfo";
 
 interface Props {
   setClassIsModifying: Dispatch<SetStateAction<boolean>>;

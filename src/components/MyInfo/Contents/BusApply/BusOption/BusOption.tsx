@@ -1,4 +1,4 @@
-import { Bus } from '../../../../../types/busApply/busApply.type';
+import { Bus } from 'types/BusApply/busApply.type';
 import * as S from './style';
 
 interface Props {

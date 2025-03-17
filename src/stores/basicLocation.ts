@@ -2,7 +2,7 @@ import { atom } from "recoil";
 import {
   applyDefaultRoom,
   basicLocationDay,
-} from "../types/basicLocation/basicLocation.type";
+} from "types/BasicLocation/basicLocation.type";
 
 export const basicLocatioinRoomAtom = atom<applyDefaultRoom[]>({
   key: "basicLocatioinRoomAtom",

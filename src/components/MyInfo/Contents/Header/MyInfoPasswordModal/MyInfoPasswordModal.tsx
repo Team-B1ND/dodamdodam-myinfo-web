@@ -1,5 +1,5 @@
 import { useSetRecoilState } from "recoil";
-import usePasswordChange from "hooks/profile/usePasswrodChange";
+import usePasswordChange from "hooks/Profile/usePasswrodChange";
 import { PasswordModifyModalState } from "stores/modal";
 import {
   MyInfoPasswordModalCloseButton,

@@ -1,4 +1,4 @@
-import { customAxios } from "libs/axios/customAxios";
+import { customAxios } from "libs/Axios/customAxioss";
 import {
   ClassroomRepository,
   getClassroomParam,

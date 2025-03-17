@@ -1,7 +1,7 @@
 import { B1ndToast } from '@b1nd/b1nd-toastify';
 import { useEffect, useState } from 'react';
-import busApplyRepository from 'repositories/busApply/busApply.repository';
-import { Bus } from 'types/busApply/busApply.type';
+import busApplyRepository from 'repositories/BusApply/busApply.repository';
+import { Bus } from 'types/BusApply/busApply.type';
 
 const useBusApply = () => {
   const [serverBusData, setServerBusData] = useState<Bus[]>([]);

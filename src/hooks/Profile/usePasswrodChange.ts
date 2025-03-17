@@ -1,6 +1,6 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
-import profileRepository from "repositories/profile/profile.repository";
+import profileRepository from "repositories/Profile/profile.repository";
 import patternCheck from "utils/patternCheck";
 
 const usePasswordChange = () => {

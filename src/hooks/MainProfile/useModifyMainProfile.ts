@@ -1,5 +1,5 @@
-import mainProfileRepository from "repositories/mainProfile/mainProfile.repository";
-import { mainProfile } from "types/mainProfile/mainProfile.type";
+import mainProfileRepository from "repositories/MainProfile/mainProfile.repository";
+import { mainProfile } from "types/MainProfile/mainProfiles.type";
 
 const useModifyMainProfile = () => {
   const patchMainProfile = async (memberInfo: mainProfile) => {

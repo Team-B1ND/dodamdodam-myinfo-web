@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { Profile } from "../types/profile/profile.type";
+import { Profile } from "types/Profile/profile.type";
 
 export const profileInfo = atom<Profile>({
   key: "profileInfo",

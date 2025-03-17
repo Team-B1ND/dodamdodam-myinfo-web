@@ -1,5 +1,5 @@
-import { Classroom } from "../../types/classroom/classroom.type";
-import { Response } from "../../types/util/response.type";
+import { Classroom } from "types/Classroom/classroom.type";
+import { Response } from "types/Utils/response.types";
 
 export interface ClassroomRepository {
   getClassroom({ id }: getClassroomParam): Promise<getClassroomResponse>;

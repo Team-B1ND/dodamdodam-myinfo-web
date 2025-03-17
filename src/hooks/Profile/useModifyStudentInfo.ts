@@ -1,7 +1,7 @@
 import { B1ndToast } from '@b1nd/b1nd-toastify'
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import { useRecoilState } from 'recoil'
-import ProfileRepository from 'repositories/profile/profile.repository'
+import ProfileRepository from 'repositories/Profile/profile.repository'
 import { profileInfo } from 'stores/profile'
 
 interface useModifyStudentInfoProps {

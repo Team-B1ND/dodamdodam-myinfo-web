@@ -3,9 +3,9 @@ import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
-} from "../../constants/token/token.constant";
-import token from "../token/token";
-import { customAxios } from "./customAxios";
+} from "constants/Tokens/token.constant";
+import token from "../Tokens/token";
+import { customAxios } from "./customAxioss";
 import authRepository from "repositories/Auth/auth.repository";
 
 //리프레쉬 작업중인지 아닌지를 구분하는 변수

@@ -1,5 +1,5 @@
-import { customAxios } from "libs/axios/customAxios";
-import { MyPassesResponse } from "types/pass/pass.type";
+import { customAxios } from "libs/Axios/customAxioss";
+import { MyPassesResponse } from "types/Pass/pass.type";
 
 class PassRepository {
   public async getMyOutGoing(): Promise<MyPassesResponse> {

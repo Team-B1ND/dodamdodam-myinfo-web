@@ -1,5 +1,5 @@
-import { customAxios } from "libs/axios/customAxios";
-import { fileUpload } from "types/fileUpload/fileUpload.type";
+import { customAxios } from "libs/Axios/customAxioss";
+import { fileUpload } from "types/FileUpload/fileUpload.type";
 
 class FileUpload {
   public async postFileUpload(formData: FormData | ""): Promise<fileUpload> {

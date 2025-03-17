@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import profileRepository from "repositories/profile/profile.repository";
+import profileRepository from "repositories/Profile/profile.repository";
 import { profileInfo } from "stores/profile";
 
 const useMyGradeInfo = () => {

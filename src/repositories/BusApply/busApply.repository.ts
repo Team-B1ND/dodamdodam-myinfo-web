@@ -1,9 +1,9 @@
-import { customAxios } from "libs/axios/customAxios";
+import { customAxios } from "libs/Axios/customAxioss";
 import {
   BusesResponse,
   MyAppliedBusResponse,
-} from "types/busApply/busApply.type";
-import { BusApplyParam } from "./busApply.param";
+} from "types/BusApply/busApply.type";
+import { BusApplyParam } from "./busApply.params";
 
 class BusApplyRepository {
   public async getTodayBuses(): Promise<BusesResponse> {

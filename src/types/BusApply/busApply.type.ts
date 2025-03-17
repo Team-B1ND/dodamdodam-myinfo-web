@@ -1,4 +1,4 @@
-import { Response } from "../util/response.type";
+import { Response } from "../Utils/response.types";
 
 export interface Bus {
   readonly id: number;

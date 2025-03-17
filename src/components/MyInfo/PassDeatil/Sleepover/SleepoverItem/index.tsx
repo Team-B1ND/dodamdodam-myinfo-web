@@ -1,4 +1,4 @@
-import { useGetMyOutSleep } from "../../../../../query/leave/leave.query";
+import { useGetMyOutSleep } from "queries/Leave/leave.query";
 import { OutingTbody } from "../../Outing/style";
 import { LeaveData, LeaveHeaderWrap } from "../style";
 

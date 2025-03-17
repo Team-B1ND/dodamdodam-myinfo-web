@@ -1,5 +1,5 @@
-import { customAxios } from "libs/axios/customAxios";
-import { mainProfile } from "types/mainProfile/mainProfile.type";
+import { customAxios } from "libs/Axios/customAxioss";
+import { mainProfile } from "types/MainProfile/mainProfiles.type";
 
 class MainProfileRepository {
   public async patchMainProfile(member: mainProfile): Promise<void> {

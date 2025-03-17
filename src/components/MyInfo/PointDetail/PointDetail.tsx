@@ -1,7 +1,7 @@
 import Nav from "../Contents/Nav/Nav";
 import * as S from "./PointDetail.style";
 import { FcInspection } from "react-icons/fc";
-import ComponentTitle from "../../common/ComponentTitle/ComponentTitle";
+import ComponentTitle from "components/Common/ComponentTitle/ComponentTitle";
 import { useState } from "react";
 import Dormitory from "./Dormitory";
 

@@ -1,5 +1,5 @@
-import { customAxios } from "libs/axios/customAxios";
-import { MyLeavesResponse } from "types/leave/leave.type";
+import { customAxios } from "libs/Axios/customAxioss";
+import { MyLeavesResponse } from "types/Leave/leave.type";
 
 class LeaveRepository {
   public async getMyOutSleeping(): Promise<MyLeavesResponse> {

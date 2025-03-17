@@ -1,5 +1,5 @@
 import axios from "axios";
-import { NewAccessTokenResponse, TokenRefreshResponse } from "../../types/token/token.type";
+import { NewAccessTokenResponse, TokenRefreshResponse } from "types/Token/token.type";
 import { postTokenRefreshParam } from "./auth.param";
 import config from "../../config/config.json";
 

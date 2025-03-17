@@ -1,4 +1,4 @@
-import { useGetMyOutGoingQuery } from "../../../../../query/pass/pass.query";
+import { useGetMyOutGoingQuery } from "queries/Pass/pass.query";
 import { OutingHeaderWrap, OutingData, OutingTbody } from "../style";
 
 const OutingItem = () => {

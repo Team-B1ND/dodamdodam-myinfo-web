@@ -1,10 +1,10 @@
 import * as S from "./style";
 import busImage from "images/bus_3d.png";
 import BusOption from "./BusOption/BusOption";
-import ComponentTitle from "components/common/ComponentTitle/ComponentTitle";
-import useBusApply from "hooks/busApply/useBusApply";
+import ComponentTitle from "components/Common/ComponentTitle/ComponentTitle";
+import useBusApply from "hooks/BusApply/useBusApply";
 import SCHOOL_IMG from "images/school_color.svg";
-import dateTransform from "utils/transform/dateTransform";
+import dateTransform from "utils/Transform/dateTransform";
 
 const BusApply = () => {
   const {

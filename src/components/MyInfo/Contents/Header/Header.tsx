@@ -6,11 +6,11 @@ import {
 import * as S from "./style";
 
 const Header = () => {
-  const [isOpenMyInfoModifyModal, setIsOpenMyInfoModifyModal] = useRecoilState(
+  const [, setIsOpenMyInfoModifyModal] = useRecoilState(
     MyInfoModifyModalState
   );
 
-  const [isOpenPasswordModifyModal, setIsOpenPasswordModifyModal] =
+  const [, setIsOpenPasswordModifyModal] =
     useRecoilState(PasswordModifyModalState);
   return (
     <S.MyInfoModifyWrap>

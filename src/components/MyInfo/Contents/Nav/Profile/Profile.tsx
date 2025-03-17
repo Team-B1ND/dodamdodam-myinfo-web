@@ -1,6 +1,6 @@
 import * as S from "./style";
 
-import useMyGradeInfo from "hooks/profile/useMyGradeInfo";
+import useMyGradeInfo from "hooks/Profile/useMyGradeInfo";
 import { useRecoilValue } from "recoil";
 import { profileInfo } from "stores/profile";
 

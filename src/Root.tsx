@@ -7,7 +7,7 @@ import { RecoilRoot } from "recoil";
 import { BrowserRouter } from "react-router-dom";
 import Routes from 'components/Router/Router';
 import { B1ndToastContainer } from '@b1nd/b1nd-toastify';
-import ThemeProviderContainer from 'components/common/ThemeProviderContainer';
+import ThemeProviderContainer from 'components/Common/ThemeProviderContainer';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

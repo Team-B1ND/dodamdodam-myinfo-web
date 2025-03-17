@@ -1,4 +1,4 @@
-import { useGetMyPointReasonQuery } from "../../../../query/point/point.query";
+import { useGetMyPointReasonQuery } from "queries/Point/point.query";
 import * as S from "./Dormitory.style";
 import { useState } from "react";
 

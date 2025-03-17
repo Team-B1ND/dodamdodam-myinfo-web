@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import pointRepository from "repositories/point/point.repository";
-import { myPointScore } from "types/myPoint/myPoint.type";
+import pointRepository from "repositories/Point/point.repository";
+import { myPointScore } from "types/MyPoint/myPoint.types";
 
 const useMyPointScore = () => {
   const [myPoint, setMyPoint] = useState<myPointScore>({

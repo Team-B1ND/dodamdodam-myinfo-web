@@ -1,15 +1,15 @@
 import * as S from "./style";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 
-import { NAV_TAB_ITEMS } from "constants/nav/nav.constant";
+// import { NAV_TAB_ITEMS } from "constants/";
 
 const Tab = () => {
-  const { pathname } = useLocation();
-  const navigator = useNavigate();
+  // const { pathname } = useLocation();
+  // const navigator = useNavigate();
 
   return (
     <S.SideTabBarWrap>
-      {NAV_TAB_ITEMS.map((tab) => (
+      {/* {NAV_TAB_ITEMS.map((tab) => (
         <S.TabBarCategoryWrap
           key={tab.link}
           isSelect={tab.link === pathname}
@@ -19,7 +19,7 @@ const Tab = () => {
         >
           {tab.title}
         </S.TabBarCategoryWrap>
-      ))}
+      ))} */}
     </S.SideTabBarWrap>
   );
 };

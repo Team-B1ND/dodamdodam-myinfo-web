@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Nav from "../Contents/Nav/Nav";
 import { MyInfoWrap } from "../Contents/style";
-import ComponentTitle from "../../common/ComponentTitle/ComponentTitle";
+import ComponentTitle from "components/Common/ComponentTitle/ComponentTitle";
 import {
   MainProfileText,
   MyInfoContentsWrap,

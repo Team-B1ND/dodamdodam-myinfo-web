@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { FcInspection } from "react-icons/fc";
 import {  useState } from "react";
-import useMyPointScore from "../../../../hooks/myPoint/useMyPointScore";
+import useMyPointScore from "hooks/MyPoint/useMyPointScore";
 
 
 const MyPoint = () => {

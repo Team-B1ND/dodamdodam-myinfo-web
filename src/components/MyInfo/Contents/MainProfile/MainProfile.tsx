@@ -7,7 +7,7 @@ import USER_IMG from "images/user.svg";
 import SMS_IMG from "images/sms.svg";
 import CALL_IMG from "images/call.svg";
 import MainProfileHr from "./MainProfileHr/MainProfileHr";
-import ComponentTitle from "../../../common/ComponentTitle/ComponentTitle";
+import ComponentTitle from "components/Common/ComponentTitle/ComponentTitle";
 import { profileInfo } from "stores/profile";
 
 const MainProfile = () => {
