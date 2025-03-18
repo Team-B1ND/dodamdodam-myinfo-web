@@ -23,7 +23,7 @@ const MyInfoClassSelect = ({
     <S.Container>
       <S.SelectContainer
         defaultValue={value}
-        onChange={(e) => onChnageSelect(e, scope)}
+        onChange={(e:ChangeEvent<HTMLSelectElement>) => onChnageSelect(e, scope)}
       >
         {items.map((item, idx) => (
           <option key={idx} value={item}>

@@ -9,6 +9,7 @@ type Props = {
 const ThemeProviderContainer = ({ children }: Props) => {
   const { themeColor } = useThemes();
   
+  
   return (
     <DodamThemeProvider theme={themeColor}>
       <DodamGlobalStyles />

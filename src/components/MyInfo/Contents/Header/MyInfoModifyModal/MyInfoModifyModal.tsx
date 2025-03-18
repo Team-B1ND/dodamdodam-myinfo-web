@@ -128,7 +128,7 @@ const MyInfoModifyModal = () => {
       onClick={() => setIsOpenMyInfoModifyModal(false)}
     >
       <S.ProfileModifyModalWrap
-        onClick={(e) => {
+        onClick={(e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
           e.stopPropagation()
         }}
       >
