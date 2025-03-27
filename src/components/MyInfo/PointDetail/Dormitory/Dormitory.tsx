@@ -10,7 +10,7 @@ const Dormitory = ({ isDormitoryAndSchool }: Props) => {
   const [isPoint, setIsPoint] = useState<boolean>(false);
 
   const { data: dormitoryBonusPointReasonData } = useGetMyPointReasonQuery(
-    isDormitoryAndSchool ? "SCHOOL" : "DORMITORY"
+    {type:isDormitoryAndSchool ? "SCHOOL" : "DORMITORY"}
   );
 
   const bonusData = dormitoryBonusPointReasonData?.data.filter(

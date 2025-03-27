@@ -4,10 +4,9 @@ export const MyinfoMain = styled.div`
     display: flex;
     width: 100%;
     min-height: 100vh;
-    padding: 32px;
+    padding: 58px 32px;
     gap: 24px;
-    margin-top: 2%;
-    background-color: ${({theme}) => theme.backgroundLow};
+    background-color: ${({theme}) => theme.backgroundNeutral};
     
     @media (max-width: 1024px) {
         flex-direction: column;

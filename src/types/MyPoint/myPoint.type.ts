@@ -1,18 +1,25 @@
 import { Response } from "types/Utils/response.type";
 
-export interface myPointScore {
-  domBonus: number;
-  domMinus: number;
-  schBonus: number;
-  schMinus: number;
-  student: {
+
+export type PointType = "DORMITORY" | "SCHOOL";
+
+export interface MyPointResponse extends Response {
+  data: {
     id: number;
+    bonus: number;
+    minus: number;
+    offset: number;
+    type: PointType;
+    student: {
+      id: number;
+      name: string;
+      grade: number;
+      room: number;
+      number: number;
+    };
   };
 }
 
-export interface myPointResponse extends Response {
-  data: myPointScore;
-}
 
 export interface PointReason {
   given_date: string;

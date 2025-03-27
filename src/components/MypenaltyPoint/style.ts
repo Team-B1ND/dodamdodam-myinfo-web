@@ -117,50 +117,34 @@ export const HistoryContainer = styled.div`
     }
 `;
 
-export const PointColumn = styled.div`
+export const PointColumn = styled.div<{type:string}>`
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-`
-
-export const PointLabel = styled.span`
-    color: #666666;
-`
-
-interface PointValueProps {
-    positive?: boolean;
-    negative?: boolean;
-}
-
-export const PointValue = styled.span<PointValueProps>`
-    ${DodamTypography.Heading1.Bold};
-    color: ${({positive, negative}) => 
-        positive ? "#0083F0" : 
-        negative ? "#FF4242" : 
-        "#333333"};
-`
-
-export const PointHistoryItem = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 8px; 
-    background-color: ${({theme})=>theme.backgroundNormal};
-    border-radius: 8px;
-    padding: 12px;
-    box-shadow: 0px 8px 12px rgba(0, 131, 240, 0.02);
-`
-
-export const HistoryTitle = styled.div`
-    color: ${({theme})=>theme.labelNormal};
-`
-
-export const HistoryDetails = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    span {
-        ${DodamTypography.Label.Medium};
-        color: ${({theme})=>theme.labelAlternative};
+    span{
+        text-align: center;
     }
+    span:nth-child(1){
+        ${DodamTypography.Body1.Medium};
+        color:${({theme})=>theme.labelAssistive};
+    }
+    span:nth-child(2){
+        ${DodamTypography.Body1.Medium};
+        color:${({theme, type})=>type === "상점"? theme.primaryNormal : theme.statusNegative};
+    }
+
 `
+
+
+export const Point = styled.span<{
+    negative:boolean
+    positive?: boolean;
+    }>`
+    ${DodamTypography.Heading1.Bold};
+    color: ${({positive, negative, theme}) => 
+        positive ? theme.statusPositive : 
+        negative ? theme.statusNegative : 
+        theme.labelAlternative};
+`
+

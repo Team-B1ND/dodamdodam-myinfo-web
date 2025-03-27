@@ -1,4 +1,3 @@
-import MyPoint from "../MyPoint/MyPoint";
 import Logout from "./Logout/Logout";
 import Notice from "./Notice/Notice";
 import Profile from "./Profile/Profile";
