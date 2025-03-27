@@ -1,0 +1,166 @@
+import { DodamShape, DodamTypography } from "@b1nd/dds-web";
+import styled from "styled-components";
+
+export const MypenaltyPointBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 340px;
+    ${DodamShape.Large};
+    background-color: ${({theme})=>theme.backgroundNormal};
+    gap: 16px;
+    padding: 16px 22px;
+`
+
+export const BoxTitle = styled.span`
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    ${DodamTypography.Headline.Bold};
+    color: ${({theme})=>theme.labelNormal};
+`
+
+export const PointHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+`
+
+export const TabContainer = styled.div`
+    display: flex;
+    gap: 8px;
+`
+
+export const Stab = styled.button<{active?: boolean}>`
+    padding: 6px 12px;
+    border-radius: 100px;
+    width: 59px;
+    height: 32px;
+    border: none;
+    ${DodamTypography.Caption1.Bold};
+    background-color: ${({active}) => active ? "#0083F0" : "#2A2B2C"};
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+`
+
+export const Rtab = styled.button<{active?: boolean}>`
+    padding: 6px 12px;
+    border-radius: 100px;
+    width: 59px;
+    height: 32px;
+    border: none;
+    ${DodamTypography.Caption1.Bold};
+    background-color: ${({active}) => active ? "#0083F0" : "#2A2B2C"};
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+`
+
+export const Points = styled.div<{negative?: boolean}>`
+    color: ${({negative}) => negative ? "#FF4242" : "#0083F0"};
+    ${DodamTypography.Body1.Bold};
+`
+
+export const PointInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+`
+
+export const PointRow = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 24px;
+    padding: 0 30%;
+`
+
+export const EmptyState = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    ${DodamTypography.Body1.Medium};
+    color: ${({theme})=>theme.labelAlternative};
+    text-align: center;
+`;
+
+export const HistoryContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 8px;
+    
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: ${({theme}) => theme.backgroundLow};
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: ${({theme}) => theme.lineNormal};
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: ${({theme}) => theme.labelAlternative};
+    }
+`;
+
+export const PointColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+`
+
+export const PointLabel = styled.span`
+    color: #666666;
+`
+
+interface PointValueProps {
+    positive?: boolean;
+    negative?: boolean;
+}
+
+export const PointValue = styled.span<PointValueProps>`
+    ${DodamTypography.Heading1.Bold};
+    color: ${({positive, negative}) => 
+        positive ? "#0083F0" : 
+        negative ? "#FF4242" : 
+        "#333333"};
+`
+
+export const PointHistoryItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    background-color: ${({theme})=>theme.backgroundNormal};
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0px 8px 12px rgba(0, 131, 240, 0.02);
+`
+
+export const HistoryTitle = styled.div`
+    color: ${({theme})=>theme.labelNormal};
+`
+
+export const HistoryDetails = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        ${DodamTypography.Label.Medium};
+        color: ${({theme})=>theme.labelAlternative};
+    }
+`

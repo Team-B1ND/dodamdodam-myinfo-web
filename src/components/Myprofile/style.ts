@@ -10,15 +10,17 @@ export const MyProfileBox = styled.div`
     ${DodamShape.Large};
     background-color: ${({theme})=>theme.backgroundNormal};
     gap: 16px;
-    padding: 20px 14px;
+    padding: 20px 24px;
 `
 
-export const ProfileText = styled.span`
+export const BoxTitle = styled.span`
     display: flex;
     justify-content: flex-start;
     width: 100%;
     ${DodamTypography.Headline.Bold};
+    color: ${({theme})=>theme.labelNormal};
 `
+
 export const Profile = styled.div`
     display: flex;
     align-items: center;
@@ -27,7 +29,7 @@ export const Profile = styled.div`
     width: 100%;
 
     span:nth-child(2){
-        color: ${({theme})=>theme.labelNormal};
+        color: ${({theme})=>theme.labelNeutral};
         ${DodamTypography.Headline.Bold};
     }
     span:nth-child(3){
@@ -43,5 +45,17 @@ export const introductionBox = styled.div`
     span{
         ${DodamTypography.Headline.Medium};
         color: ${({theme})=>theme.labelNeutral};
+    }
+`
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    
+    & > button {
+        flex: 1;
     }
 `
