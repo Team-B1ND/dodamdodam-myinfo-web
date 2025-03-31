@@ -4,11 +4,16 @@ import { QUERY_KEYS } from "queries/queryKey";
 import { useQuery, UseQueryOptions, UseQueryResult } from "react-query";
 import { getMyPointParam } from "repositories/Point/point.param";
 import pointRepository from "repositories/Point/point.repository";
-import { MyPointResponse } from "types/MyPoint/myPoint.type";
+import { MyPointResponse, PointType } from "types/MyPoint/myPoint.type";
 
-export const useGetMyPointReasonQuery = (type:getMyPointParam) =>
+export const useGetMyPointReasonQuery = (type:PointType) =>
   useQuery(["point/getMyPointReasonQuery", type], () =>
-    pointRepository.getPointReason(type)
+    pointRepository.getPointReason(type),
+  {
+    cacheTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 60,
+    suspense:true,
+  }
   );
 
   export const useGetMyPointQuery = (
@@ -20,11 +25,11 @@ export const useGetMyPointReasonQuery = (type:getMyPointParam) =>
       string[]
     >
   ): UseQueryResult<MyPointResponse, AxiosError> =>
+    
     useQuery(
       QUERY_KEYS.point.getMy(type),
-      () => pointRepository.getMyPoint({ type }),
-      {
-      
+      () => pointRepository.getMyPoint(type),
+      {      
         cacheTime: 1000 * 60 * 5,
         staleTime: 1000 * 60 * 60,
         ...options,

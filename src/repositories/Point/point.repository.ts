@@ -2,19 +2,21 @@ import { customAxios } from "libs/Axios/customAxioss";
 import {
   MyPointResponse,
   PointReasonResponse,
+  PointType,
 } from "types/MyPoint/myPoint.type";
-import { getMyPointParam } from "./point.param";
+
 
 class PointRepository {
   public async getMyPoint(
-    type: getMyPointParam
+    type: PointType
   ): Promise<MyPointResponse> {
-    const { data } = await customAxios.get(`point/my/score=${type}`);
+    
+    const { data } = await customAxios.get(`/point/score/my?type=${type}`);
     return data;
   }
 
   public async getPointReason(
-    type: getMyPointParam
+    type: PointType
   ): Promise<PointReasonResponse> {
     const { data } = await customAxios.get(`/point/my?type=${type}`);
     return data;

@@ -1,10 +1,10 @@
-
 import { useGetMyPointQuery } from "queries/Point/point.query";
 import * as S from "./style";
 import { Suspense, useState } from "react";
 import { PointType } from "types/MyPoint/myPoint.type";
 import { DodamErrorBoundary } from "@b1nd/dds-web";
 import PointList from "./PointList";
+import MyPointListFallbackLoader from "components/Common/Skeleton/MyPointList";
 
 const MypenaltyPoint = () => {
 
@@ -19,9 +19,6 @@ const MypenaltyPoint = () => {
     const handleTabClick = (tab: PointType) => {
         setActiveTab(tab);
     };
-   
-
-  
     
 
     
@@ -64,7 +61,7 @@ const MypenaltyPoint = () => {
                 
                 <S.HistoryContainer>
                    <DodamErrorBoundary text="에러발생" showButton={true}>
-                        <Suspense fallback={<>로딩중...</>}>
+                        <Suspense fallback={<MyPointListFallbackLoader/>}>
                             <PointList activeTab={activeTab}/>
                         </Suspense>
                    </DodamErrorBoundary>

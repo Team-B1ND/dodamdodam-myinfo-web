@@ -1,7 +1,5 @@
 import * as S from "./style";
 import { DodamSegmentedButton, DodamErrorBoundary, Trash } from "@b1nd/dds-web";
-import { Label } from "components/MyInfo/Contents/Header/MyInfoClassModifyModal/MyInfoClassSelect/style";
-import { Background } from "components/MyInfo/Contents/Header/MyInfoClassModifyModal/style";
 import { useState } from "react";
 
 const GoingOutInquiry = () => {

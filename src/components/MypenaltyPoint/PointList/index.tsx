@@ -8,14 +8,14 @@ interface PointListProps {
   
 
 const PointList = ({ activeTab }: PointListProps) =>{
-    const {data} = useGetMyPointReasonQuery({type: activeTab});
+    const {data} = useGetMyPointReasonQuery(activeTab);
 
     return(
         <>
          {
                         data?.data.map((item, index) => (
                             <S.PointHistoryItem key={index}>
-                                <S.HistoryTitle>{item.issueAt}</S.HistoryTitle>
+                                <S.HistoryTitle>{item.reason.reason}</S.HistoryTitle>
                                 <S.HistoryDetails>
                                     <span>{item.teacher.name} · {item.issueAt}</span>
                                     <S.Point negative={item.reason.score < 0}>

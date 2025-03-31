@@ -10,10 +10,10 @@ export const PointHistoryItem = styled.div`
     background-color: ${({theme})=>theme.backgroundNormal};
     border-radius: 8px;
     padding: 12px;
-    box-shadow: 0px 8px 12px rgba(0, 131, 240, 0.02);
 `
 
 export const HistoryTitle = styled.div`
+    ${DodamTypography.Headline.Bold};
     color: ${({theme})=>theme.labelNormal};
 `
 

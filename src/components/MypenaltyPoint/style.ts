@@ -74,7 +74,9 @@ export const PointInfo = styled.div`
 export const PointRow = styled.div`
     display: flex;
     width: 100%;
+    min-height: 50px;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 24px;
     padding: 0 30%;
 `
@@ -93,11 +95,8 @@ export const EmptyState = styled.div`
 export const HistoryContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 24px;
     overflow-y: auto;
     flex: 1;
-    padding-right: 8px;
-    
     &::-webkit-scrollbar {
         width: 6px;
     }
