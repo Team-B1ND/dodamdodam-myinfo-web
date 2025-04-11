@@ -59,55 +59,17 @@ export const OutingList = styled.div`
         background: ${({theme}) => theme.labelAlternative};
     }
 `
-
-export const OutingItem = styled.div`
+export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    background-color: ${({theme})=>theme.backgroundNormal};
-    border-radius: 8px;
-    padding: 12px;
-`
-
-export const OutingHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
-
-export const StatusLabel = styled.div`
-    ${DodamTypography.Label.Medium};
-    color: #fff;
-    background-color: ${({theme})=>theme.lineNormal};
-    padding: 4px 12px;
-    border-radius: 100px;
-`
-
-export const DeleteButton = styled.button`
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
-export const OutingContent = styled.div`
-    color: ${({theme})=>theme.labelNormal};
-    ${DodamTypography.Body1.Medium};
-    line-height: 1.4;
-`
-
-export const OutingTime = styled.div`
-    display: flex;
-    justify-content: space-between;
-    
-    span {
-        ${DodamTypography.Body1.Medium};
-        color: ${({theme})=>theme.labelNormal};
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+        display: none;
     }
 `
+
 
 export const ButtonContainer = styled.div`
     display: flex;

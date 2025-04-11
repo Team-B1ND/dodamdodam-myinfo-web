@@ -12,5 +12,8 @@ export const LayoutContainer = styled.div`
 export const Layout = styled.div`
     width: 100%;
     height: 100%;
+    @media (max-width: 1024px) {
+     overflow-y: scroll;
+    }
 `
 

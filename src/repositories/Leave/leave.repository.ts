@@ -5,6 +5,10 @@ class LeaveRepository {
   public async getMyOutSleeping(): Promise<MyLeavesResponse> {
     const { data } = await customAxios.get("/out-sleeping/my");
     return data;
+  }  
+  public async deleteOutSleeping(id:number): Promise<void> {
+    const { data } = await customAxios.delete(`/out-sleeping/${id}`)
+    return data;
   }
 }
 

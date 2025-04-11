@@ -1,7 +1,10 @@
 import { Avatar, DodamFilledButton } from "@b1nd/dds-web";
 import * as S from "./style";
+import { useGetProfileQuery } from "queries/Profile/profile.query";
 
 const MyProfile = () => {
+    const {data} = useGetProfileQuery();
+    
     return(
         <S.MyProfileBox>
             <S.BoxTitle>
@@ -9,13 +12,13 @@ const MyProfile = () => {
             </S.BoxTitle>
             <S.Profile>
                 <Avatar size="xxl"/>
-                <span>이해준</span>
-                <span>3학년1반14번</span>
+                <span>{data?.data!.name}</span>
+                <span>{data?.data!.student?.grade}학년 {data?.data!.student?.room}반 {data?.data!.student?.number}번</span>
                 <S.introductionBox>
-                    <span>010-5744-3817</span>
+                    <span>{data?.data!.phone.substring(0, 3)}-{data?.data!.phone.substring(3, 7)}-{data?.data!.phone.substring(7, 11)}</span>
                 </S.introductionBox>
                 <S.introductionBox>
-                    <span>lerb5253@dgsw.hs.kr</span>
+                    <span>{data?.data!.email}</span>
                 </S.introductionBox>
                 <S.ButtonContainer>
                     <DodamFilledButton

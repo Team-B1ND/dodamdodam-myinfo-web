@@ -7,8 +7,6 @@ export interface Leave {
 }
 
 export interface AppliedLeave extends Leave {
-  arrivedDate: null | string;
-  checkedDate: null | string;
   id: number;
   status: "ALLOWED" | "PENDING" | "DENIED";
   studenr: {
