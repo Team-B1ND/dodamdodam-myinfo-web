@@ -1,9 +1,14 @@
 import { Avatar, DodamFilledButton } from "@b1nd/dds-web";
 import * as S from "./style";
 import { useGetProfileQuery } from "queries/Profile/profile.query";
+import ChangePwModal from "./ChangePwModal";
+import { useProfile } from "hooks/Profile/useProfile";
+import ChangeProfile from "./ChangeProfile";
 
 const MyProfile = () => {
     const {data} = useGetProfileQuery();
+    const { openModal, setOpenModal, closeModal } = useProfile();
+    console.log(openModal);
     
     return(
         <S.MyProfileBox>
@@ -27,6 +32,7 @@ const MyProfile = () => {
                         textTheme="staticWhite"
                         typography={["Body2", "Bold"]}
                         customStyle={{minWidth:"45px", height:"45px"}}
+                        onClick={()=>setOpenModal((prev) => ({ ...prev, password: true }))}
                     />
                     <DodamFilledButton
                         size={"Large"}
@@ -34,9 +40,19 @@ const MyProfile = () => {
                         textTheme="staticWhite"
                         typography={["Body2", "Bold"]}
                         customStyle={{minWidth:"45px", height:"45px"}}
+                        onClick={()=>setOpenModal((prev) => ({ ...prev, profile: true }))}
                     />
                 </S.ButtonContainer>
             </S.Profile>
+            <ChangePwModal
+                isOpen={openModal.password}
+                handleSet={closeModal}
+            />
+            <ChangeProfile
+                isOpen={openModal.profile}
+                handleSet={closeModal}
+                user={data?.data!}
+            />
         </S.MyProfileBox>
     )
 }

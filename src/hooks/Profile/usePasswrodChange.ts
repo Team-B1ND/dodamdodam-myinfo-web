@@ -1,5 +1,5 @@
 import { B1ndToast } from "@b1nd/b1nd-toastify";
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import profileRepository from "repositories/Profile/profile.repository";
 import patternCheck from "utils/patternCheck";
 
@@ -9,15 +9,17 @@ const usePasswordChange = () => {
     newPw: "",
   });
 
+  const clearField = (field: "pw" | "newPw") => {
+    setPwData((prev) => ({ ...prev, [field]: "" }));
+  };
+
   const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     setPwData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const onSubmitPassword = async (
-    setIsOpenPasswordModifyModal: Dispatch<SetStateAction<boolean>>
-  ) => {
+  const onSubmitPassword = async () => {
     const { pw, newPw } = pwData;
 
     if (pw.trim() === "") {
@@ -44,13 +46,12 @@ const usePasswordChange = () => {
       });
       B1ndToast.showSuccess("비밀번호 수정 성공");
       setPwData({ pw: "", newPw: "" });
-      setIsOpenPasswordModifyModal(false);
     } catch (error) {
       B1ndToast.showError("비밀번호 수정 실패");
     }
   };
 
-  return { onChangePassword, pwData, onSubmitPassword };
+  return { onChangePassword, pwData, onSubmitPassword, clearField };
 };
 
 export default usePasswordChange;
