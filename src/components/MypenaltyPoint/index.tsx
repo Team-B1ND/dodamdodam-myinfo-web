@@ -58,7 +58,7 @@ const MypenaltyPoint = () => {
                     </>
                     )}
                 </S.PointRow>
-                
+                <div>
                 <S.HistoryContainer>
                    <DodamErrorBoundary text="에러발생" showButton={true}>
                         <Suspense fallback={<MyPointListFallbackLoader/>}>
@@ -66,6 +66,7 @@ const MypenaltyPoint = () => {
                         </Suspense>
                    </DodamErrorBoundary>
                 </S.HistoryContainer>
+                </div>
             </S.PointInfo>
         </S.MypenaltyPointBox>
     );

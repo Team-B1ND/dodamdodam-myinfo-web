@@ -5,7 +5,7 @@ export const GoingOutInquiryBox = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 450px;
+    height: 100%;
     ${DodamShape.Large};
     background-color: ${({theme})=>theme.backgroundNormal};
     gap: 16px;
@@ -63,7 +63,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 400px;
+    height: 300px;
     overflow-y: scroll;
     ::-webkit-scrollbar {
         display: none;

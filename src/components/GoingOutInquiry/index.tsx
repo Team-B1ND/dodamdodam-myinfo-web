@@ -29,13 +29,15 @@ const GoingOutInquiry = () => {
                     onClick={changePage}
                 />
                 </S.ButtonContainer>
-                <S.Content>
-                <DodamErrorBoundary text="외출/외박 내역을 불러오는 중 오류가 발생했습니다.">
-                    <Suspense fallback={<MyPassListFallbackLoader/>}>
-                        <OutGoingList select={isOutingSelected}/>
-                    </Suspense>
-                </DodamErrorBoundary>
-            </S.Content>
+                <div>
+                    <S.Content>
+                        <DodamErrorBoundary text="외출/외박 내역을 불러오는 중 오류가 발생했습니다.">
+                            <Suspense fallback={<MyPassListFallbackLoader/>}>
+                                <OutGoingList select={isOutingSelected}/>
+                            </Suspense>
+                        </DodamErrorBoundary>
+                    </S.Content>
+                </div>
         </S.GoingOutInquiryBox>
     );
 };

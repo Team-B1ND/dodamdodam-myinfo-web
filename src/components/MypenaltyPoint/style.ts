@@ -5,7 +5,7 @@ export const MypenaltyPointBox = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 340px;
+    height: 100%;
     ${DodamShape.Large};
     background-color: ${({theme})=>theme.backgroundNormal};
     gap: 16px;
@@ -67,6 +67,7 @@ export const PointInfo = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+
     flex: 1;
     overflow: hidden;
 `
@@ -97,6 +98,8 @@ export const HistoryContainer = styled.div`
     flex-direction: column;
     overflow-y: auto;
     flex: 1;
+    height: 150px;
+    overflow-x: hidden;
     &::-webkit-scrollbar {
         width: 6px;
     }

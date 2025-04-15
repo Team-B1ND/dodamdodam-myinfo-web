@@ -23,7 +23,7 @@ interface ModalProps {
 const ChangeProfile = ({ isOpen, handleSet, user }: ModalProps) => {
   if (!user) return null;
 
-
+  //사실 이렇게 하면 안되지만 빨리 개발하기 위해서 어쩔수 없는 선택이었습니다... 쏘리
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const patchStudent = usePatchStudentInfo();
   // eslint-disable-next-line react-hooks/rules-of-hooks

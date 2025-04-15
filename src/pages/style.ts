@@ -44,12 +44,8 @@ export const RightColumn = styled.div`
 
 export const ProfileContainer = styled.div`
     width: 100%;
-    height: 410px;
     
-    @media (max-width: 1200px) {
-        height: 400px;
-    }
-    
+
     @media (max-width: 768px) {
         height: auto;
     }
@@ -58,11 +54,6 @@ export const ProfileContainer = styled.div`
 export const BusContainer = styled.div`
     width: 100%;
     flex-grow: 1;
-    min-height: 300px;
-    
-    @media (max-width: 1200px) {
-        min-height: 250px;
-    }
     
     @media (max-width: 768px) {
         min-height: auto;
@@ -71,6 +62,7 @@ export const BusContainer = styled.div`
 
 export const PointsContainer = styled.div`
     width: 100%;
+    height: 40%;
     
     @media (max-width: 768px) {
         height: auto;
@@ -79,7 +71,7 @@ export const PointsContainer = styled.div`
 
 export const OutingContainer = styled.div`
     width: 100%;
-    min-height: 400px;
+    height: 60%;
     
     @media (max-width: 1200px) {
         min-height: 370px;
