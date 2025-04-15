@@ -1,4 +1,5 @@
-import { DodamFilledButton, DodamModal, DodamTextField } from "@b1nd/dds-web"
+import { DodamFilledButton, DodamTextField } from "@b1nd/dds-web"
+import Modal from "components/Common/Modal/index";
 import { ModalContent } from "./style"
 import usePasswordChange from "hooks/Profile/usePasswrodChange";
 
@@ -12,7 +13,7 @@ const ChangePwModal = ({isOpen,handleSet}:ModalProps) => {
     const {onChangePassword,pwData,onSubmitPassword,clearField}=usePasswordChange();
     
     return(
-        <DodamModal isOpen={isOpen} background={true} close={handleSet} >
+        <Modal isOpen={isOpen} close={handleSet}>
             <ModalContent onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
 
                 <DodamTextField 
@@ -43,7 +44,7 @@ const ChangePwModal = ({isOpen,handleSet}:ModalProps) => {
                 />
                 
             </ModalContent>
-        </DodamModal>
+        </Modal>
     )   
 }
 

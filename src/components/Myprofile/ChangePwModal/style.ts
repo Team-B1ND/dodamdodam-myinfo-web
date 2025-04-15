@@ -2,7 +2,7 @@ import { DodamShape } from "@b1nd/dds-web";
 import styled from "styled-components";
 
 export const ModalContent = styled.div`
-    min-width: 400px;
+    min-width: 350px;
     height: min-content;
     display: flex;
     flex-direction: column;
