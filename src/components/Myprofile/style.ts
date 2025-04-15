@@ -37,6 +37,12 @@ export const Profile = styled.div`
         ${DodamTypography.Label.Medium};
     }
 `
+export const ProfileImg = styled.img`
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+`
+
 export const introductionBox = styled.div`
     display: flex;
     padding: 10px 0;

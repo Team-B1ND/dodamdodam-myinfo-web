@@ -1,5 +1,5 @@
 import { customAxios } from "libs/Axios/customAxioss";
-import { myProfileResponse } from "types/Profile/profile.type";
+import { mainProfile, myProfileResponse } from "types/Profile/profile.type";
 import { patchMyPasswordParam, patchStudentInfoParam } from "./profile.param";
 
 class ProfileRepository {
@@ -25,6 +25,10 @@ class ProfileRepository {
       number,
     });
   }
+
+    public async patchMainProfile(member: mainProfile): Promise<void> {
+      await customAxios.patch("/member/info", member);
+    }
 }
 
 export default new ProfileRepository();

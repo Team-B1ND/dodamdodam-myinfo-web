@@ -57,3 +57,10 @@ export interface myProfileResponse extends Response {
   message: string;
   status: number;
 }
+
+
+export interface mainProfile {
+  email: string;
+  profileImage: string | null;
+  phone: string;
+}

@@ -16,7 +16,7 @@ export const ChangeProfileImg = styled.div`
     flex-direction: column;
     gap: 8px;
     align-items: center;
-    p{
+    label{
         cursor: pointer;
         position: absolute;
         top: 60%;
@@ -43,6 +43,7 @@ export const ChangeProfileImg = styled.div`
 
 export const FlexBox = styled.div`
     display: flex;
+    align-items: center;
     gap: 16px;
     & > * {
       flex: 1;

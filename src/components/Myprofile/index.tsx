@@ -8,15 +8,21 @@ import ChangeProfile from "./ChangeProfile";
 const MyProfile = () => {
     const {data} = useGetProfileQuery();
     const { openModal, setOpenModal, closeModal } = useProfile();
-    console.log(openModal);
     
     return(
+        <>
+        
         <S.MyProfileBox>
             <S.BoxTitle>
                 내프로필
             </S.BoxTitle>
             <S.Profile>
-                <Avatar size="xxl"/>
+            {data?.data.profileImage ? (
+              <S.ProfileImg src={data?.data.profileImage} alt="" />
+            ) : (
+              <Avatar size="xxl" color="staticWhite" />
+            )}
+              
                 <span>{data?.data!.name}</span>
                 <span>{data?.data!.student?.grade}학년 {data?.data!.student?.room}반 {data?.data!.student?.number}번</span>
                 <S.introductionBox>
@@ -44,16 +50,19 @@ const MyProfile = () => {
                     />
                 </S.ButtonContainer>
             </S.Profile>
-            <ChangePwModal
-                isOpen={openModal.password}
-                handleSet={closeModal}
-            />
-            <ChangeProfile
+           
+        </S.MyProfileBox>
+        <ChangeProfile
                 isOpen={openModal.profile}
                 handleSet={closeModal}
                 user={data?.data!}
             />
-        </S.MyProfileBox>
+             <ChangePwModal
+                isOpen={openModal.password}
+                handleSet={closeModal}
+      
+            />
+        </>
     )
 }
 
