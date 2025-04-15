@@ -33,32 +33,6 @@ export const EmptyState = styled.div`
     border-radius: 8px;
 `;
 
-export const OutingList = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 4px;
-    
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-    
-    &::-webkit-scrollbar-track {
-        background: ${({theme}) => theme.backgroundLow};
-        border-radius: 10px;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        background: ${({theme}) => theme.lineNormal};
-        border-radius: 10px;
-    }
-    
-    &::-webkit-scrollbar-thumb:hover {
-        background: ${({theme}) => theme.labelAlternative};
-    }
-`
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
@@ -66,8 +40,11 @@ export const Content = styled.div`
     height: 300px;
     overflow-y: scroll;
     ::-webkit-scrollbar {
-        display: none;
+        display: none !important;
     }
+    
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 `
 
 
