@@ -1,0 +1,33 @@
+import { Response } from "../Utils/response.type";
+
+export interface Pass {
+  reason: string;
+  startAt: string;
+  endAt: string;
+}
+
+export interface AppliedPass extends Pass {
+  arrivedDate: null | string;
+  checkedDate: null | string;
+  id: number;
+  status: "ALLOWED" | "PENDING" | "DENIED";
+  student: {
+    id: number;
+  };
+  teacher: {
+    id: number;
+  };
+}
+
+export interface ApplyPass {
+  reason: string;
+  startTimeHour: string;
+  startTimeMinute: string;
+  endTimeHour: string;
+  endTimeMinute: string;
+  idx: number;
+}
+
+export interface MyPassesResponse extends Response {
+  data: AppliedPass[];
+}

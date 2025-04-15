@@ -1,4 +1,4 @@
-import token from "../../lib/token/token";
+import token from "libs/Token/token";
 
 const useLogout = () => {
   const letsgoLogout = (): void => {

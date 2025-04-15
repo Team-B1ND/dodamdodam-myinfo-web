@@ -1,0 +1,101 @@
+import { Response } from "types/Utils/response.type";
+
+
+export type PointType = "DORMITORY" | "SCHOOL";
+
+export interface MyPointResponse extends Response {
+  data: {
+    id: number;
+    bonus: number;
+    minus: number;
+    offset: number;
+    type: PointType;
+    student: {
+      id: number;
+      name: string;
+      grade: number;
+      room: number;
+      number: number;
+    };
+  };
+}
+
+
+export interface PointReason {
+  given_date: string;
+  id: number;
+  place: "DORMITORY" | "SCHOOL";
+  reason: string;
+  score: number;
+  student: {
+    id: number;
+    member: {
+      email: string;
+      id: string;
+      joinDate: string;
+      name: string;
+      profileImage: string;
+      role: "ADMIN" | "STUDENT";
+      status: "ACTIVE" | "DEACTIVATED";
+    };
+    classroom: {
+      grade: number;
+      id: number;
+      place: {
+        id: number;
+        name: string;
+        type: {
+          id: number;
+          name: string;
+        };
+      };
+      room: number;
+    };
+    number: number;
+    phone: string;
+  };
+  teacher: {
+    id: number;
+    member: {
+      email: string;
+      id: string;
+      joinDate: string;
+      name: string;
+      profileImage: null;
+      role: "ADMIN" | "STUDENT";
+      status: "ACTIVE" | "DEACTIVATED";
+    };
+    tel: string;
+    position: string;
+    phone: string;
+  };
+  type: "BONUS" | "MINUS";
+}
+
+export interface PointReasonResponse extends Response {
+  data: [
+    {
+      id: number;
+      student: {
+        id: number;
+        name: string;
+        grade: number;
+        room: number;
+        number: number;
+      };
+      teacher: {
+        name: string;
+        position: string;
+        tel: string;
+      };
+      reason: {
+        id: number;
+        reason: string;
+        score: number;
+        scoreType: "MINUS" | "BONUS" | "OFFSET"; //BONUS, MINUS, OFFSET
+        pointType: "DORMITORY" | "SCHHOL"; //DORMITORY, SCHOOL
+      };
+      issueAt: string;
+    }
+  ];
+}
