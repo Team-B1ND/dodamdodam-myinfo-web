@@ -59,7 +59,7 @@ const ApplicationBus = () => {
             busId={data!.data.id}
             isSeatModalOpen={isSeatModalOpen}
             close={() => setIsSeatModalOpen(false)}
-            applySeat={data!.data.seat}
+            applySeat={data!.data.seat || 0}
           />
         </S.BusItemContainer>
       ) : (

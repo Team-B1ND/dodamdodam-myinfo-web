@@ -3,7 +3,7 @@ import * as S from './style';
 import WhiteBus from '../../../assets/bus_w.svg';
 import DarkBus from '../../../assets/bus_d.svg'
 import { Select } from "components/Common/Select";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useThemes } from "hooks/Theme/usetheme";
 import { ETheme } from "enum/Theme/theme.enum";
 import { useApplyBusSeatMutation, useChangeBusSeatMutation, useGetBusSeatInfo } from "queries/Bus/bus.query";
@@ -15,11 +15,11 @@ interface SeatChooseModalProps {
   isSeatModalOpen: boolean;
   close: () => void;
   busId: number;
-  applySeat: number | null;
+  applySeat: number;
 }
 
-const SeatChooseModal = ({ isSeatModalOpen, close, busId, applySeat}: SeatChooseModalProps) => {
-  const [selectedSeat, setSelectedSeat] = useState<number>(applySeat || 0);
+const SeatChooseModal = ({ isSeatModalOpen, close, busId, applySeat }: SeatChooseModalProps) => {
+  const [selectedSeat, setSelectedSeat] = useState<number>(applySeat);
   const { themeColor } = useThemes();
   const { data } = useGetBusSeatInfo(busId);
   const applyBusSeat = useApplyBusSeatMutation();
@@ -32,7 +32,7 @@ const SeatChooseModal = ({ isSeatModalOpen, close, busId, applySeat}: SeatChoose
         <header>
           <button onClick={() => {
               close()
-              setSelectedSeat(0)
+              setSelectedSeat(applySeat)
             }}>
             <Close size={24} color="labelNormal"/>
           </button>
@@ -55,7 +55,7 @@ const SeatChooseModal = ({ isSeatModalOpen, close, busId, applySeat}: SeatChoose
                 onSuccess: () => {
                   B1ndToast.showSuccess(`${selectedSeat}번 좌석 신청 성공`)
                   queryClient.invalidateQueries(QUERY_KEYS.bus.getMyAppliedBus, { refetchInactive: true })
-                  setSelectedSeat(0)
+                  queryClient.invalidateQueries(QUERY_KEYS.bus.getSeatInfo, { refetchInactive: true })
                   close()
                 }
               })}
