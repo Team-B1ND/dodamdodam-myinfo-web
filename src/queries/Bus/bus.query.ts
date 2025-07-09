@@ -44,21 +44,21 @@ export const useGetBusSeatInfo = (
    },
 );
 
-export const useToggleBusApplyStatus = () => {
+export const useToggleBusApplyStatusMutation = () => {
   const mutation = useMutation((status: BusApplyStatus) => 
     busApplyRepository.toggleBusApplyStatus(status)
   );
   return mutation
 }
 
-export const useApplyBusSeat = () => {
+export const useApplyBusSeatMutation = () => {
   const mutation = useMutation((seat: number) => 
     busApplyRepository.applyBusSeat(seat)
   );
   return mutation
 }
 
-export const useChangeBusSeat = () => {
+export const useChangeBusSeatMutation = () => {
   const mutation = useMutation((seat: number) => 
     busApplyRepository.changeBusSeat(seat)
   );

@@ -14,7 +14,6 @@ export const QUERY_KEYS = {
     getMy: "member/getMyMember",
   },
   bus: {
-    getBus: "bus/getBus",
     getMyAppliedBus: "bus/getMyAppliedBus",
     getSeatInfo: "bus/getSeatInfo"
   }

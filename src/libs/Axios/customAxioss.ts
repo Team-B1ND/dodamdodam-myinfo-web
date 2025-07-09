@@ -23,6 +23,8 @@ const createAxiosInstance = (config?: AxiosRequestConfig) => {
 export const customAxios = createAxiosInstance({
   baseURL: config.DODAM_SERVER,
   headers: {
+    
+    'ngrok-skip-browser-warning': "true",
     [REQUEST_TOKEN_KEY]: `Bearer ${token.getToken(ACCESS_TOKEN_KEY)}`!,
   },
 });

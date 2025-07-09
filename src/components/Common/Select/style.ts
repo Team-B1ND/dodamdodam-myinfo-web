@@ -44,8 +44,8 @@ export const SelectItemWrap = styled.div`
   position: absolute;
   top: 44px;
   left: 0px;
-
-  overflow: hidden;
+  max-height: 200px;
+  overflow: scroll;
   background-color: ${({ theme }) => theme.fillNormal};
   ${DodamShape.ExtraSmall}
   box-sizing: border-box;
@@ -54,7 +54,7 @@ export const SelectItemWrap = styled.div`
 
 export const SelectItem = styled.div`
   width: 100%;
-  height: 35px;
+  min-height: 32px;
 
   display: flex;
   align-items: center;

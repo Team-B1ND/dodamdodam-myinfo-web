@@ -9,9 +9,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import { CSSObject } from "styled-components";
 
 export interface SelectProps {
-  items: string[] | number[];
-  value: string | number;
-  onSelectedItemChange: (type: string | number) => void;
+  items: number[];
+  value: number;
+  onSelectedItemChange: (type: number) => void;
   zIndex?: number;
   customStyle?: CSSObject;
 }

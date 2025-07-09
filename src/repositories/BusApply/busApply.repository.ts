@@ -16,7 +16,7 @@ class BusApplyRepository {
   }
 
   public async applyBusSeat(seat: number): Promise<void> {
-    await customAxios.post(`/bus/board/${seat}}`);
+    await customAxios.post(`/bus/board/${seat}`);
   }
 
   public async changeBusSeat(seat: number): Promise<void> {
