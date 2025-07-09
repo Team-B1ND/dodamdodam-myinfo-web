@@ -20,7 +20,7 @@ export interface MyAppliedBusResponse extends Response {
     id: number;
     name: string;
     seat: number | null;
-    status: BusApplyStatus;
+    boardingType: BusApplyStatus;
   };
 }
 

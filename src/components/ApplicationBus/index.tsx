@@ -1,11 +1,16 @@
+import { B1ndToast } from "@b1nd/b1nd-toastify";
 import * as S from "./style";
-import { SchoolBus, School, DodamFilledButton, DodamModal } from "@b1nd/dds-web";
+import { SchoolBus, School, DodamFilledButton } from "@b1nd/dds-web";
 import SeatChooseModal from "components/ApplicationBus/SeatChooseModal";
-import { useGetMyAppliedBus } from "queries/Bus/bus.query";
+import { useGetMyAppliedBus, useToggleBusApplyStatusMutation } from "queries/Bus/bus.query";
 import { useState } from "react";
+import { useQueryClient } from "react-query";
+import { QUERY_KEYS } from "queries/queryKey";
 
 const ApplicationBus = () => {
   const { data } = useGetMyAppliedBus();
+  const queryClient = useQueryClient();
+  const toggleBusApplyStatusMutation = useToggleBusApplyStatusMutation();
   const [isSeatModalOpen, setIsSeatModalOpen] = useState(false);
 
   return (
@@ -22,17 +27,32 @@ const ApplicationBus = () => {
             {data?.data.seat && ` ${data.data.seat}번 좌석`}
           </section>
           <div>
-            <DodamFilledButton
+            {data?.data.boardingType === "BEFORE_BOARDING" && <DodamFilledButton
               size="Large"
               width={144}
               text={data?.data.seat ? "좌석 변경" : "좌석 선택"}
               onClick={() => setIsSeatModalOpen(true)}
-            />
+            />}
             <DodamFilledButton
               size="Large"
-              backgroundColorType="Negative"
+              backgroundColorType={
+                data?.data.boardingType === "BEFORE_BOARDING"
+                ? "Negative"
+                : "Primary"}
               width={160}
-              text="버스 미탑승 전환"
+              text={
+                data!.data.boardingType === "BEFORE_BOARDING"
+                ? "미탑승으로 전환"
+                : data!.data.boardingType === "UNBOARDED"
+                ? "탑승으로 전환"
+                : "탑승 완료!"}
+              onClick={() => toggleBusApplyStatusMutation.mutate(data?.data.boardingType === "BEFORE_BOARDING" ? "UNBOARDED" : "BEFORE_BOARDING", {
+                onSuccess: () => {
+                  B1ndToast.showSuccess("상태 전환 완료")
+                  queryClient.invalidateQueries(QUERY_KEYS.bus.getMyAppliedBus, { refetchInactive: true })
+                },
+                onError: () => B1ndToast.showError("상태 전환에 실패했습니다!")
+              })}
             />
           </div>
           <SeatChooseModal

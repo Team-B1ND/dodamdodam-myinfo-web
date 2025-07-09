@@ -12,7 +12,7 @@ class BusApplyRepository {
   }
 
   public async toggleBusApplyStatus(param: BusApplyStatus): Promise<void> {
-    await customAxios.patch(`/bus/status`, { status: param });
+    await customAxios.patch(`/bus/board`, { boardingType: param });
   }
 
   public async applyBusSeat(seat: number): Promise<void> {
