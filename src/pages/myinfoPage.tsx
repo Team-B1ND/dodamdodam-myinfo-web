@@ -3,6 +3,9 @@ import MypenaltyPoint from "components/MypenaltyPoint";
 import ApplicationBus from "components/ApplicationBus";
 import GoingOutInquiry from "components/GoingOutInquiry";
 import * as S from "./style";
+import { Suspense } from "react";
+import { DodamErrorBoundary } from "@b1nd/dds-web";
+import BusDataFallback from "components/Common/Skeleton/BusData";
 
 const MyinfoPage = () => {
     return(
@@ -11,9 +14,13 @@ const MyinfoPage = () => {
                 <S.ProfileContainer>
                     <MyProfile/>
                 </S.ProfileContainer>
-                <S.BusContainer>
-                    <ApplicationBus/>
-                </S.BusContainer>
+                <DodamErrorBoundary text="데이터 로딩 실패" showButton>
+                    <Suspense fallback={<BusDataFallback/>}>
+                        <S.BusContainer>
+                            <ApplicationBus/>
+                        </S.BusContainer>
+                    </Suspense>
+                </DodamErrorBoundary>
             </S.LeftColumn>
             <S.RightColumn>
                 <S.PointsContainer>

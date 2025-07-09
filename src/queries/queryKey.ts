@@ -12,5 +12,9 @@ export const QUERY_KEYS = {
   },
   member:{
     getMy: "member/getMyMember",
+  },
+  bus: {
+    getMyAppliedBus: "bus/getMyAppliedBus",
+    getSeatInfo: "bus/getSeatInfo"
   }
 };

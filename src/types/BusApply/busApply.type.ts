@@ -1,3 +1,4 @@
+import { BusApplyStatus } from "repositories/BusApply/busApply.params";
 import { Response } from "../Utils/response.type";
 
 export interface Bus {
@@ -15,5 +16,14 @@ export interface BusesResponse extends Response {
 }
 
 export interface MyAppliedBusResponse extends Response {
-  data: null | Bus;
+  data: {
+    id: number;
+    name: string;
+    seat: number | null;
+    boardingType: BusApplyStatus;
+  };
+}
+
+export interface BusSeatInfo extends Response {
+  data: number[];
 }

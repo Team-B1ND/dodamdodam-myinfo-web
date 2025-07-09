@@ -1,0 +1,1 @@
+export type BusApplyStatus = "BOARDED" | "UNBOARDED" | "BEFORE_BOARDING"
