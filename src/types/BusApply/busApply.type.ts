@@ -23,3 +23,7 @@ export interface MyAppliedBusResponse extends Response {
     status: BusApplyStatus;
   };
 }
+
+export interface BusSeatInfo extends Response {
+  data: number[];
+}

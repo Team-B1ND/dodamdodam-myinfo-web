@@ -16,5 +16,6 @@ export const QUERY_KEYS = {
   bus: {
     getBus: "bus/getBus",
     getMyAppliedBus: "bus/getMyAppliedBus",
+    getSeatInfo: "bus/getSeatInfo"
   }
 };

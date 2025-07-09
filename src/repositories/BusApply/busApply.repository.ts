@@ -1,6 +1,7 @@
 import { customAxios } from "libs/Axios/customAxioss";
 import { BusApplyStatus } from "repositories/BusApply/busApply.params";
 import {
+  BusSeatInfo,
   MyAppliedBusResponse,
 } from "types/BusApply/busApply.type";
 
@@ -22,8 +23,8 @@ class BusApplyRepository {
     await customAxios.patch(`/bus/board/${seat}`);
   }
 
-  public async getBusSeatInfo(id: number): Promise<void> {
-    const { data } = await customAxios.get(`/bus/${id}`);
+  public async getBusSeatInfo(id: number): Promise<BusSeatInfo> {
+    const { data } = await customAxios.get(`/bus/${id}/seats`);
     return data
   }
 }
