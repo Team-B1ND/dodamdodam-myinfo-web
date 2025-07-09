@@ -1,31 +1,30 @@
 import { customAxios } from "libs/Axios/customAxioss";
+import { BusApplyStatus } from "repositories/BusApply/busApply.params";
 import {
-  BusesResponse,
   MyAppliedBusResponse,
 } from "types/BusApply/busApply.type";
-import { BusApplyParam } from "./busApply.param";
 
 class BusApplyRepository {
-  public async getTodayBuses(): Promise<BusesResponse> {
-    const { data } = await customAxios.get("/bus");
-    return data;
-  }
-
   public async getMyAppliedBus(): Promise<MyAppliedBusResponse> {
-    const { data } = await customAxios.get("/bus/apply");
+    const { data } = await customAxios.get("/bus/my");
     return data;
   }
 
-  public async postBusApply({ idx }: BusApplyParam): Promise<void> {
-    await customAxios.post(`/bus/apply/${idx}`);
+  public async toggleBusApplyStatus(param: BusApplyStatus): Promise<void> {
+    await customAxios.patch(`/bus/status`, { status: param });
   }
 
-  public async patchBusApply({ idx }: BusApplyParam): Promise<void> {
-    await customAxios.patch(`/bus/apply/status/${idx}`);
+  public async applyBusSeat(seat: number): Promise<void> {
+    await customAxios.post(`/bus/board/${seat}}`);
   }
-  
-  public async deleteBusApply({ idx }: BusApplyParam): Promise<void>{
-    await customAxios.delete(`/bus/apply/${idx}`)
+
+  public async changeBusSeat(seat: number): Promise<void> {
+    await customAxios.patch(`/bus/board/${seat}`);
+  }
+
+  public async getBusSeatInfo(id: number): Promise<void> {
+    const { data } = await customAxios.get(`/bus/${id}`);
+    return data
   }
 }
 
