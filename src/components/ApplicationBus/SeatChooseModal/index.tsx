@@ -3,7 +3,7 @@ import * as S from './style';
 import WhiteBus from '../../../assets/bus_w.svg';
 import DarkBus from '../../../assets/bus_d.svg'
 import { Select } from "components/Common/Select";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useThemes } from "hooks/Theme/usetheme";
 import { ETheme } from "enum/Theme/theme.enum";
 import { useApplyBusSeatMutation, useChangeBusSeatMutation, useGetBusSeatInfo } from "queries/Bus/bus.query";
