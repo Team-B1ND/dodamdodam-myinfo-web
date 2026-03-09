@@ -1,9 +1,6 @@
 import { DodamShape, DodamTypography } from "@b1nd/dds-web";
 import styled from "styled-components";
 
-export const ChangeProfileModal = styled.div`
-    
-`
 
 export const ChangeProfileTitle = styled.span`
     color: ${({theme})=>theme.labelNormal};
