@@ -58,9 +58,9 @@ export interface myProfileResponse extends Response {
   status: number;
 }
 
-
 export interface mainProfile {
   email: string;
   profileImage: string | null;
+  name?: string;
   phone: string;
 }
